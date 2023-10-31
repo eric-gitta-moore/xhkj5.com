@@ -1,0 +1,28 @@
+
+<form enctype="multipart/form-data" id="cpform" action="admin.php?action=plugins&operation=config&identifier=ljww360&pmod=typeid&lj=tid" autocomplete="off" method="post" name="cpform">
+<input type="hidden" value="{FORMHASH}" name="formhash">
+<table  class="tb tb2 ">
+<tbody>
+	<tr><td s="1" class="td27">TID:</td></tr>
+	<tr class="noborder"><td class="vtop rowform"><textarea class="tarea" cols="50" name="tids" id="tids" onkeyup="textareasize(this, 0)" ondblclick="textareasize(this, 1)" rows="6"></textarea></td><td s="1" class="vtop tips2">{lang ljww360:One_line}</td></tr>
+	<tr><td s="1" class="td27">{lang ljww360:typeid_10}:</td></tr>
+	<tr class="noborder"><td class="vtop rowform"><select name="catid" id="catid_0" onchange="_on_select_z(this.value)">
+					<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+					<!--{loop $fenleiarr $k $v}-->
+					<option value="$v[id]">$v[subject]</option>
+					<!--{/loop}-->
+				</select>
+				<span id="level_88_fid"></span></td><td s="1" class="vtop tips2">{lang ljww360:Import_question_classification}</td></tr>
+	
+</tbody></table>
+<div class="fixsel"><input type="submit" value="{lang ljww360:wenwen48}"  name="submit" id="submit_importsubmit" class="btn"></div>
+</form>
+<script type="text/javascript">
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	$('fid').value = fid;
+}
+</script>

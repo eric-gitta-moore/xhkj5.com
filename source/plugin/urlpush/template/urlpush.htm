@@ -1,0 +1,51 @@
+<!--{subtemplate common/header}-->
+<style>
+.urlpush_tb { width:100%;}
+.urlpush_tb td { padding:8px 5px;}
+.urlpush_tb td input {width:300px;}
+.urlpush_tb td a { display:block; float:left; line-height:26px; padding:0 10px;}
+.urlpush_tb td a.a { color:#00C;font-weight:700}
+</style>
+<h3 class="flb">
+    <em id="return_upload">{lang urlpush:urlpush_view_1}</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET[handlekey]', 0)" title="{lang close}">{lang close}</a></span>
+</h3>
+<form id="editform" name="editform" method="post" autocomplete="off" onsubmit="ajaxpost(this.id,'return_editmain');;return false;" action="plugin.php?id=urlpush">
+    <input type="hidden" name="formhash" value="{FORMHASH}" >
+    <input type="hidden" name="editsubmit" value="true" >
+    <input type="hidden" name="handlekey" value="editmain" >
+    <input type="hidden" name="tid" value="$thread['tid']" >
+    <div class="c">
+    	<table class="urlpush_tb">
+        	<tbody>
+            	<tr>
+                	<td>{lang urlpush:urlpush_view_2}</td>
+                    <td class="tpclg"><input type="text" name="urlpush_url" id="urlpush_url" class="px" value="{$_G['siteurl']}forum.php?mod=viewthread&tid=$thread['tid']"></td>
+                </tr>
+                <tr>
+                	<td></td>
+                    <td>
+                    	<a id="urlpush_1" href="#" onClick="urlpush_url(this.id,'this');return false;">{lang urlpush:urlpush_view_3}</a>
+                    	<a class="a" id="urlpush_2" href="#" onClick="urlpush_url(this.id);return false;">{lang urlpush:urlpush_view_4}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="o pns"><button type="submit" name="editsubmit_btn" id="editsubmit_btn" class="pn pnc" value="true"><span>{lang urlpush:urlpush_view_5}</span></button></p>
+</form>
+<span id="return_editmain" style="display:none"></span>
+<script>
+	function urlpush_url(id,type){
+		if(type == 'this'){
+			var url = window.location;
+		}else{
+			var url = "{$_G['siteurl']}forum.php?mod=viewthread&tid=$thread['tid']";
+		}
+		$('urlpush_url').value = url;
+		$('urlpush_1').className = '';
+		$('urlpush_2').className = '';
+		$(id).className = 'a';
+	}
+</script>
+<!--{subtemplate common/footer}-->

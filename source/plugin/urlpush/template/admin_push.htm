@@ -1,0 +1,50 @@
+<table class="tb tb2 " id="tips">
+    <tbody>
+        <tr><th class="partition">{lang urlpush:admin_notic_1}</th></tr>
+    </tbody>
+</table>
+<!--{eval showformheader('plugins&operation=config&identifier=urlpush&pmod=admin_push', 'enctype');}-->
+    <!--{eval showtableheader('','','style=""');}-->
+		<tr>
+        	<th>{lang urlpush:admin_lang2}</th>
+        	<th>{lang urlpush:admin_lang3}</th>
+        	<th>{lang urlpush:admin_lang4}</th>
+        	<th>{lang urlpush:admin_lang5}</th>
+        	<th>{lang urlpush:admin_lang6}</th>
+        	<th>{lang urlpush:admin_lang7}</th>
+        </tr>
+        <!--{loop $editlist $edit}-->
+        	<tr>
+            	<td>
+                	<!--{loop $edit['url'] $url}-->
+                    	<a href="$url" target="_blank">$url</a><br>
+                    <!--{/loop}-->
+                </td>
+            	<td>$edit['dateline']</td>
+            	<td>$edit['username']</td>
+            	<td>
+                	<!--{if $edit['not_valid']}-->
+                        <!--{loop $edit['not_valid'] $url}-->
+                            <a href="$url" target="_blank">$url</a><br>
+                        <!--{/loop}-->
+                    <!--{else}-->
+                    	$edit['message']
+                    <!--{/if}-->
+                </td>
+            	<td>
+                	<!--{if $edit['status']}-->
+                    	<strong style="color:#060">{lang urlpush:admin_lang8}</strong>
+                    <!--{else}-->
+                    	<strong style="color:#C03">{lang urlpush:admin_lang9}</strong>
+                    <!--{/if}-->
+                </td>
+            	<td>
+                    <a href="admin.php?action=plugins&operation=config&do=$pluginid&identifier=urlpush&pmod=admin_push&edit_id=$edit['id']&managedo=delete&formhash={FORMHASH}">{lang urlpush:admin_lang11}</a>
+                </td>
+            </tr>
+        <!--{/loop}-->
+        <tr>
+        	<td colspan="6">$multi</td>
+        </tr>
+    <!--{eval showtablefooter();}-->
+<!--{eval showformfooter();}-->

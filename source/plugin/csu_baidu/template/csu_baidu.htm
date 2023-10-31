@@ -1,0 +1,52 @@
+{if $bind['status']==1}
+	<p class="pbm bbda xi1">{lang csu_baidu:90} <strong>{$_G[member][username]}</strong> {lang csu_baidu:91}</p>
+<form action="home.php?mod=spacecp&ac=plugin&id=csu_baidu:csu_baidu" method="post" autocomplete="off" class="mbw bbda">
+		<input type="hidden" name="formhash" value="{FORMHASH}">
+	<table cellspacing="0" cellpadding="0" class="tfm">
+		<tr>
+			<th>{lang csu_baidu:92}</th>
+			<td>
+            {eval echo dhtmlspecialchars($info[username]);}
+		    </td>
+	    </tr>
+		<tr>
+			<th>{lang csu_baidu:93}</th>
+			<td>
+            {eval echo dgmdate($at[3]-$at[2],'dt');}
+		    </td>
+	    </tr>
+		<tr>
+			<th>{lang csu_baidu:94}</th>
+			<td>
+            {eval echo dgmdate($at[3],'dt');}&nbsp;<a href="home.php?mod=spacecp&ac=plugin&id=csu_baidu:csu_baidu&formhash={FORMHASH}&refresh=true" class="xi1" ><strong>{lang csu_baidu:95}</strong></a>
+		    </td>
+	    </tr>
+		<tr>
+			<th></th>
+			<td><img src="http://tb.himg.baidu.com/sys/portrait/item/{$info[portrait]}" /></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<button type="submit" name="unbindsubmit" value="yes" class="pn pnc" onclick="javascript:confirm('{lang csu_baidu:96}')"><strong>{lang csu_baidu:97}</strong></button>
+		    </td>
+	    </tr>
+    </table>
+  </form>
+	<br />
+
+{else}
+	<div class="mtw bm2 cl">
+		<div class="bm2_b bw0 hm" style="padding-top: 70px;">
+			<a href="csu_baidu.php?mod=login&op=init"><img src="source/plugin/csu_baidu/images/login-long.png" class="vm"/></a>
+			<p class="mtn xg1">{lang csu_baidu:98}</p>
+		</div>
+		<div class="bm2_b bm2_b_y bw0">
+			<dl class="xld">
+				<h2 class="xi1 xs2">{lang csu_baidu:99}</h2>
+				<dt>{lang csu_baidu:100}</dt>
+				<dd class="xg1">{lang csu_baidu:101}{$count}{lang csu_baidu:102}</dd>
+			</dl>
+		</div>
+	</div>
+{/if}

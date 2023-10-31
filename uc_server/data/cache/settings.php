@@ -1,0 +1,32 @@
+<?php
+$_CACHE['settings'] = array (
+  'accessemail' => '',
+  'censoremail' => '',
+  'censorusername' => '',
+  'dateformat' => 'y-n-j',
+  'doublee' => '0',
+  'nextnotetime' => '0',
+  'timeoffset' => '28800',
+  'privatepmthreadlimit' => '25',
+  'chatpmthreadlimit' => '30',
+  'chatpmmemberlimit' => '35',
+  'pmfloodctrl' => '15',
+  'pmcenter' => '1',
+  'sendpmseccode' => '1',
+  'pmsendregdays' => '0',
+  'maildefault' => 'admin@xhkj5.com',
+  'mailsend' => '2',
+  'mailserver' => 'ssl://smtp.exmail.qq.com',
+  'mailport' => '465',
+  'mailauth' => '1',
+  'mailfrom' => '[ัถปรอ๘(xhkj5.com)]<admin@xhkj5.com>',
+  'mailauth_username' => 'admin@xhkj5.com',
+  'mailauth_password' => 'cky2030016184DRX',
+  'maildelimiter' => '0',
+  'mailusername' => '1',
+  'mailsilent' => '1',
+  'login_failedtime' => '5',
+  'version' => '1.6.0',
+);
+
+?>

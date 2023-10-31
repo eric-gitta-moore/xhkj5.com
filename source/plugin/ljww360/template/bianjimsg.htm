@@ -1,0 +1,68 @@
+{template common/header_ajax}
+<script type="text/javascript" src="static/js/seditor.js"></script>
+<h3 class="flb">
+	<em>{lang ljww360:wt20}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<form id="qiandao" method="post" action="plugin.php?id=ljww360&mod=wtw&action=msgbianji&tid=$tid&wid=$id" >
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+
+		<style>
+		
+.m_c .c {
+    padding: 0 10px 10px;
+}
+		</style>
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody><tr>
+    				<td width="70" height="40">{lang ljww360:wt21}</td>
+    				<td colspan="4"><input type="text" maxlength="20" style="width:350px;" class="px" name="subject" value="$bianji[subject]"></td>
+                </tr>
+                
+                <tr>
+                    <td width="70" height="40">{lang ljww360:wt22}</td>
+                    <td colspan="4"><div style="width:100%;" class="tedt">
+                            <div class="bar">
+<div class="fpd">
+<a onclick="seditor_insertunit('fastpost', '[b]', '[/b]');doane(event);" class="fbld" title="{lang ljww360:wt2}" href="javascript:;">B</a>
+<a onclick="showColorBox(this.id, 2, 'fastpost');doane(event);" id="fastpostforecolor" class="fclr" title="{lang ljww360:wt3}" href="javascript:;">Color</a>
+<a onclick="seditor_menu('fastpost', 'img');doane(event);" class="fmg" title="{lang ljww360:wt4}" href="javascript:;" id="fastpostimg">Image</a>
+<a onclick="seditor_menu('fastpost', 'url');doane(event);" class="flnk" title="{lang ljww360:wt5}" href="javascript:;" id="fastposturl">Link</a>
+<a onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;" id="fastpostsml" class="fsml" href="javascript:;">Smilies</a>
+<script reload="1" type="text/javascript">smilies_show('fastpostsmiliesdiv', 8, 'fastpost');</script>
+</div></div>
+<div class="area">
+<textarea class="pt" tabindex="12" id="fastpostmessage" name="message" cols="80" rows="10">$bianji['message']</textarea>
+</div>
+</div></td>
+  				</tr>
+                
+                                
+            </tbody></table>		
+
+		<script>
+		function Icon_selected(sId) {
+			var oImg = document.getElementsByTagName('li');
+			for (var i = 0; i < oImg.length; i++) {
+			  if (oImg[i].id == sId) {
+				var selectname = document.getElementById(oImg[i].id + "_s");
+				selectname.checked = true;
+				oImg[i].style. background = '#EFEFEF';
+			  } else {
+				oImg[i].style. background = '';
+			  }
+			}
+		}
+		</script>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" class="pn pnc" value="true"><strong>{lang ljww360:wt23}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

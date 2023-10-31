@@ -1,0 +1,441 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block
+}
+
+ol,ul {
+	list-style: none
+}
+
+blockquote,q {
+	quotes: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+input {
+	border: 0;
+	margin: 0;
+	padding: 0
+}
+
+body {
+	background: #f4f4f4;
+	color: #333;
+	font-size: 15px;
+	font-family: Hei,arial,sans-serif
+}
+
+a {
+	color: #404040;
+	text-decoration: none
+}
+
+.header {
+	background-color: #EEE;
+	border-bottom: 1px solid #d0d0d0;
+	display: block;
+	font-family: arial;
+	font-size: 15px
+}
+
+.tabList,.searchBox {
+	border-top: 1px solid #d0d0d0;
+	box-shadow: inset 0 0 1px rgba(0,0,0,0.15);
+	display: none;
+	overflow: hidden
+}
+
+.searchBox {
+	padding: 10px
+}
+
+.mod {
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	margin-bottom: 15px
+}
+
+.m-wall-top {
+	bottom: 120px;
+	display: none;
+	opacity: 0;
+	position: fixed;
+	right: 5px;
+	-webkit-transition: opacity .4s linear
+}
+
+.mod-rel-search {
+	background: #fafafa
+}
+
+.tabList a {
+	color: #333;
+	float: left;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	text-decoration: none;
+	width: 20%
+}
+
+.m-wall-top a {
+	background: url('../../images/sjimg/top.png');
+	background-size: 54px 54px;
+	display: block;
+	height: 54px;
+	overflow: hidden;
+	text-indent: -999em;
+	width: 54px
+}
+
+.mod-rel-search li {
+	display: inline-block;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 49%
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: none
+}
+
+.mod-rel-search li a {
+	color: #1a62d8
+}
+
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: block
+}
+
+.ios .noIos {
+	display: none
+}
+
+.header .top {
+	background-color: #fafafa;
+	height: 40px
+}
+
+.header .icon {
+	background: url('../../images/sjimg/icons.png') no-repeat;
+	background-size: 150px 112px;
+	border-right: 1px solid #d5d5d5;
+	float: left;
+	height: 100%;
+	width: 50px
+}
+
+.header .toSoIndex {
+	background-position: -49px 11px
+}
+
+.header .moreTabs {
+	background-position: -116px 11px
+}
+
+.header .search {
+	background-position: 16px 11px
+}
+
+.header .noPic,.header .search {
+	border-left: 1px solid #d5d5d5;
+	border-right: 0;
+	float: right
+}
+
+.header .noPic {
+	background: 0;
+	color: #fff;
+	line-height: 40px;
+	text-align: center
+}
+
+.header .logo,.searchBox .con,.header .logo a {
+	height: 100%
+}
+
+.searchBox .con {
+	background-color: #fff;
+	border: 1px solid #d0d0d0;
+	padding: 5px 50px 5px 5px;
+	position: relative
+}
+
+.searchBox .keyWords {
+	border: 0;
+	border-right: 1px solid #d4d4d4;
+	border-radius: 0;
+	box-shadow: none;
+	font-size: 15px;
+	height: 28px;
+	outline: 0;
+	padding: 0;
+	width: 100%
+}
+
+.searchBox .searchBn {
+	background-position: 18px 10px;
+	border: 0;
+	height: 40px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px
+}
+
+.mod .hd {
+	border-bottom: 1px solid #d5d5d5;
+	border-top: 1px solid #fbfbfb;
+	padding: 7px 15px 7px 29px;
+	position: relative
+}
+
+.mod .bd,.mod .ft {
+	padding: 12px 15px 0
+}
+
+.mod .ft {
+	font-size: 13px;
+	padding-top: 0;
+	padding-bottom: 13px
+}
+
+.mod .ft,.mod .ft a {
+	color: #b0b0b0
+}
+
+.mod-rel-search .bd {
+	padding-bottom: 10px
+}
+
+.header .icon a {
+	display: block;
+	height: 100%;
+	width: 100%
+}
+
+.header .logo a {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 112px
+}
+
+.header .logo img {
+	height: 16px;
+	margin-top: 12px
+}
+
+.mod .hd h2 {
+	font-size: 16px;
+	font-weight: 400
+}
+
+.mod .bd p {
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: normal
+}
+
+.mod .bd img {
+	max-width: 100%
+}
+
+.mod-rel-search li:nth-child(9),.mod-rel-search li:last-child {
+	margin-bottom: 0
+}
+
+.header .icon.active {
+	background-color: #eee
+}
+
+.header .toSoIndex.active {
+	background-position: -49px -36px
+}
+
+.header .moreTabs.active {
+	background-position: -116px -36px
+}
+
+.header .search.active {
+	background-position: 16px -36px
+}
+
+.mod .hd .ico {
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 20px;
+	left: 0;
+	position: absolute;
+	top: -1px;
+	width: 30px
+}
+
+.mod .bd .js-more-rel {
+	line-height: 1.5;
+	padding-bottom: 10px
+}
+
+.mod-rel-search .hd .ico {
+	background-image: url('../../images/sjimg/ss.png')
+}
+
+.header .logo.new a::before {
+	background-color: #ff2400;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	box-shadow: 0 1px 1px #777;
+	content: '';
+	float: right;
+	height: 4px;
+	margin: 5px 0 0 -5px;
+	width: 4px
+}
+
+#doc {
+	background: #fafafa
+}
+
+#bd {
+	background: #f4f4f4;
+	padding: 0 0 16px
+}
+
+#ft {
+	background: #fafafa;
+	border-top: 1px solid #dcdcdc;
+	padding: 7px 0
+}
+
+#bd .more {
+	background-color: #ededed;
+	background-image: -moz-linear-gradient(top,#d5edcb,#afd3a0);
+	background-image: -webkit-gradient(linear,0 0,0 100%,color-stop(0%,#fff),color-stop(94%,#eaeaea),color-stop(100%,#dcdcdc));
+	background-image: -webkit-linear-gradient(top,#fff 0,#eaeaea 94%,#dcdcdc 100%);
+	background-image: -o-linear-gradient(top,#fff 0,#eaeaea 94%,#dcdcdc 100%);
+	background-image: linear-gradient(top,#fff 0,#eaeaea 94%,#dcdcdc 100%);
+	background-repeat: repeat-x;
+	border: 1px solid #e6e5e5;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: #666;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 36px;
+	text-align: center;
+	width: 100%
+}
+
+@media(max-width:240px) {
+	body {
+		font-size: 12px
+	}
+
+	.mod-rel-search li {
+		display: block;
+		width: 100%
+	}
+
+	.mod .hd h2 {
+		font-size: 14px
+	}
+}
+
+.top-app-ban {
+	height: auto;
+	opacity: 0;
+	overflow: hidden;
+	-webkit-transform: scale(1.5)
+}
+
+.top-app-ban,.top-app-ban img {
+	width: 100%
+}
+
+.mod-notice-btn span {
+	background-size: contain;
+	bottom: 50px;
+	position: fixed;
+	right: 5px;
+	z-index: 9999
+}
+
+.mod-notice-btn i {
+	background-image: -moz-linear-gradient(90deg,#ff7300 0,#ffa800 100%);
+	background-image: -webkit-linear-gradient(90deg,#ff7300 0,#ffa800 100%);
+	background-image: -ms-linear-gradient(90deg,#ff7300 0,#ffa800 100%);
+	background-color: #ff7300;
+	border-radius: 12px;
+	display: block;
+	height: 25px;
+	line-height: 26px;
+	margin: -6px 0 0 -12px;
+	text-align: center;
+	width: 25px;
+	z-index: 56
+}
+
+.mod-notice-btn .ask,.mod-notice-btn .msg {
+	height: 48px;
+	opacity: 0;
+	transform: scale(0.1) translate(0,0);
+	-webkit-transform: scale(0.1) translate(0,0);
+	transition: all 400ms ease-out;
+	-webkit-transition: all 400ms ease-out;
+	width: 48px
+}
+
+.mod-notice-btn .ask {
+	background-image: url('../../images/sjimg/mywenda.png')
+}
+
+.mod-notice-btn .msg {
+	background-image: url('../../images/sjimg/mywenda.png');height: 64px;
+	transition: all 200ms ease-out;
+	-webkit-transition: all 200ms ease-out;
+	width: 64px
+}
+
+.mod-notice-btn .msg-anim {
+	bottom: 62px;
+	opacity: 1;
+	right: 85px;
+	transform: scale(1);
+	-webkit-transform: scale(1)
+}
+
+.mod-notice-btn .ask-anim {
+	bottom: 128px;
+	opacity: 1;
+	right: 15px;
+	transform: scale(1);
+	-webkit-transform: scale(1)
+}
+
+.mod-notice-btn .main-anim {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg)
+}
+
+.mod-notice-btn span:active {
+	-webkit-transform: scale3d(0.9,0.9,1)
+}

@@ -1,0 +1,91 @@
+<?php
+if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
+	exit('Access Denied');
+}
+$appurl=$_G['siteurl']."admin.php?action=plugins&operation=config&do=$_GET[do]&identifier=xlwsq_banner&pmod=xlwsq_banner_admin";
+loadcache('plugin');
+@extract($_G['cache']['plugin']['xlwsq_banner']);
+$p = $_GET['p'];
+$p = $p?$p:'index';
+if($p=='index'){
+	$page=$_G['page'];
+	$begin=($page-1)*10;
+	$manylist=array();
+	$rs=DB::query("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." ORDER BY diynum DESC,id desc LIMIT $begin , 10");
+	while ($rw=DB::fetch($rs)){
+		$manylist[]=$rw;
+	}
+	$allnum=DB::result_first("SELECT count(*) FROM ".DB::table('plugin_xlwsq_banner_banner'));
+	$pagenav=multi($allnum,10,$page,$appurl."&p=$p");
+}elseif ($p=='add'){
+	if(submitcheck('addbannersubmit')){
+                    $title = addslashes($_GET['title']);
+                    $pic = addslashes($_GET['pic']);
+                    $url = addslashes($_GET['url']);
+                    $diynum = intval($_GET['diynum']);
+                    $timestamp = $_G['timestamp'];
+						if($_FILES['file']['error']==0){
+							$rand=date("YmdHis").random(3, $numeric =1);
+							$filetype = array("jpg", "jpeg", "gif", "png","JPG","JPEG","GIF","PNG");
+							$arr=explode(".", $_FILES["file"]["name"]);
+							$hz=$arr[count($arr)-1];
+							if(!in_array($hz, $filetype)){
+								cpmsg(lang('plugin/xlwsq_banner', 'tupiangeshibuzhengque'));
+							}
+							$filepath = "source/plugin/xlwsq_banner/banner/".date("Ymd")."/";
+							$randname = date("Y").date("m").date("d").date("H").date("i").date("s").rand(100, 999).".".$hz;
+							if(!file_exists($filepath)){ mkdir($filepath); }			
+								if(@copy($_FILES['file']['tmp_name'], $filepath.$randname) || (function_exists('move_uploaded_file') && @move_uploaded_file($_FILES['file']['tmp_name'], $filepath.$randname))) {
+									 @unlink($_FILES['file']['tmp_name']);
+								}
+							$pic = "source/plugin/xlwsq_banner/banner/".date("Ymd")."/".$randname."";
+						}
+		DB::insert('plugin_xlwsq_banner_banner',array('id' => '','title' => $title,'pic' => $pic,'url' => $url,'diynum' => $diynum, 'dateline' => $timestamp));
+		cpmsg(lang('plugin/xlwsq_banner', 'tijiaochenggong'),$appurl);
+	 }
+}elseif ($p=='edit'){
+	$id=intval($_GET['id']);
+	$active=DB::fetch_first("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." WHERE id ='$id'");
+    if(submitcheck('editbannersubmit')){
+                    $title = addslashes($_GET['title']);
+                    $pic = addslashes($_GET['pic']);
+                    $url = addslashes($_GET['url']);
+                    $diynum = intval($_GET['diynum']);
+						if($_FILES['file']['error']==0){
+	                          if ($active['pic']!=false){
+	                             unlink($active["pic"].$filetype);
+	                           }
+							$rand=date("YmdHis").random(3, $numeric =1); 
+							$filetype = array("jpg", "jpeg", "gif", "png","JPG","JPEG","GIF","PNG");
+							$arr=explode(".", $_FILES["file"]["name"]);
+							$hz=$arr[count($arr)-1];
+							if(!in_array($hz, $filetype)){
+								cpmsg(lang('plugin/xlwsq_banner', 'tupiangeshibuzhengque'));
+							}
+							$filepath = "source/plugin/xlwsq_banner/banner/".date("Ymd")."/";
+							$randname = date("Y").date("m").date("d").date("H").date("i").date("s").rand(100, 999).".".$hz;
+							if(!file_exists($filepath)){ mkdir($filepath); }
+								if(@copy($_FILES['file']['tmp_name'], $filepath.$randname) || (function_exists('move_uploaded_file') && @move_uploaded_file($_FILES['file']['tmp_name'], $filepath.$randname))) {
+									 @unlink($_FILES['file']['tmp_name']);
+								}
+							$pic = "source/plugin/xlwsq_banner/banner/".date("Ymd")."/".$randname."";
+						}
+		DB::update('plugin_xlwsq_banner_banner',array('title' => $title,'pic' => $pic,'url' => $url,'diynum' => $diynum),"id='$id'");
+		cpmsg(lang('plugin/xlwsq_banner', 'caozuochenggong'),$appurl);
+	 }
+
+}elseif ($p=='del'){
+  if($_GET['formhash'] == FORMHASH) {
+	$id=intval($_GET['id']);
+    $active=DB::fetch_first("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." WHERE id ='$id'");
+		if ($active['pic']!=false){
+		unlink($active['pic'].$filetype);
+	}
+	DB::query("DELETE FROM ".DB::table('plugin_xlwsq_banner_banner')." WHERE id = '$id'");
+	cpmsg(lang('plugin/xlwsq_banner', 'shanchuok'),$appurl);
+  }
+}
+
+include(template("xlwsq_banner:banner_admin_$p"));
+
+?>

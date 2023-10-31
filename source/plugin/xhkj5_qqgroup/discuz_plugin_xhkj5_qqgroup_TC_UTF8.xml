@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3]]></item>
+	<item id="Time"><![CDATA[2017-05-04 20:53]]></item>
+	<item id="From"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[訊幻網_加群彈窗]]></item>
+			<item id="identifier"><![CDATA[xhkj5_qqgroup]]></item>
+			<item id="description"><![CDATA[加群彈窗代碼]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[xhkj5_qqgroup/]]></item>
+			<item id="copyright"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admincp_addonymg]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>資源中心</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[開啟插件自帶入口]]></item>
+				<item id="description"><![CDATA[ 入口調用 <a href="javascript:;" onclick="showWindow('qqgroup', 'plugin.php?id=xhkj5_qqgroup','get',1);">自定義文字/圖片</a>  將這段代碼放在要顯示彈窗的位置即可]]></item>
+				<item id="variable"><![CDATA[open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[禁止游客查看]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[uid]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[游客提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_uid]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>抱歉，您未獲得加群資質！</b><br>該帳號為QQ游客，請綁定帳號后繼續操作]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[禁止QQ游客]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[qq]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[禁止QQ游客提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_qq]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>抱歉，您未獲得加群資質！</b><br>該帳號未進行驗證，請完善帳號資料]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[禁止未驗證用戶]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[y]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[未驗證提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_y]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>抱歉，您未獲得加群資質！</b><br>該帳號為QQ游客，請完善帳號資料]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[只允許認證用戶查看]]></item>
+				<item id="description"><![CDATA[填寫認證ID  留空也不限制認證]]></item>
+				<item id="variable"><![CDATA[verify]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[verify5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[未認證提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_verify]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>抱歉，您未獲得加群資質！</b><br>點擊【<a target="_blank" href="/home.php?mod=spacecp&ac=plugin&op=profile&id=fx8_domain:index" style="color:#E53333;">驗證域名</a>】完善帳號信息]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[屏蔽用戶組]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[groupid]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[9]]></item>
+					<item id="1"><![CDATA[4]]></item>
+					<item id="2"><![CDATA[5]]></item>
+					<item id="3"><![CDATA[6]]></item>
+				</item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[黑名單提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_h]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>抱歉，您未獲得加群資質！</b><br>該帳號在系統屏蔽名單中...]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[通過提示]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[tips_ok]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>恭喜，您已通過加群資質驗證！</b><br>QQ群號【<span style="color:#E53333;">550494646</span>】，禁止外泄！<br>加群問題處填：<span style="color:#E53333;"><b>Key{uid}{group}</b></span>，沒填不通過！<br>加群后把群名片修改成：<span style="color:#E53333;">[{uid}]你的網名</span><br>您也可以點擊下面按鈕直接加入↓<br><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e23a285644813ed813d3c86883e64991a75beb2f56fb1d1acbc9f910eddb6204"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="訊幻網用戶交流群1" title="訊幻網用戶交流群1"></a>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="jiaru"><![CDATA[【加入QQ群】]]></item>
+			</item>
+		</item>
+	        <item id="license"><![CDATA[  
+訊幻網原創插件www.xhkj5.com  更多免費商業插件盡在訊幻網www.xhkj5.com
+]]></item>
+	</item>
+</root>

@@ -1,0 +1,65 @@
+<!-- ²å¼þºóÌ¨·ÖÀà¹ÜÀí -->
+<style>
+	#cpform { margin-top: 0; }
+	#cpform thead { background: #eee;}
+	#cpform th { text-align: center; border-right: 1px solid #ddd;}
+	#cpform td { border-right: 1px solid #ddd; }
+	.none { display: none;}
+	.quanxuan { margin-right: 8px; }
+	#cpform .txt { width: 60px; }
+	#jameson_fx_fx { margin-bottom: 0; padding-bottom: 0; }
+	#jameson_fx_fx a { text-decoration: none;display: inline-block; margin: 0; background: #fff;padding: 10px;font-weight: 400; color: #333;}
+	#jameson_fx_fx .active {background: #eee;color: #369; }
+	#jameson_fx_fx a:hover {background: #f00;color: #fff; }
+</style>
+<h3 id="jameson_fx_fx">
+	<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=jameson_fx&pmod=jameson_fx&contrl=mfx&act=portal" class="{if !isset($_GET['fx'])}active{/if}">{lang jameson_fx:anyonghuchakan}</a><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=jameson_fx&pmod=jameson_fx&contrl=mfx&act=portal&fx=1" class="{if $_GET['fx']==1 && !isset($_GET['fxuid'])}active{/if}">{lang jameson_fx:anwenzhangchakan}</a>
+	{if $_GET['fxuid']}
+	<a class="active">[{$username}] {lang jameson_fx:defenxiang}</a>
+	{/if}
+</h3>
+<table class="tb tb2" id="cpform">
+	<thead class="">
+		<tr class="header ">
+			<th class="td21">{lang jameson_fx:xuhao}</th>
+			<th>{if !isset($_GET['fx']) || $_GET['fxuid']}{lang jameson_fx:yonghu}{else}{lang jameson_fx:biaoti}{/if}</th>
+			<th>{lang jameson_fx:xiyinyonghu}</th>
+			<th>{lang jameson_fx:jianglizonge}/{$_G['jameson_fx']['trametitle']}</th>
+		</tr>
+	</thead>
+	<tbody>
+	{if $fenxiangs}
+	{loop $fenxiangs $key $sp}
+		<tr class="hover threadopt">
+			<td >{eval echo ++$key;}</td>
+			<td>{if !isset($_GET['fx'])}
+				<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=jameson_fx&pmod=jameson_fx&contrl=mfx&act=portal&fx=1&fxuid={$sp['fxuid']}" title="{lang jameson_fx:dianjichakanxiangxi}">{$sp['username']}</a>
+				{else}
+				<a href="./portal.php?mod=view&aid={$sp['aid']}" target="_blank">{$sp['title']}</a>
+				{/if}</td>
+			<td>{$sp['usernums']}</td>
+			<td>{$sp['jianglinums']}</td>
+		</tr>
+	{/loop}
+		<tr>
+			<td colspan="4"><a href="javascript:;" onclick="jamesonfx_clear(this)">{lang jameson_fx:yijianqingkong}</a></td>
+		</tr>
+		<tr>
+			<td colspan="4"><div class="pg right">{$pageshow}</div></td>
+		</tr>
+	{else}
+		<tr>
+			<td colspan="4"><div class="center">{lang jameson_fx:zanwufenxiang}</div></td>
+		</tr>
+	{/if}
+	</tbody>
+</table>
+<script type="text/javascript">
+	function jamesonfx_clear(em){
+		if(confirm('{lang jameson_fx:querenqingkong}')){
+			location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=jameson_fx&pmod=jameson_fx&contrl=mfx&act=delall&formhash={FORMHASH}&type=portal';
+		}else{
+			return false;
+		}
+	}
+</script>

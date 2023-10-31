@@ -1,0 +1,4 @@
+         <li><a href='home.php?mod=space&uid={$mood[uid]}'><em><img class="dxksst_avatar" src="{$mood['avatar']}" alt='{$mood[username]}'> <font>{$mood[username]}</font>
+</em></a><em>:{$mood[message]}</em><div align="right"><em>{$mood[dateline]}&nbsp;</em><em><a href="javascript:;" onclick="dxksst_reply({$pid},'{$mood[username]}',{$mood[uid]});">{$txt[reply]}</a></em> 
+<!--{if $del==1||$mood[self]}--><em>&nbsp;&nbsp;<a href="javascript:;" onclick="dxksst_reply_delete({$pid},{$mood[id]});">{$txt[delete]}</a></em><!--{/if}--></div>
+</li>

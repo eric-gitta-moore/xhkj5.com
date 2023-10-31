@@ -1,0 +1,3 @@
+[ 2017-06-23T07:45:19+08:00 ] 220.181.108.105 /index.php/home/index/zan
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+

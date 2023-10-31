@@ -1,0 +1,19 @@
+<!--{if !$wcache['forum']}-->
+{lang ljww360:daoru_1}{$wcache['forum_insert']}{lang ljww360:daoru_2}{$wcache['forum_update']}{lang ljww360:daoru_3}<br/>
+<!--{else}-->
+<font color="red">{lang ljww360:daoru_4}</font>{lang ljww360:daoru_5}{$wcache['forum_in']}{lang ljww360:daoru_2}{$wcache['forum_up']}{lang ljww360:daoru_3}<br/>
+
+<!--{/if}-->
+<!--{if !$wcache['post_1']}-->
+{lang ljww360:daoru_6}{$wcache['post_insert']}{lang ljww360:daoru_2}{$wcache['post_update']}{lang ljww360:daoru_3}
+<!--{else}-->
+<font color="red">{lang ljww360:daoru_7}</font>{lang ljww360:daoru_5}{$wcache['post_in']}{lang ljww360:daoru_2}{$wcache['post_up']}{lang ljww360:daoru_3}<a href="admin.php?action=plugins&operation=config&do=$do&identifier=ljww360&pmod=typeid">{lang ljww360:daoru_8}</a>
+<!--{/if}-->
+<script language="JavaScript">
+function myrefresh(){
+window.location.reload();
+}
+<!--{if !$wcache['post_1']}-->
+setTimeout('myrefresh()',2000); //指定1秒刷新一次
+<!--{/if}-->
+</script>

@@ -1,0 +1,69 @@
+html, body, div, span, applet, object, iframe,h1, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td 
+{margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;font-family: inherit;vertical-align: baseline;}
+body {margin:0;font:12px "\5B8B\4F53", sans-serif;background: #F5F5F5;color:#333;}
+div,ul,li,img,ol,p,dl,dt,dd,img{margin:0;padding:0;list-style:none;border:0;}
+li{line-height:180%;}
+*{font-family:Microsoft Yahei,"å¾®è½¯é›…é»‘","å®‹ä½“";/* background: #fff; *//* background: #FF0000; */border:none;/* height: 36px; *//* color:#fff; *//* width:15%; *//* cursor:pointer; */}
+table {border-collapse: separate;	border-spacing: 0;}
+a{color:#134BA0;cursor:pointer;}
+a:link{color:#014CCC;text-decoration:none;outline:none;}
+a:visited{color:#014CCC;text-decoration:none;outline:none;}
+a:hover{color:red;text-decoration:underline;}
+.logos_lists dl{float:left;position:relative;padding:16px 14px;margin:10px;background:#fff;border:1px solid #ededed;border-radius:5px;-webkit-transition:border linear .2s,box-shadow linear .2s;-moz-transition:border linear .2s,box-shadow linear .2s;-o-transition:border linear .2s,box-shadow linear .2s;transition:border linear .2s,box-shadow linear .2s}
+.logos_lists dl:hover{border-color:rgba(82,168,236,.8);outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(82,168,236,.6);-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(82,168,236,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(82,168,236,.6)}
+.copyright {background: #fff}
+.topbar {-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);background: #fff;min-height: 40px;}
+.topnav { position: relative; height: 70px; line-height: 39px max-width:1140px; margin:0 auto;}
+.container .logo {max-width: 1140px;position: absolute;float: left;}
+.logo h1 { font-size: 32px;
+font-weight:500;
+color: #085D9B;
+text-shadow: 0 1px 2px rgba(0,0,0,.2);}
+.logo a{display: block;overflow: hidden;float: left;}
+@media screen and (max-width:434px) { 
+.logo a{height: 52px;line-height: 90px;display: block;overflow: hidden;float: left;}
+}
+.logo a img{height:auto;margin-top:0;}
+.login{max-width: 960px;min-height: 80px;margin-top: 10px;margin: 0 auto;background:#fff;
+padding: 15px 30px 10px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
+
+.txt{font-size: 16px;float:left;margin-left: 220px;line-height: 70px;font-family: 'Microsoft Yahei';}
+@media screen and (max-width:434px) { 
+.logo a img{}
+.logo a img{width:150px;height:auto;margin-top:0;}
+.txt{font-size: 12px;float: left;margin-left: 160px;line-height: 60px;font-family: 'Microsoft Yahei';}
+}
+
+.container ul { float: right; padding: 22px 0;}
+.container ul li { float: left; padding: 0 px; }
+.container ul li a {display: block;line-height: 25px;color: #4A4343;padding: 0 0px 0px 25px;font-size: 18px;font-family: 'Microsoft Yahei';}
+.container ul li:hover a{color: #FE8B1F;}
+.container img:hover{opacity:1;}
+.form1{ margin-top: 15px;}
+.select{  width:125px; display:inline-block; border:1px solid #ccc;  font-size: 12px; cursor: pointer;  border-radius: 2px;  -webkit-border-radius: 2px;  -moz-border-radius: 2px;}
+@media screen and (max-width:995px) { 
+.container ul{display:none}
+}
+.btn{width:5px 10px;color: #FFF;background: #FF9735;border-color: #FF9735;}
+.btn:hover {width:5px 10px;color: #FFF;background: #CF6B0C;border-color:: #CF6B0C;}
+.logos_lists dl{float:left;position:relative;padding:16px 14.35px;margin:10px;background:#fff;border:1px solid #ededed;-webkit-transition:border linear .2s,box-shadow linear .2s;-moz-transition:border linear .2s,box-shadow linear .2s;-o-transition:border linear .2s,box-shadow linear .2s;transition:border linear .2s,box-shadow linear .2s;}
+.logos_lists img{height: 35px;}
+.logos_lists dl dt img{width: 115px;}
+.logos_lists dl dd{display:none;color:#262626}
+.tips {width: 1160px;/* padding-right: 15px; *//* padding-left:15px; */margin-right:auto;margin-left: -10px;margin-top: 40px;}
+.col-md-12{padding-left: 10px;padding-right: 10px;}
+.panel,.btn-default{ border-radius:0px}
+.col-md-3{padding-left:0px;padding-right:0px}
+.col-md-7{padding-left:0px;padding-right:0px}
+.col-md-2{padding-left:0px;padding-right:0px}
+.column form{width:100%;}
+@media screen and (max-width:1200px) { 
+.tips{display:none}
+}
+
+        
+        
+        

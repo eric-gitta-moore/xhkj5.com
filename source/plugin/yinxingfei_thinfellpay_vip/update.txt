@@ -1,0 +1,7 @@
+vv1.2.3: 
+	1.美化了样式 ，支持3个图标，配置如下：
+	铜牌会员||21||1||1||威望:100,金钱:100||extcredits1:100,extcredits2:100||hot
+	金牌会员||22||3||365||威望:300,金钱:300||extcredits1:100,extcredits2:100||high
+	铜牌会员||21||1||1||威望:100,金钱:100||extcredits1:100,extcredits2:100||invest
+	金牌会员||22||3||365||威望:300,金钱:300||extcredits1:100,extcredits2:100||active
+        2。更新了网关由 pay.tao770.com 更新到了pay.tao717.com

@@ -1,0 +1,111 @@
+<!--{if $config['background']}-->
+<style type="text/css">
+	#bd{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+#pt{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+</style>
+<!--{/if}-->
+ <div  class="aside">
+                <div class="mod-userinfo">
+                    <div class="hd">
+                    </div>
+                    <div class="bd">
+                        <div class="info">
+                            <a style="margin-top:5px;" class="pic" title="{lang ljww360:mydj1}" href="<!--{if $config['isrewrite']}-->space-uid-{$_G[uid]}.html<!--{else}-->home.php?mod=space&uid=$_G[uid]<!--{/if}-->" target="_blank">
+                                {eval echo avatar($_G[uid],'small')}                            </a>
+                            <div class="text">
+                                 <p class="name">
+                                    
+                                    $_G[username]                                    
+                                </p>
+                                <p>
+                                    {$creditname}:
+                                    <span class="gold">
+                                        $brenmyarr_1                                  </span>
+                                </p>
+                                <p class="rank">
+                                    <span class="ico-lv ico-lv-$dj">
+                                    </span>
+                                   
+                                </p>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th class="first">
+                                            {lang ljww360:wenwen11}
+                                        </th>
+                                        <th>
+                                            {lang ljww360:wenwen12}
+                                        </th>
+                                        <th>
+                                            {lang ljww360:wenwen10}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="first" >
+                                            $brennum                                        </td>
+                                        <td>
+                                            $brencainalv
+                                        </td>
+                                        <td>
+                                            $brentid                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ft">
+                    </div>
+                </div>
+                <div class="mod-usercate">
+                    <div class="hd">
+                    </div>
+                    <div class="bd">
+                        <ul class="list">
+                            <li<!--{if $action=='sy'}--> class="on"<!--{/if}-->>
+                                <span class="my-page">
+                                </span>
+                                <a href="<!--{if $config['isrewrite']}-->my-sy.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=sy<!--{/if}-->">
+                                    {lang ljww360:mydj2}
+                                </a>
+                            </li>
+                            <li <!--{if $action=='ask'||$myaction=='dai'||$myaction=='yi'}--> class="on"<!--{/if}-->>
+                                <span class="my-q">
+                                </span>
+                                <a href="<!--{if $config['isrewrite']}-->my-ask.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=ask<!--{/if}-->">
+                                    {lang ljww360:mydj3}
+                                </a>
+                            </li>
+                            <li <!--{if $action=='whd'||$myaction=='all'||$myaction=='best'}--> class="on"<!--{/if}-->>
+                                <span class="my-a">
+                                </span>
+                                <a href="<!--{if $config['isrewrite']}-->my-whd.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=whd<!--{/if}-->">
+                                    {lang ljww360:mydj4}
+                                </a>
+                            </li>
+                            <li <!--{if $action=='dj'}--> class="on"<!--{/if}-->>
+                                <span class="my-rank">
+                                </span>
+                                <a href="<!--{if $config['isrewrite']}-->my-dj.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=dj<!--{/if}-->">
+                                    {lang ljww360:mydj5}
+                                </a>
+                            </li>
+                            <li <!--{if $action=='jf'}--> class="on"<!--{/if}-->>
+                                <span class="my-gold">
+                                </span>
+                                <a href="<!--{if $config['isrewrite']}-->my-jf.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=jf<!--{/if}-->">
+                                    {lang ljww360:myjf_1}{$creditname}
+                                </a>
+                            </li>
+							<li class="last">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>

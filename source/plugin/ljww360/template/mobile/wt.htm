@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="$metakeywords" />
+<meta name="description" content="$metadescription" />
+<title>$navtitle</title>
+</head>
+
+<body class="bg">
+<!--{hook/global_header_mobile}-->
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj4.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj.css">
+{template ljww360:header}
+<div id="doc"><header id="header"><div class="search-box" style="width:98%"><div class="search-form-container">
+<form method="post" action="plugin.php?id=ljww360&mod=search&do=ss&sj=yes" class="search-form"><div class="input-container">
+<input x-webkit-speech="" autocomplete="off" value="$_GET['keyword']" class="q" name="keyword" id="searchInputBox" style="color: rgb(187, 187, 187);">
+<div class="search-box-reset" style="display: none;"></div></div>
+<input type="submit" value="" class="search-button">
+</form>
+</div></div></header><div id="bd">
+<article class="mod mod-q">
+<div class="hd">
+	<h2>$wtarr[subject]</h2>
+	<input type="hidden" id="js-ask-title" value="$wtarr[subject]">
+	<input type="hidden" id="js-ask-id" value="1363321838065165">
+	<span class="ico"></span>
+</div><div class="bd"><p></p></div>
+
+<div class="ft">{$username}<span class="line"> | </span><span>$wtarr[dateline]</span></div><div class="bd"><p>$wtarr[message]</p></div>
+{if $best}
+</article>
+<article class="mod mod-best-a"><div class="hd"><h2>{lang ljww360:wt7}</h2><span class="ico satisfy"></span></div><div class="bd"><p><!--{eval echo discuzcode($best['message'])}--></p></div><div class="ft">$best['author'] <span class="line">|</span> <span>$best['dateline']</span></div>
+</article>
+{else}
+<style type="text/css">
+	.w-answer .answer-area {
+  background: none repeat scroll 0 0 #FAFAFA;
+  border-top: 1px solid #C6C6C6;
+  padding: 10px 10px 25px 10px;
+}
+.mm-input-box {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #959595;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px 0 #CCCCCC inset;
+  height: 60px;
+  margin-bottom: 5px;
+  padding: 10px 10px 0;
+}
+.mm-input-box textarea {
+  border: 0 none;
+  display: block;
+  font-size: 14px;
+  padding: 0;
+  width: 100%;
+}
+.w-answer .answer-area .mm-submit-button {
+  float: right;
+  margin-bottom: 5px;
+}
+</style>
+<!--{if !$best&&$_G['uid']&&$wtarr['authorid']!=$_G['uid']}-->
+<div id="w-2" class="w-answer">
+<div class="answer-area">
+<form class="clear" method="post" action="plugin.php?id=ljww360&mod=wtw&wid=$_GET['wid']&tid=$tid&ac=yiht&action=htaction&sj=yes">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<div class="mm-input-box">
+<textarea placeholder="{lang ljww360:sj_9}" name="content"></textarea>
+</div>
+
+<input type="submit" name="submit" value="{lang ljww360:wt6}"  class="mm-submit-button submitBtn">
+</form>
+</div>
+</div>
+<!--{/if}-->
+{if $htarr}
+<article style="" class="mod mod-all-a-list" id="js-answer-list"><div class="hd"><h2>{lang ljww360:sj_6}</h2><span class="ico"></span></div>
+<ul id="js-list">
+<!--{loop $htarr $k $v}-->
+<li><div class="bd"><p></p><p>$v['message']</p><p>&nbsp;</p><p></p></div><div class="ft">$v['author'] <span class="line">|</span> <span>$v['dateline']</span>
+<!--{if $wtarr['author']!=$v['author']&&$_G['uid']==$wtarr['authorid']&&$_G['uid']&&!$best||$dxyhz==1&&$wtarr['author']!=$v['author']}-->
+	<span class="line">|</span> <a href="plugin.php?id=ljww360&mod=wtw&wid=$v['threadid']&tid=$v[tid]&fid=$v[fid]&pid=$v[pid]&uid=$v[authorid]&price=$wtarr[price]&special=$wtarr[special]&postid=$v['id']&action=best&formhash={FORMHASH}&sj=yes" ><span style="color:#3EAF0E">{lang ljww360:wt27}</span></a>
+	<!--{/if}-->
+</div></li>
+
+<!--{/loop}-->
+<style type="text/css">
+		#multis {
+  background: none repeat scroll 0 0 #F7F7F7;
+  border-bottom: 1px solid #E3E3E3;
+  float: left;
+  padding: 8px 0;
+  text-align: center;
+  width: 100%;
+}
+ol#multis span {
+  color: #999999;
+  margin-right: 15px;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+	</style>
+	<div style="margin-top:10px;margin-bottom:30px;">
+	<ol id="multis" >
+	$shangyiye
+	$xiayiye
+	</ol></div>
+</ul>
+
+</article>
+
+
+
+{/if}
+{/if}
+<!--<article style="display:none;" class="mod mod-rel-q" id="js-ask-relate"><div class="hd"><h2 data-type="1">已解决的相关问题</h2><span class="ico"></span></div><div class="bd"><ul id="js-ask-relate-list"></ul><p id="js-more-rel"></p></div></article>--><article style="" class="mod mod-rel-search" id="js-rel-list"><div class="hd"><h2>{lang ljww360:sj_7}</h2><span class="ico"></span></div><div class="bd">
+<ul class="js-list-item">
+<!--{loop $xgwt $k $v}-->
+<li><a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&tid=$v['tid']&wid=$v['id']<!--{/if}-->">$v['subject']</a></li> 
+ <!--{/loop}-->
+</ul></div></article>
+<!--{if $best&&$htarr}-->
+<article  class="mod mod-all-a-list" id="js-answer-list"><div class="hd"><h2>{lang ljww360:sj_6}</h2><span class="ico"></span></div>
+<ul id="js-list">
+<!--{loop $htarr $k $v}-->
+<li><div class="bd"><p></p><p>$v['message']</p><p>&nbsp;</p><p></p></div><div class="ft">$v['author'] <span class="line">|</span> <span>$v['dateline']</span></div></li>
+<!--{/loop}-->
+</ul>
+</article>
+<!--{/if}-->
+</div></div>
+
+{template ljww360:footer}
+</body>
+</html>
+<script type="text/javascript" src="source/plugin/ljww360/js/jquery.js"></script>
+<script  type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<script type="text/javascript">
+function tips(txt, fun) {
+	jq('.tips').remove();
+	var div = jq('<div style="background: url(source/plugin/ljww360/images/tips.png);max-width: 85%;min-height: 77px;min-width: 270px;position: absolute;left: -1000px;top: -1000px;text-align: center;border-radius:10px;"><span style="color: #ffffff;line-height: 77px;font-size: 23px;">' + txt + '</span></div>');
+	jq('body').append(div);
+	div.css('zIndex', 9999999);
+	div.css('left', parseInt((jq(window).width() - div.width()) / 2));
+	var top = parseInt(jq(window).scrollTop() + (jq(window).height() - div.height()) / 2);
+	div.css('top', top);
+	setTimeout(function() {
+		div.remove();
+		if (fun) {
+			fun();
+		}
+	}, 2000);
+}
+
+</script>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->

@@ -1,0 +1,55 @@
+<script type="text/javascript" src="static/js/calendar.js"></script>
+<form method="post" action="admin.php?action=plugins&operation=config&do=$do&identifier=ljww360&pmod=typeid" >
+<input type="hidden" value="{FORMHASH}" name="formhash"/>
+	<table width="45%" border="1" bordercolor="#cccccc">
+		<tr>
+			<td width="180" height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang ljww360:typeid_6}</td>
+			<td colspan="2" >&nbsp;&nbsp;
+				$pingforums	
+
+			</td>
+		</tr>
+		<tr>
+			<td height="35" bgcolor="#F2F2F2" align="center">{lang ljww360:typeid_11}</td>
+			<td colspan="3">&nbsp;&nbsp;&nbsp;<input type="text" class="px" style="width:50px" value="" name="start" onclick="showcalendar(event, this, 1)"/>&nbsp;-&nbsp;<input type="text" class="px" style="width:50px" value="" name="end" onclick="showcalendar(event, this, 1)"/>&nbsp;{lang ljww360:typeid_12}</td>
+		</tr>
+		<tr>
+			<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang ljww360:typeid_8}</td>
+			<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" class="px" size="10" value="" name="forumpage"/>&nbsp;{lang ljww360:typeid_13}</td>
+		</tr>
+		<tr>
+			<td height="35" bgcolor="#F2F2F2" align="center">{lang ljww360:typeid_14}</td>
+			<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="radio" name="special" value="1">{lang ljww360:typeid_15}&nbsp;<input type="radio" name="special" value="0" checked="">{lang ljww360:typeid_16}</td>
+		</tr>
+		<tr style="display:none">
+			<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang ljww360:typeid_9}</td>
+			<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" class="px" size="10" value="1" name="postpage"/></td>
+		</tr>
+		<tr>
+			<td height="35" bgcolor="#F2F2F2" align="center">{lang ljww360:typeid_10}</td>
+			<td colspan="2">&nbsp;&nbsp;&nbsp;<select name="catid" id="catid_0" onchange="_on_select_z(this.value)">
+					<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+					<!--{loop $fenleiarr $k $v}-->
+					<option value="$v[id]">$v[subject]</option>
+					<!--{/loop}-->
+				</select>
+				<span id="level_88_fid"></span>  </td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div style="text-align:center; margin-top:20px;">
+					<input type="submit" value="{lang ljww360:typeid_4}" title="{lang ljww360:typeid_5}" name="editsubmit" id="submit_forumsubmit" class="btn">
+				</div>	
+			</td>	
+		</tr>
+	</table>
+<script type="text/javascript">
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	$('fid').value = fid;
+}
+</script>
+</form>

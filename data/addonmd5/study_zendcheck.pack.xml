@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[study_zendcheck.pack]]></item>
+	<item id="RevisionID"><![CDATA[5782]]></item>
+	<item id="SN"><![CDATA[2017052722H6OTVhT2VH]]></item>
+	<item id="RevisionDateline"><![CDATA[1346827865]]></item>
+	<item id="Data">
+		<item id="/api/addons/zendcheck.php"><![CDATA[65f9d1d44d4daea923e7fdf511bc1b5b]]></item>
+	</item>
+</root>

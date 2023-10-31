@@ -1,0 +1,66 @@
+.post{ padding:30px 10px; }
+.postzhiyan{ padding:10px 40px;}
+.postzhiyan em{ font-size:12px; color:#f60;}
+.postzhiyan span{ float:left; width:120px;}
+.postzhiyan ul{ float:left; width:880px;}
+.postzhiyan ul li a{ color:#FFFFFF; padding:8px 14px; background-color:#4095CE; display:block; margin-bottom:20px; font-size:14px; font-weight:bold; text-decoration:none; float:left;margin-right:20px; }
+.postzhiyan ul li a:hover{background-color:#f60;}
+.post_tip li{ height:26px; line-height:26px;}
+.xhkj5_area {
+    margin: 0 auto 20px;
+    background-color: #FFFFFF;
+}
+.xhkj5l {
+    zoom: 1;
+}
+.xhkj5comtitle {
+    padding: 10px 20px;
+    border-bottom: 1px solid #DCDCDC;
+    font-size: 14px;
+    position: relative;
+    background-color: #FFFFFF;
+}
+yh {
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+.f20 {
+    font-size: 20px;
+}
+.f12 {
+    font-size: 12px;
+}
+.c999 {
+    color: #999999;
+}
+.itmore {
+    bottom: 14px;
+    color: #999999;
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+}
+#wp .wp {
+    width: auto;
+}
+.post {
+    padding: 30px 10px;
+}
+ul li {
+    list-style: none;
+}
+.postzhiyan ul li a {
+    color: #FFFFFF;
+    padding: 8px 14px;
+    background-color: #4095CE;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    float: left;
+    margin-right: 20px;
+}
+.postzhiyan span {
+    float: left;
+    width: 120px;
+}

@@ -1,0 +1,52 @@
+<?php
+if (! defined ( 'IN_DISCUZ' )) {
+	exit ( 'Access Denied' );
+}
+class mobileplugin_xlwsq_banner {
+	function index_top_mobile() {
+		global $_G,$bannerconfig;
+		$bannerconfig = $_G['cache']['plugin']['xlwsq_banner'];
+		$bannerheight = $bannerconfig['bannerheight'];
+		$return = '';
+			$query = DB::query("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." ORDER BY diynum DESC,id DESC");
+	        $banner = $banners = array();
+	        while($banner = DB::fetch($query)){
+		      $banners[] = $banner;
+	        }
+        include template('xlwsq_banner:banner');
+		return $return;
+	}
+
+	function forumdisplay_top_mobile(){
+		global $_G,$bannerconfig;
+		$bannerconfig = $_G['cache']['plugin']['xlwsq_banner'];
+		$bannerheight = $bannerconfig['bannerheight'];
+		$return = '';
+			$query = DB::query("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." ORDER BY diynum DESC,id DESC");
+	        $banner = $banners = array();
+	        while($banner = DB::fetch($query)){
+		      $banners[] = $banner;
+	        }
+        include template('xlwsq_banner:banner');
+		return $return;
+	}
+
+
+	function viewthread_top_mobile(){
+		global $_G,$bannerconfig;
+		$bannerconfig = $_G['cache']['plugin']['xlwsq_banner'];
+		$bannerheight = $bannerconfig['bannerheight'];
+		$return = '';
+			$query = DB::query("SELECT * FROM ".DB::table('plugin_xlwsq_banner_banner')." ORDER BY diynum DESC,id DESC");
+	        $banner = $banners = array();
+	        while($banner = DB::fetch($query)){
+		      $banners[] = $banner;
+	        }
+        include template('xlwsq_banner:banner');
+		return $return;
+	}
+
+}
+class mobileplugin_xlwsq_banner_forum extends mobileplugin_xlwsq_banner {
+}
+?>

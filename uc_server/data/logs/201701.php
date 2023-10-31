@@ -1,0 +1,22 @@
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484456267	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484456302	app_edit	appid=1
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484567949	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484567962	app_edit	appid=1
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484568971	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484569010	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484569182	domain_add	domainnew=www.xhkj5.com&amp;ipnew=182.18.72.223
+<?PHP exit;?>	UCenterAdministrator	118.193.185.183	1484647143	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484911441	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484911474	domain_delete	delete=1
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484911972	app_edit	appid=1
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484911993	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484911996	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484912065	app_edit	appid=1
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484912080	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.142.77	1484912146	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	122.9.21.121	1485180555	login	succeed
+<?PHP exit;?>	UCenterAdministrator	122.9.21.121	1485183241	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.95	1485249433	login	succeed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.95	1485249437	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.95	1485249442	note_send	failed
+<?PHP exit;?>	UCenterAdministrator	118.193.185.95	1485249527	setting_mail_update	

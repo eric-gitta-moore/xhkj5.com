@@ -1,0 +1,1535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>移动适配从入门到精通——39健康网经验分享 - dz插件,dz模版,dz应用中心,discuz免费插件模版下载,网站模板,SEO优化,建站教程,易语言,易安卓,编程教程,C/C++,JAVA,软件破解,PS素材,源码哥,草根吧,忽悠兄,讯幻网(xhkj5.com),39健康网,在线,监控,如何,学院 - SEO技术 - 资源分享区 - 讯幻网 -  www.xhkj5.com</title>
+<!--屏蔽错误 begin-->
+<script language="javascript" type="text/javascript">
+        function killErrors() {
+            return true;
+        }
+	window.onerror = killErrors;
+</script>
+<!--屏蔽错误 end--><link href="http://www.xhkj5.com/thread-1554-1-1.html" rel="canonical" />
+<meta name="keywords" content="移动适配从入门到精通——39健康网经验分享,dz插件,dz模版,dz应用中心,discuz免费插件模版下载,网站模板,SEO优化,建站教程,易语言,易安卓,编程教程,C/C++,JAVA,软件破解,PS素材,源码哥,草根吧,忽悠兄,讯幻网(xhkj5.com),39健康网,在线,监控,如何,学院" />
+<meta name="description" content="　　得知大家喜欢实战经验分享类干货，站长学院线上活动大咖在线曾邀请39健康网企划部总监袁大吉做过分享，手把手教同学们做移动适配，并分享了39健康网的一些经验，包括如 ... " />
+<meta name="generator" content="Xunhuan" />
+<meta name="author" content="Xunhuan Team" />
+<meta name="copyright" content="2001-2017 Xunhuan Inc." />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="http://www.xhkj5.com/" /><link rel="stylesheet" type="text/css" href="data/cache/style_3_common.css?iaL" /><link rel="stylesheet" type="text/css" href="data/cache/style_3_forum_viewthread.css?iaL" /><script type="text/javascript">var STYLEID = '3', STATICURL = 'static/', IMGDIR = 'template/comiis_nby/img', VERHASH = 'iaL', charset = 'gbk', discuz_uid = '0', cookiepre = 'SqEC_6f89_', cookiedomain = 'www.xhkj5.com', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '1|威望|,2|铜板|,3|贡献|,4|H币|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy54aGtqNS5jb20vdGhyZWFkLTE1NTQtMS0xLmh0bWw=', SITEURL = 'http://www.xhkj5.com/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script src="data/cache/common.js?iaL" type="text/javascript"></script>
+<meta name="application-name" content="讯幻网" />
+<meta name="msapplication-tooltip" content="讯幻网" />
+<meta name="msapplication-task" content="name=首页;action-uri=http://www.xhkj5.com;icon-uri=http://www.xhkj5.com/template/comiis_nby/img/portal.ico" /><meta name="msapplication-task" content="name=论坛;action-uri=http://www.xhkj5.com/forum.php;icon-uri=http://www.xhkj5.com/template/comiis_nby/img/bbs.ico" />
+<meta name="msapplication-task" content="name=群组;action-uri=http://www.xhkj5.com/group.php;icon-uri=http://www.xhkj5.com/template/comiis_nby/img/group.ico" /><meta name="msapplication-task" content="name=;action-uri=http://www.xhkj5.com/home.php;icon-uri=http://www.xhkj5.com/template/comiis_nby/img/home.ico" /><link rel="archives" title="讯幻网" href="http://www.xhkj5.com/archiver/" />
+<script src="data/cache/forum.js?iaL" type="text/javascript"></script>
+<style>
+#comiis_hd, #comiis_nv {margin-bottom:5px;}
+.comiis_wide #comiis_hd, .comiis_wide #comiis_nv {margin-bottom:10px;}
+</style>
+</head>
+<body id="nv_forum" class="pg_viewthread comiis_wide ityp" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+<div class="wp cl">
+			
+<div class="y comiis_nvlogin"><div class="comiis_um cl">
+<div class="z qqdlico">
+
+<a href="http://www.xhkj5.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D1554%26extra%3Dpage%253D1%26page%3D1&statfrom=login" target="_top" rel="nofollow"><img src="template/comiis_nby/img/qq_login.gif" class="vm" /></a>
+
+
+
+<a href="sina_login-index.html?operation=init">
+<img src="source/plugin/sina_login/img/weibo_login.png" alt="新浪微博登陆" class="vm">
+</a>
+
+<a href="csu_baidu.php?mod=login&op=init"><img src="source/plugin/csu_baidu/images/login-long.png"  class="vm" ></a></div>
+<div class="comiis_dlq"><a onclick="showWindow('login', this.href);return false;" href="member.php?mod=logging&amp;action=login">登录</a> | <a href="member.php?mod=register">快速注册</a></div>
+</div></div>
+<div class="y">
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
+</div>
+<div class="z">
+<a class="comiis_tweibo" target="_blank" href="http://weibo.com/xhkj5" title="新浪微博"></a>
+<a href="javascript:;" class="comiis_tweixin" id="kmweixin" onMouseOver="showMenu({'ctrlid':this.id,'pos':'43!','ctrlclass':'hover','duration':2});" title="官方微信"></a>
+<a class="comiis_tkefu" target="_blank" href="http://wpa.qq.com/msgrd?V=3&amp;uin=2444300667&amp;Site=%20%D1%B6%BB%C3%CD%F8&amp;Menu=yes&amp;from=discuz" title="在线客服"></a><a href="javascript:;"  onclick="setHomepage('http://www.xhkj5.com/');">设为首页</a><a href="http://www.xhkj5.com/"  onclick="addFavorite(this.href, '讯幻网');return false;">收藏本站</a><a href="javascript:;" onclick="showWindow('qqgroup', 'plugin.php?id=xhkj5_qqgroup','get',1);">加入QQ群</a>
+<a href="javascript:;" id="xhkj5comstranlink">繁体中文</a><a href="javascript:;" onclick="showWindow('svipzan_qn_dashang','plugin.php?id=svipzan_qn_dashang:qn_dashang')"><font color='red'><strong>赞助支持</strong></font> </a>
+<iframe scrolling="no" border="0" width="64" height="22" style="padding:1px 0 0 0" class="z" frameborder="0" allowtransparency="true"  src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&amp;width=64&amp;height=22&amp;uid=5037972927&amp;style=1&amp;btn=light&amp;dpc=1"></iframe>
+</div>
+<div style="display:none" class="weixin_tip" id="kmweixin_menu">			
+<div class="weixin_img"></div>
+<p>扫一扫关注官方微信</p>
+</div>
+</div>
+</div><div style="height:111px;">
+<div id="comiis_hd">
+<div class="wp cl"><div class="comiis_hdnv">
+<ul><li id="mn_portal" ><a href="http://www.xhkj5.com" hidefocus="true" title="首页 - 讯幻网"  >首页<span>首页 - 讯幻网</span></a></li><li class="a" id="mn_forum" ><a href="http://www.xhkj5.com/forum.php" hidefocus="true" title="论坛 - 讯幻网"  >论坛<span>论坛 - 讯幻网</span></a></li><li id="mn_N7ad4" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="http://www.xhkj5.com/portal.php?mod=topic&topicid=1" hidefocus="true" title="源码分享"   style="color: red">分享资源<span>源码分享</span></a></li><li id="mn_N5645" ><a href="plugin.php?id=yinxingfei_thinfellpay_vip" hidefocus="true"  >开通VIP</a></li><li id="mn_N2d81" ><a href="http://www.xhkj5.com/home.php?mod=task" hidefocus="true" title="任务中心 - 讯幻网"  >任务中心<span>任务中心 - 讯幻网</span></a></li><li id="mn_N5157" ><a href="http://ym.xhkj5.com/" hidefocus="true" title="免费域名" target="_blank"   style="color: green">免费域名<span>免费域名</span></a></li><li id="mn_N8261" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="http://www.xhkj5.com/portal.php?mod=topic&topicid=2" hidefocus="true"   style="color: blue">小工具</a></li><li id="mn_Nb10f" ><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=lPXw_f361Oz8--6huvf7_Q" hidefocus="true" title="意见反馈" target="_blank"  >意见反馈<span>意见反馈</span></a></li><li id="mn_Nf6c0" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="#" hidefocus="true" title="更多"  >更多<span>更多</span></a></li></ul>
+</div>
+<h2><a href="http://www.xhkj5.com/" title="讯幻网"><img src="template/comiis_nby/img/comiis_logo.gif" alt="讯幻网" border="0" /></a></h2>			
+</div>		
+</div>
+</div>
+<div class="ssnr" style="clear:both;"></div>
+<div class="wp comiis_nv_pop">
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none"></ul>
+<ul class="p_pop h_pop" id="mn_N7ad4_menu" style="display: none"><li><a href="forum-72-1.html" hidefocus="true" title="精品网站源码" >精品网站源码</a></li><li><a href="forum-71-1.html" hidefocus="true" title="免费网站源码" >免费网站源码</a></li><li><a href="http://www.xhkj5.com/forum-53-1.html" hidefocus="true" title="Discuz插件和模版" >Discuz插件和模版</a></li><li><a href="forum-47-1.html" hidefocus="true" title="易语言源码" >易语言源码</a></li><li><a href="forum-48-1.html" hidefocus="true" title="易安卓源码" >易安卓源码</a></li><li><a href="http://www.xhkj5.com/forum.php?mod=post&action=newthread&fid=40" hidefocus="true" title="我要分享" >我要分享</a></li></ul><ul class="p_pop h_pop" id="mn_N8261_menu" style="display: none"><li><a href="http://vip.xhkj5.com" hidefocus="true" title="免费看VIP视频" target="_blank" >免费看VIP视频</a></li><li><a href="http://tjb.xhkj5.com" hidefocus="true" title="淘金币一键领取" target="_blank" >淘金币一键领取</a></li><li><a href="http://ma.xhkj5.com" hidefocus="true" title="二维码制作" target="_blank" >二维码制作</a></li><li><a href="http://ks.xhkj5.com/" hidefocus="true" title="刷快手播放量" target="_blank" >刷快手播放量</a></li><li><a href="http://level.xhkj5.com" hidefocus="true" >代挂等级计算</a></li></ul><ul class="p_pop h_pop" id="mn_Nf6c0_menu" style="display: none"><li><a href="k_misign-sign.html" hidefocus="true" >签到</a></li><li><a href="http://www.xhkj5.com/forum.php?mod=guide" hidefocus="true" >导读</a></li><li><a href="http://www.xhkj5.com/home.php?mod=follow" hidefocus="true" >广播</a></li><li><a href="http://www.xhkj5.com/group.php" hidefocus="true" >群组</a></li><li><a href="http://www.xhkj5.com/home.php" hidefocus="true" >动态</a></li><li><a href="http://www.xhkj5.com/home.php?mod=space&do=share" hidefocus="true" >分享</a></li><li><a href="misc.php?mod=faq" hidefocus="true" >论坛帮助</a></li><li><a href="misc.php?mod=ranklist" hidefocus="true" >论坛排行榜</a></li></ul><div id="mu" class="cl">
+</div>
+</div>
+</div>	
+<div id="wp" class="wp"><script type="text/javascript">var fid = parseInt('78'), tid = parseInt('1554');</script>
+<script src="data/cache/forum_viewthread.js?iaL" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '800';var aimgcount = new Array();</script>
+<style id="diy_style" type="text/css">#portal_block_43 {  margin-top:5px !important;margin-right:0px !important;margin-bottom:12px !important;margin-left:0px !important;}#portal_block_40 {  margin-top:14px !important;margin-right:0px !important;margin-bottom:0px !important;margin-left:14px !important;}</style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="首页">讯幻网</a><em>&raquo;</em><a href="http://www.xhkj5.com/forum.php">论坛</a> <em>&rsaquo;</em> <a href="http://www.xhkj5.com/forum.php?gid=36">资源分享区</a> <em>&rsaquo;</em> <a href="http://www.xhkj5.com/forum-78-1.html">SEO技术</a> <em>&rsaquo;</em> <a href="http://www.xhkj5.com/thread-1554-1-1.html">移动适配从入门到精通——39健康网经验分享</a>
+</div>
+</div>
+<link rel="stylesheet" href="source/plugin/ecode/image/common.css" type="text/css" /><script src="source/plugin/ecode/image/common.js" type="text/javascript"></script><!-- run for free--><!--BS To Baidu OK @2017-05-17 22:51:21--><div class="wp">
+<!--[diy=diy1s]--><div id="diy1s" class="area"></div><!--[/diy]-->
+</div>
+<div class="boardnavr">
+<DIV class="comiis_width">
+<DIV class="comiis_rk">
+<DIV class="comiis_lp">
+<div id="ct" class="wp cl">
+<div id="postlist" class="pl bm efia comiis_x0 comiis_dx1">
+<div class="comiis_viewbt cl">
+<div style="clear:both;"></div>
+<div class="comiis_viewbt_box cl">
+<div class="comiis_v_h2 kmml0">	
+<h2 class="z">
+	
+<span id="thread_subject">移动适配从入门到精通——39健康网经验分享</span>
+</h2>
+<span class="z xg1">
+<a href="http://www.xhkj5.com/thread-1554-1-1.html" onclick="return copyThreadUrl(this, '讯幻网')"  class="kmcopy">[复制链接]</a>
+</span>
+<a href="plugin.php?id=urlpush&tid=1554" onclick="showWindow('urlpush', this.href);">[提交至百度]</a>
+
+<style>
+#postlist .vwthd{position:relative;overflow:visible;padding-right:115px !important;display:block;z-index:99;}
+#ct .comiis_snvbt,#ct .kmn19vbt{position:relative;overflow:visible;padding-right:55px;}
+.kmfz{height:38px;line-height:38px;}
+.comiis_viewtop{overflow:visible;}
+.comiis_code{position:absolute;top:0px;right:0px;}
+.comiis_code .comiis_code_img{width:38px;height:38px;background:url(source/plugin/comiis_code/comiis_img/comiis_code.png) no-repeat;}
+.comiis_code .comiis_code_img1 {width:45px;height:38px;background:url(source/plugin/comiis_code/comiis_img/comiis_code1.png) no-repeat;}
+.ie6 .comiis_code .comiis_code_img1{background:url(source/plugin/comiis_code/comiis_img/comiis_code1.gif) no-repeat;}
+#comiis_code_menu{z-index:301;border:#e5e5e5 1px solid;padding:15px 10px;position:absolute;width:190px;background:#fafafa;height:252px;top:-1px;right:-1px;cursor:pointer;}
+.ie6 #comiis_code_menu{right:-2px;}
+.comiis_viewtop #comiis_code_menu{top:0px;right:0px;}
+#comiis_code_menu p{text-align:center;}
+#comiis_code_menu p img{width:168px;height:168px;}
+#comiis_code_menu li{text-align:center;line-height:26px;height:26px;}
+#comiis_code_menu .comiis_txt1ymky{font:500 16px/38px "Microsoft Yahei";COLOR:#333;}
+#comiis_code_menu .comiis_txt2cdum{font:500 12px/38px "Microsoft Yahei";COLOR:#666;}
+#comiis_code_menu .comiis_txt2cdum EM{margin:0px 2px;}
+#comiis_code_menu .comiis_txt2cdum IMG{margin-top:-3px;vertical-align:middle;}
+#comiis_code_menu .comiis_txt3yyjy{font:500 12px/38px "Microsoft Yahei";}
+#comiis_code_menu .comiis_txt3yyjy A{color:#bebebe;}
+</style>
+<span class="comiis_code"><div class="comiis_code_img" id="comiis_code" onmouseover="showMenu({'ctrlid':this.id,'pos':'*'});" /></div></span>
+
+<div id="comiis_code_menu" style="display:none;">
+<p>	
+
+<img src="http://s.jiathis.com/qrcode.php?url=http://www.xhkj5.com/thread-1554-1-1.html%3Fcode=5e5def2da341b4e0" />
+
+</p>
+<ul>
+<li class="comiis_txt1ymky">微信扫一扫  分享朋友圈</li>
+<li class="comiis_txt2cdum">已有<em>2</em>人穿越成功<img src="source/plugin/comiis_code/comiis_img/comiis_smile.gif"></li>
+<li class="comiis_txt3yyjy"><A href="plugin.php?id=comiis_code" target="_blank">教程：手机怎么扫描二维码</A></li>
+</ul>
+
+<img src="favicon.ico" style="width:30px;height:30px;position:absolute;top:84px;left:90px;" />
+
+</div>
+</div>
+<div class="comiis_v_action kmml0">
+<span class="y comiis_v_views">
+<em class="views" title="查看">95</em>
+<em class="replies" title="回复">0</em>			
+</span>
+<span class="xg1">
+<span id="comiis_authi_author_div" class="z"></span>
+</span>
+</div>
+</div>
+</div>
+	
+<div class="comiis_viewbox"><div id="post_1651"  class="comiis_vrx comiis_viewbox_nr"><div class="comiis_viewthread" style="margin-left:0">
+<table id="pid1651" class="plhin" summary="pid1651" cellspacing="0" cellpadding="0">
+<tr>
+	
+<td class="plc" style="width:100%">
+<div class="pi" style="border-top:none;">
+<div class="pti" id="comiis_authi_author" style="display:none;">
+<div class="pdbt">
+</div>
+<div class="authi">
+<em id="authorposton1651">
+发表在&nbsp;
+<font style="color:#333 !important;">SEO优化</font>&nbsp;
+					
+2017-2-11 16:42:34&nbsp;
+</em>
+<span class="pipe">|</span>
+<a href="http://www.xhkj5.com/thread-1554-1-1.html" rel="nofollow">查看全部</a>
+<span class="pipe">|</span>&nbsp;<a href="javascript:;" onclick="readmode($('thread_subject').innerHTML, 1651);">阅读模式</a>
+</div>
+</div>
+</div><div class="pct" style="padding-top:5px;"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+<style type="text/css">
+                        .sftop{width:99%;height:22px;margin:6px auto 0px;border:1px solid #E9EDF0;border-bottom-color:#D3D3D3;background:#FAFAFA;top:0px;}
+                        .sftop p.initials{float:left;height:20px;overflow:hidden;line-height:22px;padding-left:4px;}
+                        .sftop p.initials span{height:24px;color:#999;float:left;}
+                                   </style><div class="sftop"><p class="initials"><span></span><A HREF="http://www.baidu.com/s?wd=移动适配从入门到精通——39健康网经验分享&si=www.xhkj5.com&ct=2097152" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_baidu.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;百度</A>&nbsp;<A HREF="http://www.google.com/search?hl=zh-CN&q=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_google.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;谷歌</A>&nbsp;<A HREF="http://search.cn.yahoo.com/s?q=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_yahoo.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;雅虎</A>&nbsp;<A HREF="http://www.sogou.com/web?query=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_sogou.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;搜狗</A>&nbsp;<A HREF="http://www.soso.com/q?pid=s.idx&w=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_soso.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;搜搜</A>&nbsp;<A HREF="http://www.youdao.com/search?q=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_yodao.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;有道</A>&nbsp;<A HREF="http://so.360.cn/s?ie=gbk&src=hao_phome&q=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_360sou.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;360搜索</A>&nbsp;<A HREF="http://www.qihoo.com/wenda.php?kw=移动适配从入门到精通——39健康网经验分享" target="_blank"><IMG SRC="./source/plugin/xhkj5_seosl/xhkj5com/icon_qihoo.gif" WIDTH="40" HEIGHT="13" BORDER="0" class="authicn vm">&nbsp;奇虎</A>&nbsp;</p></div><BR><script>settag();function settag() {var x = new Ajax();x.get('plugin.php?id=exx_tagseo:settag&tid=1554&formhash=ba2d5d3f' , function(s){});}</script> 
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_1651">
+<div class="attach_nopermission attach_tips">
+<div>
+<h3><strong>
+马上注册，结交更多好友，享用更多功能，让你轻松玩转社区。
+</strong></h3>
+<p>您需要 <a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href);return false;">登录</a> 才可以下载或查看，没有帐号？<a href="member.php?mod=register" title="注册帐号">快速注册</a> 
+
+<a href="http://www.xhkj5.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D1554%26extra%3Dpage%253D1%26page%3D1&statfrom=login" target="_top" rel="nofollow"><img src="template/comiis_nby/img/qq_login.gif" class="vm" /></a>
+
+
+
+<a href="sina_login-index.html?operation=init">
+<img src="source/plugin/sina_login/img/weibo_login.png" alt="新浪微博登陆" class="vm">
+</a>
+
+<a href="csu_baidu.php?mod=login&op=init"><img src="source/plugin/csu_baidu/images/login-long.png"  class="vm" ></a></p>
+</div>
+<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+</div>
+　　得知大家喜欢实战经验分享类干货，站长学院线上活动大咖在线曾邀请39健康网企划部总监袁大吉做过分享，手把手教同学们做移动适配，并分享了39健康网的一些经验，包括如何进行设置、如何进行监控等等。今天我们把视频和分享要点同时发布出来，有相关疑问的同学可以至社区专帖(内有PPT原图)继续参与探讨。<br />
+　　<font color="#FF0000">一、移动适配相关概念</font><br />
+　　1.1 什么是移动适配<br />
+　　通俗的理解就是告诉<a href="http://zhannei.baidu.com/cse/search?s=16793720162118387470&q=&partner=discuz" target="_blank" class="relatedlink">搜索</a>引擎你的pc访问url 和 移动访问url的对应关系，从而把pc端的收录和排名对应到移动端。<br />
+　　1.2 移动适配做法<br />
+　　整理出搜索引擎的要求，做个表格，按照表格步骤当做1+1+1一步步做完就ok，非常简单。<br />
+　　1.3 适配进度监控，调整移动适配的错误<br />
+　　移动适配讲了那么多年，大家都没学会监控移动适配效果，原因是一直没教大家如何判断适配是否成功。<br />
+　　<font color="#FF0000">二、怎样做移动适配？</font><br />
+　　2.1 梳理页面结构<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164307vbr235js2w3dtbz1.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　梳理全站pc和wap的页面结构，检查是否每一个pc页和wap页都有一一对应关系，若发现有不对应的页面，及时补足。<br />
+　　2.2自主适配<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164307grip29zpr2xmdxxr.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　2.2.1什么是自主适配<br />
+　　用户通过移动设备访问站点的PC页时，站点将其自动适配到该PC页面对应的手机页，并为之选择合适的页面版本。站长应选择适合自己网站的自主适配方式。目前自主适配主要有三种实现方式：跳转适配、代码适配、自适应，其各自的特点如下：<br />
+　　跳转适配实现比较简单，站长只需独立开发移动网站，当用户访问PC页面时，这种配置会尝试检测用户所使用的设备或ua，若监测到移动设备或ua，便通过302或301跳转至对应的移动页面。<br />
+　　代码适配实现较为复杂，该方法PC和移动页使用相同的网址（不考虑用户所使用的设备），但会根据服务器对用户所用浏览器的了解（ua），针对不同设备类型生成不同版本的 HTML。<br />
+　　自适应实现难度中等。是通过同一网址提供相同HTML 代码的网站设计方法。该方法不考虑用户所使用的设备（pc、平板电脑、移动设备），但可以根据屏幕尺寸以不同方式呈现（即适应）显示屏。<br />
+　　39目前用的是跳转适配，所以一下会先介绍跳转适配应怎样向百度传递对应关系。<br />
+　　2.2.2 跳转适配检查方法<br />
+　　所需工具：①火狐浏览器 ；②Default User Agent<a href="http://www.xhkj5.com/forum-90-1.html" target="_blank" class="relatedlink">插件</a>（模拟移动端）；③ firebug插件（抓包检查跳转情况）<br />
+　　检查步骤：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164308sqqawk0kwlp88kvw.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　2.3meta标注声明<br />
+　　在中加入meta标注，标明当前页面对应的WAPurl。<br />
+　　Meta标注声明格式：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164308b3xaa9ntct8zmna9.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　Meta标注声明示例：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164308iw1l0tzttalfll40.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　检查并记录好网站个页面的meta标注情况，没标注的页面补上：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164308q51bgq580bfl7b8l.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　2.4 制作提交对应关系sitemap<br />
+　　按照百度要求的格式制作对应关系sitemap<br />
+　　对应关系sitemap有两种可选：规则适配、url适配<br />
+　　2.4.1 规则适配<br />
+　　《规则适配格式说明》<br />
+　　a）确定是纯数字：([0-9]+) 或（d+）<br />
+　　b）确定是纯字母：([a-zA-Z]+)， 包括字母大小写的情况<br />
+　　c）确定是数字和字母混合串：<br />
+　　方法一、((?:[a-zA-Z]+[0-9]+|[0-9]+[a-zA-Z]+)[a-zA-Z0-9]+)<br />
+　　方法二、([a-zA-Z0-9]+)<br />
+　　说明：两种混合串的区别：较长的一种为严格的数字和字母混排形式，且数字 和字母交替至少出现1次；较短的一种可支持纯数字，纯字母和数字字母混排<br />
+　　d）确定有中文字符：((?:%[a-zA-Z-0-9]{2,})+)<br />
+　　e）确定有参数值：([^&amp;]+)<br />
+　　f）确定有'-'和'_'连接字符串的替换规则：将连接的各个部分分别用对应的规则替换<br />
+　　规则适配举例：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164308zbmecbb5ccxecd3e.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　规则适配提交：<br />
+　　①登陆百度站长平台<br />
+　　②“移动专区”→“移动适配”→选择对应域名→填写对应的移动url<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309b1x5goavgoz0zk10.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　③选择提交方式（可单条提交，可多条提交）<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309i7s7j57ieseos8i8.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　④根据处理状态中提示的错误修改对应关系sitemap<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309pdub67z225d30bj3.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　2.4.2 url适配<br />
+　　url适配格式说明：提供一个txt文档，文档中数据为两列，中间用空格隔开，第一列为PC版URL ,第二列为PC页面对应的移动版页面。<br />
+　　url适配格式示例：<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309r5in4nnh4vrnahhu.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　url适配提交：<br />
+　　①登陆百度站长平台<br />
+　　②“移动专区”→“移动适配”→选择对应域名→url适配→填写对应的移动url<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309ckh56zhtahul2o26.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　③选择提交方式（可上传txt文档，可直接填写url对）<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164309dm40hlqpiompeqom.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　④根据处理状态中提示的错误修改对应关系sitemap<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164310a1p6ccs7cerggge6.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　⑤记录好提交的sitemap类型<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164310wcdggooz5jmdpviv.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　2.5 适配进度监控<br />
+　　①分别将各种页面类型的pc url复制到对应移动搜索引擎进行搜索<br />
+　　②观察搜索结果显示的url，若为正确的wap端url，且点击进去是正确的wap端url，则收录适配成功，如下图<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164310wvj9vb7nzqzn0zv2.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　③将待检查页面title分别制到百度PC端和移动端进行搜索，观察排名是否接近，若排名接近，则关键词适配成功<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164310m6xugzxdgnnnx3ss.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164310ioxinzub7l6gskxk.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　④记录监控结果<br />
+　　
+<ignore_js_op>
+
+<img src="http://image.xhkj5.com/data/attachment/forum/201702/11/164311ckkz0pkqquegkkki.jpg" alt="2016033074998433.jpg" title="2016033074998433.jpg" />
+
+</ignore_js_op>
+<br />
+　　以下为培训视频<br />
+　　来源：<a href="http://www.xhkj5.com/" target="_blank" class="relatedlink"><a href="http://www.xhkj5.com/" target="_blank" class="relatedlink">讯幻网</a>络</a> 转载注明出处！<br />
+ <div align="center"></div></td></tr></table>
+<div class="ptg mbm mtn">
+<a title="39健康网" href="misc.php?mod=tag&amp;id=1846" target="_blank">39健康网</a>, <a title="在线" href="misc.php?mod=tag&amp;id=615" target="_blank">在线</a>, <a title="监控" href="misc.php?mod=tag&amp;id=465" target="_blank">监控</a>, <a title="如何" href="misc.php?mod=tag&amp;id=31" target="_blank">如何</a>, <a title="学院" href="misc.php?mod=tag&amp;id=2280" target="_blank">学院</a></div>
+		
+</div>
+<div id="comment_1651" class="cm">
+</div>
+<div id="post_rate_div_1651"></div>
+
+<style>
+.xhkj5com_dashang{ margin:10px auto; display:block; cursor:pointer;width: 134px;height: 49px;  background-image: url('source/plugin/xhkj5com_dashang/template/img/dsbtn.png');background-repeat: no-repeat;}
+.xhkj5com_dashang:hover{ background-position:-134px 0px }
+</style>
+<a class="xhkj5com_dashang" id="xhkj5com_dashang" onclick="showWindow(this.id, 'plugin.php?id=xhkj5com_dashang:xhkj5com_dashang&zzid=233&formhash=ba2d5d3f');" href="javascript:"></a>
+</div></div>
+</td></tr>
+<tr><td class="plc plm">
+ <div class="comiis_cnxh cl">
+  <h2><strong>相关帖子</strong></h2>
+  <ul class="cl">
+  <li><a href="http://www.xhkj5.com/thread-2023-1-1.html" title="【价值39元】百度云网盘" target="_blank">【价值39元】百度云网盘</a></li>
+  <li><a href="http://www.xhkj5.com/thread-2009-1-1.html" title="qqexternal.exe是什么进程如何删除" target="_blank">qqexternal.exe是什么进程如何删除</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1992-1-1.html" title="如何将网站升级为HTTPS协议？" target="_blank">如何将网站升级为HTTPS协议？</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1983-1-1.html" title="全网VIP视频免费在线看 - 使用方法" target="_blank">全网VIP视频免费在线看 - 使用方法</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1971-1-1.html" title="如何使用PHOTOSHOP制作一张有冲击力的风景照呢？" target="_blank">如何使用PHOTOSHOP制作一张有冲击力的风景照呢？</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1968-1-1.html" title="如何使用PHOTOSHOP制作一张有冲击力的风景照呢？" target="_blank">如何使用PHOTOSHOP制作一张有冲击力的风景照呢？</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1966-1-1.html" title="你家的无线路由器安全了吗？" target="_blank">你家的无线路由器安全了吗？</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1962-1-1.html" title="你家的无线路由器安全了吗？" target="_blank">你家的无线路由器安全了吗？</a></li>
+  <li><a href="http://www.xhkj5.com/thread-1951-1-1.html" title="瞒着父母辞去稳定工作，中国女孩如何创造年销千万的时尚电商业务" target="_blank">瞒着父母辞去稳定工作，中国女孩如何创造年销千万的时尚电商业务</a></li>
+    </ul>
+</div>
+<div class="sign">发帖求助前要善用【<a href ="http://so.xhkj5.com/">论坛搜索</a>】功能，那里可能会有你要找的答案；
+<p>如果你在论坛求助问题，并且已经从坛友或者管理的回复中解决了问题，请把帖子标题加上【已解决】；</p>
+<p>如何回报帮助你解决问题的坛友，一个好办法就是给对方加【铜板】，加分不会扣除自己的积分，做一个热心并受欢迎的人！</p></div>
+</td>
+</tr>
+<tr id="_postposition1651"></tr>
+<tr>
+<td class="plc" style="overflow:visible;--> width:100%">
+<div class="po">
+<div class="pob cl" style="padding-bottom:10px;">
+<div class="bdsharebuttonbox z" style="padding-bottom:5px;"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<p>
+<a href="javascript:;" onclick="showWindow('miscreport1651', 'misc.php?mod=report&rtype=post&rid=1651&tid=1554&fid=78', 'get', -1);return false;">举报</a>
+<a href="javascript:;" id="mgc_post_1651" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+</p>
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=78&amp;tid=1554&amp;reppost=1651&amp;extra=page%3D1&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+</em>
+<ul id="mgc_post_1651_menu" class="p_pop mgcmn" style="display: none;" disautofocus="disautofocus">
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=bump&amp;idtype=tid&amp;id=1554" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/bump.small.gif" />提升卡</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=stick&amp;idtype=tid&amp;id=1554" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/stick.small.gif" />置顶卡</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=close&amp;idtype=tid&amp;id=1554" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/close.small.gif" />沉默卡</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=open&amp;idtype=tid&amp;id=1554" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/open.small.gif" />喧嚣卡</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=highlight&amp;idtype=tid&amp;id=1554" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/highlight.small.gif" />变色卡</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=jack&amp;idtype=tid&amp;id=1554" id="a_jack" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/jack.small.gif" />千斤顶</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=1651:1554" id="a_namepost_1651" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a></li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_1651')</script>
+</div>
+</div>
+</td>
+</tr>
+</table></div><script>
+if($('comiis_authi_author_div') && $('comiis_authi_author')){
+$('comiis_authi_author_div').innerHTML = $('comiis_authi_author').innerHTML;
+}
+</script>
+<script type="text/javascript" reload="1">
+aimgcount[1651] = ['4002','4003','4004','4005','4006','4007','4008','4009','4010','4011','4012','4013','4014','4015','4016','4017','4018','4019','4020'];
+attachimggroup(1651);
+var aimgfid = 0;
+</script>
+</div>
+</div><div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+<div id='hiddenpoststip'><a href='javascript:display_blocked_post();'>还有一些帖子被系统自动隐藏，点此展开</a></div>
+<div id="hiddenposts"></div>
+</div>
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="ba2d5d3f" />
+<input type="hidden" name="optgroup" />
+<input type="hidden" name="operation" />
+<input type="hidden" name="listextra" value="page%3D1" />
+<input type="hidden" name="page" value="1" />
+</form>
+<div class="comiis_vfy cl">
+</div>
+<div class="comiis_pgs cl">	
+<span class="pgb"><a href="http://www.xhkj5.com/forum-78-1.html">返回列表</a></span></div>
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('10000');
+var disablepostctrl = parseInt('0');
+</script>
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&amp;action=reply&amp;fid=78&amp;tid=1554&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onSubmit="return fastpostvalidate(this)">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls comiis_f_pst">
+<div class="avatar avtm nologin"><img src="template/comiis_nby/img/comiis_nologin.jpg"></div>
+</td>
+<td class="plc">
+<span id="fastpostreturn"></span>
+<div class="cl">
+<div id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="plugin.php?id=ecode&fast=1" onClick="showWindow('ecode', this.href, 'get', 0)" title="易代码"><img src="./source/plugin/ecode/image/e.gif" style="margin-top:2px;"/></a>&nbsp;&nbsp;<a href="http://www.xhkj5.com/forum.php?mod=post&amp;action=reply&amp;fid=78&amp;tid=1554" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="data/cache/seditor.js?iaL" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>
+<div class="area">
+<div class="pt hm">
+您需要登录后才可以回帖 <a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)" class="xi2">登录</a> | <a href="member.php?mod=register" class="xi2">快速注册</a>
+
+
+<a href="http://www.xhkj5.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D1554%26extra%3Dpage%253D1%26page%3D1&statfrom=login" target="_top" rel="nofollow"><img src="template/comiis_nby/img/qq_login.gif" class="vm" /></a>
+
+
+
+<a href="sina_login-index.html?operation=init">
+<img src="source/plugin/sina_login/img/weibo_login.png" alt="新浪微博登陆" class="vm">
+</a>
+
+<a href="csu_baidu.php?mod=login&op=init"><img src="source/plugin/csu_baidu/images/login-long.png"  class="vm" ></a></div>
+</div>
+</div>
+</div>
+</div>
+<div id="seccheck_fastpost">
+</div>
+<input type="hidden" name="formhash" value="ba2d5d3f" />
+<input type="hidden" name="usesig" value="" />
+<input type="hidden" name="subject" value="  " />
+<p class="ptm pnpost">
+<a href="http://www.xhkj5.com/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=78" class="y" target="_blank">本版积分规则</a>
+<button type="button" onclick="showWindow('login', 'member.php?mod=logging&action=login&guestmessage=yes')" onmouseover="checkpostrule('seccheck_fastpost', 'ac=reply');this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>发表回复</strong></button>
+<label class="lb"><input type="checkbox" name="adddynamic" class="pc" value="1" />回帖并转播</label>
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc" />回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+</div></div>
+</div></div>
+<div class="comiis_lbox">
+<div style="height:158px;overflow:hidden;">	
+<div class="comiis_irbox comiis_irftbtn cl" id="comiis_irftbtn">
+<a href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=78')" title="发新帖" class="kmfbzt" title="发表主题"></a>
+<a href="/k_misign-sign.html" target="_blank" class="kmqd" title="签到"><script type="text/javascript">var dfsj = new Date();document.write('周'+'日一二三四五六'.charAt(new Date().getDay())+'<br>'+(dfsj.getMonth()+1)+'月'+dfsj.getDate()+'日');</script></a>
+<div class="comiis_xmft cl">
+<ul>
+<li class="a1"><span>回复</span></LI>
+<li class="a2"><span>转播</span></li>
+<li class="a3"><span>评分</span></li>
+<li class="a4"><span class="a4">分享</span></li>
+</ul>
+</div>
+</div>	
+</div>
+<!--[diy=comiis_irbox_diy01s]--><div id="comiis_irbox_diy01s" class="area"></div><!--[/diy]-->
+	
+<div class="comiis_irbox comiis_lzinfo">
+<div class="comiis_lzinfo_one">
+<div class="lzinfo_img">
+<a href="http://www.xhkj5.com/space-uid-233.html" target="_blank" title="访问我的空间"><img src="http://www.xhkj5.com/uc_server/avatar.php?uid=233&size=middle" /></a>
+</div>
+<div class="kmuser">
+<a href="http://www.xhkj5.com/space-uid-233.html" target="_blank" title="访问我的空间" c="1">多风采</a><br>
+<a href="http://www.xhkj5.com/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=7" target="_blank" class="kmtxt"></a></div>
+
+<div class="tns"><table cellspacing="0" cellpadding="0"><th>
+<p><a href="http://www.xhkj5.com/home.php?mod=space&uid=&do=thread&type=thread&view=me&from=space" class="xi2"></a></p>主题
+</th><th>
+<p><a href="http://www.xhkj5.com/home.php?mod=space&uid=&do=thread&type=reply&view=me&from=space" class="xi2"></a></p>帖子
+</th><td>
+<p><a href="http://www.xhkj5.com/home.php?mod=space&uid=&do=profile" class="xi2"></a></p>积分
+</td>		
+</table></div>
+<div class="kmuser_an cl">
+<a href="http://www.xhkj5.com/space-uid-233.html" target="_blank">Ta的主页</a><a href="http://www.xhkj5.com/home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_233&amp;touid=233&amp;pmid=0&amp;daterange=2&amp;tid=1554" class="kmmsn" onclick="showWindow('sendpm', this.href);">发信息</a>
+</div>
+</div>			
+</div>
+<!--[diy=comiis_irbox_diy01]--><div id="comiis_irbox_diy01" class="area"></div><!--[/diy]-->
+<div class="comiis_irbox comiis_irbox_ss cl">
+<!--[diy=comiis_irbox_video]--><div id="comiis_irbox_video" class="area"><div id="framer0Kw1K" class="cl_frame_bm frame move-span cl frame-1"><div id="framer0Kw1K_left" class="column frame-1-c"><div id="framer0Kw1K_left_temp" class="move-span temp"></div><div id="portal_block_40" class="cl_block_bm block move-span"><div id="portal_block_40_content" class="dxb_bc"><div class="portal_block_summary"><a href="http://wpa.qq.com/msgrd?V=3&amp;uin=2444300667&amp;Site=%20%D1%B6%BB%C3%CD%F8&amp;Menu=yes&amp;from=discuz" target="_blank"><img src="http://image.xhkj5.com/tpwj/homepage/vad01.jpg" width="300" /></a></div></div></div></div></div></div><!--[/diy]-->
+<div id="sckm"><div id="comiis_twtsc" class="comiis_scbar_narrow cl">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('comiis_twtsc_txt'))" action="search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="comiis_twtsc_mod" value="search" />
+<input type="hidden" name="formhash" value="ba2d5d3f" />
+<input type="hidden" name="srchtype" value="title" />
+<input type="hidden" name="srhfid" value="78" />
+<input type="hidden" name="srhlocality" value="forum::viewthread" />
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="comiis_twtsc_type"><a href="javascript:;" id="comiis_twtsc_type" class="showmenu xg1" onclick="showMenu(this.id)" hidefocus="true">搜索</a></td>
+<td class="comiis_twtsc_txt"><input type="text" name="srchtxt" id="comiis_twtsc_txt" onblur="if (value ==''){value='请输入搜索内容'}" onfocus="if (value =='请输入搜索内容'){value =''}" value="请输入搜索内容" autocomplete="off" x-webkit-speech speech /></td>	
+<td class="comiis_twtsc_btn"><button type="submit" name="searchsubmit" id="comiis_twtsc_btn" sc="1" class="pn pnc" value="true">&nbsp;&nbsp;</button></td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+<ul id="comiis_twtsc_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="78" >本版</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('comiis_twtsc', '');
+</script>
+<div id="scbar_hot" class="cl">
+<span class="z">热搜：</span>
+
+<a href="search.php?mod=forum&amp;srchtxt=%D1%B6%BB%C3%CD%F8&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">讯幻网</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%BD%A8%D5%BE&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">建站</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%B5%E7%C4%D4%B1%E0%B3%CC&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">电脑编程</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=andriod%B1%E0%B3%CC&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">andriod编程</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=qq%BC%BC%CA%F5&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">qq技术</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%D4%B4%C2%EB&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">源码</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=%C8%ED%BC%FE&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">软件</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=JAVA&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">JAVA</a>
+
+
+
+<a href="search.php?mod=forum&amp;srchtxt=C%2FC%2B%2B&amp;formhash=ba2d5d3f&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">C/C++</a>
+
+</div>
+</div>
+<!--[diy=comiis_irbox_diy02km]--><div id="comiis_irbox_diy02km" class="area"></div><!--[/diy]-->
+<div id="comiis_viewthread_sidebottom_div"></div>
+<!--[diy=comiis_irbox_diy02]--><div id="comiis_irbox_diy02" class="area"></div><!--[/diy]-->
+<div class="comiis_bkbox">
+<div class="comiis_bkbox_tab">
+<ul>
+<li class="kmon" id="comiis_bkbox_tab1_1" onMouseOver="switchTab('comiis_bkbox_tab1',1,2,'kmon');">版块推荐</li>
+<li id="comiis_bkbox_tab1_2" onMouseOver="switchTab('comiis_bkbox_tab1',2,2,'kmon');">百宝箱</li>
+</ul>
+</div>
+<div id="comiis_bkbox_tab1_c_1" class="comiis_bkbox_list cl">
+<!--[diy=comiis_irbox_02]--><div id="comiis_irbox_02" class="area"><div id="frameu2Lvvn" class="cl_frame_bm frame move-span cl frame-1"><div id="frameu2Lvvn_left" class="column frame-1-c"><div id="frameu2Lvvn_left_temp" class="move-span temp"></div><div id="portal_block_39" class="cl_block_bm block move-span"><div id="portal_block_39_content" class="dxb_bc"><div class="portal_block_summary"><ul>
+<li><a href="http://www.xhkj5.com/forum-44-1.html" target="_blank">QQ技术</a></li>
+<li><a href="http://www.xhkj5.com/forum-55-1.html" target="_blank">易语言</a></li>
+<li><a href="http://www.xhkj5.com/forum-57-1.html" target="_blank">C++编程语言</a></li>
+<li><a href="http://www.xhkj5.com/forum-65-1.html" target="_blank">Android教程</a></li>
+<li><a href="http://www.xhkj5.com/forum-47-1.html" target="_blank">易语言源码</a></li>
+<li><a href="http://www.xhkj5.com/forum-48-1.html" target="_blank">易安卓源码</a></li>
+<li><a href="http://www.xhkj5.com/forum-68-1.html" target="_blank">问题 & 建议</a></li>
+<li><a href="http://www.xhkj5.com/forum.php?gid=70" target="_blank">Discuz插件模版</a></li>
+<li class="kmall"><a href="http://www.xhkj5.com/forum.php">查看论坛所有版块&gt;&gt; </a></li>
+</ul></div></div></div></div></div></div><!--[/diy]-->
+</div>
+<div id="comiis_bkbox_tab1_c_2" class="comiis_bkbox_list cl" style="display:none">
+<!--[diy=comiis_irbox_03]--><div id="comiis_irbox_03" class="area"><div id="framecy9Mt2" class="cl_frame_bm frame move-span cl frame-1"><div id="framecy9Mt2_left" class="column frame-1-c"><div id="framecy9Mt2_left_temp" class="move-span temp"></div><div id="portal_block_48" class="cl_block_bm block move-span"><div id="portal_block_48_content" class="dxb_bc"><div class="portal_block_summary"><ul>
+<li><a href="k_misign-sign.html" target="_blank">每日签到</a></li>
+<li><a href="http://www.xhkj5.com/home.php?mod=task" target="_blank">论坛任务</a></li>
+<li><a href="http://www.xhkj5.com/forum-42-1.html" target="_blank">互助问答</a></li>
+<li><a href="sitemapindex.xml" target="_blank">网站地图</a></li>
+<li><a href="http://ym.xhkj5.com/" target="_blank">免费域名</a></li>
+<li><a href="http://vip.xhkj5.com/" target="_blank">免费看VIP视频</a></li>
+<li><a href="http://tjb.xhkj5.com/" target="_blank">淘金币一键领取</a>
+<li><a href="http://ma.xhkj5.com/" target="_blank">二维码制作</a></li>
+<li><a href="http://ks.xhkj5.com/" target="_blank">刷快手播放量</a></li>
+<li><a href="plugin.php?id=yytd_vip" target="_blank">开通VIP</a></li>
+</ul></div></div></div></div></div></div><!--[/diy]-->
+</div>	
+</div>
+<!--[diy=comiis_irbox_nby07]--><div id="comiis_irbox_nby07" class="area"></div><!--[/diy]-->
+<div class="comiis_irbox cl">
+<div class="comiis_irbox_tit cl" id="comiis_keys">
+<h2>图文热点</h2>
+</div>
+<div class="comiis_irbox_jctj cl">
+<!--[diy=comiis_irbox_nbyjctj]--><div id="comiis_irbox_nbyjctj" class="area"><div id="framew1s5yg" class="cl_frame_bm frame move-span cl frame-1"><div id="framew1s5yg_left" class="column frame-1-c"><div id="framew1s5yg_left_temp" class="move-span temp"></div><div id="portal_block_47" class="cl_block_bm block move-span"><div id="portal_block_47_content" class="dxb_bc"><ul id="slider"><li>
+<a href="http://www.xhkj5.com/thread-10519-1-1.html" title="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/2d/2d5aa9d3912235e9d8754f189b048832.jpg" width="300" height="180" alt="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" /></a>
+<a href="http://www.xhkj5.com/thread-10519-1-1.html" title="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" class="kmjctj_tit" target="_blank">帝国cms仿《绿茶软件园》最新第三版整站源</a>
+<span>
+详细介绍[/backcolor]
+
+仿《仿绿茶软件园》下载站第三版源码网站模板分享，帝国CMS
+</span>
+</li><li>
+<a href="http://www.xhkj5.com/thread-1939-1-1.html" title="【价值298元】CK七牛附件通 商业版1.0 解密版" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/32/3222b6a71f07725daac48d77b22d3b19.jpg" width="300" height="180" alt="【价值298元】CK七牛附件通 商业版1.0 解密版" /></a>
+<a href="http://www.xhkj5.com/thread-1939-1-1.html" title="【价值298元】CK七牛附件通 商业版1.0 解密版" class="kmjctj_tit" target="_blank">【价值298元】CK七牛附件通 商业版1.0 解密</a>
+<span>
+插_件介绍[/backcolor]
+
+CK七牛附件通说明
+
+
+[*]插件安装好后会自动开启“启用远
+</span>
+</li><li>
+<a href="http://www.xhkj5.com/thread-1877-1-1.html" title="【价值20元】自动获取TAG标签 分词版" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/94/944a6c3a56a496303dd4e39713e6e419.jpg" width="300" height="180" alt="【价值20元】自动获取TAG标签 分词版" /></a>
+<a href="http://www.xhkj5.com/thread-1877-1-1.html" title="【价值20元】自动获取TAG标签 分词版" class="kmjctj_tit" target="_blank">【价值20元】自动获取TAG标签 分词版</a>
+<span>
+插_件介绍
+
+自动获取TAG标签插件,是一款TAG优化插件，对没有TAG标签的帖会进行自动
+</span>
+</li><li>
+<a href="http://www.xhkj5.com/thread-2028-1-1.html" title="价值181元的认证平台+智能3.0" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/d4/d428b712494bc515b0380a6ae85ee0d2.jpg" width="300" height="180" alt="价值181元的认证平台+智能3.0" /></a>
+<a href="http://www.xhkj5.com/thread-2028-1-1.html" title="价值181元的认证平台+智能3.0" class="kmjctj_tit" target="_blank">价值181元的认证平台+智能3.0</a>
+<span>
+插_件介绍[/backcolor]
+
+1.本应用产品可以为Discuz! X系列 默认的认证进行美化、增
+</span>
+</li><li>
+<a href="http://www.xhkj5.com/thread-1902-1-1.html" title="【价值69元】打赏 赞助 奖励作者 商业版V1.5" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/eb/eb3e194f0a1434c0107136e0318c0f5a.jpg" width="300" height="180" alt="【价值69元】打赏 赞助 奖励作者 商业版V1.5" /></a>
+<a href="http://www.xhkj5.com/thread-1902-1-1.html" title="【价值69元】打赏 赞助 奖励作者 商业版V1.5" class="kmjctj_tit" target="_blank">【价值69元】打赏 赞助 奖励作者 商业版V1.</a>
+<span>
+插_件介绍[/backcolor]
+
+本插件为可可工作室精心打造的一款打赏插件
+一，插件可以
+</span>
+</li></ul></div></div></div></div></div><!--[/diy]-->
+</div>
+<!--[diy=comiis_irbox_nby00]--><div id="comiis_irbox_nby00" class="area"></div><!--[/diy]-->
+</div>		
+<!--[diy=comiis_irbox_diy03]--><div id="comiis_irbox_diy03" class="area"></div><!--[/diy]-->
+<div class="comiis_irbox">
+<div class="comiis_irbox_tit cl">
+<span><a href="#" target="_blank">更多</a></span><h2>精华推荐</h2>
+</div>
+<div class="comiis_irbox_list cl">
+<!--[diy=comiis_irbox_04]--><div id="comiis_irbox_04" class="area"><div id="frameG3VosF" class="cl_frame_bm frame move-span cl frame-1"><div id="frameG3VosF_left" class="column frame-1-c"><div id="frameG3VosF_left_temp" class="move-span temp"></div><div id="portal_block_41" class="cl_block_bm block move-span"><div id="portal_block_41_content" class="dxb_bc"><div class="comiis_wz_vlist kmltjx cl">
+<ul><li  class="nox hot"><a href="http://www.xhkj5.com/thread-10519-1-1.html" title="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" target="_blank">帝国cms仿《绿茶软件园》最新第三版整站源</a></li><li class="hot"><a href="http://www.xhkj5.com/thread-9-1-1.html" title="9月移动无成本卡永久绿钻以及一些代码" target="_blank">9月移动无成本卡永久绿钻以及一些代码</a></li><li class="hot"><a href="http://www.xhkj5.com/thread-10585-1-1.html" title="支付宝用户注意！领红包喽！！" target="_blank">支付宝用户注意！领红包喽！！</a></li><li><a href="http://www.xhkj5.com/thread-10584-1-1.html" title="免费领Q币！！！！" target="_blank">免费领Q币！！！！</a></li><li><a href="http://www.xhkj5.com/thread-10560-1-1.html" title="QQ音乐简单粗暴秒领7天豪华绿钻+付费音乐包" target="_blank">QQ音乐简单粗暴秒领7天豪华绿钻+付费音乐包</a></li><li><a href="http://www.xhkj5.com/thread-10467-1-1.html" title="关于某人滥用发帖机" target="_blank">关于某人滥用发帖机</a></li><li><a href="http://www.xhkj5.com/thread-2234-1-1.html" title="酷狗音乐v8.9.2破解年费VIP版" target="_blank">酷狗音乐v8.9.2破解年费VIP版</a></li><li><a href="http://www.xhkj5.com/thread-10579-1-1.html" title="请大家把链接已经挂了的资源报上来" target="_blank">请大家把链接已经挂了的资源报上来</a></li></ul>
+</div></div></div></div></div></div><!--[/diy]-->
+</div>
+</div>
+<!--[diy=comiis_irbox_diy08]--><div id="comiis_irbox_diy08" class="area"></div><!--[/diy]-->
+<div class="comiis_irbox">
+<div class="comiis_irbox_tit cl">
+<span><a href="misc.php?mod=ranklist&amp;type=member" target="_blank">更多</a></span><h2>社区学堂</h2>
+</div>
+<div class="comiis_irbox_user cl">
+<!--[diy=comiis_irbox_08]--><div id="comiis_irbox_08" class="area"><div id="frameE2OVcC" class="cl_frame_bm frame move-span cl frame-1"><div id="frameE2OVcC_left" class="column frame-1-c"><div id="frameE2OVcC_left_temp" class="move-span temp"></div><div id="portal_block_42" class="cl_block_bm block move-span"><div id="portal_block_42_content" class="dxb_bc"><div class="biguser cl"><a href="http://www.xhkj5.com/thread-10519-1-1.html" title="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/f8/f83d7a9b5be90265acefd0f064c39e7b.jpg" width="143" height="110" alt="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" />帝国cms仿《绿茶软件园》最新第三版整</a><a href="http://www.xhkj5.com/thread-1939-1-1.html" title="【价值298元】CK七牛附件通 商业版1.0 解密版" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/08/088938db0738e2f7a512609f39aa5f85.jpg" width="143" height="110" alt="【价值298元】CK七牛附件通 商业版1.0 解密版" />【价值298元】CK七牛附件通 商业版1.0 </a></div></div></div><div id="portal_block_43" class="cl_block_bm block move-span"><div id="portal_block_43_content" class="dxb_bc"><ul><li>
+	<a href="http://www.xhkj5.com/thread-10519-1-1.html" title="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/e9/e93ab29307f325fbedbd4eb32d5d527c.jpg" width="60" height="60" alt="帝国cms仿《绿茶软件园》最新第三版整站源码+手机版+火车头采集" />帝国cms仿《绿茶软件园》最新第三版整站源</a>
+	<span>
+详细介绍[/backcolor]
+
+仿《仿绿茶软件园》下载站第三版源码网站模板分享，帝国CMS
+</span>
+</li><li>
+	<a href="http://www.xhkj5.com/thread-1939-1-1.html" title="【价值298元】CK七牛附件通 商业版1.0 解密版" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/c8/c87d18ceffeab9847a4d122cadf44373.jpg" width="60" height="60" alt="【价值298元】CK七牛附件通 商业版1.0 解密版" />【价值298元】CK七牛附件通 商业版1.0 解密</a>
+	<span>
+插_件介绍[/backcolor]
+
+CK七牛附件通说明
+
+
+[*]插件安装好后会自动开启“启用远
+</span>
+</li><li>
+	<a href="http://www.xhkj5.com/thread-1877-1-1.html" title="【价值20元】自动获取TAG标签 分词版" target="_blank"><img src="http://image.xhkj5.com/data/attachment/block/81/8191cec4e4d098aee24a2ba6f03b80f0.jpg" width="60" height="60" alt="【价值20元】自动获取TAG标签 分词版" />【价值20元】自动获取TAG标签 分词版</a>
+	<span>
+插_件介绍
+
+自动获取TAG标签插件,是一款TAG优化插件，对没有TAG标签的帖会进行自动
+</span>
+</li></ul></div></div></div></div></div><!--[/diy]-->
+</div>
+</div>
+<!--[diy=comiis_irbox_diy09]--><div id="comiis_irbox_diy09" class="area"></div><!--[/diy]-->
+<div class="comiis_irbox" style="margin-bottom:0;">
+<div class="comiis_irbox_tit cl">
+<span><a href="#" target="_blank">更多</a></span><h2>客服中心</h2>
+</div>
+<div class="comiis_irbox_tel cl">
+<!--[diy=comiis_irbox_tel]--><div id="comiis_irbox_tel" class="area"><div id="frameBXycfO" class="cl_frame_bm frame move-span cl frame-1"><div id="frameBXycfO_left" class="column frame-1-c"><div id="frameBXycfO_left_temp" class="move-span temp"></div><div id="portal_block_44" class="cl_block_bm block move-span"><div id="portal_block_44_content" class="dxb_bc"><div class="portal_block_summary"><span class="kmtel">暂无客服电话</span>
+<span class="km24">周一至周日 8:30-20:30 仅收市话费</span></div></div></div></div></div></div><!--[/diy]-->
+</div>
+<div class="comiis_irbox_qqwb cl">
+<!--[diy=comiis_irbox_qqwb]--><div id="comiis_irbox_qqwb" class="area"><div id="framemehE44" class="cl_frame_bm frame move-span cl frame-1"><div id="framemehE44_left" class="column frame-1-c"><div id="framemehE44_left_temp" class="move-span temp"></div><div id="portal_block_45" class="cl_block_bm block move-span"><div id="portal_block_45_content" class="dxb_bc"><div class="portal_block_summary"><a href="http://wpa.qq.com/msgrd?V=3&uin=2444300667&Site=%D1%B6%BB%C3%CD%F8%C2%E7&Menu=yes&from=discuz" target="_blank" class="iqq">在线客服</a>
+<a href="http://wpa.qq.com/msgrd?V=3&uin=2444300667&Site=%D1%B6%BB%C3%CD%F8%C2%E7&Menu=yes&from=discuz" target="_blank" class="iwb">客服微博</a>
+<a href="http://wpa.qq.com/msgrd?V=3&uin=2444300667&Site=%D1%B6%BB%C3%CD%F8%C2%E7&Menu=yes&from=discuz" target="_blank" class="icp">产品咨询</a>
+<a href="http://wpa.qq.com/msgrd?V=3&uin=2444300667&Site=%D1%B6%BB%C3%CD%F8%C2%E7&Menu=yes&from=discuz" target="_blank" class="ish">售后中心</a></div></div></div></div></div></div><!--[/diy]-->
+</div>
+<!--[diy=comiis_irbox_nbyewm]--><div id="comiis_irbox_nbyewm" class="area"><div id="frameaZ6X7n" class="cl_frame_bm frame move-span cl frame-1"><div id="frameaZ6X7n_left" class="column frame-1-c"><div id="frameaZ6X7n_left_temp" class="move-span temp"></div><div id="portal_block_46" class="cl_block_bm block move-span"><div id="portal_block_46_content" class="dxb_bc"><div class="portal_block_summary"><div class="comiis_irbox_tits cl">
+<h2>关注我们</h2>
+</div>
+<div class="comiis_irbox_ewm cl">
+<ul>
+<li><img src="template/comiis_nby/img/comiis_dmob.jpg" width="145" height="145">手机客户端</li>
+<li><img src="template/comiis_nby/img/comiis_dwx.jpg" width="145" height="145">关注官方微信</li>
+</ul>
+</div></div></div></div></div></div></div><!--[/diy]-->
+</div>
+<!--[diy=comiis_irbox_diy10]--><div id="comiis_irbox_diy10" class="area"></div><!--[/diy]-->
+</div>
+<div style="clear:both;height:0px;overflow:hidden;font-size:0;"></div>
+</div>
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不收听';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '收听TA';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=ba2d5d3f&fuid='+values['fuid'];
+}
+}
+var blockedPIDs = [];
+fixed_avatar([1651], 1);
+if($('comiis_viewthread_sidebottom_div') && $('comiis_viewthread_sidebottom')){
+$('comiis_viewthread_sidebottom_div').innerHTML = "<div class=\"comiis_irbox comis_kmlzrt\">" + $('comiis_viewthread_sidebottom').innerHTML + "</div>";
+}
+</script>
+<script src="template/comiis_nby/img/jquery.min.js" type="text/javascript" type="text/javascript"></script>
+<script src="template/comiis_nby/img/responsiveslides.min.js" type="text/javascript" type="text/javascript"></script><style>.comiis_btn{top:0px;}</style>
+<script>
+var comiis_irftbtn = $('comiis_irftbtn');
+var comiis_irftbtnoffset = parseInt(fetchOffset(comiis_irftbtn)['top']);
+_attachEvent(window, 'scroll', function () {
+var comiis_scrollTopk = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+if(comiis_scrollTopk >= comiis_irftbtnoffset - 0){
+comiis_irftbtn.className = 'comiis_irbox comiis_irftbtn cl comiis_btn';
+if (BROWSER.ie && BROWSER.ie < 7) {
+comiis_irftbtn.style.position = 'absolute';
+comiis_irftbtn.style.top = (comiis_scrollTopk + 0) + 'px';
+}else{
+comiis_irftbtn.style.position = 'fixed';
+}
+}else{
+comiis_irftbtn.style.position = 'static';
+comiis_irftbtn.className = 'comiis_irbox comiis_irftbtn cl';
+}
+});
+</script>
+</div>
+<div class="focus" id="sitefocus">
+<div class="bm">
+<div class="bm_h cl">
+<a href="javascript:;" onclick="setcookie('nofocus_forum', 1, 1*3600);$('sitefocus').style.display='none'" class="y" title="关闭">关闭</a>
+<h2>
+站长推荐<span id="focus_ctrl" class="fctrl"><img src="template/comiis_nby/img/pic_nv_prev.gif" alt="上一条" title="上一条" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/1</em> <img src="template/comiis_nby/img/pic_nv_next.gif" alt="下一条" title="下一条" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
+</h2>
+</div>
+<div class="bm_c" id="focus_con">
+</div>
+</div>
+</div><div class="bm_c" style="display: none" id="focus_0">
+<dl class="xld cl bbda">
+<dt><a href="http://www.xhkj5.com/" class="xi2" target="_blank">偷偷告诉你个小秘密——</a></dt>
+<dd>讯(xun)幻(huan)科(ke)技(ji)首字母(xhkj)，再加上“5”就是“xhkj5”。</dd>
+</dl>
+<p class="ptn cl"><a href="http://www.xhkj5.com/" class="xi2 y" target="_blank">查看 &raquo;</a></p>
+</div><script type="text/javascript">
+var focusnum = 1;
+if(focusnum < 2) {
+$('focus_ctrl').style.display = 'none';
+}
+if(!$('focuscur').innerHTML) {
+var randomnum = parseInt(Math.round(Math.random() * focusnum));
+$('focuscur').innerHTML = Math.max(1, randomnum);
+}
+showfocus();
+var focusautoshow = window.setInterval('showfocus(\'next\', 1);', 5000);
+</script>
+
+            <link href="source/plugin/ror_pace/public/css/pace-theme-black-flash.min.css" rel="stylesheet">
+            <script src="source/plugin/ror_pace/public/js/pace.min.js"></script>
+        <script>xlm_wid='12600';xlm_url='https://www.xianliao.me/';xlm_uid='0';xlm_name='';xlm_avatar='http://www.xhkj5.com/uc_server/avatar.php?uid=0&size=small';xlm_gid='7 ';xlm_time='1531088238';xlm_hash='99350e6acef54e40c72557e3c0646e18255bb00373e35529c4614679a7342ae2bedec5efce87ac20f9aa50555ca0c6d70599e44617cc2d4e7f90b29a0625480d';xlm_isAdmin='0';</script><script type='text/javascript' charset='UTF-8' src='https://www.xianliao.me/embed.js'></script>
+
+<style type="text/css"> 
+#scrolltop {
+   display: none;
+}
+ul#navmenu ul
+{ 
+display: none; 
+position: absolute; 
+left: -233px;
+bottom: 5px;
+} 
+ul#navmenu li:hover ul ul, 
+ul#navmenu li.iehover ul ul,  { 
+display: none; 
+} 
+ul#navmenu li:hover ul, 
+ul#navmenu ul li:hover ul, 
+ul#navmenu ul ul li:hover ul, 
+ul#navmenu li.iehover ul, 
+ul#navmenu ul li.iehover ul, 
+ul#navmenu ul ul li.iehover ul { 
+display: block; 
+} 
+
+#jz52top a {margin: 6px 0;}
+
+#jz52top { z-index: 200; visibility: visible; right: 10px; }
+
+#jz52topa { visibility: hidden;}
+#jz52top, #jz52top a { border: none;}
+
+
+#jz52top { position: fixed; bottom: 40px; display: block; width: 40px; background: none repeat scroll 0% 0% transparent; border: 0px #cdcdcd solid; border-radius: 3px; border-top: 0; cursor: pointer; }
+#jz52top:hover { text-decoration: none; }
+
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #f8f8f8 url('source/plugin/jz52_top/template/jz52top1.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+
+                a.jz52topa:hover { background-position: -40px 0px !important;}
+a.replyfast { background-position: 0 -40px !important; }
+a.replyfast:hover { background-position: -40px -40px !important;}
+a.returnlist { background-position: 0 -80px !important; }
+a.returnlist:hover { background-position: -40px -80px !important;}
+a.returnboard { background-position: -80px -240px !important; }
+a.returnboard:hover { background-position: -120px -240px !important;}
+a.jzqr { background-position: 0 -120px !important; }
+a.jzqr:hover { background-position: -40px -120px !important;}
+                a.jzwx { background-position: 0 -320px !important; }
+a.jzwx:hover { background-position: -40px -320px !important;}				
+a.jzkf { background-position: -80px 0px !important; }
+a.jzkf:hover { background-position: -120px -0px !important;}
+a.jzfx { background-position: -80px -40px !important; }
+a.jzfx:hover { background-position: -120px -40px !important;}
+.jzfxn { background: #fff !important; width: 231px !important; height: 260px !important; }
+a.jzlast { background-position: -80px -80px !important; }
+a.jzlast:hover { background-position: -120px -80px !important;}
+a.jznext { background-position: -80px -120px !important; }
+a.jznext:hover { background-position: -120px -120px !important;}	
+a.jzxyy { background-position: -80px -120px !important; }
+a.jzxyy:hover { background-position: -120px -360px !important;}			
+a.jzsct { background-position: 0px -160px !important; }
+a.jzsct:hover { background-position: -40px -160px !important;}				
+a.jzscb { background-position: -80px -160px !important; }
+a.jzscb:hover { background-position: -120px -160px !important;}				
+a.jzqqq { background-position: 0px -200px !important; }
+a.jzqqq:hover { background-position: -40px -200px !important;}	
+                a.jzsoso { background-position: -80px -320px !important; }
+a.jzsoso:hover { background-position: -120px -320px !important;}					
+a.jzwo { background-position: -80px -200px !important; }
+a.jzwo:hover { background-position: -120px -200px !important;}
+a.jzzdy { background-position: 0px -240px !important; }
+a.jzzdy:hover { background-position: -40px -240px !important;}
+a.jzfbzt { background-position: 0px -280px !important; }
+a.jzfbzt:hover { background-position: -40px -280px !important;}
+a.jzkfzx { background-position: -80px -280px !important; }
+a.jzkfzx:hover { background-position: -120px -280px !important;}
+
+
+#jzqrn { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzqrn { border: 1px solid rgb(210, 210, 210); text-align: center; }
+#jzqrn p {
+    font-size: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+color: #999;
+    font-family: Microsoft YaHei;
+}
+#jzwon { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzwon { border: 1px solid rgb(210, 210, 210); }
+#jzfxn { border: 1px solid rgb(210, 210, 210); }
+#jzfxn h3 {
+    height: 23px;
+    background: none repeat scroll 0% 0% rgb(250, 250, 250);
+    border-bottom: 1px solid rgb(236, 236, 236);
+    padding: 10px 0px 0px 10px;
+}
+#jzfxn .bdsharebuttonbox { padding: 13px 0px 0px 20px; }
+#jzfxn .bdsharebuttonbox a, #jzfxn .bdsharebuttonbox .bds_more {
+    float: left;
+    font-size: 12px;
+    padding-left: 25px;
+    line-height: 16px;
+text-align: left;
+    height: 16px;
+    background: url("http://bdimg.share.baidu.com/static/api/img/share/icons_1_16.png?v=01d441d0.png") no-repeat scroll 0px 0px ;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0px;
+text-indent: 0;
+    overflow: hidden;
+width: 68px;
+}
+#jzfxn .bdsharebuttonbox .bds_qzone {
+    background-position: 0px -52px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsina {
+    background-position: 0px -104px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqq {
+    background-position: 0px -260px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_renren {
+    background-position: 0px -208px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqf {
+    background-position: 0px -364px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tieba {
+    background-position: 0px -728px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_sqq {
+    background-position: 0px -2652px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_hi {
+    background-position: 0px -416px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_isohu {
+    background-position: 0px -3016px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_weixin {
+    background-position: 0px -1612px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_t163 {
+    background-position: 0px -832px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsohu {
+    background-position: 0px -520px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_baidu {
+    background-position: 0px -2600px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_qq {
+    background-position: 0px -624px !important;
+}
+#jz52top a b {
+    visibility: hidden;
+    font-weight: normal;
+}
+</style> 
+
+<script type="text/javascript"> 
+// JavaScript Document
+function goTopEx(){
+        var obj=document.getElementById("goTopBtn");
+        function getScrollTop(){
+                return document.documentElement.scrollTop || document.body.scrollTop;
+            }
+        function setScrollTop(value){
+            if(document.documentElement.scrollTop){
+                    document.documentElement.scrollTop=value;
+                }else{
+                    document.body.scrollTop=value;
+                }
+                
+            }    
+        window.onscroll=function(){getScrollTop()>0?obj.style.display="":obj.style.display="none";
+                    var h=document.body.scrollHeight - getScrollTop() - obj.offsetTop - obj.offsetHeight;
+                    obj.style.bottom=0+"px";
+                    if(h<350){
+                        obj.style.bottom=340+"px";
+                        obj.style.top="auto";
+                    }
+
+        
+        }
+        obj.onclick=function(){
+
+            var goTop=setInterval(scrollMove,10);
+            function scrollMove(){
+                    setScrollTop(getScrollTop()/1.1);
+                    if(getScrollTop()<1)clearInterval(goTop);
+
+                }
+        }
+    }
+
+</script> 
+
+<div id="jz52top" >
+    
+<span>
+<DIV style="DISPLAY: none" id="goTopBtn" ><a title="返回顶部" class="jz52topa" ><b>返回顶部</b></a></DIV>
+</span>
+    <SCRIPT type=text/javascript>goTopEx();</SCRIPT>
+	
+
+<span>		
+<a href="http://www.xhkj5.com/forum-78-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+</span>
+
+<link rel="stylesheet" rev="stylesheet" href="source/plugin/jz52_top/template/imc_access_pop.css" type="text/css" media="screen"/>
+<span><a href="javascript:;" onclick="showWindow('jz52_kf','plugin.php?id=jz52_top:jz52_kfzx')" title="客服中心" class="jzkfzx" target="_blank" ><b>客服中心</b></a></span>
+
+<span><a rel="nofollow" title="搜索" class="jzsoso" href="javascript:;" onclick="showWindow('jzso','plugin.php?id=jz52_top:jz52_so')"><b>搜索</b></a></span>	
+
+    <span><a rel="nofollow" title="官方QQ群" class="jzqqq" href="javascript:;" onclick="showWindow('qqgroup','plugin.php?id=jz52_top:qqgroup')"><b>官方QQ群</b></a></span>	
+    
+    
+<span><ul id="navmenu"> <li><a title="分享"  class="jzfx" ><b>分享</b></a> <ul> <div class="jzfxn" id="jzfxn">
+<h3>分享到：</h3>
+<div class="bdsharebuttonbox" data-tag="share_2">
+<a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone">QQ空间</a>
+<a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina">新浪微博</a>
+<a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq">腾讯微博</a>
+<a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren">人人网</a>
+<a title="分享到腾讯朋友" href="#" class="bds_tqf" data-cmd="tqf">腾讯朋友</a>
+<a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba">百度贴吧</a>
+<a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq">QQ好友</a>
+<a title="分享到百度空间" href="#" class="bds_hi" data-cmd="hi">百度空间</a>
+<a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin">微信</a>
+<a title="分享到网易微博" href="#" class="bds_t163" data-cmd="t163">网易微博</a>
+<a title="分享到搜狐微博" href="#" class="bds_tsohu" data-cmd="tsohu">搜狐微博</a>
+<a title="分享到百度搜藏" href="#" class="bds_baidu" data-cmd="baidu">百度搜藏</a>
+<a title="分享到QQ收藏" href="#" class="bds_qq" data-cmd="qq">QQ收藏</a>
+<a href="#" onclick="return false;" data-cmd="more" target="_blank;">更多...</a>
+</div>
+<script>with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div> </ul></li></ul> </span>
+    
+<span><ul id="navmenu"> <li><a title="QR Code"  class="jzqr" href="forum.php?mobile=yes"><b>QR Code</b></a> <ul> <div id="jzqrn">
+
+
+<style type="text/css">
+#jzqrn .ltqr { margin: 24px 0 10px 0; }
+</style>
+<img  class="ltqr" src="http://qr.liantu.com/api.php?w=183&amp;m=0&amp;text=http://www.xhkj5.com/thread-1554-1-1.html" />
+<img style="width:45px;height:45px;position:absolute;top:95px;left:95px;" src="favicon.ico" />
+
+
+<p>手机扫描二维码快速访问本帖</p>
+
+
+
+</div> </ul></li></ul> </span>	
+
+<span>
+<ul id="navmenu"> 
+<li><a title="个人中心" class="jzwo" >
+
+<b>个人中心</b></a> 
+<ul> <div id="jzwon">
+
+<style type="text/css">
+
+#jzmms{padding: 2px; text-align: right; }
+.navbar-unread {
+    background-color: #E74C3C;
+    border-radius: 30px;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    min-width: 8px;
+    padding: 0px 4px;
+    right: 0px;
+    text-align: center;
+    text-shadow: none;
+    z-index: 10;
+align: right;
+}
+
+.navbar-unreadn {
+    background: url("source/plugin/jz52_top/template/mmsn.png") no-repeat scroll 0px 0px ;
+    border-radius: 30px;
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    min-width: 8px;
+    padding: 0px 4px;
+    right: 0px;
+    text-align: center;
+    text-shadow: none;
+    z-index: 10;
+align: right;
+}	
+
+#jzgrzxkp {
+height: 260px;
+width: 231px;
+background:#f2f6f8;
+font-family: Microsoft YaHei;
+}
+
+#jzgrzxkp .jzgrzxkptop {
+height: 140px;
+background:  url("source/plugin/jz52_top/template/4.jpg") no-repeat 0 0 #0079b8 ;
+color: #fff;
+}
+#jzgrzxkp .jzgrzxkptop a{
+
+color: #fff;
+}
+
+#jzgrzxkp .jzgrzxkptop h3 {
+ height: 16px;
+font-weight:normal;
+    padding: 8px 0px 0px 10px;
+font-size: 16px;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpthtle {
+height: 35px;
+}
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg {
+height: 65px;
+text-align:center;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg img {
+width: 54px;
+width: 54px;
+border-radius: 100px;
+margin-top: 2px;
+
+
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg .jzgrzxkpimgn {
+width: 58px;
+height: 58px;
+border-radius: 100px;
+background: none repeat scroll 0% 0% #fff;
+margin-top: 5px;
+margin-right: auto;
+    margin-left: auto;
+}
+
+#jzgrzxkp .jzyhm {
+    font-size: 15px;
+    line-height: 22px;
+text-align: center;
+padding-bottom: 10px;
+text-align:center;
+}
+
+#jzgrzxkp .jzyhm a {
+    width: 231px;
+    height: 15px;
+text-align:center;
+background: none ;
+}
+
+#jzgrzxkp .jzgrzxkpbox  { height: 120px; background:#f1f1f1;}
+
+#jzgrzxkp .jzgrzxkpbox a { background:url("source/plugin/jz52_top/template/gr1.png") no-repeat 0 0  ;  width:57px;height:60px;float:left; margin: 0px;}
+
+.box01{background-position: 0px 0px !important;}
+.box02{background-position: -57px 0px !important;}
+.box03{background-position: -114px 0px !important;}
+.box04{background-position: -171px 0px !important;}
+
+.box05{background-position: 0px -60px !important;}
+.box06{background-position: -57px -60px !important;}
+.box07{background-position: -114px -60px !important;}
+.box08{background-position: -171px -60px !important;}
+.box09{background-position: 0px -120px !important;}
+
+
+#jz52-grzx-skin a{
+margin: 0px;
+top: 0px;
+height: 20px;
+width: 20px;
+overflow: hidden;
+background-image: url('source/plugin/jz52_top/template/wei.png');
+background-position: 0px 0px;
+background-repeat: no-repeat;
+position: absolute;
+display: block;
+right: 0px;
+}
+
+</style>
+
+<div id="jzgrzxkp" class="jzgrzxkp">
+
+<div class="jzgrzxkptop">
+<div class="jzgrzxkpthtle">
+<h3>个人中心</h3>
+</div>  
+<div class="jzgrzxkpimg">
+<div class="jzgrzxkpimgn">
+<img src="uc_server/avatar.php?uid=0&size=big" width="54" height="54">
+</div>
+</div>
+   
+<div class="jzyhm"><a href="member.php?mod=logging&amp;action=login" onClick="showWindow('login', this.href)">登录或注册</a></div>
+ 
+</div>
+<div class="jzgrzxkpbox">
+
+<a href="http://www.xhkj5.com/home.php?mod=space&amp;do=favorite&amp;view=me" class="box01" target="_blank"  title="收藏" ></a>
+
+<a href="http://www.xhkj5.com/forum.php?mod=guide&amp;view=my" class="box02" target="_blank"  title="帖子" ></a>
+
+<a href="http://www.xhkj5.com/home.php?mod=space&amp;do=notice" class="box09" target="_blank"  title="提醒" >
+
+</a>
+
+<a href="http://www.xhkj5.com/home.php?mod=space&amp;do=pm" class="box04" target="_blank"  title="消息" >
+
+</a>
+
+<a href="http://www.xhkj5.com/home.php?mod=spacecp" class="box05" target="_blank" title="设置" ></a>
+
+<a href="http://www.xhkj5.com/home.php?mod=medal" class="box06" target="_blank" title="勋章" ></a>
+
+<a href="http://www.xhkj5.com/home.php?mod=task" class="box07" target="_blank" title="任务" ></a>
+
+</div>
+</div>
+</div>
+</ul>
+</li>
+</ul>
+</span>	
+
+</div>
+
+<div class="comiis_kmzxk" style="clear:both;"></div>
+<div class="comiis_dibox cl">
+<div id="ft" class="wp comiis_foot cl hytj">
+<dl>
+<dt>关于我们</dt>
+<dd><a href="#" target="_blank">关于我们</a></dd>
+<dd><a href="nimba_linkhelper-addlink.html" target="_blank">友情链接</a></dd>
+<dd><a href="http://wpa.qq.com/msgrd?V=3&amp;uin=2444300667&amp;Site=%20%D1%B6%BB%C3%CD%F8&amp;Menu=yes&amp;from=discuz" target="_blank">联系我们</a></dd>
+</dl>
+<dl>
+<dt>帮助中心</dt>
+<dd><a href="#" target="_blank">网友中心</a></dd>
+<dd><a href="#" target="_blank">购买须知</a></dd>
+<dd><a href="#" target="_blank">支付方式</a></dd>
+</dl>
+<dl>
+<dt>服务支持</dt>
+<dd><a href="#" target="_blank">资源下载</a></dd>
+<dd><a href="#" target="_blank">售后服务</a></dd>
+<dd><a href="#" target="_blank">定制流程</a></dd>
+</dl>	
+<dl>
+<dt>关注我们</dt>
+<dd><a href="http://weibo.com/xhkj5" target="_blank" class="kmweibo">官方微博</a></dd>
+<dd><a href="#" target="_blank" class="kmkongjian">官方空间</a></dd>
+<dd><a href="#" target="_blank" class="kmweixin">官方微信</a></dd>
+</dl>
+<div class="comiis_tel">
+<ul>
+<li class="item1">暂无客服电话</li>
+<li class="item2">周一到周日 8:30-20:30 (全年无休)</li>
+<li class="item3 cl">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;uin=2444300667&amp;Site=%20%D1%B6%BB%C3%CD%F8&amp;Menu=yes&amp;from=discuz" target="_blank">7 x 24小时在线客服</a>
+</li>
+</ul> 
+</div> 
+</div>
+<div class="comiis_dilogo wp cl">
+<div class="comiis_minilogo"><a href="./"><img src="template/comiis_nby/img/comiis_minilogo.gif" alt="讯幻网(xhkj5.com)"></a></div>
+<div class="comiis_dinav"><a href="http://www.xhkj5.com/forum.php?mod=misc&action=showdarkroom" >小黑屋</a><a href="http://www.xhkj5.com/forum.php?mobile=yes" >手机版</a><a href="http://www.xhkj5.com/archiver/" >Archiver</a></div>
+</div>
+</div>
+<div class="wp comiis_copyright cl">
+<a href="#" target="_blank"><img src="template/comiis_nby/img/comiis_diico01.gif" alt="诚信网站"></a>
+<a href="#" target="_blank"><img src="template/comiis_nby/img/comiis_diico02.gif" alt="可信网站"></a>
+Powered by <a href="http://www.xhkj5.com" target="_blank">讯幻网</a>  &copy; 2008-2017 <a href="http://www.xhkj5.com/" target="_blank">讯幻网(xhkj5.com)</a> 版权所有 <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">湘ICP备17005202号-1</a> <a href="http://wpa.qq.com/msgrd?V=3&amp;uin=2444300667&amp;Site=讯幻网&amp;Menu=yes&amp;from=discuz" rel="nofollow" target="_blank" title="QQ">客服QQ: 2444300667</a>&nbsp;技术支持: <A href="http://www.xhkj5.com" target="_blank" title="讯幻网">讯幻网</A>	<style type="text/css">
+
+#xhkj5comstranlink{color: #333333 !important;}
+#nv #xhkj5comstranlink {
+line-height: 33px;
+height: 33px;
+}
+</style>
+<p style="display: none; height:0px; width:0px; " ><a title="javascript xhkj5com and vcpic go js and css" href="http://www.wanmeiff.com">JS of wanmeiff.com and vcpic.com Please keep this copyright information, respect of, thank you!</a><a  title="javascript xhkj5com and vcpic go js and css" href="http://www.vcpic.com">JS of wanmeiff.com and vcpic.com Please keep this copyright information, respect of, thank you!</a></p>
+<script type="text/javascript" language="javascript"> var Default_isFT = 0 </script><SCRIPT language=Javascript src="source/plugin/xhkj5com_jtft/xhkj5com_js/12344279923_gbk.js"></SCRIPT> </div>
+
+<div id="ft" class="wp cl comiis_di01 hytj">
+<div style="text-align:center;">
+<p>
+<!--百度自动推送 begin-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度自动推送 end-->
+<!--360自动收录 begin-->
+<script>
+(function(){
+   var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?11dd9df26e1c33a0f2ffb7b3c2078eeb":"https://jspassport.ssl.qhimg.com/11.0.1.js?11dd9df26e1c33a0f2ffb7b3c2078eeb";
+   document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+<!--360自动收录 end-->
+<!--百度统计 begin-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0b8f9dc72a675e61d3d8deb6fa6da065";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度统计 end-->
+<!--CNZZ统计 begin-->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273003277'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1273003277%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+<!--CNZZ统计 end-->
+<!--审查元素 begin-->
+<script type="text/javascript">
+        if (window.console) {
+            var cons = console;
+            if (cons) {
+		console.log("一张网页，要经历怎样的过程，才能抵达用户面前？\n一位新人，要经历怎样的成长，才能站在技术之巅？\n探寻这里的秘密；\n体验这里的挑战；\n成为这里的主人；\n加入讯幻网，加入开发，你，可以影响世界。\n")
+                cons.log("这位看代码的童鞋，不如来和我们一起为讯幻网添砖加瓦吧！");
+                cons.log("有意求职者，请邮件至：%c admin@xhkj5.com %c(邮件请注明来自:console)", "color:red;font-weight:bold;", "color:#666");
+            }
+        }
+</script>
+<!--审查元素 end--></p>
+</div>
+</div>
+<script src="home.php?mod=misc&ac=sendmail&rand=1531088238" type="text/javascript"></script>
+<div id="scrolltop">
+<span><a href="http://www.xhkj5.com/forum.php?mod=post&amp;action=reply&amp;fid=78&amp;tid=1554&amp;extra=page%3D1&amp;page=1" onclick="showWindow('reply', this.href)" class="replyfast" title="快速回复"><b>快速回复</b></a></span>
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa" href="javascript:;"><b>返回顶部</b></a></span>
+<span>
+<a href="http://www.xhkj5.com/forum-78-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+</span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { new_showTopLink(); });checkBlind();</script>
+<script type="text/javascript">
+function new_showTopLink() {
+var ft = $('ft');
+if(ft){
+var scrolltop = $('scrolltop');
+var viewPortHeight = parseInt(document.documentElement.clientHeight);
+var scrollHeight = parseInt(document.body.getBoundingClientRect().top);
+var basew = parseInt(ft.clientWidth);
+var sw = scrolltop.clientWidth;
+if (basew < 1500) {
+var left = parseInt(fetchOffset(ft)['left']);
+left = left < sw ? left * 2 - sw : left;
+scrolltop.style.left = ( basew + left ) + 'px';
+} else {
+scrolltop.style.left = 'auto';
+scrolltop.style.right = 0;
+}
+if (BROWSER.ie && BROWSER.ie < 7) {
+scrolltop.style.top = viewPortHeight - scrollHeight - 150 + 'px';
+}
+if (scrollHeight < -100) {
+scrolltop.style.visibility = 'visible';
+} else {
+scrolltop.style.visibility = 'hidden';
+}
+}
+}
+if($("myrepeats") && $("comiis_key")){
+$("comiis_key").appendChild($("myrepeats"));
+}
+if($("qmenu_loop")){
+var qmenu_timer, qmenu_scroll_l;
+var qmenu_in = 0;
+var qmenu_width = 246;
+var qmenu_loop = $('qmenu_loop');
+var qmenu_all_width = 41 * $('qmenu_loopul').getElementsByTagName("li").length - qmenu_width;
+if(qmenu_all_width < 20){
+$('qmenu_an').style.display = 'none';
+}
+}
+function qmenu_move(qmenu_lr){
+if(qmenu_in == 0 && ((qmenu_lr == 1 && qmenu_loop.scrollLeft < qmenu_all_width) || (qmenu_lr == 0 && qmenu_loop.scrollLeft > 0))){
+qmenu_in = 1;
+qmenu_scroll_l = qmenu_loop.scrollLeft;
+qmenu_timer = setInterval(function(){
+qmenu_scroll(qmenu_lr);
+}, 10);
+}
+}
+function qmenu_scroll(qmenu_lr){
+if((qmenu_lr == 1 && qmenu_loop.scrollLeft >= qmenu_width + qmenu_scroll_l) || (qmenu_lr == 0 && ((qmenu_loop.scrollLeft <= qmenu_scroll_l - qmenu_width) || qmenu_loop.scrollLeft == 0))){
+clearInterval(qmenu_timer);
+qmenu_in = 0;
+}else{
+if(qmenu_lr == 1){
+qmenu_loop.scrollLeft += Math.round((qmenu_width + qmenu_scroll_l - qmenu_loop.scrollLeft) / 15) + 1;
+}else{
+qmenu_loop.scrollLeft -= Math.round((qmenu_width - (qmenu_scroll_l - qmenu_loop.scrollLeft)) / 15) + 1;
+}
+}
+}
+</script>

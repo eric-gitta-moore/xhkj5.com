@@ -1,0 +1,20 @@
+/* */
+if (JQT(document).scrollTop() > 0) {
+	if(JQT('#hd').is('.top') == false) {
+		JQT("#hd").addClass("top");
+	}
+}
+JQT(document).ready(function() {
+	JQT(window).scroll(function() {
+		if (JQT(document).scrollTop() > 0) {
+			if(JQT('#hd').is('.top') == false) {
+				JQT("#hd").addClass("top");
+			}
+		}
+		else{
+			if(JQT('#hd').is('.top')) {
+				JQT("#hd").removeClass("top");
+			}
+		}
+	});
+});

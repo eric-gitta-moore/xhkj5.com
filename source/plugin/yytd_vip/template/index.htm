@@ -1,0 +1,263 @@
+{template common/header}
+<link rel="stylesheet" type="text/css"
+	href="source/plugin/yytd_vip/css/style.css" />
+<div id="pt" class="bm cl" >
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+		<em>&rsaquo;</em><a href="./plugin.php?id=yytd_vip">{lang yytd_vip:buyGroup}</a>
+	</div>
+</div>
+<div class="yytd_bank">
+	<div style="padding: 2px;"></div>
+	<div class="bm bw0">
+		<div class="left">
+			<div class="bm bmw fl yytd_bank_clear">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:openGroup}</a>
+					</h2>
+				</div>
+				<div class="bm_c txtstyle">
+				<div id="yytd">
+				<!--{loop $yytd_rule $key $value}-->
+					<div class="role">
+					<dl>
+						<dt class="trfont">$value[0]  <!--{if $value[6]=='hot'}-->
+								&nbsp;&nbsp;<img src='static/image/common/apphot.png'> <!--{/if}--></dt>
+						<dd>{lang yytd_vip:group_column04}:<font>$value[4]</font></dd>
+						<dd>{lang yytd_vip:group_column03}:<font><!--{if $value[3]>0}-->$value[3]{lang yytd_vip:danwei}<!--{else}-->{lang yytd_vip:validityinfo}<!--{/if}--></font></dd>
+						<dd>{lang yytd_vip:group_column02}:<font>$value[2]{lang yytd_vip:danwei01}</font></dd>
+						<dd class="center">
+						<input type="button" value="{lang yytd_vip:buyButton}"
+					class="pn pnc vm" name="replysubmit"
+							   {if $_G['uid']}
+						 onclick="ajaxget('plugin.php?id=yytd_vip&action=buytrue&buyId=$key','return_tanchu_result_msg','');return false;"
+							{else}
+							onclick="alert('{lang yytd_vip:notice07}');"
+							{/if}
+							style=' font-weight:bold; padding:0px 10px'/>
+						</dd>
+					</dl>
+					</div>
+				<!--{/loop}-->
+					</div>
+					 	
+					<div style="clear:both"></div>
+					<div class="text-align_right txtstyle">{$multi}</div>
+				</div>
+				
+<!--开始位置  -->
+<div class="bm_h cl">
+<h2> <font color="red">VIP特权总览</font> </h2>
+</div>
+<style>
+
+
+.shangyemain tr td.w11em {
+text-align: right;
+padding-right: 15px;
+width: 183px;
+border: 1px solid #eee;
+}
+.shangyemain tr td {
+border: 1px solid #eee;
+padding: 6px 0px;
+text-align: center;
+font-size: 13px;
+}
+
+</style>
+<div class="shangyemain">
+<style>
+
+
+.baojia-table td.w11em3{ background:#F0FFF7}
+.baojia-table td.w11em4{ background:#F0FFF7}
+</style>
+<table border="1" class="baojia-table" width="100%" cellpadding="0" cellspacing="1">
+<tbody>
+<tr class="hsd">
+<td class="w11em h24s" style="color:#555;font-size:14px;width: 20%"><strong>特权对比</strong></td>
+<td class="h24s" style="color:#888;font-size:14px;width: 20%"><strong>普通用户</strong></td>
+<td class="h24s" style="color:#555;font-size:14px;width: 20%"><strong>赞助VIP</strong></td>
+<td class="h24s" style="color:red;font-size:14px;width: 20%"><strong>年费VIP</strong></td>
+<td class="h24s" style="color:blue;font-size:14px;width: 20%"><strong>终身VIP</strong></td>
+
+</tr>
+
+<tr>
+<td class="w11em">身份铭牌</td>
+<td class="w11em1">/</td>
+<td class="w11em2"><img src="data/attachment/common/37/common_23_usergroup_icon.gif?IJ3j1j"></td>
+<td><img src="data/attachment/common/1f/common_24_usergroup_icon.gif?VK52p6"></td>
+<td class="w11em4"><img src="data/attachment/common/8e/common_25_usergroup_icon.gif?tbZi8a"></td>
+
+</tr>
+<tr>
+<td class="w11em">赞助认证图标(永久)</td>
+<td class="w11em1">/</td>
+<td class="w11em2"><img src="tpwj/common_4_verify_icon.png" alt="赞助过本站" title="赞助过本站"></td>
+<td><img src="tpwj/common_2_verify_icon.png" alt="赞助过本站" title="赞助过本站"></td>
+<td class="w11em4"><img src="tpwj/common_2_verify_icon.png" alt="赞助过本站" title="赞助过本站"></td>
+
+</tr>
+<tr>
+<td class="w11em">资源下载次数</td>
+<td class="w11em3"><a style="color:red"><b></b></a>随用户组上升</td>
+<td class="w11em3"><a style="color:red"><b>7</b></a>次/天</td>
+<td class="w11em3"><a style="color:red"><b>11</b></a>次/天</td>
+<td class="w11em4"><a style="color:red"><b>15</b></a>次/天</td>
+
+</tr>
+
+<tr>
+<td class="w11em">用户出售资源免购买下载</td>
+<td class="w11em1"><img src="tpwj/c.png"></td>
+<td class="w11em3"><img src="tpwj/c.png"></td>
+<td class="w11em3"><a style="color:red"><b>1</b></a>个/天</td>
+<td class="w11em4"><a style="color:red"><b>3</b></a>个/天</td>
+</tr>
+
+<tr>
+<td class="w11em">免费资源下载</td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+<tr>
+<td class="w11em">赞助资源下载</td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+<tr>
+<td class="w11em">年费资源下载</td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+<tr>
+<td class="w11em">H币资源下载</td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/c.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+
+                   <tr>
+<td class="w11em">服务周期</td>
+<td class="w11em1">/</td>
+<td class="w11em3"><a style="color:red"><b>30</b></a>天</td>
+<td class="w11em3"><a style="color:red"><b>365</b></a>天</td>
+<td class="w11em4"><a style="color:red"><b>终身</b></a></td>
+  </tr>	
+<tr>
+<td class="w11em">服务费用原价</td>
+<td class="w11em1">/</td>
+<td class="w11em3"><a style="color:#999;font-size:14px"><del><b>30元</b></del></a>/周期</td>
+<td class="w11em3"><a style="color:#999;font-size:14px"><del><b>128元</b></del></a>/周期</td>
+<td class="w11em4"><a style="color:#999;font-size:14px"><del><b>388元</b></del></a>/终身</td>
+</tr>
+<tr>				
+<td class="w11em">服务费用</td>
+<td class="w11em1">/</td>
+<td class="w11em3"><a style="color:red;font-size:16px"><b>15元</b></a>/周期</td>
+<td class="w11em3"><a style="color:red;font-size:16px"><b>64元</b></a>/周期</td>
+<td class="w11em4"><a style="color:red;font-size:16px"><b>194元/终身</b></a></td>
+  </tr>			
+<tr>
+<td class="w11em"><a style="color:red">昵称红名显示</a></td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+<tr>
+<td class="w11em4">无广告<a style="color:blue;font-size:9px">(赞助商广告除外)</a></td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/c.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>
+<tr>
+<td class="w11em">求资源</td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td><img src="tpwj/sure.png"></td>
+<td class="w11em4"><img src="tpwj/sure.png"></td>
+</tr>		
+<tr>
+<td class="w11em">补充说明:</td>
+<td colspan="4">未完待续。。。<img src="tpwj/sure.png">表示有权限，<img src="tpwj/c.png">表示无权限</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--结束位置  -->
+				
+			</div>
+		</div>
+		<div class="right">
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:userinfo}</a>
+					</h2>
+				</div>
+				<!-- {if !$_G['uid']} -->
+				<div class='bm_c txtstyle'>
+					<br />
+					<br />
+					<center>
+						{lang yytd_vip:loginoutinfo}<br /> <a
+							href="member.php?mod=logging&amp;action=login"
+							onclick="showWindow('login', this.href)" class="xi2">	{lang yytd_vip:loginM}</a> | <a
+							href="member.php?mod=register" class="xi2">	{lang yytd_vip:registerM}</a>
+					</center>
+					<br />
+					<br />
+				</div>
+				<!-- {else} -->
+				<div class='bm_c txtstyle'>
+					<div class="dashed">{lang yytd_vip:notice05}: $myname</div>
+					<div class="dashed">{lang yytd_vip:notice04}: $grouptitle</div>
+					<div class="dashed">$moneyname: $mymoey</div>
+				</div>
+				<!--{/if}-->
+			</div>
+
+			<!-- {if $yytd_isshow==1} -->
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:notice03}</a>
+					</h2>
+				</div>
+				<div class='bm_c txtstyle'>
+		<!--{eval $i=0;}-->	
+		<!--{loop $order_completed_data $ordervalue}-->
+		
+					<div class="dashed">
+						$ordervalue['submitdate'] $ordervalue['username'], {lang yytd_vip:notice02} $ordervalue['group_name']
+					<!--{if $i<3}-->
+						
+						<img src='source/plugin/yytd_vip/images/new.gif'>
+					<!--{/if}-->
+					</div>
+					<!--{eval ++$i;}-->
+		<!--{/loop}-->	
+
+				</div>
+			</div>
+
+			<!-- {/if} -->
+		</div>
+
+	</div>
+</div>
+<div class="yytd_bank_clear"></div>
+<div id="return_tanchu_result_msg" style="display: none"></div>
+{template common/footer}

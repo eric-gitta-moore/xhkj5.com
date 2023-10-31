@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[mpage_thread_edit.plugin]]></item>
+	<item id="RevisionID"><![CDATA[73933]]></item>
+	<item id="SN"><![CDATA[2017072415cD3sIIN0cw]]></item>
+	<item id="RevisionDateline"><![CDATA[1496908804]]></item>
+	<item id="Data">
+		<item id="/discuz_plugin_mpage_thread_edit_SC_UTF8.xml"><![CDATA[e4a83ca8bf8d361a1d618feea179f621]]></item>
+		<item id="/discuz_plugin_mpage_thread_edit_SC_GBK.xml"><![CDATA[8a5f8f2bee921bc04935f5c9842080b5]]></item>
+		<item id="/more.inc.php"><![CDATA[45e10924d4b9f1051abda1f9890f0c4e]]></item>
+		<item id="/edit.class.php"><![CDATA[334deed0b4a8df1683af07db61ce1d66]]></item>
+		<item id="/template/edit.htm"><![CDATA[92ea21d5ae9b4bececb7fcbe5adfa872]]></item>
+		<item id="/discuz_plugin_mpage_thread_edit_TC_BIG5.xml"><![CDATA[6bb86b69d43b193ab67c8f64fe928987]]></item>
+		<item id="/discuz_plugin_mpage_thread_edit_TC_UTF8.xml"><![CDATA[36daa50f53ea52c3c35e56a2f8da6d09]]></item>
+	</item>
+</root>

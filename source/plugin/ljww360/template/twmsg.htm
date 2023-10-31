@@ -1,0 +1,176 @@
+{template common/header}
+<iframe style="display:none" name="formsubmit" id="myiframe"></iframe>
+<!--{if $config['background']}-->
+<style type="text/css">
+	.c{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+#pt{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+</style>
+<!--{/if}-->
+<script type="text/javascript" src="source/plugin/ljww360/js/jquery.js"></script>
+<script  type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<div id="pt" class="bm cl"><div class="z">
+<a href="index.php" class="nvhm" title="{lang ljww360:wenwen1}">$_G[setting][bbname]</a><em> &rsaquo; </em><a href="plugin.php?id=ljww360">$dingbu</a><em> &rsaquo; </em><a href="plugin.php?id=ljww360&mod=tw">{lang ljww360:wenwen32}</a><!--{if $_G ['groupid'] == 1}-->
+				<em> &rsaquo; </em><a href="plugin.php?id=ljww360&update=1">{lang ljww360:wenwen3}</a>
+				<!--{/if}--></div></div>
+<form id="qiandao" method="post" action="plugin.php?id=ljww360&mod=tw&act=twmsg" onkeydown="if(event.keyCode==13){showWindow('qwindow', 'qiandao', 'post', '0');return false}" enctype="multipart/form-data" target="formsubmit" style="width:100%">
+<input type="hidden" value="{FORMHASH}" id="formhash" name="formhash">
+
+		<style type="text/css">
+			
+		
+.m_c .c {
+    padding: 0 10px 10px;
+}
+		.tedt .bar {
+  background: none repeat scroll 0 0 #F2F2F2;
+  border-bottom: 1px solid #CDCDCD;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px 0 0;
+}
+.exfm {
+  background: none repeat scroll 0 0 #E5EDF2;
+  border: 1px dashed #C2D5E3;
+  margin: 10px 0;
+  padding: 10px 14px;
+}
+		</style>
+		<div class="wp" >
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0" style="width:100%">
+                
+  				<tbody>
+				<script type="text/javascript">
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	$('fid').value = fid;
+}
+</script>
+
+
+<script charset="$_G['charset']" src="source/plugin/ljww360/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/ljww360/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/ljww360/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<!--{if !$config['iseditor']}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#myeditorpp',{
+					newlineTag : 'br',
+				});
+				
+        });
+		KindEditor.options.cssData = 'img { max-width:400px; }';
+</script>
+<!--{else}-->
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+		editor = K.create('textarea[name="content"]', {
+			resizeType : 1,
+			allowPreviewEmoticons : false,
+			allowImageUpload : true,
+			newlineTag : 'br',
+			cssData : 'img { max-width:400px; }',
+			items : [
+				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	});
+</script>
+<!--{/if}-->
+
+
+
+                <tr ><td >
+<select name="catid" id="catid_0" onchange="_on_select_z(this.value)" style="width:20%">
+<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+<!--{loop $fenlei $k $v}-->
+<option value="$v[id]">$v[subject]</option>
+<!--{/loop}-->
+</select>
+<span id="level_88_fid"></span>
+<input style="width:50%;" type="text" name="subject" value="$_GET['subject']" maxlength="30" placeholder="$shuoming"/>&nbsp;&nbsp;{lang ljww360:twmsg_1}</td><td></td></tr>
+<!--{if $isxst}--><tr><td colspan="4"><div class="exfm cl">
+<label for="rewardprice">{lang ljww360:twmsg_2}</label>
+<input type="text" tabindex="1" value="<!--{if $config[isxs]}-->1<!--{else}-->0<!--{/if}-->" onkeyup="getrealprice(this.value)" size="6" class="px pxs" id="rewardprice" name="rewardprice">
+{$creditname}{lang ljww360:twmsg_3}<strong id="realprice"></strong> {$creditname}<p class="mtn xg1">
+{lang ljww360:twmsg_5}&nbsp;$brenmyarr&nbsp;{$creditname}</p>
+<p class="mtn xg1">{lang ljww360:twmsg_6}</p>
+</div></td></tr>
+
+
+<script  type="text/javascript">
+var jq=jQuery.noConflict();
+function getrealprice(price){
+
+if(!price.search(/^\d+$/) ) {
+n = Math.ceil(parseInt(price) + price * $xsgs);
+if(price > $config['zgxsz']) {
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_7}{$config[zgxsz]}</b>';
+} else if(price < 1 || (0 > 0 && price > 0)) {
+if($config['isxs']){
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_8}</b>';
+}else{
+$('realprice').innerHTML = '<b>0</b>';
+}
+} else {
+$('realprice').innerHTML = n;
+}
+}else{
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_9}</b>';
+}
+}
+if($('rewardprice')) {
+getrealprice($('rewardprice').value)
+}
+//EXTRAFUNC['validator']['special'] = 'validateextra';
+function validateextra() {
+if($('postform').rewardprice && $('postform').rewardprice.value == '') {
+showDialog('{lang ljww360:twmsg_10}', 'alert', '', function () { $('postform').rewardprice.focus() });
+return false;
+}
+return true;
+} 
+</script>
+<!--{/if}-->
+                <tr>
+                   
+                    <td colspan="4"><textarea id="myeditorpp" name="content" style="width:100%;height:500px;">$_GET['content']
+
+</textarea>
+</td>
+  				</tr>
+                
+               <tr height=40><td ><p class="o pns">
+	<button type="submit" name="submit" class="pn pnc" onClick='validate(this);'><strong>{lang ljww360:wenwen38}</strong></button>
+</p></td></tr>                 
+            </tbody></table>		
+
+		
+	
+</div>
+
+</form>
+<script type="text/javascript">
+function validate(obj) {
+               edit_save();
+            window.onbeforeunload = null;
+            obj.form.submit();
+            return false;
+        }
+</script>
+{template common/footer}

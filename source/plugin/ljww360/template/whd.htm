@@ -1,0 +1,76 @@
+{template common/header}
+<link rel="stylesheet" href="source/plugin/ljww360/css/gl.css">
+{template ljww360:twnav}
+<div class="egridt clearfix" id="bd">
+           {template ljww360:body}
+
+<div class="article article_bg">
+    <div class="mod-status">
+        <div class="hd">
+            <h3>
+                {lang ljww360:mydj4}
+            </h3>
+        </div>
+    </div>
+    <div class="cls-tab-card">
+        <li<!--{if $myaction=='all'||!$myaction}--> class="first on"<!--{/if}-->>
+            <a href="<!--{if $config['isrewrite']}-->my-whd-all.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&myaction=all<!--{/if}-->">			
+                {lang ljww360:whd1}
+            </a>
+        </li>
+        <li <!--{if $myaction=='best'}--> class="first on"<!--{/if}-->>
+            <a href="<!--{if $config['isrewrite']}-->my-whd-best.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&myaction=best<!--{/if}-->">	
+                {lang ljww360:whd2}
+            </a>
+        </li>
+    </div>
+    <div class="clear">  </div>
+
+<form method="post" action="">
+<div class="cls-qa-list-2">
+<table>
+<thead>
+<tr>
+<th class="align-l">
+{lang ljww360:wenwen28}
+</th>
+<th width="60">
+{lang ljww360:wenwen11}
+</th>
+<th width="130" class="align-r">
+{lang ljww360:myindex7}
+</th>
+</tr>
+</thead>
+<tbody>
+<!--{loop $whdall $k $v}-->
+<tr>
+<td class="align-l">
+<a title="$v['subject']" href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->" target="_blank">
+<span class="wealth">$v['price']</span>
+ $v['subject']</a>
+<span class="cate">
+
+<!--{if $typearr[$v['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-$q-{$v['catid2']}-{$typearr[$v['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v['catid2']&upid=$typearr[$v['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$v['catid2']]['subject']</a>]<!--{elseif $typearr[$v['catid']]['subject']&&!$v['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-$q-{$v[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v['catid']<!--{/if}-->" target="_blank">$typearr[$v['catid']]['subject']</a>]<!--{/if}-->
+</span>
+</td>
+
+<td class="quick-num">
+$v['replies']</td>
+<td class="quick-time align-r">
+<!--{eval echo date('Y-m-d H:i:s',$v['dateline'])}--></td>
+</tr>
+<!--{/loop}-->
+</tbody>
+</table>
+</div>
+</form>
+<div class="clear">  </div>
+<div class="cl mtm"></div>
+
+</div>
+<div class="clear">  </div>
+<div class="cl mtm"></div>
+</div>
+        </div>
+		{template common/footer}

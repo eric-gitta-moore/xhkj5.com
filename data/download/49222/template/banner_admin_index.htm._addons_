@@ -1,0 +1,18 @@
+{template xlwsq_banner:banner_admin_header}
+<table class="ct_list" width="100%">
+<tr><th>{lang xlwsq_banner:bannerpaixun}</th><th width="140">{lang xlwsq_banner:bannertitle}</th><th>{lang xlwsq_banner:banner}</th><th>{lang xlwsq_banner:bannertime}</th><th>{lang xlwsq_banner:bannercaozuo}</th></tr>
+{loop $manylist $banner}
+<tr>
+<td>{$banner['diynum']}</a></td>
+<td>{$banner['title']}</a></td>
+<td><a href="{$banner['url']}" target="_blank"><img src="{$banner['pic']}"  height="80" width="250" title="{$banner['title']}"></a></td>
+<td>{echo date('Y-m-d',$banner[dateline])}</td>
+<td>
+<a href="$appurl&amp;p=edit&amp;id=$banner[id]">{lang xlwsq_banner:bannerbianji}</a>
+<a href="$appurl&amp;p=del&amp;id=$banner[id]&formhash={FORMHASH}" onclick="return confirm('{lang xlwsq_banner:bannerquedingshanchu}')">{lang xlwsq_banner:bannershanchu}</a>
+</td>
+</tr>
+ {/loop}
+</table>
+{$pagenav}
+

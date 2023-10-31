@@ -1,0 +1,28 @@
+/* Write your styles */
+
+.am-header .am-header-nav img{
+	 height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.am-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  
+  color: #14a6ef;
+  background-color: rgba(59,180,242,.15);
+  border-color: #caebfb;
+}
+.am-accordion-title {
+  color: #14a6ef;
+  background-color: rgba(59,180,242,.15);
+  border-color: #caebfb;
+}
+.am-accordion-gapped .am-accordion-content {
+  margin-bottom: 10px;
+}
+.am-panel-bd{
+	padding:0;
+}

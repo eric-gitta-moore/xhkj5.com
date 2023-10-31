@@ -1,0 +1,13 @@
+<?php
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+$sql = <<<EOF
+DROP TABLE IF EXISTS `pre_plugin_xlwsq_banner_banner`;
+EOF;
+
+runquery($sql);
+
+$finish = TRUE;
+
+?>

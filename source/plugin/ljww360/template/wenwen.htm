@@ -1,0 +1,595 @@
+{template common/header}
+
+<link rel="stylesheet" href="source/plugin/ljww360/css/g1.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/g2.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/jilv.css">
+<style id="diy_style" type="text/css"></style>
+<script src="source/plugin/ljww360/js/5.js" type="text/javascript"></script>
+<div id="doc4" style="min-height:1280px;">  
+<style type="text/css">
+#hd { margin:0 auto;}	
+ </style>
+  <style type="text/css">
+.grid-3 {width:100% !important;}
+ </style>
+{template ljww360:twnav}
+<!--[diy=ljww360_index_00]--><div id="ljww360_index_00" class="area"></div><!--[/diy]-->
+<!-- 首页幻灯 -->
+		<div id="bd" class="gridone clearfix">
+            <div class="article">
+			<!--{if $istj}-->
+                <div class="mod-slides widget-slide" data-jss="animType:&#39;fade&#39;,autoPlay:true,autoPlayTime:5000,animDur:300,supportMouseenter:true">
+                    <ul class="pic slide-content">
+                        <li class="pic-item" style="opacity: 0; ">
+						{if $im1}
+                            <a href="<!--{if $config['isrewrite']}-->answer-{$im1['id']}-{$im1['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im1['id']&tid=$im1['tid']<!--{/if}-->" class="img" target="_blank">
+							<!--{if $tupian1}-->
+                                <img  alt="$im1['subject']" title="" src="$tupian1">
+								<!--{else}-->
+								 <img  alt="$im1['subject']" title="" src="$im1['src']">
+								 <!--{/if}-->
+                            </a>
+							{else}
+							<a href="#" class="img">
+							<!--{if $tupian1}-->
+                                <img  alt="$im1['subject']" title="" src="$tupian1">
+								<!--{else}-->
+								 <img  alt="$im1['subject']" title="" src="$im1['src']">
+								 <!--{/if}-->
+								 </a>
+							{/if}
+                            <div class="info">
+                                <h4 style="font-size:16px;">
+									
+                                   <a href="<!--{if $config['isrewrite']}-->answer-{$im1['id']}-{$im1['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im1['id']&tid=$im1['tid']<!--{/if}-->" target="_blank">
+                                        <!--{eval echo mb_substr($im1['subject'],0,24,$_G['charset']);}-->                                   
+										</a>
+										
+<sup></sup>
+                                </h4>
+                                <ul>
+									<!--{loop $wwarr $key $val}-->
+                                    <li>
+                                        <a  href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->" target="_blank">
+                                            <!--{eval echo mb_substr($val['subject'],0,33,$_G['charset']);}-->                                        </a>
+                                    </li>
+									<!--{/loop}-->
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="pic-item" style="opacity: 0; ">
+						{if $im2}
+                            <a href="<!--{if $config['isrewrite']}-->answer-{$im2['id']}-{$im2['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im2['id']&tid=$im2['tid']<!--{/if}-->" class="img" target="_blank">
+							<!--{if $tupian2}-->
+                                <img alt="$im2['subject']" title="" src="$tupian2">
+								<!--{else}-->
+								<img alt="$im2['subject']" title="" src="$im2['src']">
+								 <!--{/if}-->
+                            </a>
+							{else}
+							<a href="#" class="img">
+							<!--{if $tupian2}-->
+                                <img alt="$im2['subject']" title="" src="$tupian2">
+								<!--{else}-->
+								<img alt="$im2['subject']" title="" src="$im2['src']">
+								 <!--{/if}-->
+								 </a>
+							{/if}
+<sup></sup>
+                            <div class="info">
+                                 <h4 style="font-size:16px;">
+                                    <a href="<!--{if $config['isrewrite']}-->answer-{$im2['id']}-{$im1['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im2['id']&tid=$im2['tid']<!--{/if}-->" target="_blank">
+                                       <!--{eval echo mb_substr($im2['subject'],0,24,$_G['charset']);}-->                                    </a>
+                                    <sup>
+                                    </sup>
+                                </h4>
+                                <ul>
+
+								<!--{loop $ggarr $key $val}-->
+                                    <li>
+                                        <a  href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->" target="_blank">
+                                            <!--{eval echo mb_substr($val['subject'],0,33,$_G['charset']);}-->                                        </a>
+                                    </li>
+								<!--{/loop}-->
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="pic-item selected" style="opacity: 1; ">
+						{if $im3}
+                            <a href="<!--{if $config['isrewrite']}-->answer-{$im3['id']}-{$im3['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im3['id']&tid=$im3['tid']<!--{/if}-->" class="img" target="_blank">
+							<!--{if $tupian3}-->
+                                <img alt="$im3['subject']" title="" src="$tupian3">
+								<!--{else}-->
+								 <img alt="$im3['subject']" title="" src="$im3['src']">
+								  <!--{/if}-->
+                            </a>
+						{else}
+						<a href="#" class="img">
+						<!--{if $tupian3}-->
+                                <img alt="$im3['subject']" title="" src="$tupian3">
+								<!--{else}-->
+								 <img alt="$im3['subject']" title="" src="$im3['src']">
+								  <!--{/if}-->
+								  </a>
+						{/if}
+<sup></sup>
+                            <div class="info">
+                                 <h4 style="font-size:16px;">
+                                    <a  href="<!--{if $config['isrewrite']}-->answer-{$im3['id']}-{$im3['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$im3['id']&tid=$im3['tid']<!--{/if}-->" target="_blank">
+                                       <!--{eval echo mb_substr($im3['subject'],0,24,$_G['charset']);}-->                                    </a>
+                                    <sup>
+                                    </sup>
+                                </h4>
+                                <ul>
+	
+                                   <!--{loop $ffarr $key $val}-->
+                                    <li>
+                                        <a  href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+                                            <!--{eval echo mb_substr($val['subject'],0,33,$_G['charset']);}-->                                        </a>
+                                    </li>
+								<!--{/loop}-->
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="text slide-nav">
+                        <li class="">
+                            <span>
+								<!--{if $config['issubject']}-->
+                               <!--{eval echo mb_substr($im1['subject'],0,12,$_G['charset']);}-->    
+							   <!--{/if}--></span>
+                            <i class="arrow">
+                            </i>
+                        </li>
+                        <li class="">
+                            <span>
+                                <!--{if $config['issubject']}-->
+                               <!--{eval echo mb_substr($im2['subject'],0,12,$_G['charset']);}-->                            
+							   <!--{/if}--></span>
+                            <i class="arrow">
+                            </i>
+                        </li>
+                        <li class="selected">
+                            <span>
+                               <!--{if $config['issubject']}-->
+                               <!--{eval echo mb_substr($im3['subject'],0,12,$_G['charset']);}-->                            
+							   <!--{/if}--></span>
+                            <i class="arrow">
+                            </i>
+                        </li>
+                    </ul>
+                </div>
+				<!--{/if}-->
+				<!--form method="post" action="plugin.php?id=ljww360&mod=search" style="width:100%">
+<div class="form-group">
+<input type="search" placeholder="$config['ssts']" value="" name="keyword" class="form-control" style="float:left;">
+&nbsp;<button class="btn  btn-primary" type="submit">{lang ljww360:wenwen39}</button>
+</div>
+</form-->
+              <!--{if $config['isdj']}-->  <div class="mod-qa-list">
+                    <div class="hd">
+                        <h3 class="t1">
+                            {lang ljww360:wenwen4}
+                        </h3>
+                        <p class="more">
+                            <a href="<!--{if $config['isrewrite']}-->type-1-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1<!--{/if}-->">
+                                {lang ljww360:wenwen5}&gt;&gt;
+                            </a>
+                        </p>
+                    </div>
+					
+                    <div class="bd"><!-- 待解决问题 -->
+                        <div class="cls-qa-list-1">
+                            <ul>
+<!--{loop $djarr $key $val}-->
+                                <li>
+                                    <span class="s0">
+
+                                        <a  target="_blank" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+                                           <span class="wealth">$val['price']</span> <!--{eval echo mb_substr($val['subject'],0,30,$_G['charset']);}-->                                        </a>
+                                    </span><span class="cate"><!--{if $typearr[$val['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$val['catid2']}-{$typearr[$val['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val[catid2]&upid=$typearr[$val['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$val['catid2']]['subject']</a>]<!--{elseif $typearr[$val['catid']]['subject']&&!$val['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$val[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val['catid']<!--{/if}-->" target="_blank">$typearr[$val['catid']]['subject']</a>]<!--{/if}--></span>
+                                    <span class="s1">
+                                        $val['replies']{lang ljww360:wenwen6}
+                                    </span>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--{/if}-->
+				<!--{if $config['iszero']}--><div class="mod-qa-list">
+                    <div class="hd">
+                        <h3 class="t1">
+                            {lang ljww360:wenwen43}
+                        </h3>
+                        <p class="more">
+                            <a href="<!--{if $config['isrewrite']}-->type-4-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=4<!--{/if}-->">
+                                {lang ljww360:wenwen5}&gt;&gt;
+                            </a>
+                        </p>
+                    </div>
+                    <div class="bd"><!-- 0回答 -->
+                        <div class="cls-qa-list-1">
+                            <ul>
+<!--{loop $zeroarr $key $val}-->
+                                <li>
+                                    <span class="s0">
+
+                                        <a  target="_blank" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+                                           <span class="wealth">$val['price']</span> <!--{eval echo mb_substr($val['subject'],0,30,$_G['charset']);}-->                                       </a>
+                                    </span><span class="cate"><!--{if $typearr[$val['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-4-{$val['catid2']}-{$typearr[$val['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val[catid2]&upid=$typearr[$val['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$val['catid2']]['subject']</a>]<!--{elseif $typearr[$val['catid']]['subject']&&!$val['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-4-{$val[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val['catid']<!--{/if}-->" target="_blank">$typearr[$val['catid']]['subject']</a>]<!--{/if}--></span>
+                                    <span class="s1">
+                                        $val['replies']{lang ljww360:wenwen6}
+                                    </span>
+                                </li>
+                                <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--{/if}-->
+                <!--{if $config['isgxs']}--><div class="mod-qa-list"><!-- 高悬赏问题 -->
+                    <div class="hd">
+                        <h3 class="t2">
+                            {lang ljww360:wenwen41}
+                        </h3>
+                        <p class="more">
+                            <a href="<!--{if $config['isrewrite']}-->type-3-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=3<!--{/if}-->">
+                                 {lang ljww360:wenwen5}&gt;&gt;
+                            </a>
+                        </p>
+                    </div>
+                    <div class="bd">
+                        <div class="cls-qa-list-1">
+                            <ul>
+							<!--{loop $xsarr $key $val}-->
+<li>
+<span class="s0">
+
+<a title="$val['subject']" target="_blank" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+   <span class="wealth">$val['price']</span> <!--{eval echo mb_substr($val['subject'],0,30,$_G['charset']);}--></a> 
+</span><span class="cate"><!--{if $typearr[$val['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-3-{$val['catid2']}-{$typearr[$val['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val[catid2]&upid=$typearr[$val['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$val['catid2']]['subject']</a>]<!--{elseif $typearr[$val['catid']]['subject']&&!$val['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-3-{$val[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val['catid']<!--{/if}-->" target="_blank">$typearr[$val['catid']]['subject']</a>]<!--{/if}--></span>
+<span class="s1">
+$val['replies']{lang ljww360:wenwen6}
+</span>
+</li>
+ <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!--{/if}-->
+
+               <!--{if $config['isyjj']}--> <div class="mod-qa-list"><!-- 已解决问题 -->
+                    <div class="hd">
+                        <h3 class="t2">
+                            {lang ljww360:wenwen7}
+                        </h3>
+                        <p class="more">
+                            <a href="<!--{if $config['isrewrite']}-->type-2-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2<!--{/if}-->">
+                                 {lang ljww360:wenwen5}&gt;&gt;
+                            </a>
+                        </p>
+                    </div>
+                    <div class="bd">
+                        <div class="cls-qa-list-1">
+                            <ul>
+							<!--{loop $yjqarr $key $val}-->
+<li>
+<span class="s0">
+
+<a title="$val['subject']" target="_blank" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+   <span class="wealth">$val['price']</span> <!--{eval echo mb_substr($val['subject'],0,30,$_G['charset']);}--></a> 
+</span><span class="cate"><!--{if $typearr[$val['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-2-{$val['catid2']}-{$typearr[$val['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val[catid2]&upid=$typearr[$val['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$val['catid2']]['subject']</a>]<!--{elseif $typearr[$val['catid']]['subject']&&!$val['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-2-{$val[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val['catid']<!--{/if}-->" target="_blank">$typearr[$val['catid']]['subject']</a>]<!--{/if}--></span>
+<span class="s1">
+$val['replies']{lang ljww360:wenwen6}
+</span>
+</li>
+ <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!--{/if}-->
+            </div>
+
+            <div class="aside">
+						
+			   			<!--{if $brenuid}-->
+			
+
+<div id="mod-userinfo" class="mod-userinfo"><div class="info"><a style="margin-top:5px;" class="pic" href="<!--{if $config['isrewrite']}-->space-uid-{$brenuid}.html<!--{else}-->home.php?mod=space&uid=$brenuid<!--{/if}-->">
+{eval echo avatar($_G['uid'],'small')}</a><div class="text"><p class="name"><a href="<!--{if $config['isrewrite']}-->space-uid-{$_G['uid']}.html<!--{else}-->home.php?mod=space&uid=$_G['uid']<!--{/if}-->" text="userinfo-name" class="js-user-name">{$username}</a><span class="ico-ide ico-ide-1"></span></p><p>$creditname:<span class="wealth">$brenmyarr[$wendajf]</span></p> <p class="rank">
+                                    <span class="ico-lv ico-lv-$brendj">
+                                    </span>
+                                   
+                                </p></div></div><div class="status"><table><tbody><tr><th class="first">{lang ljww360:wenwen11}</th><th>{lang ljww360:wenwen12}</th><th>{lang ljww360:wenwen10}</th></tr><tr><td class="first"><a href="<!--{if $config['isrewrite']}-->my-whd.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=whd<!--{/if}-->" class="js-user-answer-num">$brennum</a></td><td><a href="<!--{if $config['isrewrite']}-->my-sy.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=sy<!--{/if}-->" class="js-user-acc-num">$brencainalv</a></td><td><a href="<!--{if $config['isrewrite']}-->my-ask.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=ask<!--{/if}-->" class="js-user-ask-num">$brentid</a></td></tr></tbody></table></div>
+								
+								<button onclick="window.location.href='plugin.php?id=ljww360&mod=tw'" class="btn btn-success" type="button" style="margin-top: 10px;width:98%;">{lang ljww360:wenwen14}</button></div>
+
+<!--{else}-->
+<div class="bm" ><div class="bm_c">
+<a href="member.php?mod=logging&action=login"><img src="source/plugin/ljww360/images/login1.jpg" border="0" align="absmiddle" /></a> <strong>{lang ljww360:wenwen25}</strong></div></div>
+
+<!--{/if}-->
+<style type="text/css">
+	.btn-primary {
+  color: #fff;
+  background-color: <!--{if $config['tcolor']}-->{$config['tcolor']}<!--{else}-->#3EAF0E<!--{/if}-->;
+  border-color: #357ebd;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+.btn-success {
+  color: #fff;
+  background-color: {if $config['scolor']}{$config['scolor']}{else}#3EAF0E{/if};
+  border-color: #4cae4c;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.mod-slides ul.text li.selected span {
+	background:{if $config['lz_color']}{$config['lz_color']}{else}#68b2fc{/if};
+	color:#fff;
+	cursor:default
+}
+</style>
+{if $config['istwo']}
+<style type="text/css">
+	.mod-cate .item li {
+    width: 45%;
+}
+</style>
+{/if}
+                <div class="mod-cate" style="margin-bottom: 10px;">
+                    <div class="hd">
+                        <h3>
+                            {lang ljww360:wenwen8}
+                        </h3>
+                    </div>
+                    <div id="modetop" class="bd">
+                        <ul id="modCateList" class="list">
+   
+                        </ul>
+                        <div id="modCatePanel" class="panel-cate" style="display:none;">
+                        </div>
+                        <script>
+						var xxx=0;
+						var aa=0;
+                            var category_data = [$str]; (function() {
+                                var e = [];
+                                category_data.forEach(function(t, n) {
+                                    var r = t[0].trim().split("|"),
+                                    i = r[0],
+                                    s = r[1],
+                                    o = [];
+                                    t[1].forEach(function(e) {
+                                        var t = e.split("|"),
+                                        n = t[0],
+                                        r = t[1];
+                                        o.push('<li><a href="<!--{if $config[isrewrite]}-->type-1-', r, '-',s,'.html<!--{else}-->plugin.php?id=ljww360&mod=list&upid=',s,'&q=1&catid=', r, '<!--{/if}-->">', n, "</a></li>")
+                                    });
+                                    var u = !1;
+                                      if (t.length == 2 || t[2].length == 0){
+										u = !0;
+																		
+									}
+									if(o.length==0){
+										if(n!=0){
+											xxx+=aa;
+										}
+										aa=37
+									}else{
+										if(n!=0){
+											xxx+=aa;
+										}
+										aa=57
+									}
+                                    e.push('<li data-top="', xxx, '" data-index="', n, '" class="item ', u ? "item-nosub": "", '"><h4><a href="<!--{if $config[isrewrite]}-->type-1-', s, '-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=', s,'<!--{/if}-->">', i, "</a></h4><ul>", o.join(""), "</ul></li>")
+                                }),
+                                W("#modCateList").html(e.join(""))
+								
+                            })()
+							
+                        </script>
+                    </div>
+                    <div class="ft" {if $config['isqrcode']}style="margin-top: 10px;"{/if}>
+					{if $config['iserweima'] && $config['isqrcode']}
+					
+				<div class="mod-week-star">
+                    <div class="hd">
+                        <h3 style="background: url('');text-indent: 0em;">
+                            {lang ljww360:qrcode_1}
+                        </h3>
+                    </div>
+                    <div class="bd">
+                        
+						<img src="source/plugin/ljww360/images/qrcode/ljww360_qrcode.jpg" width=98%;>
+                    
+					</div>
+				</div>
+				{/if}
+                    </div>
+                </div>
+	<!--[diy=ljww360_index_03]--><div id="ljww360_index_03" class="area"></div><!--[/diy]-->			
+				 
+<style type="text/css">
+	
+.new-q-holder a {
+    background: url("source/plugin/ljww360/images/wenw.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 46px;
+    outline: medium none;
+   
+    width: 175px;
+	margin-top:10px;
+}
+.hd h3 {
+  color: #666666;
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
+<div class="extra" <!--{if !$istj}-->style="top:10px;"<!--{/if}-->>		
+				{if $config['iserweima'] && !$config['isqrcode']}
+				<div class="mod-week-star">
+                    <div class="hd">
+                        <h3>
+                            {lang ljww360:qrcode_1}
+                        </h3>
+                    </div>
+                    <div class="bd">
+                        
+						<img src="source/plugin/ljww360/images/qrcode/ljww360_qrcode.jpg" width=98%;>
+                    
+					</div>
+				</div>
+				{/if}
+
+	<div id="mod-guiness" class="mod-guiness" {if !$config['isqrcode']}style="margin-top: 10px;"{/if}>
+		<div class="hd">
+			<h3>{lang ljww360:wenwen49}</h3>
+		</div>
+			<div class="bd">
+				<ul>
+					<li><p class="rk">{lang ljww360:wenwen50}</p>
+						<div class="info">
+							<a target="_blank" href="<!--{if $config['isrewrite']}-->space-uid-{$brnum['authorid']}.html<!--{else}-->home.php?mod=space&uid=$brnum['authorid']<!--{/if}-->" class="pic">{eval echo avatar($brnum['authorid'],'small')}</a>
+								<div style="overflow:hidden" class="text">
+									<p class="name">
+										<a target="_blank" href="<!--{if $config['isrewrite']}-->space-uid-{$brnum['authorid']}.html<!--{else}-->home.php?mod=space&uid=$brnum['authorid']<!--{/if}-->">$brnum['author']</a>
+										<span class="ico-guiness"></span>
+									</p>
+									<p>{lang ljww360:wenwen51}<b>$brnum['a']</b>{lang ljww360:wenwen52}</p>
+									<a class="btn  btn-primary" href="<!--{if $config['isrewrite']}-->type-1-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1<!--{/if}-->" style="font-size:12px;"><span>{lang ljww360:wenwen53}</span></a>
+							</div>
+						</div>
+					</li>
+					<li><p class="rk">{lang ljww360:wenwen54}</p>
+						<div class="info">
+							<a target="_blank" href="<!--{if $config['isrewrite']}-->space-uid-{$bignum['authorid']}.html<!--{else}-->home.php?mod=space&uid=$bignum['authorid']<!--{/if}-->" class="pic">{eval echo avatar($bignum['authorid'],'small')}</a>
+								<div style="overflow:hidden" class="text">
+								<p class="name">
+									<a target="_blank" href="<!--{if $config['isrewrite']}-->space-uid-{$bignum['authorid']}.html<!--{else}-->home.php?mod=space&uid=$bignum['authorid']<!--{/if}-->">$bignum['author']</a>
+									<span class="ico-guiness"></span>
+								</p>
+								<p>{lang ljww360:wenwen55}<b>$bignum['num']</b>{lang ljww360:wenwen52}</p>
+								<a class="btn  btn-primary" href="<!--{if $config['isrewrite']}-->type-1-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1<!--{/if}-->" style="font-size:12px;"><span>{lang ljww360:wenwen53}</span></a>
+								</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+                <div class="mod-week-star">
+                    <div class="hd">
+                        <h3>
+                            {lang ljww360:wenwen56}
+                        </h3>
+                    </div>
+                    <div class="bd">
+                        <div class="info">
+							<a href="<!--{if $config['isrewrite']}-->space-uid-{$bzwarfirst['authorid']}.html<!--{else}-->home.php?mod=space&uid=$bzwarfirst['authorid']<!--{/if}-->" class="pic" style="margin-top:5px;">
+								{eval echo avatar($bzwarfirst['authorid'],'small')}</a>
+                            <div class="text">
+                                <p class="name">
+                                    <a href="<!--{if $config['isrewrite']}-->space-uid-{$bzwarfirst['authorid']}.html<!--{else}-->home.php?mod=space&uid=$bzwarfirst['authorid']<!--{/if}-->" >$bzwarfirst['author']</a>                               </p>
+                                <p>
+                                    {lang ljww360:wenwen16}
+									<!--{if $bzwarfirst['authorid']}-->
+									<span class="ico-lv ico-lv-$dj">
+                                    </span>
+                                    <!--{/if}-->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="status">
+                            <ul>
+                                <li>
+                                    {lang ljww360:wenwen11}
+                                    <em>
+                                        $num                                   </em>
+                                </li>
+                                <li>
+                                    {lang ljww360:wenwen12}
+                                    <em>
+                                        $cainalv
+                                    </em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list-best">
+                            <h4>
+                                {lang ljww360:wenwen17}
+                            </h4>
+							
+                            <ul >
+<!--{loop $allbest $key $val}-->
+                                <li>
+                                    <a target="_blank" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->">
+                                        $val['subject']                                    </a>
+                                </li>
+								<!--{/loop}-->
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				{if $config['ispaihang']}
+				<div id="mod-user-wealth" class="mod-user-wealth" >
+				<div class="hd">
+				<h3>{$creditname}{lang ljww360:wenwen42}</h3><p class="date"></p>
+				</div>
+				<div class="bd">
+				
+				<ul class="list">
+				<!--{eval $sign=0;}-->
+				<!--{loop $pmarr $key $val}-->
+				<!--{eval $user=getuserbyuid($val['uid']);}-->
+				<li><span class="num no1"  style=" background-position: -969px <!--{eval echo -78+$sign*-22}-->px;">2</span><a class="name" target="_blank" href="<!--{if $config['isrewrite']}-->space-uid-{$val['uid']}.html<!--{else}-->home.php?mod=space&uid=$val['uid']<!--{/if}-->">$user['username']</a><span class="wealth">$val[$wendajf]</span></li>
+				<!--{eval $sign++;}-->
+				<!--{/loop}-->
+				</ul>
+				</div>
+				</div>
+				{/if}
+				$config['banquan']
+            </div>
+            </div>
+			
+        </div>
+		<!--[diy=ljww360_index_01]--><div id="ljww360_index_01" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="panel-setting" style="display:none;">
+        <div class="hd">
+        </div>
+       
+    </div>
+	
+   <script src="source/plugin/ljww360/js/1.js" type="text/javascript"></script>
+    <script src="source/plugin/ljww360/js/2.js" type="text/javascript"></script>
+	<!--{if $config['isrewrite']}-->
+	<script src="source/plugin/ljww360/js/9.js" type="text/javascript"></script>
+	<!--{else}-->
+	<script src="source/plugin/ljww360/js/8.js" type="text/javascript"></script>
+	<!--{/if}-->
+    <script src="source/plugin/ljww360/js/4.js" type="text/javascript"></script>
+	
+{template common/footer}

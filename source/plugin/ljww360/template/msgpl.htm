@@ -1,0 +1,66 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>{lang ljww360:msgpl_1}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang seo:ljsubject7}"></a></span>
+	
+</h3>
+<form id="ljsubject" method="post" action="plugin.php?id=ljww360&mod=wtw&action=plsubject&wid=$id&tid=$tid" onkeydown="if(event.keyCode==13){showWindow('qwindow', 'ljsubject', 'post', '0');return false}">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<script type="text/javascript">
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	$('fid').value = fid;
+}
+</script>
+		<style>
+		
+.lj_t{
+border:1px solid #CCCCCC;
+
+}
+		</style>
+		<div class="c">
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+					 
+				
+                <tr>
+    				<td  height="40">{lang ljww360:msgpl_2}</td>
+    				<td colspan="4"><select name="catid" id="catid_0" onchange="_on_select_z(this.value)">
+<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+<!--{loop $fenlei $k $v}-->
+<option value="$v[id]">$v[subject]</option>
+<!--{/loop}-->
+</select>
+<span id="level_88_fid"></span></td>
+                </tr>
+                                
+            </tbody></table>		
+
+		<script>
+		function Icon_selected(sId) {
+			var oImg = document.getElementsByTagName('li');
+			for (var i = 0; i < oImg.length; i++) {
+			  if (oImg[i].id == sId) {
+				var selectname = document.getElementById(oImg[i].id + "_s");
+				selectname.checked = true;
+				oImg[i].style. background = '#EFEFEF';
+			  } else {
+				oImg[i].style. background = '';
+			  }
+			}
+		}
+		</script>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" class="pn pnc" value="true"><strong>{lang ljww360:msgpl_3}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

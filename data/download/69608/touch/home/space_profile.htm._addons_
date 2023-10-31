@@ -1,0 +1,70 @@
+<!--{if $_GET['mycenter'] && !$_G['uid']}-->
+	<!--{eval dheader('Location:member.php?mod=logging&action=login');exit;}-->
+<!--{/if}-->
+<!--{template common/header}-->
+<!--{if !$_GET['mycenter']}-->
+
+<!-- header start -->
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc">
+            <a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1" class="hd_left iconfont icon-back"></a>
+            <div class="hd_name"><h2><!--{if $_G['uid'] == $space['uid']}-->{lang myprofile}<!--{else}-->$space[username]{lang otherprofile}<!--{/if}--></h2></div>
+        </div>
+	</div>
+</div>
+<!-- header end -->
+<!-- userinfo start -->
+<div id="usinfo">
+	<div class="us_avt">
+		<div><img src="uc_server/avatar.php?uid={$space[uid]}&size=small" /></div>
+		<h2 class="name">$space[username]</h2>
+	</div>
+	<div class="usbox blockBG">
+		<ul>
+			<li><span>$space[credits]</span>{lang credits}</li>
+			<!--{loop $_G[setting][extcredits] $key $value}-->
+			<!--{if $value[title]}-->
+			<li><span>{$space["extcredits$key"]} $value[unit]</span>$value[title]</li>
+			<!--{/if}-->
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+<!--{if $space['uid'] == $_G['uid']}-->
+<div class="logout_but blockBG"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout_mobile}</a></div>
+<!--{/if}-->
+<p><br /><br /></p>
+<!-- userinfo end -->
+
+<!--{else}-->
+
+<!-- header start -->
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc">
+            <div class="hd_name"><h2><!--{if $_G['uid'] == $space['uid']}-->{lang myprofile}<!--{else}-->$space[username]{lang otherprofile}<!--{/if}--></h2></div>
+        </div>
+	</div>
+</div>
+<!-- header end -->
+<!-- userinfo start -->
+<div class="userinfo">
+	<div class="us_avt">
+		<div><img src="uc_server/avatar.php?uid={$space[uid]}&size=small" /></div>
+		<h2 class="name">$_G[username]</h2>
+	</div>
+</div>
+<div class="list_user_menu blockBG cl">
+    <ul>
+        <a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread"><li>{lang myfavorite}<i class="iconfont icon-fanhui2"></i></li></a>
+        <a href="home.php?mod=space&uid={$_G[uid]}&do=thread&view=me"><li>{lang mythread}<i class="iconfont icon-fanhui2"></i></li></a>
+        <a href="home.php?mod=space&do=pm"><li>{lang mypm}<!--{if $_G[member][newpm]}--><em></em><!--{/if}--><i class="iconfont icon-fanhui2"></i></li></a>
+        <a href="home.php?mod=space&uid={$_G[uid]}&do=profile"><li>{lang myprofile}<i class="iconfont icon-fanhui2"></i></li></a>
+    </ul>
+</div>
+<!-- userinfo end -->
+
+<!--{/if}-->
+<!--{eval $nofooter = true;}-->
+<!--{template common/footer}-->

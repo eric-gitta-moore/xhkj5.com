@@ -1,0 +1,50 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>{lang ljww360:wt10}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<form id="qiandao" method="post" action="plugin.php?id=ljww360&mod=wtw&wid=$id&postid=$postid&action=htaction&tid=$tid&pid=$pid&fid=$fid" onkeydown="if(event.keyCode==13){showWindow('qwindow', 'qiandao', 'post', '0');return false}">
+<div class="f_c" >
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+		<style>
+		.qdsmilea{padding:3px;margin:auto;float:left;list-style:none;float:left}
+		.qdsmilea li{float: left;padding:5px .4em;border:2px #fff solid;}
+		.qdsmilea li img{margin-bottom:5px;}
+		.qdsmilea li:hover{cursor:pointer;}
+		</style>
+		<div class="tedt">
+                            <div class="bar"><script type="text/javascript" src="data/cache/seditor.js?8ZL"></script>
+<div class="fpd">
+<a href="javascript:;" title="{lang ljww360:tw2}" class="fbld" onclick="seditor_insertunit('reply', '[b]', '[/b]');doane(event);">B</a>
+<a fwin="ljtuandui" href="javascript:;" title="{lang ljww360:tw3}" class="fclr" id="replyforecolor" onclick="showColorBox(this.id, 2, 'reply');doane(event);">Color</a>
+<a fwin="ljtuandui" id="replyimg" href="javascript:;" title="{lang ljww360:tw4}" class="fmg" onclick="seditor_menu('reply', 'img');doane(event);">Image</a>
+<a fwin="ljtuandui" id="replyurl" href="javascript:;" title="{lang ljww360:tw5}" class="flnk" onclick="seditor_menu('reply', 'url');doane(event);">Link</a>
+<a href="javascript:;" class="fsml" id="fastpostsml" onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;" fwin="ljtuandui">Smilies</a>
+<script type="text/javascript" reload="1">smilies_show('fastpostsmiliesdiv', 8, 'fastpost');</script>
+</div></div>
+<div class="area" style="background:#FFF;">
+<textarea fwin="ljtuandui" rows="3" name="content" class="pt" id="replymessage" style="background:#FFF;"></textarea>
+</div>
+
+		<script>
+		function Icon_selected(sId) {
+			var oImg = document.getElementsByTagName('li');
+			for (var i = 0; i < oImg.length; i++) {
+			  if (oImg[i].id == sId) {
+				var selectname = document.getElementById(oImg[i].id + "_s");
+				selectname.checked = true;
+				oImg[i].style. background = '#EFEFEF';
+			  } else {
+				oImg[i].style. background = '';
+			  }
+			}
+		}
+		</script>
+	
+</div>
+<p class="o pns">
+	<button type="submit" class="pn pnc" value="true"><strong>{lang ljww360:wenwen48}</strong></button>
+</p>
+</form>
+{template common/footer_ajax}

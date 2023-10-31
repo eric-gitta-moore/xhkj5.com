@@ -1,0 +1,69 @@
+<!--{block return}-->
+
+<!--{if !$_G['uid']}-->
+<script type="text/javascript" src="./source/plugin/wic_secondary_login/template/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	var jq=jQuery.noConflict();
+</script>
+<style type="text/css">
+	.wic_slogin{position: fixed; left: 0; bottom: 0; width: 100%; padding: 28px 0;  height: 40px;  text-align: center; line-height: 45px; background: #f9f9f9; border-top: 1px solid #e6e6e6; font-family:microsoft yahei;}
+		.wic_slogin_info{ display:inline-block;*zoom:1;*display:inline; font-size: 22px; font-weight: 400; color:#000;}
+			.wic_slogin_info a{ color:{$slogin_register_color};}
+			.wic_slogin_info a:hover{ text-decoration:none;}
+		.wic_slogin_btn{  display:inline-block;*zoom:1;*display:inline; line-height: 40px; height: 40px;  margin-left: 15px;}
+			.wic_slogin_btn a{display: block; background: {$slogin_login_bgcolor}; color:#fff; padding:0 20px; border-radius: 3px; font-size:14px;}
+			.wic_slogin_btn a:hover{background: {$slogin_login_bgcolorhover}; text-decoration:none; }
+		.wic_slogin_line{  display:inline-block;*zoom:1;*display:inline;width:1px; margin: 10px 5px 0 20px;height: 20px;  background: #ccc;}
+		.wic_slogin_qq{  display:inline-block;*zoom:1;*display:inline; line-height: 40px; height: 40px;  margin-left: 15px;}
+			.wic_slogin_qq a{ display: block; color:#fff; padding:0 20px 0 45px; border-radius: 3px; font-size:14px;background : {$slogin_qqlogin_bgcolor} url(./source/plugin/wic_secondary_login/template/images/qq.png)  15px center no-repeat;}
+			.wic_slogin_qq a:hover{ background-color:{$slogin_qqlogin_bgcolorhover}; text-decoration:none;}
+		.wic_slogin_wechat{  display:inline-block;*zoom:1;*display:inline;line-height: 40px; height: 40px;  margin-left: 15px;}	
+			.wic_slogin_wechat a{display: block; color:#fff; padding:0 20px 0 45px; border-radius: 3px; font-size:14px;background : {$slogin_wxlogin_bgcolor} url(./source/plugin/wic_secondary_login/template/images/wechat.png)  15px center no-repeat;}	
+			.wic_slogin_wechat a:hover{ background-color:{$slogin_wxlogin_bgcolorhover}; text-decoration:none;}	
+</style>
+
+<div class="wic_slogin cl">
+	<div class="wp">
+    	<div class="wic_slogin_info">{$slogintxt}</div>
+        <div class="wic_slogin_btn">{$slogintext}</div>
+        <span class="wic_slogin_line"></span>
+        <div class="wic_slogin_qq">{$sloginqqtext}</div>
+        <div class="wic_slogin_wechat">{$sloginwxtext}</div>
+    </div>
+</div>
+<script>
+	var AnimationPlay = false;
+	var LayerDisplay = true;
+	var Win_scrollTop = jq(window).scrollTop();
+	jq(window).scroll(function(){
+		if (AnimationPlay) {
+			return;
+		}
+
+		var Win_scrollTop2 = jQuery(window).scrollTop();
+		if (Win_scrollTop2>Win_scrollTop) {
+			if (LayerDisplay) {
+				LayerDisplay = false;
+				AnimationPlay = true;
+				
+				jq('.wic_slogin').stop().animate({'bottom':'-130px','opacity':'0','visibility':'hidden'},500,function(){
+					AnimationPlay = false;
+				});
+			}
+			
+		}else if(Win_scrollTop2<=Win_scrollTop) {
+			if (!LayerDisplay) {
+				LayerDisplay = true;
+				AnimationPlay = true;
+				
+				jq('.wic_slogin').stop().animate({'bottom':'0px','opacity':'1','visibility':'visible'},300 ,function(){
+					AnimationPlay = false;
+				});
+			}
+		}
+		Win_scrollTop = Win_scrollTop2;
+	});
+</script> 
+<!--{/if}-->
+
+<!--{/block}-->

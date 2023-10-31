@@ -1,0 +1,34 @@
+{template common/header}
+<div id="doc4" style="min-height:760px;">
+<link rel="stylesheet" href="source/plugin/ljww360/css/index.combo.css">
+{template ljww360:twnav}
+<div id="warper" class="wp"><div id="container"><div id="qa-tabcard"><input type="hidden" id="js-filt" value="20"><ul class="clearfix">
+<li <!--{if $_GET['do']=='yi'||$_GET['do']=='ss'||$_GET['do']=='del'}-->class="on"<!--{/if}-->><span text="tab-resolved"><a href="plugin.php?id=ljww360&mod=search&do=yi&keyword=$subject" text="tab-unresolved">{lang ljww360:search1}</a></span></li>
+<li <!--{if $_GET['do']=='dai'}-->class="on"<!--{/if}-->><a href="plugin.php?id=ljww360&mod=search&do=dai&keyword=$subject" text="tab-unresolved">{lang ljww360:search2}</a></li>
+</ul></div>
+<div clsss="clearfix" id="qaresult">
+<ul class="qa-list">
+<!--{loop $djarr $k $v}-->
+<li class="item">
+<div class="qa-i-hd"><h3><a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->" target="_blank" aid="1370743077064003" index="1">$v['subject']</a></h3></div><div class="qa-i-bd">{if $arrbest[$v[id]]}$arrbest[$v[id]]{else}$arrdai[$v[id]]{/if}...</div><div class="qa-i-ft"><span class="cate"><a href="<!--{if $config['isrewrite']}-->type-$q-{$v['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v['catid']<!--{/if}-->" target="_blank" text="qaresult-cate">$typearr[$v['catid']]['subject']</a> &gt; <a href="<!--{if $config['isrewrite']}-->type-$q-{$v['catid2']}-{$typearr[$v['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v[catid2]&upid=$typearr[$v['catid2']]['upid']<!--{/if}-->" target="_blank" text="qaresult-cate">$typearr[$typearr[$v['catid2']]['upid']]['subject']</a></span> - $v['replies']{lang ljww360:search3}$v['dateline']</div>
+</li>
+<!--{/loop}-->
+<div style="margin-bottom:50px;">
+$paging
+	</div>
+</ul>
+	</div>
+	
+<div style="" class="mod-sh-history" id="js-sh-history"><div class="hd clearfix"><h3>{lang ljww360:search4}</h3><a href="plugin.php?id=ljww360&mod=search&do=del">{lang ljww360:search5}</a></div><div class="bd"><ul>
+<!--{if $_G['cookie']['keyword']}-->
+
+<!--{loop $cookiearr $k $v}-->
+<li><a href="plugin.php?id=ljww360&mod=search&do=ss&keyword=$v" title="$v">$v</a></li>
+<!--{/loop}-->
+
+<!--{else}-->
+<li>{lang ljww360:search6}</li>
+<!--{/if}-->
+</ul>
+</div></div></div></div></div></div>
+{template common/footer}

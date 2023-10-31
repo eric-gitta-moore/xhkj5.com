@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[freeaddon_qqmail.plugin]]></item>
+	<item id="RevisionID"><![CDATA[33465]]></item>
+	<item id="SN"><![CDATA[2017022614Tx5F8IafFi]]></item>
+	<item id="RevisionDateline"><![CDATA[1396058401]]></item>
+	<item id="Data">
+		<item id="/feedback.inc.php"><![CDATA[96b1473f59439a2d47aa476ab5b9e5e7]]></item>
+		<item id="/template/faq.htm"><![CDATA[135c7b743808101dc592b37e8195d7c2]]></item>
+		<item id="/template/index.htm"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+		<item id="/template/index.html"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+		<item id="/thank.inc.php"><![CDATA[12ec882a84817a3da06fe34ca5355cd8]]></item>
+		<item id="/pluginvar.func.php"><![CDATA[4cf3dd8d1c802a4343dffa23da41c927]]></item>
+		<item id="/install.php"><![CDATA[c699b64def65dd2386d657bb49bac1f1]]></item>
+		<item id="/installlang.lang.php"><![CDATA[b53f8781381dac85c2f438a9ac43cf44]]></item>
+		<item id="/uninstall.php"><![CDATA[bbab5e568b19b2c9c455ab6c801dbfe4]]></item>
+		<item id="/hook.class.php"><![CDATA[9b2ccd06f7dfb232195cf2403ca6c26a]]></item>
+		<item id="/upgrade.php"><![CDATA[c699b64def65dd2386d657bb49bac1f1]]></item>
+		<item id="/demo.php"><![CDATA[7448767ff6e6f4f8a98df589a41e0932]]></item>
+		<item id="/check.php"><![CDATA[6efa80b00ac5c185e52fd35195a6ebac]]></item>
+		<item id="/images/faq.gif"><![CDATA[2016bd6b1d980e1609ecad8d4c40085b]]></item>
+		<item id="/images/index.htm"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+		<item id="/images/mail.png"><![CDATA[c7b28f2e93337b5f1830bc9c2142961b]]></item>
+		<item id="/images/index.html"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+		<item id="/discuz_plugin_freeaddon_qqmail_SC_GBK.xml"><![CDATA[7ab6c8c4cb4ecb8cc6dd6472fb0bc53a]]></item>
+		<item id="/faq.inc.php"><![CDATA[79e41eede4fb221ac2ce6988c49deaef]]></item>
+		<item id="/discuz_plugin_freeaddon_qqmail_SC_UTF8.xml"><![CDATA[ce891662f70bbb5127f72cd6a28ba37d]]></item>
+		<item id="/discuz_plugin_freeaddon_qqmail_TC_UTF8.xml"><![CDATA[5ba8820e3334bde41cf9da0839f04d89]]></item>
+		<item id="/changelog.inc.php"><![CDATA[7d468385112d006d72d9235c6c5bcc44]]></item>
+		<item id="/index.htm"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+		<item id="/discuz_plugin_freeaddon_qqmail_TC_BIG5.xml"><![CDATA[4c987278b9b9f0831dfb686c84d67514]]></item>
+		<item id="/addon.inc.php"><![CDATA[e33b688b18f26bdca886ba7ad7eff573]]></item>
+		<item id="/index.html"><![CDATA[9a24b75e925f2d504492a5661ac4a516]]></item>
+	</item>
+</root>

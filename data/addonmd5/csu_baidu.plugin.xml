@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[csu_baidu.plugin]]></item>
+	<item id="RevisionID"><![CDATA[61993]]></item>
+	<item id="SN"><![CDATA[2017043012Bzt8BtugA5]]></item>
+	<item id="RevisionDateline"><![CDATA[1482037213]]></item>
+	<item id="Data">
+		<item id="/admin_donate.inc.php"><![CDATA[5d758a8e6a3bd18af751081eb7b11f0b]]></item>
+		<item id="/admin_list.inc.php"><![CDATA[71d55d6316bdcf97a4fde15ae01ee4fe]]></item>
+		<item id="/connect/connect_login.php"><![CDATA[5359b090564bdcd6d1cf991550f06c7a]]></item>
+		<item id="/connect/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/connect.func.php"><![CDATA[45e9e5f1e6cb9cc6365d305fa45f50e9]]></item>
+		<item id="/csulang/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/csulang/SC_GBK.php"><![CDATA[81dbbd0a6d5fd191b466778bcd2fe66d]]></item>
+		<item id="/csulang/SC_UTF8.php"><![CDATA[d69c371051be6d19ecbef3a900c14345]]></item>
+		<item id="/csulang/TC_BIG5.php"><![CDATA[e85a8b48bdf8e886fb100581d6ac95c0]]></item>
+		<item id="/csulang/TC_UTF8.php"><![CDATA[f2ad3597b8cc4a5494f6a280255ce05c]]></item>
+		<item id="/csu_baidu.inc.php"><![CDATA[7d2bb9dc8943d12687503a17597f667e]]></item>
+		<item id="/discuz_plugin_csu_baidu_SC_GBK.xml"><![CDATA[3a04d7a719f396b3c96f94ac86fd82a8]]></item>
+		<item id="/discuz_plugin_csu_baidu_SC_UTF8.xml"><![CDATA[185dcff87a836cf4dc18eeef25e08f36]]></item>
+		<item id="/discuz_plugin_csu_baidu_TC_BIG5.xml"><![CDATA[a368bb0425a87e75988f73474057136f]]></item>
+		<item id="/discuz_plugin_csu_baidu_TC_UTF8.xml"><![CDATA[e07cefd2c30b4418cef889b6e72f1779]]></item>
+		<item id="/hook.class.php"><![CDATA[5eb458b64adedf192f4c27ce937606b3]]></item>
+		<item id="/images/ico.png"><![CDATA[02147cbc6198a1707bf5511c5e43a112]]></item>
+		<item id="/images/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/images/login-long.png"><![CDATA[f0eeaa6d2c11629f4e3ecb547852a639]]></item>
+		<item id="/images/login-short.png"><![CDATA[f557c5c573cf8102debb9495350699d7]]></item>
+		<item id="/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/install.php"><![CDATA[f589f2e14f69aa79dbb6203fdd715acd]]></item>
+		<item id="/needbind.inc.php"><![CDATA[9bd955dba1bbcfdd1a46215e21c32912]]></item>
+		<item id="/table/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/table/table_csu_baidu_connect.php"><![CDATA[1a9a6f1f1ac969556101336385cd4732]]></item>
+		<item id="/table/table_csu_baidu_guest.php"><![CDATA[f5f8a38fce6de7381b65af417f8c1790]]></item>
+		<item id="/template/csu_baidu.htm"><![CDATA[36433f0e55f3aaa6047b446df82b68c4]]></item>
+		<item id="/template/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/uninstall.php"><![CDATA[ddd34822c0031c985cd7de0b529971df]]></item>
+		<item id="/upgrade.php"><![CDATA[f92e5e065bd8f124556091228e7c5d34]]></item>
+	</item>
+</root>

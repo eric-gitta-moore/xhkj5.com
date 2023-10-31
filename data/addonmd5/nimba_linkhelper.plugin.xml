@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[nimba_linkhelper.plugin]]></item>
+	<item id="RevisionID"><![CDATA[12576]]></item>
+	<item id="SN"><![CDATA[201707252215hA2v102g]]></item>
+	<item id="RevisionDateline"><![CDATA[1442995201]]></item>
+	<item id="Data">
+		<item id="/check.inc.php"><![CDATA[4e364fed6cc9ca3a32bb016347d8e8c4]]></item>
+		<item id="/logs.inc.php"><![CDATA[06ed9b61c5c8ea620cb4f92c1c580a97]]></item>
+		<item id="/uninstall.php"><![CDATA[639f0940ea3d6478ab41d8d5264eb828]]></item>
+		<item id="/install.php"><![CDATA[74a735e2b5789dfa8ad4115607c1fbf2]]></item>
+		<item id="/discuz_plugin_nimba_linkhelper_SC_UTF8.xml"><![CDATA[3259c4b2807cacb813b8f09fefe8064b]]></item>
+		<item id="/addlink.inc.php"><![CDATA[510f89e44a12d32380060717a2fbde89]]></item>
+		<item id="/addon.inc.php"><![CDATA[a74e56c1fc84f4e92a7935086b035bcc]]></item>
+		<item id="/discuz_plugin_nimba_linkhelper_SC_GBK.xml"><![CDATA[0d1e20a482d414e306255254303c2e50]]></item>
+		<item id="/hook.class.php"><![CDATA[9437a2423c0324a9caa1828e53510c60]]></item>
+		<item id="/discuz_plugin_nimba_linkhelper_TC_UTF8.xml"><![CDATA[6613ac5a40ffb8d907460d0ade1d9de1]]></item>
+		<item id="/admincp.inc.php"><![CDATA[2727e676a1696c2db902e7f1515187fe]]></item>
+		<item id="/upgrade.php"><![CDATA[d511b8a2757c546a8f064d8084add323]]></item>
+		<item id="/template/addlink.htm"><![CDATA[07ee556804a81178912057ce19e452fc]]></item>
+		<item id="/discuz_plugin_nimba_linkhelper_TC_BIG5.xml"><![CDATA[8eaab544e411ed0a31b99fa464fb5037]]></item>
+		<item id="/friendlink.inc.php"><![CDATA[aee9477e011924cc5310721fb21aa827]]></item>
+	</item>
+</root>

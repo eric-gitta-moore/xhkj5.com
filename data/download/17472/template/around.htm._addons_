@@ -1,0 +1,10 @@
+ <em><a href="javascript:;" onClick="dxksst_getpage({$pid},1)"> <font>{lang dxksst_floor:first_page}</font></a>&nbsp;</em>
+  <!--{loop $around $pk $pv}-->
+     <!--{if $pv!=$page}-->
+    
+      <em><a href="javascript:;" onClick="dxksst_getpage({$pid},{$pv})"><font>{$pv}</font></a>&nbsp;</em>
+      <!--{else}-->
+      <em>{$pv}&nbsp;</em>
+       <!--{/if}-->
+      <!--{/loop}-->
+ <em><a href="javascript:;" onClick="dxksst_getpage({$pid},{$maxpage})"> <font>{lang dxksst_floor:end_page}</font></a>&nbsp;</em>      

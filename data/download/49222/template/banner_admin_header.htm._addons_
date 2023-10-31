@@ -1,0 +1,23 @@
+<style>
+.ct_list{ font-size:12px;}
+.ct_list tr td{text-align:left; border-bottom:1px dashed #ededed;}
+</style>
+<script language="javascript">
+function changetype(type){
+ document.getElementById(type).style.display='';
+ if(type=="text"){
+    document.getElementById('file').style.display='none';
+	document.getElementById('url').style.fontWeight='bold'; 
+	document.getElementById('up').style.fontWeight='lighter';
+ }
+ if(type=='file'){
+	document.getElementById('text').style.display='none';
+	document.getElementById('up').style.fontWeight='bold';
+	document.getElementById('url').style.fontWeight='lighter';
+ }
+}
+</script>
+<table class="tb tb2 ">
+<tr>
+<th colspan="15" class="partition"><a href="$appurl">{lang xlwsq_banner:bannerlist}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="$appurl&amp;p=add">{lang xlwsq_banner:banneradd}</a></th>
+</tr></table>

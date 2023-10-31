@@ -1,0 +1,64 @@
+<!--{template common/header}-->
+<!-- header start -->
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc">
+            <a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1" class="hd_left iconfont icon-back"></a>
+            <div class="hd_name"><h2><!--{if $_GET['type'] == 'forum'}-->{lang favforum}<!--{else}-->{lang favthread}<!--{/if}--></h2></div>
+        </div>
+	</div>
+</div>
+
+<div class="tabs blockBG">
+	<div class="hd">
+        <ul class="tb2">
+		<!--{if $_GET['type'] == 'forum'}-->
+            <li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+            <li class="on"><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+		<!--{else}-->
+            <li class="on"><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+            <li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+		<!--{/if}-->
+        </ul>
+    </div>
+    <div class="bd">
+
+<!-- main collectlist start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<div class="coll_list">
+    <!--{if $list}-->
+        <ul>
+        <!--{loop $list $k $value}-->
+            <li><a href="$value[url]">$value[title]</a></li>
+        <!--{/loop}-->
+        </ul>
+    <!--{else}-->
+        <div class="nodata">{lang no_favorite_yet}</div>
+    <!--{/if}-->
+</div>
+<!--{else}-->
+<div class="threadlist">
+	<ul>
+	<!--{if $list}-->
+    	<!--{eval $key = 0;}-->
+        <!--{loop $list $k $value}-->
+            <!--{if $key}--><div class="one-px-border"></div><!--{/if}-->
+            <a href="$value[url]" class="article_link cl ">
+                <h3>$value[title]</h3>
+            </a>
+            <!--{eval $key++;}-->
+		<!--{/loop}-->
+	<!--{else}-->
+        <div class="nodata">{lang no_favorite_yet}</div>
+	<!--{/if}-->
+	</ul>
+</div>
+
+<!--{/if}-->
+<!-- main collectlist end -->
+$multi
+    </div>
+</div>
+
+<!--{eval $nofooter = true;}-->
+<!--{template common/footer}-->

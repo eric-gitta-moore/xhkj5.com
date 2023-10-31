@@ -1,0 +1,153 @@
+{template common/header}
+<link rel="stylesheet" href="source/plugin/ljww360/css/gl.css">
+{template ljww360:twnav}
+<div class="egridt clearfix" id="bd">
+           {template ljww360:body}
+
+<div class="article article_bg">
+                <div class="mod-status">
+                    <div class="hd">
+                        <h3>
+                            {lang ljww360:mydj2}
+                        </h3>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <li>
+                                {$creditname}:
+                                <em>
+                                    $brenmyarr_1                                </em>
+                            </li>
+                            <li>
+                                {lang ljww360:myindex1}
+                                <em>
+                                    $brennum                                </em>
+                            </li>
+                            <li>
+                                {lang ljww360:myindex2}
+                                <em>
+                                    $brencainalv
+                                </em>
+                            </li>
+                            <li>
+                                {lang ljww360:myindex3}
+                                <em>
+                                    $brentid
+                                </em>
+                            </li>
+                            <div class="clear">
+                            </div>
+                        </ul>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="ft">
+                    </div>
+                </div>
+                <div style="margin-top:16px" class="mod-ql-list">
+                    <div class="hd">
+                        <h4>
+                            {lang ljww360:myindex4}
+                        </h4>
+                        <span class="gray">
+                            {lang ljww360:myindex5}
+                            <em>
+                                $brentid                            </em>
+                            {lang ljww360:myindex6}
+                        </span>
+                    </div>
+                    <div class="bd">
+<div class="cls-qa-list-2">
+<table>
+<thead>
+<tr>
+<th class="align-l">
+{lang ljww360:wenwen28}
+</th>
+<th width="60">
+{lang ljww360:wenwen11}
+</th>
+<th width="130" class="align-r">
+{lang ljww360:myindex7}
+</th>
+<!--{loop $brentw $k $v}-->
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-l">
+<a title="$v['subject']" href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->" target="_blank">
+<span class="wealth">$v['price']</span>$v['subject']</a>
+<span class="cate">
+<!--{if $typearr[$v['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$v['catid2']}-{$typearr[$v['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v[catid2]&upid=$typearr[$v['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$v['catid2']]['subject']</a>]<!--{elseif $typearr[$v['catid']]['subject']&&!$v['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$v['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$v['catid']<!--{/if}-->" target="_blank">$typearr[$v['catid']]['subject']</a>]<!--{/if}-->
+</span>
+</td>
+<td class="quick-num">
+$v['replies']</td>
+<td class="quick-time align-r">
+<!--{eval echo date('Y-m-d H:i:s',$v['dateline'])}--></td>
+</tr>
+<!--{/loop}-->
+</tbody>
+</table>
+</div>
+                    </div>
+                    <div class="ft">
+                    </div>
+                </div>
+                <div class="mod-ql-list">
+                    <div class="hd">
+                        <h4>
+                            {lang ljww360:mydj4}
+                        </h4>
+                        <span class="gray">
+                            {lang ljww360:myindex5}
+                            <em>
+                                $brennum                            </em>
+                            {lang ljww360:myindex6}
+                        </span>
+                    </div>
+                    <div class="bd">
+<div class="cls-qa-list-2">
+<table>
+<thead>
+<tr>
+<th class="align-l">
+{lang ljww360:wenwen28}
+</th>
+<th width="60">
+{lang ljww360:wenwen11}
+</th>
+<th width="130" class="align-r">
+{lang ljww360:myindex7}
+</th>
+</th>
+</tr>
+</thead>
+<tbody>
+<!--{loop $whdall $k $v}-->
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-l">
+<a title="$v['subject']" href="plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']" target="_blank">
+<span class="wealth">$v['price']</span>$v['subject']</a>
+<span class="cate">
+<!--{if $typearr[$v['catid2']]['subject']}-->[<a href="plugin.php?id=ljww360&mod=list&q=1&catid=$v[catid2]&upid=$typearr[$v['catid2']]['upid']" target="_blank">$typearr[$v['catid2']]['subject']</a>]<!--{elseif $typearr[$v['catid']]['subject']&&!$v['catid2']}-->[<a href="plugin.php?id=ljww360&mod=list&q=1&catid=$v['catid']" target="_blank">$typearr[$v['catid']]['subject']</a>]<!--{/if}-->
+</span>
+</td>
+<td class="quick-num">
+$v['replies']</td>
+<td class="quick-time align-r">
+<!--{eval echo date('Y-m-d H:i:s',$v['dateline'])}--></td>
+</tr>
+<!--{/loop}-->
+</tbody>
+</table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		{template common/footer}

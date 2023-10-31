@@ -1,0 +1,62 @@
+<!--{template common/header}-->
+<header class="header">
+	<div class="nav">
+		<a onclick="history.go(-1)" class="z"><img src="static/image/mobile/images/icon_back.png" zsrc="static/image/mobile/images/icon_back.png" style="display: inline; visibility: visible;"></a>
+		<span class="category">
+            <span class="name">{lang yinxingfei_thinfellpay_client:Integral recharge}</span>
+        </span>
+	</div>
+</header>
+<link rel="stylesheet" href="source/plugin/yinxingfei_thinfellpay_client/assets/css/weui.min.css?{VERHASH}" />
+<link rel="stylesheet" href="source/plugin/yinxingfei_thinfellpay_client/assets/css/touch_app.css?{VERHASH}" />
+<div class="tpay-inde-main">
+	<div class="wp">
+		<div class="tpay-inde-main-wp">
+			<form method="post" id="thinfell_pay_form" autocomplete="off">
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+				<input type="hidden" name="ratio" id="ratio" value="{$setratio}" />
+				<input type="hidden" name="min" id="min" value="{$setmin}" />
+				<input type="hidden" name="max" id="max" value="{$setmax}" />
+				<input type="hidden" name="tpaysubmit" value="true">
+				<div class="tpay-inde-main-r">
+					<ul class="tpay-inde-main-r-nav">
+						<li class="on"><a href="plugin.php?id=yinxingfei_thinfellpay_client:recharge&do=index" >{lang yinxingfei_thinfellpay_client:Integral recharge}</a></li>
+						<li ><a href="plugin.php?id=yinxingfei_thinfellpay_client:recharge&do=record">{lang yinxingfei_thinfellpay_client:lang68}</a></li>
+					</ul>
+					<div class="tpay-inde-main-r-box">
+						<div class="tpay-inde-main-r-box-h"><i class="weui-icon-info-circle" style="margin-top: -4px;"></i>{lang yinxingfei_thinfellpay_client:lang01}{$setextcredittitle}{lang yinxingfei_thinfellpay_client:lang011}{$setmin}-{$setmax}{lang yinxingfei_thinfellpay_client:lang03}{$setratio}{$setextcredittitle}</div>
+
+						<div class="weui-cells__title">{lang yinxingfei_thinfellpay_client:lang69}</div>
+						<div class="weui-cells">
+							<div class="weui-cell">
+								<div class="weui-cell__bd">
+									<input class="weui-input" type="text" placeholder="{lang yinxingfei_thinfellpay_client:lang49}{$setextcredittitle}{lang yinxingfei_thinfellpay_client:lang66}" name="number" id="number">
+								</div>
+							</div>
+						</div>
+						<div class="weui-cells__title" id="tprmb"></div>
+						<div class="weui-btn-area">
+							<a href="javascript:;" class="weui-btn weui-btn_primary" onclick="return checkepay();" style="color: #fff;">{lang yinxingfei_thinfellpay_client:lang50}</a>
+						</div>
+					</div>
+					<script>var lang06 = '{lang yinxingfei_thinfellpay_client:lang06}',lang_yuan = '{lang yinxingfei_thinfellpay_client:yuan}',lang30 = '{lang yinxingfei_thinfellpay_client:lang30}',lang31 = '{lang yinxingfei_thinfellpay_client:lang31}',lang32 = '{lang yinxingfei_thinfellpay_client:lang32}',lang33 = '{lang yinxingfei_thinfellpay_client:lang33}';</script>
+					<script src="source/plugin/yinxingfei_thinfellpay_client/assets/js/jquery.min.js" type="text/javascript"></script>
+					<script type="text/javascript" src="source/plugin/yinxingfei_thinfellpay_client/assets/js/jquery.placeholder.min.js"></script>
+					<script src="source/plugin/yinxingfei_thinfellpay_client/assets/js/app.js?{VERHASH}" type="text/javascript"></script>
+					<div class="tpay_dialog_alert">
+						<div class="tpay_mask"></div>
+						<div class="tpay_dialog">
+							<div class="tpay_dialog_hd"><strong class="tpay_dialog_title">{lang yinxingfei_thinfellpay_client:lang11}</strong></div>
+							<div class="tpay_dialog_bd"></div>
+							<div class="tpay_dialog_ft">
+								<a href="javascript:;" class="tpay_dialog_ft_primary" id="tp_queding">{lang yinxingfei_thinfellpay_client:lang12}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="wp">
+<!--{template common/footer}-->
