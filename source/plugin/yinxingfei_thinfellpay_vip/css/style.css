@@ -1,0 +1,1669 @@
+.yinxingfei_thinfellpay_bank_clear {
+    clear: both;
+}
+.yinxingfei_thinfellpay_bank {
+ background: #f5f5f5 none repeat scroll 0 0;;
+}
+body, a {
+    color: #333;
+}
+body {
+    background: #f8f8f8 none repeat scroll 0 0;
+}
+a {
+    text-decoration: none;
+    transition: color 0.2s ease 0s;
+}
+em {
+    font-style: normal;
+}
+input {
+    outline-color: #e41e27;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clr_red {
+    color: #f52f3e;
+}
+.clr_yellow {
+    color: #ffa810;
+}
+.hide {
+    left: -9999px;
+    position: absolute;
+}
+.ellipsis, .carousel_wp .subtxt, .news_box .article h1, .news_box .article h1, table .rate_data .hint span, .news_box .news_list li, .news_box .article h1, .account_info_wp .username, .account_gather .account, .newsPage_wp article h1, .aside_list .col1 p, .prd_list td p, .rate_data .hint span, .wdhb_wp .redp_list .tip_box p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.g_tips {
+    background: #ffdc87 none repeat scroll 0 0;
+    color: #666;
+    font-size: 14px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    z-index: 101;
+}
+.txt-right {
+    text-align: right;
+}
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+}
+.wrap {
+    min-width: 1200px;
+    position: relative;
+    width: 100%;
+}
+#finance_cont {
+}
+.carousel_wp {
+    margin-bottom: 21px;
+    position: relative;
+}
+.carousel_wp .item_wp {
+    left: -9px;
+    overflow: hidden;
+    padding: 9px;
+    position: relative;
+}
+.carousel_wp .item {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    margin-right: 14px;
+    margin-top: 14px;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.2s ease 0s;
+    width: 200px;
+    border: 1px solid red;
+    padding:5px;
+    border-radius:5px;
+}
+.carousel_wp .item::before {
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+}
+.carousel_wp .fixed_item::before {
+    display: none;
+}
+.carousel_wp .item:hover {
+    background-position: -207px -103px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.carousel_wp .fixed_item, .carousel_wp .item_main {
+    background-position: 0 -525px;
+    float: left;
+    margin-right: 13px;
+}
+.carousel_wp .fixed_item:hover, .carousel_wp .item_main:hover {
+    background-position: -300px -525px;
+}
+.carousel_wp .fixed_item {
+    display: none;
+    top: 9px;
+}
+.fixedItem .fixed_item {
+    display: block;
+}
+.carousel_wp .item .mark {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai.png") no-repeat scroll -50px 0;
+    color: #fff;
+    font-size: 12px;
+    height: 44px;
+    left: 15px;
+    line-height: 14px;
+    overflow: hidden;
+    padding: 6px 8px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 24px;
+}
+.carousel_wp .fixed_item .mark, .carousel_wp .item_main .mark {
+    background-position: 0 0;
+    color: #f64346;
+}
+.carousel_wp .item .tit {
+    color: #fff;
+    font-size: 20px;
+    line-height: 23px;
+    position: relative;
+    text-align: center;
+    margin:20px auto;
+}
+.carousel_wp .fixed_item .tit {
+    font-size: 24px;
+    width: 100%;
+}
+.carousel_wp .item .tit span {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.carousel_wp .item .tit span::before, .carousel_wp .item .tit span::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 56px;
+}
+.carousel_wp .item .tit span::before{
+    background-position: -450px 0;
+    left: -71px;
+}
+.carousel_wp .item .tit span::after{
+    background-position: -450px -25px;
+    right: -71px;
+}
+.carousel_wp .tit img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.carousel_wp .subtxt {
+    font-size: 16px;
+    margin: 0 10px;
+    text-align: center;
+}
+.carousel_wp .fixed_item .subtxt {
+    color: #fff;
+}
+.carousel_wp .finance_data {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 153px;
+    width: 100%;
+}
+.carousel_wp .finance_data::after {
+    background: #b39584 none repeat scroll 0 0;
+    content: "";
+    height: 48px;
+    left: 50%;
+    margin-top: -24px;
+    position: absolute;
+    top: 50%;
+    width: 1px;
+}
+.carousel_wp .item_main .finance_data::after, .carousel_wp .fixed_item .finance_data::after {
+    background: #f16761 none repeat scroll 0 0;
+}
+.carousel_wp .finance_data .data_left, .carousel_wp .finance_data .data_right {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 109px;
+}
+.carousel_wp .finance_data .data_right {
+    color: #ffe74a;
+}
+.carousel_wp .finance_data .data_off {
+    color: #d9bfae;
+}
+.carousel_wp .fixed_item .finance_data .data_off, .carousel_wp .item_main .finance_data .data_off {
+    color: #ffc3c2;
+}
+.carousel_wp .finance_data .data_num {
+    display: block;
+    font: 42px/1 Impact;
+}
+.carousel_wp .finance_data .symbol {
+    font: bold 20px/1 "Microsoft YaHei";
+}
+.carousel_wp .act_img {
+    height: 124px;
+    left: 50%;
+    margin-left: -125px;
+    overflow: hidden;
+    position: absolute;
+    top: 107px;
+    width: 250px;
+}
+.carousel_wp .act_img img {
+    display: block;
+    width: 100%;
+}
+.carousel_wp .buy_wp {
+    margin-top: 20px;
+}
+.carousel_wp .btn_buy, .carousel_wp .btn_buy_off {
+    border: 1px solid#fc532d;
+    border-radius: 20px;
+    color:#fc532d;
+    display: block;
+    font-size: 16px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 auto 16px;
+    text-align: center;
+    transition: all 0.2s ease 0s;
+    width: 156px;
+}
+.carousel_wp .btn_buy_off {
+    background: #7a655a none repeat scroll 0 0;
+    border-color: #7a655a;
+    color: #d1ae9b;
+    cursor: default;
+}
+.carousel_wp .fixed_item .btn_buy_off, .carousel_wp .item_main .btn_buy_off {
+    background: #c9312b none repeat scroll 0 0;
+    border-color: #c9312b;
+    color: #ff8580;
+    cursor: default;
+}
+.carousel_wp .btn_buy:hover {
+    background:#fc532d none repeat scroll 0 0;
+    color: #fff;
+    text-decoration: none;
+}
+.carousel_wp .fixed_item .btn_buy, .carousel_wp .item_main .btn_buy {
+    background: #fc625e none repeat scroll 0 0;
+    border-color: #fff;
+    color: #fff;
+}
+.carousel_wp .fixed_item .btn_buy:hover, .carousel_wp .item_main .btn_buy:hover {
+    background: #fff none repeat scroll 0 0;
+    color: #ee303e;
+}
+.carousel_wp .buy_wp .hint {
+    text-align: center;
+}
+.carousel_wp .buy_wp .txt_left {
+    float: left;
+    text-align: right;
+    width: 45%;
+}
+.carousel_wp .buy_wp .txt_right {
+    float: right;
+    text-align: left;
+    width: 45%;
+}
+.carousel_wp .control_wp a {
+    height: 40px;
+    margin-top: -20px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s ease 0s;
+    width: 28px;
+}
+.carousel_wp .control_wp a.btn_prev {
+    left: -48px;
+}
+.carousel_wp .control_wp a.btn_next {
+    background-position: -150px 0;
+    right: -30px;
+}
+.carousel_wp .control_wp a.btn_prev:hover {
+    transform: translateX(-20%);
+}
+.carousel_wp .control_wp a.btn_next:hover {
+    transform: translateX(20%);
+}
+.product_list_wp {
+    padding-bottom: 20px;
+}
+
+.product_cont_wp {
+    clear: both;
+}
+.prd_list {
+    margin: 0;
+    max-height: 1044px;
+}
+.prd_list table {
+    width: 100%;
+}
+.prd_list tbody tr:hover {
+    background: #f3f3f3 none repeat scroll 0 0;
+}
+.prd_list th, .prd_list td {
+    border-bottom: 1px solid #f7f7f7;
+    position: relative;
+    width: 133px;
+}
+.prd_list th {
+    cursor: default;
+    font-size: 16px;
+    height: 65px;
+    transition: color 0.2s ease 0s;
+}
+th.header {
+    min-width: 0;
+}
+.prd_list th.hv:hover {
+    color: #f52f3e;
+}
+.prd_list td p {
+    line-height: 24px;
+}
+.prd_list table .prdlogo_img_wp {
+    margin: 3px auto 6px;
+}
+.prd_list .percent {
+    display: block;
+    font-size: 30px;
+    text-align: right;
+    width: 102px;
+}
+.prd_list .btn_buy, .prd_list .btn, .prd_list .btn_buy_off {
+    color: #000;
+    display: block;
+    height: 100%;
+    position: relative;
+    transition: none 0s ease 0s ;
+    width: 100%;
+}
+.prd_list .btn_buy, .prd_list .btn_buy_off {
+    line-height: 86px;
+}
+.prd_list .btn_buy_off {
+    color: #999;
+    cursor: default;
+}
+.prd_list .btn_buy::before {
+    content: "+ ";
+    display: none;
+}
+.prd_list .btn_buy::after, .prd_list .btn::after, .prd_list .btn_buy_off::after {
+    background: #eee none repeat scroll 0 0;
+    content: "";
+    height: 44px;
+    left: 0;
+    margin-top: -22px;
+    position: absolute;
+    top: 50%;
+    width: 2px;
+}
+.prd_list tr:hover .btn_buy, .prd_list tr:hover .btn {
+    background: #e41e27 none repeat scroll 0 0;
+    color: #fff;
+}
+.prd_list tr:hover .btn_buy::after, .prd_list tr:hover .btn::after {
+    display: none;
+}
+.prd_list tr:hover .btn_buy::before {
+    display: inline;
+}
+.prd_list .mark {
+    border: 1px solid #f52f3e;
+    border-radius: 1px;
+    color: #f52f3e;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 7px;
+    padding: 0 7px;
+    position: relative;
+    top: -2px;
+}
+.prd_list .btn_detail span {
+    display: block;
+}
+.prd_list .btn_detail .txt1 {
+    margin-bottom: 3px;
+    padding-top: 51px;
+}
+.prd_list .btn_detail .txt2 {
+    color: #999;
+    font-size: 12px;
+}
+.prd_list tr:hover .btn_detail .txt2 {
+    color: #ffadb1;
+}
+.prd_list .hl {
+    color: #f52f3e;
+}
+.board img {
+    display: block;
+    width: 100%;
+}
+.fadeInRight {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.runInRight {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-name: runInRight;
+}
+@keyframes runInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(1200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@media only screen and (max-width: 1320px) {
+    .carousel_wp .control_wp a.btn_next {
+        right: 18px;
+    }
+    .carousel_wp .control_wp a.btn_prev {
+        left: 0;
+    }
+}
+.tips_red {
+    background: #fff0f1 none repeat scroll 0 0;
+    border-bottom: 1px solid #ebebeb;
+    color: #e41e27;
+    padding: 16px 93px 15px 162px;
+    text-indent: -5em;
+}
+@keyframes jump {
+    0%, 6%, 12%, 18%, 24%, 30%, 100% {
+        transform: translateY(0px);
+    }
+    3%, 15%, 27% {
+        transform: translateY(-5%);
+    }
+    9%, 21% {
+        transform: translateY(5%);
+    }
+}
+@keyframes jump {
+    0%, 6%, 12%, 18%, 24%, 30%, 100% {
+        transform: translateY(0px);
+    }
+    3%, 15%, 27% {
+        transform: translateY(-5%);
+    }
+    9%, 21% {
+        transform: translateY(5%);
+    }
+}
+
+.d_tabon {
+    background: #e31e26 none repeat scroll 0 0;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 232px;
+    z-index: 1;
+}
+@keyframes iconFade {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+.u_paging {
+    margin-top: 60px;
+}
+.u_paging a.off:hover {
+    color: #999;
+}
+.wrap {
+    background: #fff none repeat scroll 0 0;
+    overflow-x: hidden;
+}
+.u_paging .prev, .u_paging .next {
+    width: 73px;
+}
+.u_paging a.on {
+    background: #f4f4f4 none repeat scroll 0 0;
+    color: #666;
+}
+.carousel_sec {
+    margin-bottom: 21px;
+    position: relative;
+}
+.carousel_wp {
+    left: 9px;
+    margin: 0 auto;
+}
+.carousel_wpper .control_wp {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.carousel_wpper .control_wp a {
+    background: rgba(28, 22, 18, 0.4) none repeat scroll 0 0;
+    height: 108px;
+    opacity: 0;
+    position: absolute;
+    top: 137px;
+    transition: all 0.3s ease 0s;
+    width: 80px;
+}
+.carousel_wpper .control_wp .ic_arr {
+    background-image: url("../images/spr24_licai_new.png");
+    height: 21px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+}
+.carousel_wpper .control_wp a.btn_prev .ic_arr {
+    background-position: 0 0;
+    right: 38px;
+}
+.carousel_wpper .control_wp a.btn_next .ic_arr {
+    background-position: -24px 0;
+    left: 38px;
+}
+.carousel_wpper .control_wp a.btn_prev {
+    left: 0;
+    margin-left: -80px;
+}
+.carousel_wpper .control_wp a.btn_next {
+    margin-right: -80px;
+    right: 0;
+}
+.carousel_wpper .control_wp a:hover {
+    background: #f63f4d none repeat scroll 0 0;
+}
+.carousel_wpper .control_wp a.btn_prev:hover {
+    transform: translateX(0%);
+}
+.carousel_wpper .control_wp a.btn_next:hover {
+    transform: translateX(0%);
+}
+.carousel_sec:hover .carousel_wpper .control_wp a.btn_prev {
+    margin-left: 0;
+    opacity: 1;
+}
+.carousel_sec:hover .carousel_wpper .control_wp a.btn_next {
+    margin-right: 0;
+    opacity: 1;
+}
+.carousel_wp .item .mark {
+    background-image: url("../images/spr24_licai_new.png");
+    font-size: 0;
+    height: 51px;
+    left: 0;
+    line-height: 0;
+    padding: 0;
+    width: 51px;
+    z-index: 10;
+}
+.carousel_wp .item .mark.active {
+    background-position: 0 -80px;
+}
+.carousel_wp .item .mark.hot {
+    background-position: -58px -80px;
+}
+.carousel_wp .item .mark.high {
+    background-position: -118px -80px;
+}
+.carousel_wp .item .mark.invest {
+    background-position: -178px -80px;
+}
+
+.carousel_wp .act_img img.code_img {
+    height: 100%;
+    margin: 0 auto;
+    width: auto;
+}
+.carousel_wp .item {
+    overflow: visible;
+}
+.carousel_wp .data_box {
+    background: #5e4b3d none repeat scroll 0 0;
+    display: none;
+    height: 230px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 288px;
+}
+.carousel_wp .data_box .data_tt {
+    font-size: 16px;
+    line-height: 1;
+    padding: 13px 0 23px;
+    text-align: center;
+}
+.carousel_wp .data_box .data_cont {
+    margin: 0 20px;
+    position: relative;
+}
+.carousel_wp .fixed_item, .carousel_wp .item_list li:hover {
+    position: relative;
+    z-index: 10;
+}
+.carousel_wp .fixed_item .data_box::after {
+    border-color: transparent transparent transparent #fc524c;
+    border-style: dashed dashed dashed solid;
+    left: -1px;
+}
+.data_histogram {
+    border-bottom: 1px solid #82766c;
+    border-left: 1px solid #82766c;
+    font-size: 0;
+    height: 129px;
+    line-height: 0;
+    padding-top: 15px;
+    position: relative;
+    text-align: center;
+}
+.data_histogram .data_item {
+    display: inline-block;
+    height: 100%;
+    margin: 0 13px;
+    position: relative;
+    width: 28px;
+}
+.data_histogram .data_item.item_stress {
+    width: 57px;
+}
+.data_histogram .txt_item {
+    color: #e6baa3;
+    font-size: 12px;
+    left: 50%;
+    line-height: 32px;
+    margin-left: -50px;
+    position: absolute;
+    top: 100%;
+    width: 100px;
+}
+.data_histogram .bar_box {
+    background: #ff4446 none repeat scroll 0 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.data_histogram .txt_data {
+    bottom: 102%;
+    color: #fff;
+    font-size: 12px;
+    left: 50%;
+    line-height: 1;
+    margin-left: -50px;
+    position: absolute;
+    width: 100px;
+}
+.data_histogram .sub_bar_box {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.data_histogram .sub_bar {
+    width: 100%;
+}
+.data_histogram .sub_bar.bar_yellow {
+    background: #ffa200 none repeat scroll 0 0;
+    height: 39px;
+}
+.data_histogram .sub_bar.bar_blue {
+    background: #1d7cfa none repeat scroll 0 0;
+    height: 39px;
+}
+.data_histogram .sub_bar.bar_red {
+    background: #ff4446 none repeat scroll 0 0;
+}
+.data_histogram .sub_bar p {
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 6px;
+}
+.data_dotline {
+    border-bottom: 1px solid #82766c;
+    border-left: 1px solid #82766c;
+    height: 166px;
+    margin-left: 58px;
+    position: relative;
+}
+.data_dotline .data_item {
+    height: 36px;
+    position: relative;
+}
+.data_dotline .data_item.item_stress {
+    margin-top: 6px;
+}
+.data_dotline .txt_item {
+    color: #e6baa3;
+    font-size: 12px;
+    height: 36px;
+    line-height: 24px;
+    margin-right: 11px;
+    position: absolute;
+    right: 100%;
+    white-space: nowrap;
+}
+.data_dotline .dot_wp {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.data_dotline .dot_box {
+    background: #82766c none repeat scroll 0 0;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 200%;
+}
+.data_dotline .dot_item {
+    float: left;
+    height: 100%;
+    position: relative;
+}
+.data_dotline .dot_box.dot_2 .dot_item {
+    width: 84px;
+}
+.data_dotline .dot_box.dot_4 .dot_item {
+    margin: 0 -2px 0 40px;
+    width: 4px;
+}
+.data_dotline .dot_item::after {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -204px -44px;
+    content: "";
+    height: 7px;
+    left: 50%;
+    margin-left: -3px;
+    position: absolute;
+    top: -3px;
+    width: 7px;
+}
+.data_dotline .dot_item.cur::after {
+    background-position: -190px -44px;
+}
+.data_dotline .txt_dot {
+    color: #82766c;
+    font-size: 12px;
+    left: 50%;
+    line-height: 1;
+    margin-left: -50px;
+    position: absolute;
+    text-align: center;
+    top: -18px;
+    white-space: nowrap;
+    width: 100px;
+}
+.data_dotline .dot_item.cur .txt_dot {
+    color: #fff;
+}
+.data_dotline .txt_line {
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.data_foldline {
+    left: 0;
+    position: absolute;
+    top: -20px;
+    width: 100%;
+}
+.product_tab_wp {
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 0;
+    line-height: 0;
+    overflow: visible;
+    text-align: center;
+}
+.product_tab_wp .tab {
+    display: inline-block;
+    float: none;
+}
+.product_tab_wp .tit strong {
+    font-weight: bold;
+}
+.product_tab_wp .tit {
+    border-left: 0 none;
+    font-size: 20px;
+    padding: 25px 0 19px;
+}
+.product_tab_wp .tab.on .tit {
+    background: #fff none repeat scroll 0 0;
+}
+.product_tab_wp .subtit {
+    font-size: 14px;
+    line-height: 28px;
+}
+.product_tab_wp .ico_new {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -48px 0;
+    height: 11px;
+    width: 22px;
+}
+.d_tabon {
+    bottom: -2px;
+    top: auto;
+}
+.product_tab_wp .btn_compare {
+    border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    font-size: 0;
+    height: 38px;
+    line-height: 0;
+    position: absolute;
+    right: 32px;
+    text-align: center;
+    top: 35px;
+    transition: all 0.2s ease 0s;
+    width: 88px;
+    z-index: 5;
+}
+.product_tab_wp .btn_compare span {
+    color: #333;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 38px;
+    margin: 0 2px;
+}
+.product_tab_wp .btn_compare em {
+    color: #f52f3e;
+}
+.product_tab_wp .btn_compare .ic_cp {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -78px 0;
+    height: 11px;
+    margin-left: 3px;
+    position: relative;
+    top: 1px;
+    width: 11px;
+}
+.product_tab_wp .btn_compare .ic_cp.red {
+    background-position: -96px 0;
+}
+.product_tab_wp .btn_compare:hover {
+    background: #f52f3e none repeat scroll 0 0;
+    border-color: #f52f3e;
+}
+.product_tab_wp .btn_compare:hover span {
+    color: #fff;
+}
+.product_tab_wp .btn_compare:hover em {
+    color: #fff;
+}
+.product_tab_wp .btn_compare:hover .ic_cp, .product_tab_wp .btn_compare:hover .ic_cp.red {
+    background-position: -114px 0;
+}
+.product_tab_wp + .filter_box {
+    border-bottom: 0 none;
+    border-top: 0 none;
+    margin: 36px 0 35px;
+    padding: 0;
+}
+@keyframes link_more {
+    0%, 5%, 12.5%, 20%, 25%, 100% {
+        transform: translateY(0px);
+    }
+    10% {
+        transform: translateY(-4px);
+    }
+    15% {
+        transform: translateY(-2px);
+    }
+}
+.tips_red {
+    border-bottom: 0 none;
+    margin-bottom: 43px;
+}
+.sort i {
+    border-width: 4px;
+}
+.sort .ico_sortup {
+    margin-bottom: 5px;
+}
+.prd_list thead {
+    position: relative;
+    z-index: 10;
+}
+.red_task_wp {
+    height: 50px;
+    position: absolute;
+    right: 43px;
+    top: 11px;
+    width: 120px;
+    z-index: 101;
+}
+.red_task_wp .btn_task {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    text-align: center;
+    text-indent: -14px;
+}
+.red_task_wp .btn_task .ic_arr {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -140px 0;
+    height: 7px;
+    margin-top: -3px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 13px;
+}
+.red_task_wp .task_list {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 12px;
+    left: -9999px;
+    line-height: 27px;
+    margin-top: -8px;
+    opacity: 0;
+    padding: 12px 0;
+    position: absolute;
+    text-indent: 12px;
+    top: 100%;
+    transition: opacity 0.3s ease 0s;
+    width: 118px;
+}
+.red_task_wp:hover .btn_task .ic_arr {
+    background-position: -140px -10px;
+}
+.red_task_wp:hover .task_list {
+    left: 1px;
+    opacity: 1;
+}
+.prd_list th.hv {
+    text-indent: 8px;
+}
+.prd_list th.col1.hv {
+    text-indent: 0;
+}
+.prd_list td {
+    border-bottom-style: dashed;
+    color: #383838;
+}
+.prd_list table td .percent {
+    color: #ff2c42;
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 30px;
+    overflow: visible;
+    position: relative;
+    text-align: left;
+    width: auto;
+}
+.prd_list table td .percent .grey {
+    color: #999;
+}
+.prd_list .percent .txt_tip {
+    color: #808080;
+    font-size: 12px;
+    left: 0;
+    line-height: 18px;
+    margin-top: 8px;
+    position: absolute;
+    top: 100%;
+}
+.prd_list .percent .txt_tip em {
+    border: 1px solid #ff4354;
+    border-radius: 0;
+    color: #ff4354;
+    margin-right: 4px;
+    padding: 0 3px;
+    white-space: nowrap;
+}
+.prd_list .percent .stress {
+    border: 0 none;
+    bottom: 0;
+    color: #f52f3e;
+    font-size: 12px;
+    left: 100%;
+    line-height: 12px;
+    margin-left: 8px;
+    position: absolute;
+    white-space: nowrap;
+}
+.prd_list .percent .stress.grey {
+    color: #999;
+}
+.prd_list .item_product {
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    width: 186px;
+}
+.prd_list .txt_product {
+    max-width: 186px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.prd_list .item_product .txt_tag {
+    color: #808080;
+    font-size: 12px;
+    height: 18px;
+    left: 0;
+    line-height: 16px;
+    position: absolute;
+    top: 42px;
+}
+.prd_list .item_product .txt_tag span {
+    border: 1px solid #a5a5a5;
+    border-radius: 2px;
+    color: #999;
+    float: left;
+    margin-right: 5px;
+    padding: 0 4px;
+}
+.prd_list .col1 {
+    width: 150px;
+}
+.prd_list th.col1 {
+    padding-left: 30px;
+    text-align: left;
+}
+
+.prd_list .col_btn {
+    width: 200px;
+}
+.prd_list td {
+    border-bottom: 0 none;
+    position: relative;
+}
+.prd_list td::after {
+    border-top: 1px dashed #e1e1e1;
+    bottom: -2px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.prd_list tbody tr:hover {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-bottom: 0 none;
+}
+.prd_list tbody tr:hover td::after {
+    border-top: 1px solid #f7f7f7;
+}
+.prd_list th {
+    background: #f3f3f3 none repeat scroll 0 0;
+    border-bottom: 0 none;
+    height: 56px;
+    z-index: 0;
+}
+.prd_list .fuli_box {
+    font-size: 0;
+    height: 100%;
+    line-height: 0;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+.prd_list .txt_fuli {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 56px;
+    position: relative;
+}
+.prd_list .txt_fuli::after {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -116px -18px;
+    content: "";
+    height: 15px;
+    left: 98%;
+    margin-left: 6px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 15px;
+}
+.prd_list .fuli_box .txt_tip {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    bottom: 42px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 12px;
+    left: -9999px;
+    line-height: 27px;
+    opacity: 0;
+    padding: 12px 0 12px 12px;
+    position: absolute;
+    text-align: left;
+    transition: opacity 0.3s ease 0s;
+    width: 206px;
+}
+.prd_list .fuli_box:hover .txt_tip {
+    left: 100%;
+    margin-left: -30px;
+    opacity: 1;
+}
+.prd_list tr:hover .btn_buy::before, .prd_list .btn_buy::after {
+    display: none;
+}
+.prd_list .buy_btns {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+.prd_list .btn_buy {
+    border-radius: 32px;
+    color: #f52f3e;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 100px;
+}
+.prd_list .btn_buy_off {
+    color: #808080;
+    cursor: default;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 100px;
+}
+.prd_list .btn_buy_off::after {
+    display: none;
+}
+.prd_list tr:hover .btn_buy {
+    background: #f52f3e none repeat scroll 0 0;
+    color: #fff;
+}
+.prd_list .up_down {
+    display: inline-block;
+    height: 25px;
+    margin: 0 10px;
+    position: relative;
+    top: 4px;
+    vertical-align: top;
+    width: 25px;
+}
+.prd_list .up_down a {
+    border-radius: 25px;
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.2s ease 0s;
+    width: 25px;
+    z-index: 5;
+}
+.prd_list .up_down a:hover {
+    border-radius: 33px;
+    height: 33px;
+    left: -4px;
+    top: -4px;
+    width: 33px;
+}
+.prd_list .btn_add {
+    background: #ffc3c3 none repeat scroll 0 0;
+}
+.prd_list .btn_minus {
+    background: #d6d6d6 none repeat scroll 0 0;
+}
+.prd_list .btn_add::before {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -48px -16px;
+    content: "";
+    height: 11px;
+    left: 7px;
+    position: absolute;
+    top: 7px;
+    transition: all 0.2s ease 0s;
+    width: 11px;
+}
+.prd_list .btn_add:hover::before {
+    left: 11px;
+    top: 11px;
+}
+.prd_list .up_down.done::after {
+    background: #ffc3c3 url("../images/spr24_licai_new.png") no-repeat scroll -48px -16px;
+    border: 7px solid #ffc3c3;
+    border-radius: 100%;
+    content: "";
+    height: 11px;
+    left: -9999px;
+    position: absolute;
+    top: 0;
+    width: 11px;
+}
+
+@keyframes add_done {
+    0% {
+        left: 0;
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    100% {
+        left: 0;
+        opacity: 0;
+        transform: translate(40px, -80px);
+    }
+}
+.prd_list .btn_minus::before {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -64px -20px;
+    content: "";
+    height: 1px;
+    left: 7px;
+    position: absolute;
+    top: 12px;
+    transition: all 0.2s ease 0s;
+    width: 11px;
+}
+.prd_list .btn_minus:hover::before {
+    left: 11px;
+    top: 16px;
+}
+.prd_list .up_down {
+    height: 32px;
+    top: 0;
+    width: 32px;
+}
+.prd_list .up_down a {
+    border-radius: 25px;
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 25px;
+}
+.prd_list .up_down a::before, .prd_list .up_down.done::after {
+    display: none;
+}
+.prd_list .btn_add {
+    background: #ffc3c3 none repeat scroll 0 0;
+    color: #ff2c42;
+}
+.prd_list .btn_minus {
+    background: #d6d6d6 none repeat scroll 0 0;
+    color: #333;
+}
+.prd_list .up_down a, .prd_list .up_down a:hover {
+    border-radius: 100%;
+    font-size: 12px;
+    height: 32px;
+    left: 0;
+    line-height: 32px;
+    text-align: center;
+    top: 0;
+    width: 32px;
+}
+.prd_list .up_down a:hover {
+    opacity: 0.9;
+}
+.prd_list .up_down .ic_add {
+    background: #ffc3c3 none repeat scroll 0 0;
+    border-radius: 100%;
+    color: #ff2c42;
+    display: none;
+    font-size: 12px;
+    font-style: normal;
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    transition: -webkit-transform 1s ease 0s, opacity 0.8s ease 0.2s;
+    width: 32px;
+}
+.prd_list .up_down.done .ic_add {
+    opacity: 0;
+}
+.prd_list .sort i {
+    border-color: #b0b0b0 #f3f3f3;
+}
+.prd_list .sort i.on {
+    border-color: #e41e27 #f3f3f3;
+}
+.prd_list th.col1 {
+    width: 120px;
+}
+@keyframes tips_hide {
+    0% {
+        left: 50%;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    99% {
+        left: 50%;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        left: 50%;
+        transform: translateY(-9999px);
+    }
+}
+.pop_tips .txt_pop {
+    color: #fff;
+    font-size: 16px;
+    line-height: 34px;
+    padding: 0 20px;
+    position: relative;
+    top: 30px;
+    white-space: nowrap;
+}
+
+@keyframes wavesani {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        transform: translate3d(-309px, 0px, 0px);
+    }
+}
+@keyframes wavesani {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+        transform: translate3d(-309px, 0px, 0px);
+    }
+}
+.prd_list .tips {
+    background-color: #ffa200;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    left: 50%;
+    line-height: 14px;
+    margin-left: -15px;
+    padding: 4px 6px;
+    position: absolute;
+    top: 19px;
+    white-space: nowrap;
+    z-index: 1;
+}
+.prd_list .tips .arrow_down {
+    border-color: #ffa200 transparent transparent;
+    border: 5px solid;
+    bottom: -10px;
+    height: 0;
+    left: 10px;
+    position: absolute;
+    width: 0;
+}
+.prd_list .mark_rate {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll 0 -150px;
+    height: 60px;
+    line-height: 60;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+}
+.prd_list .radio_box_wp {
+    bottom: 40px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    white-space: nowrap;
+    width: 240px;
+}
+.prd_list .radio_box_wp .radio_box {
+    color: #808080;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: top;
+}
+.prd_list .radio_box .btn_radio {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") no-repeat scroll -75px -150px;
+    display: inline-block;
+    height: 12px;
+    margin-right: 1px;
+    vertical-align: top;
+    width: 12px;
+}
+.prd_list .radio_box .btn_radio.cur {
+    background-position: -75px -175px;
+}
+.product_hd_wp {
+    border-bottom: 1px solid #e6e7e8;
+    height: 32px;
+}
+.product_hd_wp h2 {
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    float: left;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 17px;
+    position: relative;
+    text-align: center;
+    top: 1px;
+    font-weight: lighter;
+}
+#finance_cont .filter_box {
+    border: medium none;
+    margin: 16px 0;
+}
+#finance_cont .filter_box .filter_nav {
+    padding-left: 138px;
+}
+#finance_cont .filter_box .label {
+    padding-left: 30px;
+}
+.prd_list .widget_wp {
+    left: 30px;
+    position: absolute;
+    top: 0;
+}
+.prd_list .widget {
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    height: 36px;
+    line-height: 13px;
+    margin-right: 20px;
+    position: relative;
+    text-align: center;
+    width: 34px;
+}
+.prd_list .widget span {
+    display: block;
+    overflow: hidden;
+    padding-top: 4px;
+    position: relative;
+    z-index: 1;
+}
+.prd_list .widget::before {
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 17px 6px;
+    bottom: 0;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    z-index: 2;
+}
+.prd_list .widget.widgetbg_red {
+    background: #f52f3e none repeat scroll 0 0;
+}
+.prd_list .widget.widgetbg_yellow {
+    background: #ffa200 none repeat scroll 0 0;
+}
+.prd_list .widget.widgetbg_vip {
+    background: #ffdd03 none repeat scroll 0 0;
+    color: #f00;
+    width: 42px;
+}
+.prd_list .widgetbg_vip::before {
+    border-width: 0 21px 6px;
+}
+.prd_list th.col2 {
+    z-index: 1;
+}
+.prd_list .radio_box_wp {
+    display: none;
+}
+.prd_list tbody tr:hover .radio_box_wp {
+    display: block;
+}
+.redp_box .empty_list {
+    padding: 52px 0 66px;
+    text-align: center;
+}
+.redp_box .empty_list .txt {
+    font-size: 18px;
+    line-height: 32px;
+}
+.btn_red {
+    background: #f52f3e none repeat scroll 0 0;
+    border-radius: 23px;
+    color: #fff;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    margin: 32px auto;
+    text-align: center;
+    transition: all 0.2s ease 0s;
+    width: 156px;
+}
+.btn_red:hover {
+    background: #fd404e none repeat scroll 0 0;
+}
+.redp_box .empty_list .tip {
+    color: #808080;
+    font-size: 16px;
+}
+.prd_list tbody {
+    position: relative;
+    z-index: 10;
+}
+.novice_cont .prd_list td {
+    padding-left: 2em;
+
+}
+table .fix_row td {
+    background: #fffdf5 none repeat scroll 0 0;
+}
+.fix_row .btn_buy, .fix_row .btn_buy_off {
+    margin-right: 62px;
+}
+.ico_hint {
+    background: rgba(0, 0, 0, 0) url("../images/spr24_licai_new.png") repeat scroll -150px -150px;
+    display: inline-block;
+    height: 16px;
+    margin-left: 6px;
+    vertical-align: -1px;
+    width: 16px;
+}
+.lctq_wp .rules_wp .subsec .txt {
+    color: #7e6c65;
+    font-size: 16px;
+}
+.lctq_wp .rules_wp .subsec .btn_red {
+    height: 32px;
+    line-height: 32px;
+    margin: 26px auto 0;
+    width: 100px;
+}
+.lctq_wp .rules_wp .subsec .pop_hint {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.29);
+    font-size: 12px;
+    left: 181px;
+    line-height: 30px;
+    padding: 11px 20px;
+    position: absolute;
+    text-align: left;
+    top: 53px;
+    width: 150px;
+}
+.wdtq_wp .link_openvip:hover, .wdtq_wp .tit_wp .link_wp a:hover {
+    color: #f52f3c;
+}
+@keyframes coin_up {
+    0% {
+        transform: translateY(100%) rotate(-360deg);
+    }
+    90% {
+        transform: translateY(-5%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+@keyframes coin_up {
+    0% {
+        transform: translateY(100%) rotate(-360deg);
+    }
+    90% {
+        transform: translateY(-5%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+.prd_list .fix_table_hack th {
+    padding-bottom: 141px;
+}
+.prd_list {
+    position: relative;
+}
+.prd_list .fix_table {
+    left: 0;
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    z-index: 100;
+}
+
+.act_name {
+    font: 30px/1 Impact;
+    color: #fc532d;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+.yinxingfei_thinfellpay_bank .right{
+    float:right;
+    width:25%;
+}
+.yinxingfei_thinfellpay_bank .left{
+    float:left;
+    width:74%;
+}

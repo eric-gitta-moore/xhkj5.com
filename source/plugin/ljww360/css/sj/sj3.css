@@ -1,0 +1,68 @@
+.mod-a-list {
+	background: transparent;
+	border: 0 none;
+	margin-bottom: 15px
+}
+
+.mod-no-a {
+	background: #fff;
+	font-size: 14px
+}
+
+.mod-a-list li {
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	border-top: 1px solid #e7e7e7;
+	margin-bottom: 15px
+}
+
+.mod-a-list b {
+	color: #249841;
+	font-weight: 400
+}
+
+.mod-no-a a {
+	color: #1e64d8
+}
+
+.mod-a-list .hd {
+	background-color: #ededed;
+	border-top: 1px solid #f9f9f9;
+	border-bottom: 1px solid #d5d5d5;
+	padding: 0
+}
+
+.mod-a-list .ft {
+	color: #b0b0b0;
+	font-size: 13px;
+	padding-top: 7px;
+	padding-bottom: 10px;
+	text-align: right
+}
+
+.mod-no-a .bd {
+	margin-bottom: 30px
+}
+
+.mod-no-a .ft {
+	text-align: center
+}
+
+.mod-a-list .hd h2 {
+	background: url(../../images/sjimg/t01bfbe386ff547e96d.png) 98% center no-repeat;
+	background-size: 22px 13px;
+	padding: 7px 55px 7px 15px
+}
+
+.mod-no-a .ft p {
+	margin-bottom: 30px
+}
+
+.mod-a-list .ft .datetime {
+	float: left
+}
+
+#bd.no-a {
+	background: #fff;
+	height: 100%
+}

@@ -1,0 +1,14 @@
+{template common/header}
+<link rel="stylesheet" href="source/plugin/ljww360/css/gl.css">
+{template ljww360:twnav}
+<div class="egridt clearfix" id="bd">
+           {template ljww360:body}
+
+<div class="article article_bg"><div class="mod-status"><div class="hd"><h3>{lang ljww360:myjf_1}$creditname</h3></div><div class="bd"><!--{if $brenmyarr_1}--><p class="next_level">{lang ljww360:myjf_2}<span class="wealth">$brenmyarr_1</span>{$creditname}{lang ljww360:myjf_3}</p><!--{else}--><p class="next_level">{lang ljww360:myjf_4}{$creditname}{lang ljww360:myjf_5}</p><!--{/if}--></div></div><div class="table_list"><div class="hd"><h4>{lang ljww360:myjf_6}{$creditname}{lang ljww360:myjf_7}</h4></div><div class="bd"><table>
+<thead>
+<tr><th width="248">{lang ljww360:myjf_8}</th><th width="268">{lang ljww360:myjf_9}{$creditname}</th><th width="108">{lang ljww360:myjf_10}</th></tr></thead>
+<tbody><tr><td>{lang ljww360:myjf_11}</td><td>$brjl</td><td>{$brjlnum}{lang ljww360:myjf_12}</td></tr>
+<tr><td>{lang ljww360:myjf_13}</td><td>$zuijiadaan</td><td></td></tr>
+<tr><td>{lang ljww360:myjf_14}</td><td>{$zuijiadaan}+{lang ljww360:myjf_15}{$creditname}</td><td></td></tr>
+</tbody></table></div><div class="ft"></div></div></div>
+		{template common/footer}

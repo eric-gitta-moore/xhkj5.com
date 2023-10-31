@@ -1,0 +1,11 @@
+# zxsq_code使用说明
+
+本插件实现了在Discuz论坛插入高亮代码。
+
+## 使用方法
+
+### 直接输入代码
+
+~~~
+[pre]put your code here[/pre]
+~~~~

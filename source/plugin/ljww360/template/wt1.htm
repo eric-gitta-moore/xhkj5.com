@@ -1,0 +1,294 @@
+{template common/header}
+<link rel="stylesheet" href="source/plugin/ljww360/css/gl.css">
+{template ljww360:twnav}
+<style type="text/css">
+	.mod-question .hd .ico, .mod-answer-list .hd .ico, .mod-relevant .resolved-relevant, .mod-relevant .unresolved-relevant {
+  background: url("/source/plugin/ljww360/images/t01886327bcd8171cfb.png") no-repeat scroll 0 0 transparent;
+}
+.mod-question .hd .ico {
+  
+  display: block;
+  height: 28px;
+  left: -6px;
+  position: absolute;
+  top: 15px;
+  width: 66px;
+}
+</style>
+<div class="grid-3 clearfix" id="bd">
+            <div class="article">			
+
+
+                <div class="mod-question">
+                    <div class="hd cl">
+<div class="cl">
+<div class="cl z">
+<span class="ico" <!--{if !$best}-->style="background-position: 0 -32px;"<!--{/if}-->>
+</span>
+<h3 style="padding:0" class="title">
+$wtarr[subject]</h3><span><!--{if $typearr[$wtarr[catid2]]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$wtarr['catid']}-{$typearr[$wtarr['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$wtarr['catid']&upid=$typearr[$wtarr['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$wtarr[catid2]]['subject']</a>]<!--{elseif $typearr[$wtarr[catid]]['subject']&&!$wtarr[catid2]}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$wtarr[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$wtarr[catid]<!--{/if}-->" target="_blank">$typearr[$wtarr[catid]]['subject']</a>]<!--{elseif $dxyhz==1 || $wtarr['authorid']==$_G['uid']}-->[<a href="#" onclick='showWindow("ljsuject","plugin.php?id=ljww360&mod=wtw&action=msgpl&wid=$_GET["wid"]&tid=$tid&formhash={FORMHASH}");'><font color="red">{lang ljww360:wt12}</font></a>]<!--{/if}--></span>
+<span class="wealth">
+$wtarr['price']	
+<!--{if $_G['groupid']==1||$wtarr['authorid']==$_G['uid']||$groupiddel}--><span class="pipe">&nbsp;|&nbsp;</span><a href="javascript:void(0)" onclick="deleteproject({$tid})">{lang ljww360:wt13}</a><!--{if !$best}--><span class="pipe">&nbsp;|&nbsp;</span><a href="javascript:void(0)" onclick='showWindow("ljsuject","plugin.php?id=ljww360&mod=wtw&action=msgbj&wid=$_GET["wid"]&tid=$tid&formhash={FORMHASH}");'>{lang ljww360:wt24}</a><!--{/if}--><!--{/if}--><!--{if $_G['groupid']==1||$groupiddel}--><span class="pipe">&nbsp;|&nbsp;</span><a href="javascript:void(0)" onclick='showWindow("ljsuject","plugin.php?id=ljww360&mod=wtw&action=tsmsg&tid=$tid&wid=$_GET["wid"]&formhash={FORMHASH}");'>{lang ljww360:tsmsg_9}</a><!--{/if}-->
+</span>	
+</div>
+<script type="text/javascript">
+function deleteproject(tid){
+    var url="$del"+tid;
+	showDialog("$queding",'confirm','',function(){location.href=url});
+}
+</script>
+						
+
+</div>
+                        <div class="label">
+<a class="author" href="<!--{if $config['isrewrite']}-->space-uid-{$wtarr['authorid']}.html<!--{else}-->home.php?mod=space&uid=$wtarr['authorid']<!--{/if}-->" target="_blank">
+                                $wtarr['author']                            </a>
+                            |
+                            <span class="pubtime">
+                                $wtarr['dateline']                            </span>
+                        </div>
+                    </div>
+                    <div style="padding:10px 25px;" class="bd cl ptm pbm">						
+<div>$wtarr[message]</div>
+<!--{if $wtarr[bc]}-->
+<div class="askadd cl mtm">
+<h3><b>{lang ljww360:wt14}</b></h3>
+<div>$wtarr[bc]</div>						
+</div>
+<!--{/if}-->
+<!--{if $wtarr['authorid']==$_G['uid']}-->
+<div class="ft" <!--{if $isxst}-->style="width:305px;"<!--{else}-->style="width:252px;"<!--{/if}-->><div id="ope-action" class="ope-action clearfix">
+<ul>
+<li>
+<font style="font-family: 'Microsoft YaHei',arial,tahoma,{lang ljww360:wt19},sans-serif;font-size: 12px;">{lang ljww360:wt18}&nbsp;:</font><a alog-action="qb-ask-addit"  onclick='showWindow("ljsuject","plugin.php?id=ljww360&mod=wtw&action=bc&tid=$tid&wid=$id&formhash={FORMHASH}");' href="javascript:void(0)">
+<i class="i-added">
+</i>
+<font style="font-family: 'Microsoft YaHei',arial,tahoma,{lang ljww360:wt19},sans-serif;">{lang ljww360:wt15}</font>
+</a>
+
+</li>
+<!--{if $isxst}-->
+<li class="ope-spliter">
+</li>
+<li>
+<a alog-action="qb-add-reward"  onclick='showWindow("ljsuject","plugin.php?id=ljww360&mod=wtw&action=zjxs&tid=$tid&wid=$id&formhash={FORMHASH}");' href="javascript:void(0)">
+<i class="i-enhance">
+</i>
+<font style="font-family: 'Microsoft YaHei',arial,tahoma,{lang ljww360:wt19},sans-serif;">{lang ljww360:wt16}</font>
+</a>
+</li>
+<!--{/if}-->
+</ul>
+</div></div><!--{/if}-->
+<!-- 问题补充 --><!-- JiaThis Button BEGIN -->
+$config['fenxiang']
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375634427209135" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+                    </div>
+
+<div class="ft cl mtm">
+						
+</div>
+                </div>
+				<!--{if $wtarr['authorid']!=$_G['uid']}-->
+<div class="mod-answer-form">
+<div class="hd">
+<h4>
+{lang ljww360:wt1}
+</h4>
+</div>
+<div class="bd"><!-- 回答问题 -->
+<form method="post" action="plugin.php?id=ljww360&mod=wtw&wid=$_GET['wid']&tid=$tid&ac=yiht&action=htaction" enctype="multipart/form-data">
+<div style="padding:0" class="textarea" id="editorwraper">
+<div style="border:none; width:100%;" class="tedt">
+<script charset="$_G['charset']" src="source/plugin/ljww360/js/editor/kindeditor-min.js" reload="true"></script>
+<!--{if $_G['charset']=='gbk'}-->
+<script charset="gbk" src="source/plugin/ljww360/js/editor/lang/zh_CN.js" reload="true"></script>
+<!--{else}-->
+<script charset="utf-8" src="source/plugin/ljww360/js/editor/lang/zh_CN_U8.js" reload="true"></script>
+<!--{/if}-->
+<script type="text/javascript" reload="true">
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#myeditorpp');
+        });
+</script>
+<div >
+<textarea id="myeditorpp" name="content" style="width:688px;height:300px;">
+</textarea>
+</div>
+</div>
+</div>
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<input type="submit" value="{lang ljww360:wt6}" name="btn_answer" class="btn btn-2">
+
+</form>
+</div>
+</div>
+<!--{/if}-->
+<link rel="stylesheet" href="source/plugin/ljww360/css/detail.combo.css">
+<style type="text/css">
+	input.btn-set-best {
+	
+  border: 0 none;
+}
+
+</style>
+<!--{if $best}-->
+<div class="mod-answer-one mod-answer-best"><div class="hd"><h4>{lang ljww360:wt7}</h4><p class="pubtime">$best['dateline']</p><div class="ico-best"></div></div><div class="bd"><div data-ans_id="1370755344063428" data-ask_id="1370755162125640" class="content"><p><!--{eval echo discuzcode($best['message'])}--></p><p>&nbsp;</p></div></div><div class="ft"><div class="vcard-user"><a class="pic" href="<!--{if $config['isrewrite']}-->space-uid-{$best['authorid']}.html<!--{else}-->home.php?mod=space&uid=$best['authorid']<!--{/if}-->" target="_blank">{eval echo avatar($best['authorid'],'small')}</a><div class="text"><p class="name"><a href="<!--{if $config['isrewrite']}-->space-uid-{$best['authorid']}.html<!--{else}-->home.php?mod=space&uid=$best['authorid']<!--{/if}-->" target="_blank">$best['author']</a></p><p><span class="ico-ide ico-ide-1"></span><span class="ico-lv ico-lv-{$bestdj}" ></span></p><p>{lang ljww360:wt8}<em>$cainalv</em></p></div></div></div></div>
+<!--{/if}-->
+<!--{if !$best&&$htarr}-->
+	<div id="answerList">
+<div class="mod-answer-list"><div class="hd"><h4><b>($wtarr[replies])</b>&nbsp;</h4><span class="ico  "></span></div><div class="bd"><p class="ask-q-time"><span>{lang ljww360:wt9}</span></p><div class="mod-all-answer-list"><ul class="list">
+<!--{loop $htarr $k $v}-->
+<li id="pid{$v[id]}" class="item js-form odd"><div class="date"><span></span></div><div title="2013-05-31 15:20" class="dot"></div><div class="answer-detail  clearfix js-answer-region"><div class="vcard"><a href="<!--{if $config['isrewrite']}-->space-uid-{$v['authorid']}.html<!--{else}-->home.php?mod=space&uid=$v['authorid']<!--{/if}-->" target="_blank">{eval echo avatar($v['authorid'],'small')}$v['author']</a></div><div class="content-box"><div class="mod-qa-content"><div class="g-point g-point-left"><ins class="border"></ins><ins class="bg"></ins></div><div data-ask_id="1369983863123404" data-ans_id="1369984855123988" class="content clearfix"><div style="float:left"><p>$v['message']</p></div></div></div></div></div><!--{if $wtarr['author']!=$v['author']&&$_G['uid']==$wtarr['authorid']&&$_G['uid']&&!$best}--><a style="margin-left:80px;margin-top:10px;" class="z btn-set-best btn-set-zw" alog-action="qb-add-reward" id="btn7422" href="plugin.php?id=ljww360&mod=wtw&wid=$v['threadid']&postid=$v['id']&tid=$v['tid']&fid=$v['fid']&pid=$v['pid']&ht=ask&formhash={FORMHASH}" onclick="showWindow('ljww360', this.href,'get',0);return false;"><span>{lang ljww360:wt10}</span></a>
+<form class="z" method="post" action="plugin.php?id=ljww360&mod=wtw">
+<input type="hidden" value="$v['threadid']" name="wid">
+<input type="hidden" value="$v['tid']" name="tid">
+<input type="hidden" value="$v['fid']" name="fid">
+<input type="hidden" value="$v['pid']" name="pid">
+<input type="hidden" value="$v['authorid']" name="uid">
+<input type="hidden" value="$wtarr['price']" name="price">
+<input type="hidden" value="$wtarr['special']" name="special">
+<input type="hidden" value="$v['id']" name="postid">
+<input type="hidden" value="best" name="action">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<span class="z cl">
+<input type="submit" style="width: 110px;height: 28px;margin-top:10px;" name="setbest" value="" class="btn-set-best">
+</span>
+</form>
+<!-- 回复的回复按钮权限判断 -->
+<!--{elseif $v['authorid']!=$_G['uid']&&!$best}--><a class="btn-more-trace js-added-btn" href="plugin.php?id=ljww360&mod=wtw&wid=$v['threadid']&postid=$v['id']&tid=$v['tid']&fid=$v['fid']&pid=$v['pid']&ht=ask&formhash={FORMHASH}" onclick="showWindow('ljww360', this.href,'get',0);return false;"><span style='background: url("source/plugin/ljww360/images/t018d6e72759b499dee.png") no-repeat scroll -249px -48px transparent;display: block;height: 28px;left: -6px;top: 17px;width: 28px;margin-left:80px;margin-top:10px;'>
+</span></a><!--{if $dxyhz==1}-->
+<form class="z" method="post" action="plugin.php?id=ljww360&mod=wtw">
+<input type="hidden" value="$v['threadid']" name="wid">
+<input type="hidden" value="$v['tid']" name="tid">
+<input type="hidden" value="$v['fid']" name="fid">
+<input type="hidden" value="$v['pid']" name="pid">
+<input type="hidden" value="$v['authorid']" name="uid">
+<input type="hidden" value="$wtarr['price']" name="price">
+<input type="hidden" value="$wtarr['special']" name="special">
+<input type="hidden" value="$v['id']" name="postid">
+<input type="hidden" value="best" name="action">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<span style='background: url("source/plugin/ljww360/images/t018d6e72759b499dee.png") no-repeat scroll -249px -48px transparent;display: block;height: 28px;left: -6px;top: 17px;width: 28px;margin-left:120px;margin-top:-30px;'>
+<input type="submit"  name="setbest" value="{lang ljww360:wt17}" class="btn btn-2">
+</span>
+</form>
+<!--{/if}--><!--{/if}--></li>
+<!--{/loop}-->
+<!--{if method_exists(helper_page,multi)}-->
+	<tr><td colspan="16" style="text-align:right"><!--{eval  echo helper_page::multi($num, $perpage, $curpage, 'plugin.php?id=ljww360&mod=wtw&tid='.$tid.'&wid='.$_GET['wid'],0, 10, FALSE,FALSE);}--></td></tr>
+	<!--{else}-->
+	<tr><td colspan="16" style="text-align:right"><!--{eval  echo multi($num, $perpage, $curpage, 'plugin.php?id=ljww360&mod=wtw&tid='.$tid.'&wid='.$_GET['wid'],0, 10, FALSE,FALSE);}--></td></tr>
+	<!--{/if}-->
+</ul></div></div></div></div>				
+<!--{/if}-->
+<!--{if $xgwt}-->
+                <div class="mod-relevant">
+                    <div class="hd">
+                        <h4>
+                            {lang ljww360:wt11}
+                        </h4>
+                    </div>
+                    <div class="bd">
+                        <div class="cls-qa-list-1">
+                            <ul class="list">
+							<!--{loop $xgwt $k $v}-->
+                                <li>
+                                    <span class="s0">
+                                        <span class="wealth">
+                                            $v['price']                                        </span>
+                                        <a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&tid=$v['tid']&wid=$v['id']<!--{/if}-->" target="_blank">
+$v['subject']                                        </a>
+                                    </span>
+                                    <span class="s1">
+                                        <span class="pubtime">
+                                            $v['dateline']                                        </span>
+                                    </span>
+                                </li>
+                               <!--{/loop}-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				<!--{/if}-->
+<!--{if $best}-->
+	<div id="answerList">
+<div class="mod-answer-list"><div class="hd"><h4><b>($wtarr[replies])</b>&nbsp;</h4><span class="ico  "></span></div><div class="bd"><p class="ask-q-time"><span>{lang ljww360:wt9}</span></p><div class="mod-all-answer-list"><ul class="list">
+<!--{loop $htarr $k $v}-->
+<li  class="item js-form odd">
+<div class="date">
+<span></span>
+</div>
+<div title="2013-05-31 15:20" class="dot">
+</div>
+<div class="answer-detail  clearfix js-answer-region">
+<div class="vcard">
+	<a href="<!--{if $config['isrewrite']}-->space-uid-{$v['authorid']}.html<!--{else}-->home.php?mod=space&uid=$v['authorid']<!--{/if}-->" target="_blank">{eval echo avatar($v['authorid'],'small')}$v['author']</a>
+</div>
+	<div class="content-box">
+		<div class="mod-qa-content">
+			<div class="g-point g-point-left">
+				<ins class="border"></ins><ins class="bg"></ins>
+			</div>
+				<div data-ask_id="1369983863123404" data-ans_id="1369984855123988" class="content clearfix">
+					<div style="float:left"><p>$v['message']</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--{if $wtarr['author']!=$v['author']&&$_G['uid']==$wtarr['authorid']&&$_G['uid']&&!$best}-->
+<a style="margin-left:80px;margin-top:10px;" class="z btn-set-best btn-set-zw" alog-action="qb-add-reward" id="btn7422" href="plugin.php?id=ljww360&mod=wtw&tid=$v['tid']&fid=$v['fid']&pid=$v['pid']&ht=ask&formhash={FORMHASH}" onclick="showWindow('ljww360', this.href,'get',0);return false;"><span>{lang ljww360:wt10}</span></a>
+<form class="z" method="post" action="plugin.php?id=ljww360&mod=wtw">
+<input type="hidden" value="$v['threadid']" name="wid">
+<input type="hidden" value="$v['tid']" name="tid">
+<input type="hidden" value="$v['fid']" name="fid">
+<input type="hidden" value="$v['pid']" name="pid">
+<input type="hidden" value="$v['authorid']" name="uid">
+<input type="hidden" value="$wtarr['price']" name="price">
+<input type="hidden" value="$wtarr['special']" name="special">
+<input type="hidden" value="$v['id']" name="postid">
+<input type="hidden" value="best" name="action">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+<span class="z cl">
+<input type="submit" style="width: 110px;height: 28px;margin-top:10px;" name="setbest" value="" class="btn-set-best">
+</span>
+</form><!--{elseif $v['authorid']!=$_G['uid']&&!$best}--><a class="btn-more-trace js-added-btn" href="plugin.php?id=ljww360&mod=wtw&tid=$v['tid']&fid=$v['fid']&pid=$v['pid']&ht=ask" onclick="showWindow('ljww360', this.href,'get',0);return false;"><span style='background: url("source/plugin/ljww360/images/t018d6e72759b499dee.png") no-repeat scroll -249px -48px transparent;display: block;height: 28px;left: -6px;top: 17px;width: 28px;margin-left:80px;margin-top:10px;'>
+</span></a><!--{/if}--></li>
+<!--{/loop}-->
+<!--{if method_exists(helper_page,multi)}-->
+	<tr><td colspan="16" style="text-align:right"><!--{eval  echo helper_page::multi($num, $perpage, $curpage, 'plugin.php?id=ljww360&mod=wtw&tid='.$tid.'&wid='.$_GET['wid'],0, 10, FALSE,FALSE);}--></td></tr>
+	<!--{else}-->
+	<tr><td colspan="16" style="text-align:right"><!--{eval  echo multi($num, $perpage, $curpage, 'plugin.php?id=ljww360&mod=wtw&tid='.$tid.'&wid='.$_GET['wid'],0, 10, FALSE,FALSE);}--></td></tr>
+	<!--{/if}-->
+</ul></div></div></div></div>				
+<!--{/if}-->
+            </div>
+			<style type="text/css">
+.mod-userinfo .qa-btn {
+  background-position: -310px -153px;
+  height: 26px;
+  margin-top: 15px;
+  width: 194px;
+}
+.mod-userinfo .qa-btn li a {
+  color: #666666;
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  text-indent: 38px;
+  width: 90px;
+}
+
+			</style>
+           <div id="mod-userinfo" class="mod-userinfo" style="float:left;width: 180px;"><div class="info"><a href="<!--{if $config['isrewrite']}-->space-uid-{$wtarr[authorid]}.html<!--{else}-->home.php?mod=space&uid=$wtarr[authorid]<!--{/if}-->" class="js-user-header pic">{eval echo avatar($wtarr[authorid],'small')}</a><div class="text"><p class="name"><a href="<!--{if $config['isrewrite']}-->space-uid-{$wtarr[authorid]}.html<!--{else}-->home.php?mod=space&uid=$wtarr[authorid]<!--{/if}-->" text="userinfo-name" class="js-user-name">{$username}</a><span class="ico-ide ico-ide-1"></span></p><p>$creditname:&nbsp;<span class="wealth">$brenmyarr[$wendajf]</span></p><p class="rank">
+                                    <span class="ico-lv ico-lv-$dj">
+                                    </span>
+                                   
+                                </p></div></div><div class="status"><table><tbody><tr><th class="first">{lang ljww360:wenwen11}</th><th>{lang ljww360:wenwen12}</th><th>{lang ljww360:wenwen10}</th></tr><tr><!--{if $_G['uid']==$authorid}--><td class="first"><a href="<!--{if $config['isrewrite']}-->my-whd.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=whd<!--{/if}-->" class="js-user-answer-num">$brennum</a></td><td><a href="<!--{if $config['isrewrite']}-->my-sy.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=sy<!--{/if}-->" class="js-user-acc-num">$brencainalv</a></td><td><a href="<!--{if $config['isrewrite']}-->my-ask.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=ask<!--{/if}-->" class="js-user-ask-num">$brentid</a></td><!--{else}--><td>$brennum</td><td>$brencainalv</td><td>$brentid</td><!--{/if}--></tr></tbody></table></div><!--{if $_G['uid']==$authorid}--><div class="qa-btn" style="margin-left:-10px"><ul class="clearfix"><li class="asked"><a href="<!--{if $config['isrewrite']}-->my-ask.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=ask<!--{/if}-->" class="js-user-ask-link" text="userinfo-myAsk">{lang ljww360:mydj3}</a></li><li class="answered"><a href="<!--{if $config['isrewrite']}-->my-whd.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&action=whd<!--{/if}-->" class="js-user-answer-link" text="userinfo-myAnswer">{lang ljww360:mydj4}</a></li></ul></div><!--{/if}--></div>
+        </div>
+
+
+		{template common/footer}

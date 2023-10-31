@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Style]]></item>
+	<item id="Version"><![CDATA[X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2015-10-25 02:31]]></item>
+	<item id="From"><![CDATA[dede168Ô´ÂëÍø]]></item>
+	<item id="Data">
+		<item id="styleid"><![CDATA[10]]></item>
+		<item id="name"><![CDATA[Å¬±ÈÑÇÉçÇø]]></item>
+		<item id="available"><![CDATA[1]]></item>
+		<item id="templateid"><![CDATA[8]]></item>
+		<item id="extstyle"><![CDATA[|]]></item>
+		<item id="tplname"><![CDATA[Å¬±ÈÑÇÉçÇø]]></item>
+		<item id="directory"><![CDATA[./template/comiis_nby]]></item>
+		<item id="copyright"><![CDATA[www.dede168.com]]></item>
+		<item id="style">
+			<item id="titlebgcolor"><![CDATA[#eee titlebg.png repeat-x 0 0]]></item>
+			<item id="menuhoverbgcolor"><![CDATA[ nv_a.png repeat-x 50% -50px]]></item>
+			<item id="lightlink"><![CDATA[#FFF]]></item>
+			<item id="floatbgcolor"><![CDATA[#FFF]]></item>
+			<item id="dropmenubgcolor"><![CDATA[#FEFEFE]]></item>
+			<item id="floatmaskbgcolor"><![CDATA[#000]]></item>
+			<item id="dropmenuborder"><![CDATA[#e5e5e5]]></item>
+			<item id="specialbg"><![CDATA[#fafafa]]></item>
+			<item id="specialborder"><![CDATA[#e5e5e5]]></item>
+			<item id="commonbg"><![CDATA[#f9f9f9]]></item>
+			<item id="commonborder"><![CDATA[#e5e5e5]]></item>
+			<item id="inputbg"><![CDATA[#FFF]]></item>
+			<item id="stypeid"><![CDATA[1]]></item>
+			<item id="inputborderdarkcolor"><![CDATA[#dfdfdf]]></item>
+			<item id="headerbgcolor"><![CDATA[]]></item>
+			<item id="headerborder"><![CDATA[0]]></item>
+			<item id="sidebgcolor"><![CDATA[#fff vlineb.png repeat-y 0 0]]></item>
+			<item id="msgfontsize"><![CDATA[14px]]></item>
+			<item id="bgcolor"><![CDATA[#f3f3f3]]></item>
+			<item id="noticetext"><![CDATA[#e03300]]></item>
+			<item id="highlightlink"><![CDATA[#e03300]]></item>
+			<item id="link"><![CDATA[#444]]></item>
+			<item id="lighttext"><![CDATA[#999]]></item>
+			<item id="midtext"><![CDATA[#666]]></item>
+			<item id="tabletext"><![CDATA[#444]]></item>
+			<item id="smfontsize"><![CDATA[0.83em]]></item>
+			<item id="threadtitlefont"><![CDATA['Microsoft Yahei','Simsun',Tahoma]]></item>
+			<item id="threadtitlefontsize"><![CDATA[14px]]></item>
+			<item id="smfont"><![CDATA[Arial]]></item>
+			<item id="fontsize"><![CDATA[12px/1.5]]></item>
+			<item id="font"><![CDATA['Microsoft Yahei','Simsun',Tahoma]]></item>
+			<item id="styleimgdir"><![CDATA[template/comiis_nby/img]]></item>
+			<item id="imgdir"><![CDATA[template/comiis_nby/img]]></item>
+			<item id="boardimg"><![CDATA[comiis_logo.gif]]></item>
+			<item id="available"><![CDATA[]]></item>
+			<item id="headertext"><![CDATA[#656d78]]></item>
+			<item id="footertext"><![CDATA[#333]]></item>
+			<item id="menubgcolor"><![CDATA[ nv.png repeat-x]]></item>
+			<item id="menutext"><![CDATA[#FFF]]></item>
+			<item id="menuhovertext"><![CDATA[#FFF]]></item>
+			<item id="wrapbg"><![CDATA[#FFF]]></item>
+			<item id="wrapbordercolor"><![CDATA[#e5e5e5]]></item>
+			<item id="contentwidth"><![CDATA[630px]]></item>
+			<item id="contentseparate"><![CDATA[#e5e5e5]]></item>
+			<item id="inputborder"><![CDATA[#dfdfdf]]></item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2]]></item>
+	</item>
+</root>

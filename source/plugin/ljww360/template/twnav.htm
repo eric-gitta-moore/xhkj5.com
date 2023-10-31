@@ -1,0 +1,38 @@
+<!--{if $config['background']}-->
+<style type="text/css">
+#bd{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+#pt{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+#pt a{
+	color:#333;
+}
+#doc4{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+#warper{
+	background:none repeat scroll 0 0 #FFFFFF
+}
+</style>
+<!--{/if}-->
+<div id="pt" class="bm cl"><div class="z">
+<a href="index.php" class="nvhm" title="{lang ljww360:wenwen1}">$_G[setting][bbname]</a><em> &rsaquo; </em><a href="<!--{if $config['isrewrite']}-->answer.html<!--{else}-->plugin.php?id=ljww360<!--{/if}-->">$dingbu</a><!--{if $_GET['mod']}--><em> &rsaquo; </em>{$daohang}<!--{/if}--><!--{if $_G ['groupid'] == 1}-->
+				<em> &rsaquo; </em><a href="plugin.php?id=ljww360&update=1">{lang ljww360:wenwen3}</a>
+				<!--{/if}--></div>
+				<div style="float:right;" >
+<form id="form_search" target="_blank" method="post" name="" action="<!--{if $config['isrewrite']}-->search.html<!--{else}-->plugin.php?id=ljww360&mod=search&do=ss<!--{/if}-->" onsubmit="return brand_search(this)">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td><input type="text" name="keyword" id="srchtxt" placeholder="$config['ssts']" value="" style="border:2px solid <!--{if $config['sscolor']}-->{$config['sscolor']}<!--{else}-->#3EAF0E<!--{/if}-->;width:250px;height:24px;"></td>
+
+<td><button value="true" name="searchsubmit"  type="submit" style="width:80px;height:30px;margin-left:5px;background:none repeat scroll 0 0 <!--{if $config['scolor']}-->{$config['scolor']}<!--{else}-->#3EAF0E<!--{/if}-->;color:#FFFFFF">{lang ljww360:wenwen39}</button></td><td style="width:55px;height:26px;margin-left:5px;"><button value="true"   type="button" onclick="window.location.href='plugin.php?id=ljww360&mod=tw'" style="width:80px;height:30px;margin-left:1px;background:none repeat scroll 0 0 <!--{if $config['tcolor']}-->{$config['tcolor']}<!--{else}-->#3EAF0E<!--{/if}-->;color:#FFFFFF" >{lang ljww360:wenwen40}</button>
+</td>
+<td></td>
+<td><div class="hot"></div></td>
+</tr>
+</tbody></table>
+</form>
+</div> 
+</div>

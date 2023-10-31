@@ -1,0 +1,52 @@
+.mod-guiness {
+border: 1px solid #E0E0E0;
+
+margin-bottom:10px
+}
+#hd, #bd {
+  text-align: left;
+}
+.mod-guiness .hd {
+  border-bottom: 1px solid #E0E0E0;
+  padding: 6px 10px;
+}
+.mod-guiness .bd {
+  padding: 6px;
+}
+.mod-guiness li {
+  padding-bottom: 15px;
+  vertical-align: middle;
+}
+.mod-guiness .rk {
+  color: #FF6600;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.ico-certify, .ico-guiness {
+  background: url("../images/t01252ee3b0a62e3fe0.png") no-repeat scroll 0 0 transparent;
+}
+.ico-guiness {
+  background-position: 0 -313px;
+  height: 17px;
+  left: -3px;
+  position: absolute;
+  top: -11px;
+  width: 16px;
+}
+
+.mod-guiness .info {
+  color: #666666;
+  position: relative;
+}
+.mod-guiness .info .pic {
+  float: left;
+  height: 70px;
+  margin-right: 10px;
+  overflow: hidden;
+  width: 50px;
+}
+.mod-guiness .info b {
+  color: #FF6600;
+  font-weight: 400;
+}
+

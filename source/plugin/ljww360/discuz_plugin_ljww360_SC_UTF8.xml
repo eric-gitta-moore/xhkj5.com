@@ -1,0 +1,1326 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2015-05-06 03:10]]></item>
+	<item id="From"><![CDATA[讯幻网 (www.xhkj5.com)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[讯幻网_【亮剑】精仿360问答]]></item>
+			<item id="identifier"><![CDATA[ljww360]]></item>
+			<item id="description"><![CDATA[打造Discuz最专业的问答系统]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[ljww360/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[3.9]]></item>
+			<item id="__modules">
+			<item id="69">
+					<item id="name"><![CDATA[mysitead]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>讯幻网</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[ljww360]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[问答系统]]></item>
+					<item id="url"><![CDATA[plugin.php?id=ljww360]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[sj]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[typeid]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[旧问题导入]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[wenwen]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[wenwentype]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[问题分类]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[seo]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[SEO设置]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="6">
+					<item id="name"><![CDATA[admin_wwgl]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[问题管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="7">
+					<item id="name"><![CDATA[ts]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[推送管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="8">
+					<item id="name"><![CDATA[yijiejue]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[已解决分类]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="9">
+					<item id="name"><![CDATA[upgrade]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[修复插件]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[5]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="10">
+					<item id="name"><![CDATA[app]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[<span style="color:red">亮剑应用中心</span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[50]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页0回答问题]]></item>
+				<item id="description"><![CDATA[关闭后问答首页将不显示0回答问题]]></item>
+				<item id="variable"><![CDATA[iszero]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页已解决问题]]></item>
+				<item id="description"><![CDATA[关闭后问答首页将不显示已解决问题]]></item>
+				<item id="variable"><![CDATA[isyjj]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页待解决问题]]></item>
+				<item id="description"><![CDATA[关闭后问答首页将不显示待解决问题]]></item>
+				<item id="variable"><![CDATA[isdj]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页推荐轮转]]></item>
+				<item id="description"><![CDATA[当推送主题没有填写的时候可以暂时关闭首页推荐轮转，以免留空。]]></item>
+				<item id="variable"><![CDATA[istj]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页高悬赏问题]]></item>
+				<item id="description"><![CDATA[关闭后问答首页将不显示高悬赏问题]]></item>
+				<item id="variable"><![CDATA[isgxs]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启首页排行]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ispaihang]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启二维码展示]]></item>
+				<item id="description"><![CDATA[开启后首页跟问题展示页会显示带链接的二维码，手机直接扫描进入手机版]]></item>
+				<item id="variable"><![CDATA[iserweima]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[手机二维码显示在分类下方]]></item>
+				<item id="description"><![CDATA[默认显示在世界之最上方
+选是将显示在问题分类下方]]></item>
+				<item id="variable"><![CDATA[isqrcode]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[允许发布外链用户组]]></item>
+				<item id="description"><![CDATA[留空不限制
+问答提问跟回答允许发布外链的用户组]]></item>
+				<item id="variable"><![CDATA[url_groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[是否开启问答推送论坛]]></item>
+				<item id="description"><![CDATA[开启问答推送论坛将会把问题同步到论坛中
+****开启后请到问题分类中绑定各分类对应的同步版块]]></item>
+				<item id="variable"><![CDATA[tuisong]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[论坛同步问答只同步悬赏帖]]></item>
+				<item id="description"><![CDATA[开起开关论坛版块下的帖子将只有悬赏帖才会同步到问答]]></item>
+				<item id="variable"><![CDATA[isspecial]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[是否开启论坛同步问答]]></item>
+				<item id="description"><![CDATA[开启论坛同步问答将会把绑定版块下的发帖同步到问答中
+***需要问答独立请关闭此开关。]]></item>
+				<item id="variable"><![CDATA[isforum]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[绑定关联版块]]></item>
+				<item id="description"><![CDATA[绑定关联版块用于论坛帖子同步到问答、旧问题导入、分类绑定版块（用于问答帖子同步到论坛）]]></item>
+				<item id="variable"><![CDATA[wenwenbk]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[允许回答的用户组]]></item>
+				<item id="description"><![CDATA[留空不限制]]></item>
+				<item id="variable"><![CDATA[reply_groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[不允许回答的用户组提示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[prompt]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[你所在的用户组暂未支持回答问题，请努力升级哦~。~]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[普通问答帖消耗积分数]]></item>
+				<item id="description"><![CDATA[发布普通问答帖消耗积分数，请填写数字，填0不消耗积分]]></item>
+				<item id="variable"><![CDATA[putong]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[普通问答帖消耗积分说明]]></item>
+				<item id="description"><![CDATA[普通问答帖消耗积分说明将会显示在发表问题的标题框中。
+最多显示30个（含标点符号）
+积分类型=｛jflx｝
+消耗积分数=｛jfs｝]]></item>
+				<item id="variable"><![CDATA[shuoming]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[发布普通问答帖需要消耗{jflx}{jfs}(悬赏不扣除！)]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[普通问答帖消耗积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[putongjflx]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[最佳答案奖励积分数]]></item>
+				<item id="description"><![CDATA[普通问答帖中回答被采纳奖励积分数，悬赏帖回答被采纳奖励积分数+悬赏积分]]></item>
+				<item id="variable"><![CDATA[zuijiadaan]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[悬赏最佳答案积分类型]]></item>
+				<item id="description"><![CDATA[请设置一个问答悬赏帖子、最佳答案奖励积分项，如开启悬赏帖请到（全局--积分设置--悬赏使用的积分）请保持论坛的悬赏积分跟问答的悬赏最佳答案积分类型一致
+此积分也是排行积分]]></item>
+				<item id="variable"><![CDATA[wendajf]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[缓存时间]]></item>
+				<item id="description"><![CDATA[请填写缓存时间（必须以分钟为单位，填写小时将不生效），小时必须转化为分钟。]]></item>
+				<item id="variable"><![CDATA[cache]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[120]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[推送主题图片1]]></item>
+				<item id="description"><![CDATA[不推送首页不显示,请填写要推送的图片地址，格式如source/plugin/wenwen/images/ac.jpg]]></item>
+				<item id="variable"><![CDATA[tupian1]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[source/plugin/ljww360/images/ac.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[推送主题图片2]]></item>
+				<item id="description"><![CDATA[不推送首页不显示,请填写要推送的图片地址，格式如source/plugin/wenwen/images/ac.jpg]]></item>
+				<item id="variable"><![CDATA[tupian2]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[source/plugin/ljww360/images/a1.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="23">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[推送主题图片3]]></item>
+				<item id="description"><![CDATA[不推送首页不显示,请填写要推送的图片地址，格式如source/plugin/wenwen/images/ac.jpg]]></item>
+				<item id="variable"><![CDATA[tupian3]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[source/plugin/ljww360/images/a2.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="24">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[SEO标题]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[title]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[SEO问答]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="25">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[SEO关键字]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[keywords]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[SEO问答]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="26">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[SEO描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[description]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[亮剑SEO问答是由讯幻网自主研发基于社区的互动式SEO知识问答分享平台]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="27">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[版权信息]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[banquan]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<div style="border: 1px solid #D5D5D5;margin-top:10px" class="mod-userlogin">
+                    <div class="bd clearfix">
+                       <p>版权信息
+    </p>
+  <p>精仿360问答 V3.6.3
+  </p>
+  <p><a href="http://www.dzx30.com" target="_blank">@亮剑Discuz!</a></p></div>
+                    </div>
+                </div>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="28">
+				<item id="displayorder"><![CDATA[17]]></item>
+				<item id="title"><![CDATA[顶部显示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[dingbu]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[问答系统]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="29">
+				<item id="displayorder"><![CDATA[18]]></item>
+				<item id="title"><![CDATA[等级规则]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[grade]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1=10
+2=100
+3=300
+4=400
+5=500
+6=600
+7=700
+8=800
+9=900
+10=1000
+11=1100
+12=1200
+13=1300
+14=1400
+15=2000
+16=2200
+17=2400
+18=2600
+19=2800
+20=3000
+21=3500
+22=4000
+23=4500
+24=5000
+25=5500
+26=6000
+27=6500
+28=7000
+29=7500
+30=8000
+31=8500
+32=9000
+33=9500
+34=10000
+35=15000
+36=20000
+37=25000
+38=30000
+39=35000
+40=40000
+41=60000
+42=80000
+43=100000
+44=150000
+45=200000
+46=250000
+46=300000
+47=500000
+48=800000
+49=1000000]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="30">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[是否开启悬赏帖]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isxst]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="31">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[悬赏帖税率]]></item>
+				<item id="description"><![CDATA[默认公式：所支付积分总数=悬赏积分*0.2+悬赏积分]]></item>
+				<item id="variable"><![CDATA[xsgs]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[0.2]]></item>
+				<item id="extra"><![CDATA[0.1 = 0.1
+0.2 = 0.2 
+0.3 = 0.3
+0.4 = 0.4
+0.5 = 0.5]]></item>
+			</item>
+			<item id="32">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[强制悬赏帖提示语]]></item>
+				<item id="description"><![CDATA[开启强制悬赏帖，如发的不是悬赏的提示语]]></item>
+				<item id="variable"><![CDATA[tsy]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[悬赏积分必须选择或填写]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="33">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[是否强制发悬赏帖子]]></item>
+				<item id="description"><![CDATA[选是在问答中发帖必须悬赏积分才能发布问题，同时最好网站版块中发帖也强制只发悬赏帖]]></item>
+				<item id="variable"><![CDATA[isxs]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="34">
+				<item id="displayorder"><![CDATA[20]]></item>
+				<item id="title"><![CDATA[最高悬赏值]]></item>
+				<item id="description"><![CDATA[如超过此值将提示用户悬赏积分不能高于最高悬赏值]]></item>
+				<item id="variable"><![CDATA[zgxsz]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[500]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="35">
+				<item id="displayorder"><![CDATA[22]]></item>
+				<item id="title"><![CDATA[追加悬赏提示语]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[zjysy]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<font color="red">当您对问题悬赏更多积分时，该问题将会出现在所属分类的高悬赏问题列表上方，<br/>提高被回答者看到的几率。<br/>您所需要支付积分总数为追加悬赏积分*{xssl}+追加悬赏积分</font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="36">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[首页问题显示条数]]></item>
+				<item id="description"><![CDATA[问答首页未解决、已解决、高悬赏、零回答，问题显示条数，默认7条]]></item>
+				<item id="variable"><![CDATA[indexasknum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[7]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="37">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[分类列表页问题显示条数]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[flasknum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[15]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="38">
+				<item id="displayorder"><![CDATA[24]]></item>
+				<item id="title"><![CDATA[每天奖励积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jljflx]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="39">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[每天前多少个回复有奖励]]></item>
+				<item id="description"><![CDATA[每天每人限制前多少个回答问题有积分奖励]]></item>
+				<item id="variable"><![CDATA[brjlnum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="40">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[每天回答问题积分奖励数]]></item>
+				<item id="description"><![CDATA[每天回复未超出限制时的奖励积分数]]></item>
+				<item id="variable"><![CDATA[brjl]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="41">
+				<item id="displayorder"><![CDATA[26]]></item>
+				<item id="title"><![CDATA[允许管理问答用户组]]></item>
+				<item id="description"><![CDATA[注：允许管理问答用户组权限：代选最佳答案、设置问答帖子分类、编辑修改问答帖子
+设置分类：可以给没有分类的问答版块下的帖子选择分类
+代选最佳答案：可以给一段时间后没有选最佳答案的问答帖代选最佳答案]]></item>
+				<item id="variable"><![CDATA[dxuser]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="42">
+				<item id="displayorder"><![CDATA[27]]></item>
+				<item id="title"><![CDATA[问题分享代码]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[fenxiang]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<div class="jiathis_style">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_tools_1"></a>
+	<a class="jiathis_button_tools_2"></a>
+	<a class="jiathis_button_tools_3"></a>
+	<a class="jiathis_button_tools_4"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="43">
+				<item id="displayorder"><![CDATA[28]]></item>
+				<item id="title"><![CDATA[开启认证才能发布问题]]></item>
+				<item id="description"><![CDATA[开启开关将只有认证通过的用户才能在问答发布问题
+开启开关请选择一个认证选项]]></item>
+				<item id="variable"><![CDATA[isverify]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="44">
+				<item id="displayorder"><![CDATA[29]]></item>
+				<item id="title"><![CDATA[认证verify选项]]></item>
+				<item id="description"><![CDATA[开启后请选择一个认证verify
+DZ默认6为实名，7为视频，12345为自定义认证]]></item>
+				<item id="variable"><![CDATA[verify]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[6]]></item>
+				<item id="extra"><![CDATA[1 = verify1
+2 = verify2
+3 = verify3
+4 = verify4
+5 = verify5
+6 = verify6
+7 = verify7]]></item>
+			</item>
+			<item id="45">
+				<item id="displayorder"><![CDATA[30]]></item>
+				<item id="title"><![CDATA[是否开启伪静态]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isrewrite]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="46">
+				<item id="displayorder"><![CDATA[31]]></item>
+				<item id="title"><![CDATA[是否开启插件白背景]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[background]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="47">
+				<item id="displayorder"><![CDATA[32]]></item>
+				<item id="title"><![CDATA[是否开启轮转标题]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[issubject]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="48">
+				<item id="displayorder"><![CDATA[33]]></item>
+				<item id="title"><![CDATA[问题页右侧广告1]]></item>
+				<item id="description"><![CDATA[<div id="mod-userinfo"  style="width: 268px;float:left;border: 1px solid #E4E4E4;margin-top:5px;">
+        <a href="http://www.xhkj5.com/gg/addon.php?/?@liangjian"><img src="source/plugin/ljww360/images/meinv.jpg" style="width:268px;height:330px;"/></a>
+</div>]]></item>
+				<item id="variable"><![CDATA[gg1]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="49">
+				<item id="displayorder"><![CDATA[34]]></item>
+				<item id="title"><![CDATA[问题页右侧广告2]]></item>
+				<item id="description"><![CDATA[<div id="mod-userinfo"  style="width: 268px;float:left;border: 1px solid #E4E4E4;margin-top:5px;">
+        <a href="http://www.xhkj5.com/gg/addon.php?/?@liangjian"><img src="source/plugin/ljww360/images/meinv.jpg" style="width:268px;height:330px;"/></a>
+</div>]]></item>
+				<item id="variable"><![CDATA[gg2]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="50">
+				<item id="displayorder"><![CDATA[35]]></item>
+				<item id="title"><![CDATA[发帖编辑器开启精简版]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[iseditor]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="51">
+				<item id="displayorder"><![CDATA[36]]></item>
+				<item id="title"><![CDATA[回帖编辑开启精简版]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isheditor]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="52">
+				<item id="displayorder"><![CDATA[37]]></item>
+				<item id="title"><![CDATA[搜索提示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ssts]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[ 请输入搜索内容!]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="53">
+				<item id="displayorder"><![CDATA[38]]></item>
+				<item id="title"><![CDATA[搜索框颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[sscolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#3EAF0E]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="54">
+				<item id="displayorder"><![CDATA[39]]></item>
+				<item id="title"><![CDATA[搜索按钮颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[scolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#3EAF0E]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="55">
+				<item id="displayorder"><![CDATA[40]]></item>
+				<item id="title"><![CDATA[提问按钮颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[tcolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#3EAF0E]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="56">
+				<item id="displayorder"><![CDATA[41]]></item>
+				<item id="title"><![CDATA[显示全部二级分类]]></item>
+				<item id="description"><![CDATA[选是二级分类将不在弹窗中显示，直接页面上显示全部二级分类]]></item>
+				<item id="variable"><![CDATA[istwo]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="57">
+				<item id="displayorder"><![CDATA[41]]></item>
+				<item id="title"><![CDATA[轮转横条颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[lz_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#68b2fc]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="58">
+				<item id="displayorder"><![CDATA[42]]></item>
+				<item id="title"><![CDATA[允许提问用户组]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[lj_groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[10]]></item>
+					<item id="1"><![CDATA[11]]></item>
+					<item id="2"><![CDATA[12]]></item>
+					<item id="3"><![CDATA[13]]></item>
+					<item id="4"><![CDATA[14]]></item>
+					<item id="5"><![CDATA[15]]></item>
+					<item id="6"><![CDATA[20]]></item>
+					<item id="7"><![CDATA[16]]></item>
+					<item id="8"><![CDATA[17]]></item>
+					<item id="9"><![CDATA[18]]></item>
+					<item id="10"><![CDATA[19]]></item>
+					<item id="11"><![CDATA[1]]></item>
+					<item id="12"><![CDATA[2]]></item>
+					<item id="13"><![CDATA[3]]></item>
+				</item>
+			</item>
+			<item id="59">
+				<item id="displayorder"><![CDATA[43]]></item>
+				<item id="title"><![CDATA[不允许提问提示语]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[lj_tsy]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[您所在的用户组暂无权限发布问题，请努力升级：）]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="60">
+				<item id="displayorder"><![CDATA[44]]></item>
+				<item id="title"><![CDATA[是否开启名言]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ismingren]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="61">
+				<item id="displayorder"><![CDATA[46]]></item>
+				<item id="title"><![CDATA[问答管理员名言]]></item>
+				<item id="description"><![CDATA[名言将显示在问答看题页
+ 格式：名言|管理员名
+ 多个用回车分隔如：
+ 名言1|管理员名1
+名言2|管理员名2
+双击输入框可扩大/缩小]]></item>
+				<item id="variable"><![CDATA[mingren]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[一个提问，一份期待；一条回答，一份回应。知识问与答，连接你和我！|-- 来自问答管理员 admin
+一个提问，一份期待；一条回答，一份回应。知识问与答，连接你和我！！|-- 来自问答管理员 xxx]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="62">
+				<item id="displayorder"><![CDATA[47]]></item>
+				<item id="title"><![CDATA[问题页显示登录人信息]]></item>
+				<item id="description"><![CDATA[开启开关将会在问题页显示登录用户的个人信息]]></item>
+				<item id="variable"><![CDATA[isuid]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="63">
+				<item id="displayorder"><![CDATA[48]]></item>
+				<item id="title"><![CDATA[是否允许用户自己删除问题]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isdel]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="64">
+				<item id="displayorder"><![CDATA[49]]></item>
+				<item id="title"><![CDATA[微社区链接1描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wsq_1]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[访问问答系统，帮助有需求的人]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="65">
+				<item id="displayorder"><![CDATA[50]]></item>
+				<item id="title"><![CDATA[微社区链接2描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wsq_2]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[有不懂的问题？快来发帖求助吧]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="66">
+				<item id="displayorder"><![CDATA[51]]></item>
+				<item id="title"><![CDATA[手机版首页轮转图片]]></item>
+				<item id="description"><![CDATA[格式：图片路径|链接
+source/plugin/ljww360/images/ad_1.jpg|http://www.xhkj5.com/gg/addon.php?/?@ljww360.plugin
+source/plugin/ljww360/images/ad_2.jpg|http://www.xhkj5.com/gg/addon.php?/?@ljww360.plugin]]></item>
+				<item id="variable"><![CDATA[mobile_index_img]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[source/plugin/ljww360/images/ad_1.jpg|http://www.xhkj5.com/gg/addon.php?/?@ljww360.plugin
+source/plugin/ljww360/images/ad_2.jpg|http://www.xhkj5.com/gg/addon.php?/?@ljww360.plugin]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="67">
+				<item id="displayorder"><![CDATA[52]]></item>
+				<item id="title"><![CDATA[手机版发布按钮颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[button_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="68">
+				<item id="displayorder"><![CDATA[53]]></item>
+				<item id="title"><![CDATA[手机版顶部导航颜色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[mobile_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="wwtype1"><![CDATA[删除成功]]></item>
+				<item id="wwtype2"><![CDATA[您确定要删除吗]]></item>
+				<item id="wwtype3"><![CDATA[排序]]></item>
+				<item id="wwtype4"><![CDATA[分类]]></item>
+				<item id="wwtype5"><![CDATA[操作]]></item>
+				<item id="wwtype6"><![CDATA[删除]]></item>
+				<item id="wwtype7"><![CDATA[添加子分类]]></item>
+				<item id="wwtype8"><![CDATA[添加分类]]></item>
+				<item id="wwtype9"><![CDATA[更新成功]]></item>
+				<item id="wwtype10"><![CDATA[您确定要删除吗]]></item>
+				<item id="typeid1"><![CDATA[配置成功]]></item>
+				<item id="wenwen33"><![CDATA[缓存更新成功]]></item>
+				<item id="wenwen34"><![CDATA[请选择分类]]></item>
+				<item id="wenwen1"><![CDATA[请先登录！]]></item>
+				<item id="wenwen2"><![CDATA[问题已提交]]></item>
+				<item id="wenwen3"><![CDATA[不足]]></item>
+				<item id="wenwen4"><![CDATA[搜索答案-]]></item>
+				<item id="list1"><![CDATA[待解决-]]></item>
+				<item id="list2"><![CDATA[待解决-全部-]]></item>
+				<item id="list3"><![CDATA[已解决-]]></item>
+				<item id="list4"><![CDATA[已解决-全部-]]></item>
+				<item id="list5"><![CDATA[高悬赏-]]></item>
+				<item id="list6"><![CDATA[高悬赏-全部-]]></item>
+				<item id="list7"><![CDATA[零回答-]]></item>
+				<item id="list8"><![CDATA[零回答-全部-]]></item>
+				<item id="list9"><![CDATA[全部分类]]></item>
+				<item id="mydj3"><![CDATA[我的提问-]]></item>
+				<item id="mydj4"><![CDATA[我的回答-]]></item>
+				<item id="mydj5"><![CDATA[我的等级-]]></item>
+				<item id="myindex8"><![CDATA[个人中心-]]></item>
+				<item id="search_1"><![CDATA[请到插件配置已解决主题分类！]]></item>
+				<item id="wtw1"><![CDATA[最佳答案设置成功]]></item>
+				<item id="wtw2"><![CDATA[发表于]]></item>
+				<item id="wtw3"><![CDATA[回复成功]]></item>
+				<item id="wtw4"><![CDATA[追加悬赏成功]]></item>
+				<item id="wtw5"><![CDATA[设置成功]]></item>
+				<item id="wtw6"><![CDATA[补充提问成功]]></item>
+				<item id="wtw7"><![CDATA[确定要删除这个问题吗?会把论坛帖子一起删除哦！]]></item>
+				<item id="wtw8"><![CDATA[您访问的主题不存在!]]></item>
+				<item id="wtw9"><![CDATA[已解决]]></item>
+				<item id="wtw10"><![CDATA[待解决]]></item>
+				<item id="wtw11"><![CDATA[我的回答]]></item>
+				<item id="wtw12"><![CDATA[我的首页]]></item>
+				<item id="wtw13"><![CDATA[我的]]></item>
+				<item id="wtw14"><![CDATA[我的等级]]></item>
+				<item id="wtw15"><![CDATA[修改成功]]></item>
+				<item id="wtw16"><![CDATA[您的回复被问答悬赏帖]]></item>
+				<item id="wtw17"><![CDATA[的作者]]></item>
+				<item id="wtw18"><![CDATA[选为最佳答案]]></item>
+				<item id="wtw19"><![CDATA[查看]]></item>
+				<item id="wtw20"><![CDATA[回复了您在问答系统的帖子]]></item>
+				<item id="wtw21"><![CDATA[请求来路不正确！]]></item>
+				<item id="wtw22"><![CDATA[补充内容必须填写！]]></item>
+				<item id="wtw23"><![CDATA[追加悬赏不能为空!]]></item>
+				<item id="wtw24"><![CDATA[大字体主题推送问题必须含图！]]></item>
+				<item id="wtw25"><![CDATA[推送成功!]]></item>
+				<item id="wtw26"><![CDATA[推送位置必须选择！]]></item>
+				<item id="wt_1"><![CDATA[标题不能为空]]></item>
+				<item id="wt_2"><![CDATA[内容不能为空]]></item>
+				<item id="wt_3"><![CDATA[分类必须选择]]></item>
+				<item id="wt_4"><![CDATA[请联系管理员前往插件设置中的问题分类绑定发帖版块]]></item>
+				<item id="wt_5"><![CDATA[我要提问-]]></item>
+				<item id="wt_6"><![CDATA[认证通过后才能发布问题哦！]]></item>
+				<item id="type_1"><![CDATA[导入旧问题须知]]></item>
+				<item id="type_2"><![CDATA[为了避免数据量太庞大导致导入旧问题速度过慢，我们采用自动刷新页面分批导入方法]]></item>
+				<item id="type_3"><![CDATA[导入版块、分批数量必须填写]]></item>
+				<item id="type_4"><![CDATA[提交数据后程序会自动刷新页面，请不要关闭浏览器或者关闭本页面。]]></item>
+				<item id="type_5"><![CDATA[请填写必填参数]]></item>
+				<item id="type_6"><![CDATA[开启帖子推送绑定版块须知]]></item>
+				<item id="type_7"><![CDATA[绑定版块]]></item>
+				<item id="type_8"><![CDATA[请选择绑定版块]]></item>
+				<item id="type_9"><![CDATA[如开启帖子推送请自行绑定所有分类发帖所对应的版块！]]></item>
+				<item id="type_10"><![CDATA[一级分类绑定版块调一级分类绑定的版块，二级分类绑定后就调二级分类的版块]]></item>
+				<item id="type_11"><![CDATA[未绑定版块的分类将不能发帖！]]></item>
+				<item id="admin_wwgl_1"><![CDATA[问答管理说明]]></item>
+				<item id="admin_wwgl_2"><![CDATA[问题管理提供了搜索跟批量移动分类跟批量删除功能]]></item>
+				<item id="admin_wwgl_3"><![CDATA[问题管理需要点击选中你要操作的问题前面的复选框才会显示出操作按钮]]></item>
+				<item id="admin_wwgl_4"><![CDATA[问题管理点击全选框可以选中本页面的所有问题]]></item>
+				<item id="admin_wwgl_5"><![CDATA[搜索]]></item>
+				<item id="admin_wwgl_6"><![CDATA[标题]]></item>
+				<item id="admin_wwgl_7"><![CDATA[作者]]></item>
+				<item id="admin_wwgl_8"><![CDATA[分类]]></item>
+				<item id="admin_wwgl_9"><![CDATA[悬赏]]></item>
+				<item id="admin_wwgl_10"><![CDATA[回答]]></item>
+				<item id="admin_wwgl_11"><![CDATA[提问时间]]></item>
+				<item id="admin_wwgl_12"><![CDATA[修改成功]]></item>
+				<item id="admin_wwgl_13"><![CDATA[回复管理提供了批量删除]]></item>
+				<item id="admin_wwgl_14"><![CDATA[回复内容]]></item>
+				<item id="admin_wwgl_15"><![CDATA[回复人]]></item>
+				<item id="admin_wwgl_16"><![CDATA[回复时间]]></item>
+				<item id="admin_wwgl_17"><![CDATA[(清空问答表)]]></item>
+				<item id="ts_1"><![CDATA[标题]]></item>
+				<item id="ts_2"><![CDATA[轮转位置]]></item>
+				<item id="ts_3"><![CDATA[字体大小]]></item>
+				<item id="ts_4"><![CDATA[推送时间]]></item>
+				<item id="ts_5"><![CDATA[大（推荐）]]></item>
+				<item id="ts_6"><![CDATA[小]]></item>
+				<item id="ts_7"><![CDATA[删除成功]]></item>
+				<item id="sj_1"><![CDATA[上一页]]></item>
+				<item id="sj_2"><![CDATA[下一页]]></item>
+				<item id="yijiejue_1"><![CDATA[已解决分类技巧提示]]></item>
+				<item id="yijiejue_2"><![CDATA[已解决主题分类：设置后选择最佳答案时将会把主题分类归到已解决主题分类，不选将不执行本操作]]></item>
+				<item id="yijiejue_3"><![CDATA[只同步主题分类：设置后论坛同步到问答将只同步该主题分类下的问题，未设置主题分类的版块将只同步没有选择分类的帖子到问答]]></item>
+				<item id="yijiejue_4"><![CDATA[开启只同步悬赏帖后只同步主题分类设置只对悬赏帖有效，普通主题将不同步]]></item>
+				<item id="yijiejue_5"><![CDATA[配置成功]]></item>
+				<item id="block_1"><![CDATA[亮剑问答类]]></item>
+				<item id="block_2"><![CDATA[亮剑问答]]></item>
+				<item id="block_3"><![CDATA[问题标题]]></item>
+				<item id="block_4"><![CDATA[已解决标识]]></item>
+				<item id="block_5"><![CDATA[帖子tid]]></item>
+				<item id="block_6"><![CDATA[问题id]]></item>
+				<item id="block_7"><![CDATA[问题链接]]></item>
+				<item id="block_8"><![CDATA[全部版块]]></item>
+				<item id="block_9"><![CDATA[选择版块]]></item>
+				<item id="block_10"><![CDATA[调用问题类型]]></item>
+				<item id="block_11"><![CDATA[未解决]]></item>
+				<item id="block_12"><![CDATA[已解决]]></item>
+				<item id="block_13"><![CDATA[高悬赏]]></item>
+				<item id="block_14"><![CDATA[零回答]]></item>
+				<item id="block_15"><![CDATA[主题排序方式]]></item>
+				<item id="block_16"><![CDATA[按最后回复时间倒序排序]]></item>
+				<item id="block_17"><![CDATA[按发布时间倒序排序]]></item>
+				<item id="block_18"><![CDATA[按回复数倒序排序]]></item>
+				<item id="block_19"><![CDATA[按浏览次数倒序排序]]></item>
+				<item id="typeid_14"><![CDATA[如发现导入数据不全，请重新选择导入，每批次数写小点]]></item>
+				<item id="typeid_15"><![CDATA[如发现BUG请联系]]></item>
+				<item id="typeid_16"><![CDATA[在线客服]]></item>
+				<item id="wsq_1"><![CDATA[访问问答系统，帮助有需求的人]]></item>
+				<item id="wsq_2"><![CDATA[有不懂的问题？快来发帖求助吧]]></item>
+				<item id="biggest_reward"><![CDATA[您超过了最大悬赏]]></item>
+				<item id="bbname"><![CDATA[站点名称]]></item>
+				<item id="code"><![CDATA[可用代码，点击插入: ]]></item>
+				<item id="cat"><![CDATA[分类]]></item>
+				<item id="problem_state"><![CDATA[问题状态]]></item>
+				<item id="page_index"><![CDATA[首页]]></item>
+				<item id="page_list"><![CDATA[列表页]]></item>
+				<item id="page_view"><![CDATA[详情页]]></item>
+				<item id="region"><![CDATA[地区]]></item>
+				<item id="seotitle"><![CDATA[标题(title)]]></item>
+				<item id="seokeywords"><![CDATA[关键词(keywords)]]></item>
+				<item id="seodescription"><![CDATA[描述(description)]]></item>
+				<item id="seo_update_succeed"><![CDATA[SEO设置成功更新]]></item>
+				<item id="The_successful_introduction"><![CDATA[成功导入]]></item>
+				<item id="A_update"><![CDATA[个，更新]]></item>
+				<item id="ge"><![CDATA[个]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="wenwen1"><![CDATA[首页]]></item>
+				<item id="wenwen2"><![CDATA[亮剑问答系统]]></item>
+				<item id="wenwen3"><![CDATA[更新缓存数据]]></item>
+				<item id="wenwen4"><![CDATA[待解决问题]]></item>
+				<item id="wenwen5"><![CDATA[更多]]></item>
+				<item id="wenwen6"><![CDATA[回答]]></item>
+				<item id="wenwen7"><![CDATA[已解决问题]]></item>
+				<item id="wenwen8"><![CDATA[所有问题分类]]></item>
+				<item id="wenwen9"><![CDATA[欢迎您：]]></item>
+				<item id="wenwen10"><![CDATA[提问数]]></item>
+				<item id="wenwen11"><![CDATA[回答数]]></item>
+				<item id="wenwen12"><![CDATA[采纳率]]></item>
+				<item id="wenwen13"><![CDATA[总有一个人知道你问题的答案]]></item>
+				<item id="wenwen14"><![CDATA[我要提问]]></item>
+				<item id="wenwen15"><![CDATA[问答之星]]></item>
+				<item id="wenwen16"><![CDATA[等级：]]></item>
+				<item id="wenwen17"><![CDATA[精选回答]]></item>
+				<item id="wenwen18"><![CDATA[积分排行榜]]></item>
+				<item id="wenwen19"><![CDATA[版权信息]]></item>
+				<item id="wenwen20"><![CDATA[讯幻网]]></item>
+				<item id="wenwen21"><![CDATA[版本：]]></item>
+				<item id="wenwen22"><![CDATA[按分类查找]]></item>
+				<item id="wenwen23"><![CDATA[按关键词查找]]></item>
+				<item id="wenwen24"><![CDATA[搜索]]></item>
+				<item id="wenwen25"><![CDATA[请先登录！]]></item>
+				<item id="wenwen26"><![CDATA[高悬赏]]></item>
+				<item id="wenwen27"><![CDATA[零回答]]></item>
+				<item id="wenwen28"><![CDATA[标题]]></item>
+				<item id="wenwen29"><![CDATA[时间]]></item>
+				<item id="wenwen30"><![CDATA[我来回答]]></item>
+				<item id="wenwen31"><![CDATA[问题分类]]></item>
+				<item id="wenwen32"><![CDATA[提问]]></item>
+				<item id="wenwen33"><![CDATA[缓存更新成功]]></item>
+				<item id="wenwen34"><![CDATA[请选择分类]]></item>
+				<item id="wenwen35"><![CDATA[问题描述]]></item>
+				<item id="wenwen36"><![CDATA[我的]]></item>
+				<item id="wenwen37"><![CDATA[悬赏]]></item>
+				<item id="wenwen38"><![CDATA[提交问题]]></item>
+				<item id="wenwen39"><![CDATA[搜索答案]]></item>
+				<item id="wenwen40"><![CDATA[?提问]]></item>
+				<item id="wenwen41"><![CDATA[高悬赏问题]]></item>
+				<item id="wenwen42"><![CDATA[排行榜]]></item>
+				<item id="wenwen43"><![CDATA[零回答问题]]></item>
+				<item id="wenwen44"><![CDATA[我要回答]]></item>
+				<item id="wenwen45"><![CDATA[提问结果]]></item>
+				<item id="wenwen46"><![CDATA[回答结果]]></item>
+				<item id="wenwen47"><![CDATA[全部分类]]></item>
+				<item id="wenwen48"><![CDATA[提交]]></item>
+				<item id="wenwen49"><![CDATA[问答吉尼斯世界之最]]></item>
+				<item id="wenwen50"><![CDATA[24小时产生回答最多的人]]></item>
+				<item id="wenwen51"><![CDATA[24小时内共回答:]]></item>
+				<item id="wenwen52"><![CDATA[条]]></item>
+				<item id="wenwen53"><![CDATA[挑战他]]></item>
+				<item id="wenwen54"><![CDATA[回答总数最多的人]]></item>
+				<item id="wenwen55"><![CDATA[回答总数：]]></item>
+				<item id="wenwen56"><![CDATA[本周问答之星]]></item>
+				<item id="mydj1"><![CDATA[点击修改头像]]></item>
+				<item id="mydj2"><![CDATA[我的首页]]></item>
+				<item id="mydj3"><![CDATA[我的提问]]></item>
+				<item id="mydj4"><![CDATA[我的回答]]></item>
+				<item id="mydj5"><![CDATA[我的等级]]></item>
+				<item id="mydj6"><![CDATA[恭喜您，已经升到]]></item>
+				<item id="mydj7"><![CDATA[级啦，]]></item>
+				<item id="mydj8"><![CDATA[距下一级还需]]></item>
+				<item id="mydj9"><![CDATA[等级规则]]></item>
+				<item id="mydj10"><![CDATA[等级]]></item>
+				<item id="myindex1"><![CDATA[回答数:]]></item>
+				<item id="myindex2"><![CDATA[采纳率:]]></item>
+				<item id="myindex3"><![CDATA[提问数:]]></item>
+				<item id="myindex4"><![CDATA[我的提问]]></item>
+				<item id="myindex5"><![CDATA[(共]]></item>
+				<item id="myindex6"><![CDATA[条)]]></item>
+				<item id="myindex7"><![CDATA[提问时间]]></item>
+				<item id="whd1"><![CDATA[全部回答]]></item>
+				<item id="whd2"><![CDATA[被采纳的回答]]></item>
+				<item id="wtw1"><![CDATA[待解决的问题]]></item>
+				<item id="wtw2"><![CDATA[已解决的问题]]></item>
+				<item id="wt1"><![CDATA[我来回答]]></item>
+				<item id="wt2"><![CDATA[文字加粗]]></item>
+				<item id="wt3"><![CDATA[设置文字颜色]]></item>
+				<item id="wt4"><![CDATA[图片]]></item>
+				<item id="wt5"><![CDATA[添加链接]]></item>
+				<item id="wt6"><![CDATA[提交回答]]></item>
+				<item id="wt7"><![CDATA[满意回答]]></item>
+				<item id="wt8"><![CDATA[采纳率：]]></item>
+				<item id="wt9"><![CDATA[回答速度]]></item>
+				<item id="wt10"><![CDATA[追问]]></item>
+				<item id="wt11"><![CDATA[相关问题]]></item>
+				<item id="wt12"><![CDATA[修改分类]]></item>
+				<item id="wt13"><![CDATA[删除]]></item>
+				<item id="wt14"><![CDATA[问题补充：]]></item>
+				<item id="wt15"><![CDATA[补充提问]]></item>
+				<item id="wt16"><![CDATA[追加悬赏]]></item>
+				<item id="wt17"><![CDATA[管理组代选最佳答案]]></item>
+				<item id="wt18"><![CDATA[您还可以]]></item>
+				<item id="wt19"><![CDATA[宋体]]></item>
+				<item id="wt20"><![CDATA[问题编辑]]></item>
+				<item id="wt21"><![CDATA[问题标题：]]></item>
+				<item id="wt22"><![CDATA[问题内容：]]></item>
+				<item id="wt23"><![CDATA[修改]]></item>
+				<item id="wt24"><![CDATA[编辑]]></item>
+				<item id="wt25"><![CDATA[被浏览]]></item>
+				<item id="wt26"><![CDATA[次]]></item>
+				<item id="wt27"><![CDATA[采纳满意答案]]></item>
+				<item id="wt28"><![CDATA[点此补充您的追问]]></item>
+				<item id="wt29"><![CDATA[相关知识]]></item>
+				<item id="wt30"><![CDATA[个回答]]></item>
+				<item id="wt31"><![CDATA[更多关于 "]]></item>
+				<item id="wt32"><![CDATA[" 的相关知识]]></item>
+				<item id="wt33"><![CDATA[今日网友热议]]></item>
+				<item id="search1"><![CDATA[已解决]]></item>
+				<item id="search2"><![CDATA[待解决]]></item>
+				<item id="search3"><![CDATA[个回答 - 提问时间: ]]></item>
+				<item id="search4"><![CDATA[搜索历史]]></item>
+				<item id="search5"><![CDATA[清除]]></item>
+				<item id="search6"><![CDATA[暂无搜索历史]]></item>
+				<item id="typeid_1"><![CDATA[为问答关联版块设置已解决主题分类]]></item>
+				<item id="typeid_2"><![CDATA[设定的版块]]></item>
+				<item id="typeid_3"><![CDATA[对应的主题分类]]></item>
+				<item id="typeid_4"><![CDATA[提交操作]]></item>
+				<item id="typeid_5"><![CDATA[按 Enter 键可随时提交您的修改]]></item>
+				<item id="myjf_1"><![CDATA[我的]]></item>
+				<item id="myjf_2"><![CDATA[恭喜您，目前有 ]]></item>
+				<item id="myjf_3"><![CDATA[啦!]]></item>
+				<item id="myjf_4"><![CDATA[您还没有]]></item>
+				<item id="myjf_5"><![CDATA[，要努力哦!]]></item>
+				<item id="myjf_6"><![CDATA[获得]]></item>
+				<item id="myjf_7"><![CDATA[值规则]]></item>
+				<item id="myjf_8"><![CDATA[操作]]></item>
+				<item id="myjf_9"><![CDATA[获得]]></item>
+				<item id="myjf_10"><![CDATA[周期上限]]></item>
+				<item id="myjf_11"><![CDATA[回答]]></item>
+				<item id="myjf_12"><![CDATA[/日]]></item>
+				<item id="myjf_13"><![CDATA[普通帖回答被采纳]]></item>
+				<item id="myjf_14"><![CDATA[悬赏帖回答被采纳]]></item>
+				<item id="myjf_15"><![CDATA[悬赏]]></item>
+				<item id="zjxsmsg1"><![CDATA[追加悬赏]]></item>
+				<item id="zjxsmsg2"><![CDATA[当前悬赏值：]]></item>
+				<item id="zjxsmsg3"><![CDATA[追加悬赏：]]></item>
+				<item id="zjxsmsg4"><![CDATA[注：（总悬赏值=追加悬赏值+当前悬赏值）]]></item>
+				<item id="zjxsmsg5"><![CDATA[提交]]></item>
+				<item id="bc1"><![CDATA[补充提问]]></item>
+				<item id="bc2"><![CDATA[补充提问：]]></item>
+				<item id="twmsg_1"><![CDATA[最多输入30个字]]></item>
+				<item id="twmsg_2"><![CDATA[悬赏价格:]]></item>
+				<item id="twmsg_3"><![CDATA[, 税后支付 ]]></item>
+				<item id="twmsg_4"><![CDATA[ 金钱]]></item>
+				<item id="twmsg_5"><![CDATA[价格不能低于 1 , 您有]]></item>
+				<item id="twmsg_6"><![CDATA[30 天后如果您仍未设置最佳答案，管理组有权代为您选择]]></item>
+				<item id="twmsg_7"><![CDATA[售价不能高于]]></item>
+				<item id="twmsg_8"><![CDATA[售价超出范围]]></item>
+				<item id="twmsg_9"><![CDATA[填写无效]]></item>
+				<item id="twmsg_10"><![CDATA[抱歉，请输入悬赏价格]]></item>
+				<item id="daoru_1"><![CDATA[主题表成功导入问题]]></item>
+				<item id="daoru_2"><![CDATA[个，更新]]></item>
+				<item id="daoru_3"><![CDATA[个]]></item>
+				<item id="daoru_4"><![CDATA[主题表导入结束：]]></item>
+				<item id="daoru_5"><![CDATA[成功导入问题]]></item>
+				<item id="daoru_6"><![CDATA[帖子表成功导入问题]]></item>
+				<item id="daoru_7"><![CDATA[帖子表导入结束：]]></item>
+				<item id="daoru_8"><![CDATA[返回]]></item>
+				<item id="list_1"><![CDATA[快速回答]]></item>
+				<item id="list_2"><![CDATA[关闭]]></item>
+				<item id="list_3"><![CDATA[如需插入图片，请点击标题到问题详情页]]></item>
+				<item id="list_4"><![CDATA[提交回答]]></item>
+				<item id="list_5"><![CDATA[没有相关问题哦！]]></item>
+				<item id="msgpl_1"><![CDATA[设置分类]]></item>
+				<item id="msgpl_2"><![CDATA[请选择分类]]></item>
+				<item id="msgpl_3"><![CDATA[提交]]></item>
+				<item id="typeid_6"><![CDATA[要导入的版块]]></item>
+				<item id="typeid_7"><![CDATA[请选择要导入的版块]]></item>
+				<item id="typeid_8"><![CDATA[每批导入数量]]></item>
+				<item id="typeid_9"><![CDATA[帖子表每批导入数量]]></item>
+				<item id="typeid_10"><![CDATA[导入到问题分类：]]></item>
+				<item id="typeid_11"><![CDATA[导入发帖时间段内的帖子]]></item>
+				<item id="typeid_12"><![CDATA[选择开始和结束时间]]></item>
+				<item id="typeid_13"><![CDATA[每批次小于50中最佳]]></item>
+				<item id="typeid_14"><![CDATA[是否只导入悬赏帖]]></item>
+				<item id="typeid_15"><![CDATA[是]]></item>
+				<item id="typeid_16"><![CDATA[否]]></item>
+				<item id="admin_keyword_1"><![CDATA[用户名]]></item>
+				<item id="admin_keyword_2"><![CDATA[时间段：]]></item>
+				<item id="admin_keyword_3"><![CDATA[搜索]]></item>
+				<item id="admin_tc_1"><![CDATA[暂无分类]]></item>
+				<item id="admin_tc_2"><![CDATA[全选]]></item>
+				<item id="admin_tc_3"><![CDATA[操作]]></item>
+				<item id="admin_tc_4"><![CDATA[选项]]></item>
+				<item id="admin_tc_5"><![CDATA[批量移动到分类]]></item>
+				<item id="admin_tc_6"><![CDATA[批量删除问答帖]]></item>
+				<item id="admin_tc_7"><![CDATA[按 Enter 键可随时提交您的修改]]></item>
+				<item id="admin_tc_8"><![CDATA[提交]]></item>
+				<item id="admin_tc_9"><![CDATA[批量删除论坛帖]]></item>
+				<item id="admin_tc_10"><![CDATA[(<font color="red">同时删除问答跟论坛请两个都选择</font>)]]></item>
+				<item id="tsmsg_1"><![CDATA[问题推送]]></item>
+				<item id="tsmsg_2"><![CDATA[推送到首页幻灯：]]></item>
+				<item id="tsmsg_3"><![CDATA[轮转1大字体（含图）]]></item>
+				<item id="tsmsg_4"><![CDATA[轮转2大字体（含图）]]></item>
+				<item id="tsmsg_5"><![CDATA[轮转3大字体（含图）]]></item>
+				<item id="tsmsg_6"><![CDATA[轮转1小字体]]></item>
+				<item id="tsmsg_7"><![CDATA[轮转2小字体]]></item>
+				<item id="tsmsg_8"><![CDATA[轮转3小字体]]></item>
+				<item id="tsmsg_9"><![CDATA[推送]]></item>
+				<item id="tsmsg_10"><![CDATA[关闭]]></item>
+				<item id="sj_1"><![CDATA[问答]]></item>
+				<item id="sj_2"><![CDATA[论坛]]></item>
+				<item id="sj_3"><![CDATA[暂无最佳答案]]></item>
+				<item id="sj_4"><![CDATA[回答]]></item>
+				<item id="sj_5"><![CDATA[轻触返回顶部]]></item>
+				<item id="sj_6"><![CDATA[其他回答]]></item>
+				<item id="sj_7"><![CDATA[相关搜索]]></item>
+				<item id="sj_8"><![CDATA[问答]]></item>
+				<item id="nav_1"><![CDATA[问题管理]]></item>
+				<item id="nav_2"><![CDATA[回复管理]]></item>
+				<item id="sjtw_1"><![CDATA[返回]]></item>
+				<item id="yijiejue_1"><![CDATA[目标版块]]></item>
+				<item id="yijiejue_2"><![CDATA[已解决主题分类]]></item>
+				<item id="yijiejue_3"><![CDATA[只同步主题分类]]></item>
+				<item id="yijiejue_4"><![CDATA[请选择]]></item>
+				<item id="yijiejue_5"><![CDATA[全部]]></item>
+				<item id="yijiejue_6"><![CDATA[提交]]></item>
+				<item id="sj_9"><![CDATA[请输入您的回答...]]></item>
+				<item id="daima"><![CDATA[代码]]></item>
+				<item id="sj_10"><![CDATA[待解决]]></item>
+				<item id="sj_11"><![CDATA[零回答]]></item>
+				<item id="sj_12"><![CDATA[高悬赏]]></item>
+				<item id="sj_13"><![CDATA[已解决]]></item>
+				<item id="qrcode_1"><![CDATA[手机二维码]]></item>
+				<item id="qrcode_2"><![CDATA[扫描二维码进入手机版]]></item>
+				<item id="Details"><![CDATA[详情]]></item>
+				<item id="Release"><![CDATA[发布]]></item>
+				<item id="Multi_section_import"><![CDATA[多版块导入]]></item>
+				<item id="tid_import"><![CDATA[tid导入]]></item>
+				<item id="One_line"><![CDATA[一行一个TID！]]></item>
+				<item id="Import_question_classification"><![CDATA[把问题导入问答的哪个分类下]]></item>
+			</item>
+			<item id="installlang">
+				<item id="install1"><![CDATA[电脑/网络]]></item>
+				<item id="install2"><![CDATA[手机/数码]]></item>
+				<item id="install3"><![CDATA[生活]]></item>
+				<item id="install4"><![CDATA[游戏]]></item>
+				<item id="install5"><![CDATA[体育/运动]]></item>
+				<item id="install6"><![CDATA[娱乐明星]]></item>
+				<item id="install7"><![CDATA[休闲爱好]]></item>
+				<item id="install8"><![CDATA[文化/艺术]]></item>
+				<item id="install9"><![CDATA[社会民生]]></item>
+				<item id="install10"><![CDATA[教育/科学]]></item>
+				<item id="install11"><![CDATA[健康/医疗]]></item>
+				<item id="install12"><![CDATA[商业/理财]]></item>
+				<item id="install13"><![CDATA[情感/家庭]]></item>
+				<item id="install14"><![CDATA[地区问题]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

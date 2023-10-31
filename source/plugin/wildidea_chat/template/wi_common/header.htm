@@ -1,0 +1,24 @@
+<!-- header -->
+{subtemplate common/header}
+<script type="text/javascript"></script>
+<link href="{$PL_STATIC}/styles/wi_chat.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$PL_STATIC}/scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="{$PL_STATIC}/scripts/layer/layer.js"></script>
+<script type="text/javascript" src="{$PL_STATIC}/scripts/wi_scroll.js"></script>
+<script type="text/javascript" src="{$PL_STATIC}/scripts/wi_chat.js"></script>
+<script type="text/javascript">
+    jQuery.noConflict();
+    SITE_URL = '{$SITE_URL}';
+    UID = parseInt('{$_G["uid"]}');
+    UNAME = '{$_G["username"]}';
+    AVATAR = '{$avatar}';
+    HOST = '{$host}';
+    PORT = parseInt('{$port}');
+    STATIC = '{$PL_STATIC}';
+    EMOTION_PATH = '{$emotionPath}';
+    EMOTION_MAP = JSON.parse('{$emotionMap}');
+    ENABLE_CTRL_ENTER = '{$enableCtrlEnter}';
+    EMOTION_SWITCH = '{$emotionSwitch}';
+    REMOTE = '{$remote}';
+    LANG = JSON.parse('{$language}');
+</script>

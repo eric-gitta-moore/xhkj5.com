@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[checkext.plugin]]></item>
+	<item id="RevisionID"><![CDATA[51851]]></item>
+	<item id="SN"><![CDATA[20170729186NbFJT3t69]]></item>
+	<item id="RevisionDateline"><![CDATA[1435809609]]></item>
+	<item id="Data">
+		<item id="/check.inc.php"><![CDATA[dfa0834b2e1920597852252c4a6e0e1b]]></item>
+		<item id="/discuz_plugin_checkext_TC_BIG5.xml"><![CDATA[a83b20cbf43f57b1178f7d1719e76fc5]]></item>
+		<item id="/uninstall.php"><![CDATA[003afe63c48360d95b93e47917876123]]></item>
+		<item id="/install.php"><![CDATA[003afe63c48360d95b93e47917876123]]></item>
+		<item id="/static/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/discuz_plugin_checkext_SC_GBK.xml"><![CDATA[dc194b4f5887a1e1f40366f8a7520d33]]></item>
+		<item id="/discuz_plugin_checkext_TC_UTF8.xml"><![CDATA[93dc84043734783754a79251f07ad538]]></item>
+		<item id="/discuz_plugin_checkext_SC_UTF8.xml"><![CDATA[48dc855070faad23eee895930a612a85]]></item>
+		<item id="/template/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+	</item>
+</root>

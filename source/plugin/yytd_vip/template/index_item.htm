@@ -1,0 +1,157 @@
+{template common/header}
+<link rel="stylesheet" type="text/css"
+	href="source/plugin/yytd_vip/css/style.css" />
+<div id="pt" class="bm cl" >
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+		<em>&rsaquo;</em><a href="./plugin.php?id=yytd_vip">{lang yytd_vip:buyGroup}</a>
+	</div>
+</div>
+<div class="yytd_bank">
+	<div style="padding: 2px;"></div>
+	<div class="bm bw0">
+		<div class="left">
+			<div class="bm bmw fl yytd_bank_clear">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:openGroup}</a>
+					</h2>
+				</div>
+				<div class="bm_c txtstyle">
+				 	<table width='100%'>
+						<tr align='left' class="trfont" height='25px'>
+							<td>{lang yytd_vip:group_column01}</td>
+							<td>{lang yytd_vip:group_column02}</td>
+							<td>{lang yytd_vip:group_column03}</td>
+							<td>{lang yytd_vip:group_column04}</td>
+							<td>{lang yytd_vip:group_column05}</td>
+						</tr>
+				<!--  
+						<form action="plugin.php?id=yytd_vip&action=buytrue" method="post">
+				-->
+				<!--{loop $yytd_rule $key $value}-->
+
+
+<tr>
+							<td><div class="dashed" width='100%'></div></td>
+							<td><div class="dashed" width='100%'></div></td>
+							<td><div class="dashed" width='100%'></div></td>
+							<td><div class="dashed" width='100%'></div></td>
+							<td><div class="dashed" width='100%'></div></td>
+						</tr>
+						<tr class='trfontcontet' height='35px'>
+							<td>$value[0]</td>
+							<td><font color='red'><B>$value[2] {lang yytd_vip:danwei01}</B></font> <!--{if $value[6]=='hot'}-->
+								&nbsp;&nbsp;<img src='static/image/common/apphot.png'> <!--{/if}-->
+							</td>
+							
+										<!--{if $value[3]>0}-->
+							
+							<td>$value[3]{lang yytd_vip:danwei}</td>
+							<!--{else}-->
+							<td>{lang yytd_vip:validityinfo}</td>
+							<!--{/if}-->
+							
+							
+							
+							<td>$value[4]</td>
+							<td>
+	
+							<button id="livereplysubmit" value="replysubmit"
+					class="pn pnc vm" name="replysubmit"
+						type="submit"  onclick="showWindow('yytd_vip', 'plugin.php?id=yytd_vip&action=buytrue&buyId=$key');return false;">
+						<strong>{lang yytd_vip:buyButton}</strong>
+					</button>
+								</td>
+
+						</tr>
+				<!--{/loop}-->
+				</table>
+
+					</div>
+					 	
+					<div style="clear:both"></div>
+					<div class="text-align_right txtstyle">{$multi}</div>
+				</div>
+				
+				<div class="bm_h cl">
+					<h2>
+						<a><font color='red'>{lang yytd_vip:notice}</font></a>
+					</h2>
+				</div>
+				<div class="bm_c txtstyle">
+					<table width='100%' class='notestyle'>
+						<!--{loop $yytd_note $valueNote}-->
+						<tr>
+							<td>$valueNote</td>
+						</tr>
+						<!--{/loop}-->
+						<tr>
+							<td><font color='red'>{lang yytd_vip:notice01}</font></td>
+						</tr>
+						
+					</table>
+				</div>
+				
+			</div>
+		</div>
+		<div class="right">
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:userinfo}</a>
+					</h2>
+				</div>
+				<!-- {if !$_G['uid']} -->
+				<div class='bm_c txtstyle'>
+					<br />
+					<br />
+					<center>
+						{lang yytd_vip:loginoutinfo}<br /> <a
+							href="member.php?mod=logging&amp;action=login"
+							onclick="showWindow('login', this.href)" class="xi2">	{lang yytd_vip:loginM}</a> | <a
+							href="member.php?mod=register" class="xi2">	{lang yytd_vip:registerM}</a>
+					</center>
+					<br />
+					<br />
+				</div>
+				<!-- {else} -->
+				<div class='bm_c txtstyle'>
+					<div class="dashed">{lang yytd_vip:notice05}: $myname</div>
+					<div class="dashed">{lang yytd_vip:notice04}: $grouptitle</div>
+					<div class="dashed">$moneyname: $mymoey</div>
+				</div>
+				<!--{/if}-->
+			</div>
+
+			<!-- {if $yytd_isshow==1} -->
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang yytd_vip:notice03}</a>
+					</h2>
+				</div>
+				<div class='bm_c txtstyle'>
+		<!--{eval $i=0;}-->	
+		<!--{loop $order_completed_data $ordervalue}-->
+		
+					<div class="dashed">
+						$ordervalue['submitdate'] $ordervalue['username'], {lang yytd_vip:notice02} $ordervalue['group_name']
+					<!--{if $i<3}-->
+						
+						<img src='source/plugin/yytd_vip/images/new.gif'>
+					<!--{/if}-->
+					</div>
+					<!--{eval ++$i;}-->
+		<!--{/loop}-->	
+
+				</div>
+			</div>
+
+			<!-- {/if} -->
+		</div>
+
+	</div>
+</div>
+<div class="yytd_bank_clear"></div>
+{template common/footer}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="$metakeywords" />
+<meta name="description" content="$metadescription" />
+<title>$navtitle </title>
+</head>
+
+<body class="bg">
+<!--{hook/global_header_mobile}-->
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj3.css">
+{template ljww360:header}
+<div id="doc"><header id="header"><div class="search-box" style="width:98%"><div class="search-form-container">
+<form method="post" action="plugin.php?id=ljww360&mod=search&do=ss&sj=yes" class="search-form">
+
+<div class="input-container">
+	<input x-webkit-speech="" autocomplete="off" value="$subject" class="q" name="keyword" id="searchInputBox">
+	
+	</div>
+</div><input type="submit" value="" class="search-button"></form>
+	
+	</div>
+</div>
+	</header>
+		<div id="bd">
+<article class="mod mod-a-list">
+	<ul id="js-list">
+	<!--{loop $djarr $k $v}-->
+		<li class="js-list">
+		<a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->">
+			<div class="hd">
+				<h2>$v['subject']</h2>
+			</div>
+			<div class="bd">
+				<p><!--{if !$arrbest[$v[id]]}-->{lang ljww360:sj_3}<!--{else}-->$arrbest[$v[id]]<!--{/if}-->...</p>
+			</div>
+			<div class="ft"><span class="datetime">$v['dateline']</span><span>$v['replies']{lang ljww360:sj_4}</span></div></a>
+		</li>
+	<!--{/loop}-->
+
+	</ul>
+	
+	</div></article>
+	<style type="text/css">
+	.pages {
+padding: 10px;
+text-align: center;
+background: #EEEEEE;
+margin-top: 1px;
+clear: both;
+}
+.pages a {
+padding-left: 10px;
+}
+</style>
+	<ol class="pages">
+	$paging
+	</ol>
+	</div>
+<footer id="ft"><div class="search-box"><div class="search-form-container">
+	<form method="post" action="plugin.php?id=ljww360&mod=search&do=ss&sj=yes" class="search-form"><div class="input-container">
+	<input x-webkit-speech="" autocomplete="off" value="$subject" class="q" name="keyword" id="q"></div><input type="submit" value="" class="search-button"></form></div></div></footer></div>
+	
+
+{template ljww360:footer}
+</body>
+</html>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->

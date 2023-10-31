@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[nimba_cover.plugin]]></item>
+	<item id="RevisionID"><![CDATA[49620]]></item>
+	<item id="SN"><![CDATA[20170721219AGQdzQqmn]]></item>
+	<item id="RevisionDateline"><![CDATA[1429189206]]></item>
+	<item id="Data">
+		<item id="/uninstall.php"><![CDATA[5e4d7d5a7b19e502bc7ff9a19e086b70]]></item>
+		<item id="/install.php"><![CDATA[6fc0375e6bbd7dd50154603ce52a470d]]></item>
+		<item id="/addon.inc.php"><![CDATA[fccaf6ee1d1e02b4426676663cde2f99]]></item>
+		<item id="/cover.inc.php"><![CDATA[9f650c90888397db0ecc688083d446d1]]></item>
+		<item id="/discuz_plugin_nimba_cover_TC_BIG5.xml"><![CDATA[7f0a73bfbfc863b0bdcd04f24aaa8303]]></item>
+		<item id="/hook.class.php"><![CDATA[c7736465cf7c7b0535bd26546106c67d]]></item>
+		<item id="/discuz_plugin_nimba_cover_SC_UTF8.xml"><![CDATA[880e3b7c212ab87b1c864a7caf933c68]]></item>
+		<item id="/keyword.inc.php"><![CDATA[5abf4d6b522a58c732da6e9f4e6ba03e]]></item>
+		<item id="/template/cover.htm"><![CDATA[655033b50f8968100b3abf6f6bccc3d8]]></item>
+		<item id="/discuz_plugin_nimba_cover_TC_UTF8.xml"><![CDATA[19c01adf49ced33e54dc9e91d8781aa6]]></item>
+		<item id="/discuz_plugin_nimba_cover_SC_GBK.xml"><![CDATA[7e7b132882bfbe88c593cbb2a68a8f54]]></item>
+	</item>
+</root>

@@ -1,0 +1,70 @@
+<!--{loop $counts $row}-->
+<tr class="hover"><td><input type="checkbox" value="$row['id']" name="idarray[{$row[tid]}]" class="checkbox" onclick="if(this.checked){$('deleteallinput').style.display='';}else{$('deleteallinput').style.display='none';}"></td><td class="td_m" style="width:550px;"><a target="_blank" href="plugin.php?id=ljww360&mod=wtw&wid=$row['id']&tid=$row[tid]">$row['subject']</a></td><td class="td_k">$row['author']</td><td class="td_l"><!--{if $row['catid2']}-->$typearr[$row['catid2']]['subject']<!--{elseif $row['catid']&&!$row['catid2']}-->$typearr[$row['catid']]['subject']<!--{else}-->{lang ljww360:admin_tc_1}<!--{/if}--></td><td class="td_l">$row['price']</td><td class="td_l">$row['replies']</td><td><!--{eval echo date('Y-m-d H:i:s',$row['dateline']);}--></td></tr>
+<tr>
+<!--{/loop}-->
+	<td colspan="2" >
+		<input type="hidden" value="delete" name="btnsubmit" id="_btnsubmit">
+		<input type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray');if(this.checked){$('deleteallinput').style.display='';}else{$('deleteallinput').style.display='none';}" name="chkall">&nbsp;{lang ljww360:admin_tc_2}&nbsp;&nbsp;
+			
+	</td><td colspan="5">$paging</td>
+</tr>
+<script type="text/javascript">
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	$('fid').value = fid;
+}
+</script>
+<table class="tb tb2 nobdt" style="display:none" id="deleteallinput">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15">
+                {lang ljww360:admin_tc_3}
+            </th>
+        </tr>
+        <tr class="header">
+            <th>
+            </th>
+            <th>
+                {lang ljww360:admin_tc_3}
+            </th>
+            <th>
+                {lang ljww360:admin_tc_4}
+            </th>
+        </tr>
+        <tr class="hover">
+            <td class="td25">
+                <input type="checkbox" value="1" name="wdfl"  class="radio">
+            </td>
+            <td class="td24">
+                {lang ljww360:admin_tc_5}
+            </td>
+            <td style="width:auto;" class="rowform">
+               <select name="catid" id="catid_0" onchange="_on_select_z(this.value)">
+					<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+					<!--{loop $fenleiarr $k $v}-->
+					<option value="$v[id]">$v[subject]</option>
+					<!--{/loop}-->
+				</select>
+				<span id="level_88_fid"></span>              
+            </td>
+        </tr>  
+        <tr class="hover">
+           
+			
+            <td colspan="15">
+                <input type="checkbox" value="1" name="wd_del"  class="radio">&nbsp;{lang ljww360:admin_tc_6}
+				<input type="checkbox" value="1" name="fourm_del"  class="radio">&nbsp;{lang ljww360:admin_tc_9}&nbsp;&nbsp;{lang ljww360:admin_tc_10}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="15">
+                <div class="fixsel">
+                    <input type="submit" value="{lang ljww360:admin_tc_8}" title="{lang ljww360:admin_tc_7}" name="submit" class="btn">
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

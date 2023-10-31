@@ -1,0 +1,7 @@
+2018-02-21 下午05:07 修改template/default/forum/forumdisplay_list.htm 修复default模版,解决瀑布流参差不齐
+2018-03-03 下午02:49 修改source/class/discuz/discuz_application.php 解决使用CDN后获取不到访客真实IP的问题
+2018-03-10 下午06:33 修改template/comiis_nby/forum/forumdisplay_list.php 修复comiis_nby模版,解决瀑布流参差不齐
+2018-03-10 下午07:38 修改template/comiis_nby/forum/forumdisplay_list.php 修复comiis_nby模版,305行,解决瀑布流参差不齐
+2018-03-17 下午12:26 修改template/default/search/footer.htm 修改底部版权信息
+2018-03-17 下午12:32 修改template/comiis_nby/common/footer.php 修改统计代码不居中问题，106行
+2018-04-20 下午11:09 修改template/default/search/footer.htm 修复底部文字乱码，32、33行

@@ -1,0 +1,164 @@
+{template common/header}
+<iframe name="formsubmit" width="1" height="1" ></iframe>
+<link rel="stylesheet" href="source/plugin/ljww360/css/l1.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/l2.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/l3.css">
+<div id="doc4" style="min-height:760px;">  <style type="text/css">
+#hd { margin:0 auto;}	
+ </style>
+  <style type="text/css">
+.grid-3 {width:100% !important;}
+ </style>
+<div class="article">
+{template ljww360:twnav}
+                <div class="mod-category">
+                    <div class="hd">
+                    </div>
+                    <div class="bd">
+                        <h4>
+                             {lang ljww360:wenwen22}
+                        </h4>
+                        <div class="list">
+   
+							<ul class="clearfix">
+							<!--{loop $fenlei $key $val}-->
+<li <!--{if $val['id']==$_GET['catid']}-->class="a"<!--{/if}-->>
+<a <!--{if $fenl||$_GET['upid']}-->href=" <!--{if $config['isrewrite']}-->type-1-{$val['id']}-{$val['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$val['id']&upid=$val['upid']<!--{/if}-->"<!--{else}-->href="<!--{if $config['isrewrite']}-->type-1-{$val['id']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$val['id']<!--{/if}-->"<!--{/if}-->>
+$val['subject']</a>
+										
+</li>
+<!--{/loop}-->
+
+                            </ul>
+                        </div>
+                        <h4>
+                             {lang ljww360:wenwen23}
+                        </h4>
+                        <div class="form">
+                            <form method="post" action="plugin.php?id=ljww360&mod=list&q=$_GET['q']">
+                                <div class="sh-ipt">
+                                    <input type="text" maxlength="30" value="$_GET['s']" name="s">
+                                    <input type="hidden" value="10" name="filt">
+                                </div>
+                                <div class="sh-btn">
+                                    <button type="submit">
+                                         {lang ljww360:wenwen24}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mod-answer-list">
+                    <div class="hd">
+                        <ul class="tab-card">
+                            <li <!--{if $_GET['q']==1}-->class="on"<!--{/if}-->>
+                                 <!--{if $_GET['catid']&&$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-1-{$_GET['catid']}-{$_GET['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$_GET['catid']&upid=$_GET['upid']<!--{/if}-->"><!--{elseif $_GET['catid']&&!$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-1-{$_GET['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1&catid=$_GET['catid']<!--{/if}-->"><!--{else}--><a href="<!--{if $config['isrewrite']}-->type-1-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=1<!--{/if}-->"><!--{/if}-->
+                                    {lang ljww360:wenwen4}
+                                </a>
+                            </li>
+                            <li <!--{if $_GET['q']==2}-->class="on"<!--{/if}-->>
+							 <!--{if $_GET['catid']&&$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-2-{$_GET['catid']}-{$_GET['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$_GET['catid']&upid=$_GET['upid']<!--{/if}-->"><!--{elseif $_GET['catid']&&!$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-2-{$_GET['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$_GET['catid']<!--{/if}-->"><!--{else}--><a href="<!--{if $config['isrewrite']}-->type-2-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2<!--{/if}-->"><!--{/if}-->
+                                    {lang ljww360:wenwen7}
+                                </a>
+                            </li>
+                          <li <!--{if $_GET['q']==3}-->class="on"<!--{/if}-->>
+						  <!--{if $_GET['catid']&&$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-3-{$_GET['catid']}-{$_GET['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=3&catid=$_GET['catid']&upid=$_GET['upid']<!--{/if}-->"><!--{elseif $_GET['catid']&&!$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-3-{$_GET['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=3&catid=$_GET['catid']<!--{/if}-->"><!--{else}--><a href="<!--{if $config['isrewrite']}-->type-3-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=3<!--{/if}-->"><!--{/if}-->
+                                    {lang ljww360:wenwen26}
+                                </a>
+                            </li>
+ <li <!--{if $_GET['q']==4}-->class="on"<!--{/if}-->>
+  <!--{if $_GET['catid']&&$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-4-{$_GET['catid']}-{$_GET['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=4&catid=$_GET['catid']&upid=$_GET['upid']<!--{/if}-->"><!--{elseif $_GET['catid']&&!$_GET['upid']}--><a href="<!--{if $config['isrewrite']}-->type-4-{$_GET['catid']}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=4&catid=$_GET['catid']<!--{/if}-->"><!--{else}--><a href="<!--{if $config['isrewrite']}-->type-4-0-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=4<!--{/if}-->"><!--{/if}-->
+                                
+                                    {lang ljww360:wenwen27}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bd cl">
+                        <div class="cls-qa-table">
+                            <table>
+                                <tbody>
+								<!--{if $djarr}-->
+                                    <tr>
+                                        <th class="s0">
+                                            {lang ljww360:wenwen28}
+                                        </th>
+                                        <th class="s1">
+                                             {lang ljww360:wenwen11}
+                                        </th>
+                                        <th style="width: 130px;" class="s2">
+                                             {lang ljww360:wenwen29}
+                                        </th>
+                                    </tr>
+									
+									<!--{loop $djarr $key $val}-->
+<tr>
+<td class="titlee">
+<div class="tit-mini">												
+<div class="wrap">
+<span class="wealth">$val['price']</span>
+<a class="lnk" href="<!--{if $config['isrewrite']}-->answer-{$val['id']}-{$val['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']<!--{/if}-->" title="$val['subject'] " target="_blank"><!--{eval echo mb_substr($val['subject'],0,40,$_G['charset']);}--></a><span class="cate"><!--{if $typearr[$val['catid2']]['subject']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$val['catid2']}-{$typearr[$val['catid2']]['upid']}.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val[catid2]&upid=$typearr[$val['catid2']]['upid']<!--{/if}-->" target="_blank">$typearr[$val['catid2']]['subject']</a>]<!--{elseif $typearr[$val['catid']]['subject']&&!$val['catid2']}-->[<a href="<!--{if $config['isrewrite']}-->type-1-{$val[catid]}-0.html<!--{else}-->plugin.php?id=ljww360&mod=list&q=2&catid=$val['catid']<!--{/if}-->">$typearr[$val['catid']]['subject']</a>]<!--{/if}--></span>													
+</div>
+<!--{if $val['sign']!=1&&$_G['uid']!=$val['authorid']&&$_G['uid']}-->
+ <script type="text/javascript" src="source/plugin/ljww360/js/jquery.min.js"></script>
+<script>
+jQuery.noConflict();
+
+function bbb(a,b){
+	var c='#div_'+b;
+	if(jQuery(a).val()=='{lang ljww360:list_1}'){
+		jQuery(c).show();
+		jQuery(a).val('{lang ljww360:list_2}');
+	}else{
+		jQuery(c).hide();
+		jQuery(a).val('{lang ljww360:list_1}');
+	}
+	
+}
+</script>&nbsp;&nbsp;<input type="button" value="{lang ljww360:list_1}" onclick="bbb(this,{$val[id]});">
+ <!--{/if}-->
+</div>
+
+</td>
+<td>
+$val['replies']</td>
+<td>
+$val['dateline'] 
+</td>
+</tr>
+<tr id="div_{$val[id]}" style="display:none"><td colspan="1">
+<form method="post" action="plugin.php?id=ljww360&mod=wtw&wid=$val['id']&tid=$val['tid']&ac=yiht&ks=kshd&action=htaction" enctype="multipart/form-data" target="formsubmit">
+<input type="hidden" value="{FORMHASH}" id="formhash" name="formhash">
+<textarea style="border:2px solid #3EAF0E;width:710px;height:70px;" placeholder="{lang ljww360:list_3}" rows="5" cols="110" name="content"></textarea>
+</textarea><span class="btn btn-2" style="float:right;margin-top:5px;"><button text="quick-submit">{lang ljww360:list_4}</button></span>
+</form>
+</td></tr>
+<!--{/loop}-->
+<!--{else}-->
+{lang ljww360:list_5}
+<!--{/if}-->
+
+                                </tbody>
+
+                            </table>
+							<!--{if method_exists(helper_page,multi)}-->
+	<tr><td colspan="16" style="text-align:right">
+	
+	
+	<!--{eval  echo helper_page::multi($num, $perpage, $curpage, $fyurl,0, 10, FALSE,FALSE);}-->
+	<!--{else}-->
+	<!--{eval  echo helper_page::multi($num, $perpage, $curpage, $fyurl,0, 10, FALSE,FALSE);}-->
+	
+	</td></tr>
+	
+	<!--{/if}-->
+                        </div>
+<div style="text-align:center; margin-top:15px;" class="cl mbm">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+{template common/footer}

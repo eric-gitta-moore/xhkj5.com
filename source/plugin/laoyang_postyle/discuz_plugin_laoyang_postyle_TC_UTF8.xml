@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-08-16 15:44]]></item>
+	<item id="From"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[0]]></item>
+			<item id="name"><![CDATA[訊幻網_自定義發帖格式]]></item>
+			<item id="identifier"><![CDATA[laoyang_postyle]]></item>
+			<item id="description"><![CDATA[自定義發帖格式,用戶發帖時自動填入發帖格式,引導用戶輸入相關內容.]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[laoyang_postyle/]]></item>
+			<item id="copyright"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[1.2]]></item>
+			<item id="__modules">
+				<item id="10">
+					<item id="name"><![CDATA[myyapmagoo]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>訊幻網</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="general">
+					<item id="name"><![CDATA[laoyang_postyle]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+								<item id="1">
+					<item id="name"><![CDATA[youhui]]></item>
+					<item id="menu"><![CDATA[優惠插件]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[發帖格式(1)]]></item>
+				<item id="description"><![CDATA[支持Discuz!代碼.如:
+[b]姓名:[/b]
+身高:]]></item>
+				<item id="variable"><![CDATA[style1]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[應用到的版塊(1)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forum1]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[發帖格式(2)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[style2]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[應用到的版塊(2)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forum2]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[39]]></item>
+				</item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[發帖格式(3)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[style3]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[應用到的版塊(3)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forum3]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[發帖格式(4)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[style4]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[應用到的版塊(4)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forum4]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[發帖格式(5)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[style5]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[應用到的版塊(5)]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forum5]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+	</item>
+</root>

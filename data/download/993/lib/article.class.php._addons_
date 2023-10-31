@@ -1,0 +1,1246 @@
+<?php
+
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+
+
+class article{
+	var $cache;
+	var $import_cache;
+	var $plugin_set;
+	var $pick_set;
+	var $pick_config;
+	var $aid;
+	var $step;
+	var $errno;//错误码
+	//args 传入的参数  array('optype' => $args['optype'], 'aid' => $aid, 'forums' => $args['forums'], 'portal' => $args['portal'], 'blog' => $args['blog'], 'threadtypeid' => $args['threadtypeid'], 'pid' => $args['pid'], 'check_title' => 0)
+	function article($args = array()){
+		global $_G;
+		pload('F:spider');
+		pload('F:article');
+		$this->plugin_set = get_pick_set();
+		$this->pick_set = pick_common_get();//插件设置
+		$this->pick_config = $_G['cache']['evn_milu_pick'];
+		
+			
+		$args['run_type'] = $args['run_type'] ? $args['run_type'] : 'normal';//手动执行，有些跳转之后，run_type这个参数会没法传递，此时为默认值
+		$import_cache_key = $args['run_type'] == 'article_edit' ? 'normal' : $args['run_type']; 
+		$this->import_cache = (array)pload_cache('article_bat_run_'.$import_cache_key);
+		if(!empty($this->import_cache['run_type'])) $args['run_type'] = $this->import_cache['run_type'];
+		if(empty($args['aid'])) $args['aid'] = $this->import_cache['current']['aid'];//多次跳转，aid参数也会没了。此时从保存的批量执行信息读取
+		$this->cache = (array)pload_cache('article_public_run_'.$import_cache_key);
+	
+		if(!empty($args['aid']) && $this->cache['article_info']['aid'] != $args['aid']) $this->cache = FALSE;
+		
+		if(!$this->cache){//使用时，必须先清除缓存
+			$this->pick_set['pick_today'] = dunserialize($this->pick_set['pick_today']);
+			$aid = $args['aid'];
+			$this->cache = $args;
+			$this->cache['no_msg_action_arr'] = array('pick', 'timing', 'auto_timing');//不需要提示的 auto_timing是采集器定时发布。timing是全局定时发布
+			$this->cache['p_arr'] = get_pick_info($args['pid']);
+			$this->cache['run_type'] = $args['run_type']; 
+			$this->cache['p_arr']['content_filter_html'] = unserialize(dstripslashes($this->cache['p_arr']['content_filter_html']));
+			
+			$this->cache['article_info'] = pick_article_info($aid);
+			$this->article_seo_format();//seo伪原创
+			$this->cache['mod'] = 'attach';//当前运行的任务 顺序是 attach 下载附件 article 发布文章  reply 发布回复 upload 附件上传
+			$this->errno = 0;
+			$this->cache['common'] = '';//保存公用的东西
+			loadcache(array('threadsort_option_'.$this->cache['article_info']['sortid']));
+			$this->cache['threadsort'] = $_G['cache']['threadsort_option_'.$this->cache['article_info']['sortid']];
+			$this->cache['finsh'] = '';//用于文章发布之后更新状态
+			$this->cache['article_info']['content_key_arr'] = array();
+			if($this->cache['article_info']['content_arr']){
+				$this->cache['article_info']['content_key_arr'] = array_keys($this->cache['article_info']['content_arr']);
+			}
+			$this->cache['article_info']['ori_content'] = $this->cache['article_info']['content'];
+			if(!$this->cache['article_info']['view_num']){
+				$this->cache['p_arr']['view_num'] = $this->cache['p_arr']['view_num'] ? $this->cache['p_arr']['view_num'] : 0;
+				$this->cache['article_info']['view_num'] = $this->get_rand_data($this->cache['p_arr']['view_num']);
+			}
+			
+			//发布时间
+			$this->cache['article_info']['public_time'] = $this->get_article_dateline();
+			//发布用户
+			$user_info = $this->get_article_user_info();
+			
+			$this->cache['article_info']['public_uid'] = $user_info['uid'];
+			$this->cache['article_info']['public_username'] = $user_info['username'];
+			//标签
+			if($this->pick_set['open_tag'] == 1 && $this->cache['optype'] != 'move_portal') $this->cache['article_info']['article_tag'] = $this->cache['article_info']['article_tag'] ? $this->cache['article_info']['article_tag'] : dz_get_tag($this->cache['article_info']['title'], $this->cache['article_info']['content']);
+		}
+		
+		if(empty($this->cache['optype'])){
+			$this->cache['optype'] = $this->import_cache['args']['optype'];
+		}
+		
+		if($this->cache['run_type'] == 'article_edit'){
+			$this->import_cache['total'] = 1;
+		}
+		$this->aid = $this->cache['article_info']['aid'];
+		$this->step = $this->cache['run_step'];
+		$this->plugin_set['title_length'] = $this->plugin_set['title_length'] ? $this->plugin_set['title_length'] : 80;
+		
+	}
+	
+	function run_start(){
+		$this->free_version_limit();
+		if($this->errno < 0) return $this->errno;
+		$this->download_attach();
+		$this->download_avatar();
+		$this->article_timing();
+		if($this->cache['is_timing'] == 1) return;//如果是定时发布，立即停止
+		$this->article_public();
+		$this->reply_public();
+		$this->upload_attach();
+		$this->public_finsh();
+		$cache_key = $this->cache['run_type'] == 'article_edit' ? 'normal' : $this->cache['run_type']; 
+		pcache_del('article_public_run_'.$cache_key);
+		$this->finsh_redirect();//发布结束之后跳转
+		
+	}
+	
+	function free_version_limit(){
+		if(VIP) return 1;
+		if($this->pick_set['pick_today']['article_public_num'] < 120) return 1;
+		if(in_array($this->cache['run_type'], $this->cache['no_msg_action_arr'])) {
+			$this->errno = -111;
+			return $this->errno;
+		}
+		cpmsg_error(milu_lang('article_public_limit', array('n' => 120)));
+	}
+	
+	function finsh_redirect(){
+		if($this->cache['run_type'] == 'article_edit'){
+			$article_view_url_arr = array('move_portal' => 'portal.php?mod=view&aid='.$this->cache['finsh']['insert_id'], 'move_forums' => 'forum.php?mod=viewthread&tid='.$this->cache['finsh']['insert_id'], 'move_blog' => 'home.php?mod=space&do=blog&uid='.$this->cache['common']['public_uid'].'&id='.$this->cache['finsh']['insert_id']);
+			$article_view_url = $article_view_url_arr[$this->cache['optype']];
+			$return_url = '?'.PICK_GO.'picker_manage&myac=article_manage&p=1&pid='.$this->cache['p_arr']['pid'].$this->cache['url_args'];
+			$return_list_html = '<a href="'.$return_url.'">'.milu_lang('return_list').'</a>';
+			$article_view_output = '&nbsp;<span class="pipe">|</span>&nbsp;<a target="_blank" href="'.$article_view_url.'">'.milu_lang('view_article').'</a>';
+			if($this->cache['timing']['public_time']){//定时发布
+				cpmsg(milu_lang('bat_i_p_a_f_timing', array('t' => _striptext($this->cache['article_info']['title']), 'time' => dgmdate($this->cache['timing']['public_time']) )).'<br>'.$return_list_html, PICK_GO.'picker_manage&myac=pick_article_edit&aid='.$this->cache['article_info']['aid'].'&pid='.$this->cache['p_arr']['pid'], 'succeed');
+				return;
+			}else{
+				cpmsg(milu_lang('bat_i_p_a_f', array('t' => _striptext($this->cache['article_info']['title']))).'<br><br><a href="?'.PICK_GO.'picker_manage&myac=pick_article_edit&aid='.$this->cache['article_info']['aid'].'&pid='.$this->cache['p_arr']['pid'].'">'.milu_lang('continue_edit').'</a>&nbsp;<span class="pipe">|</span>&nbsp;'.$return_list_html.$article_view_output, PICK_GO.'picker_manage&myac=pick_article_edit&aid='.$this->cache['article_info']['aid'].'&pid='.$this->cache['p_arr']['pid'], 'succeed');
+			}
+		
+		}
+		if(in_array($this->cache['run_type'], $this->cache['no_msg_action_arr'])) return;//
+		
+		$public_cache_data = pload_cache('article_bat_run_'.$this->cache['run_type']);
+		$current = $public_cache_data['current'];
+		$public_cache_data['current']['currow'] += 1;
+		pcache_data('article_bat_run_'.$this->cache['run_type'], $public_cache_data);
+		$msg = milu_lang('bat_i_p_a_f', array('t' => _striptext($current['title'])));
+		if($this->cache['timing']['public_time']){//定时发布
+			$msg = milu_lang('bat_i_p_a_f_timing', array('t' => _striptext($current['title']), 'time' => dgmdate($this->cache['timing']['public_time']) ));
+		}
+		cpmsg($msg.milu_lang('bat_import_article', array('t' => $public_cache_data['total'], 'p' => percent_format($public_cache_data['current']['currow'], $public_cache_data['total']))), PICK_GO.'picker_manage&myac=article_batch&tpl=no&step=1', 'loading', '', false);
+	}
+	
+	//文章进入定时发布
+	function article_timing(){
+		global $_G;
+		if(!VIP) return;
+		if($this->pick_set['is_timing'] != 1) return;
+		if($this->cache['article_info']['public_time'] <= $_G['timestamp']) return;
+		$timing_public_arr = array();
+		if($this->cache['optype'] == 'move_portal'){//门户
+			$public_type = 1;
+			$timing_public_arr['portal'] = $this->cache['portal'];
+		}else if($this->cache['optype'] == 'move_forums'){//论坛
+			$public_type = 2;
+			$timing_public_arr['forums'] = $this->cache['forums'];
+			$timing_public_arr['threadtypeid'] = $this->cache['threadtypeid'];
+		}else{
+			$public_type = 3;
+			$timing_public_arr['blog'] = $this->cache['blog'];
+			$timing_public_arr['classid'] =  $this->cache['threadtypeid'];
+		}
+		$this->cache['is_timing'] = 1;//定时发布的标志
+		$this->temp_arr['article_status'] = 4;//文章入库时标记文章发布状态为定时发布
+		$timing_setarr = array('public_type' => $public_type, 'data_id' => $this->cache['article_info']['aid'], 'content_type' => 1, 'public_dateline' => $this->cache['article_info']['public_time'], 'pid' => $this->cache['p_arr']['pid'], 'public_info' => pserialize($timing_public_arr));
+		article_timing_add($timing_setarr);
+		DB::update('strayer_article_title', array('status' => 4), array('aid' => $this->cache['article_info']['aid']));
+		$this->cache['timing']['public_time'] = $this->cache['article_info']['public_time'];
+		$this->cache['timing']['title'] = $this->cache['article_info']['title'];
+		//如果有回复而且发布到论坛的话
+		$timing_setarr = array();
+		if($this->cache['article_info']['is_bbs'] == 1 && $this->cache['article_info']['content_arr'] && $this->cache['optype'] == 'move_forums'){
+			$this->cache['common']['public_time'] = $this->cache['article_info']['public_time'];
+			$this->cache['common']['public_uid'] = $this->cache['article_info']['public_uid'];
+			$this->cache['common']['public_username'] = $this->cache['article_info']['public_username'];
+			$this->cache['mod'] = 'reply';
+			$this->cache['timing']['public_type'] = $public_type;
+			$this->cache['timing']['timing_public_arr'] = $timing_public_arr;
+			$this->cache['timing']['is_reply'] = 1;
+			$this->reply_public();
+			
+		}
+		if($this->cache['run_type'] == 'auto_timing'){//定时发布写入日志
+			pload('F:pick');
+			pick_log(milu_lang('cron_article_timing_public', array('t' => $this->cache['article_info']['title'], 'aid' => $this->cache['article_info']['aid'], 'd' =>  dgmdate($this->cache['timing']['public_time']))), array('log_type' => 'timing', 'pid' => $this->cache['p_arr']['pid']));//写入日志
+		}
+		$this->finsh_redirect();
+	}
+	
+
+	//同义词替换、伪原创
+	function article_seo_format(){
+		//同义词替换
+		$this->cache['article_info']['title'] = str_replace(array("\n", "\r\n"), " ",  $this->cache['article_info']['title']);//去掉标题中的换行
+		if($this->cache['p_arr']['is_word_replace'] == 1){
+			$words = get_replace_words();
+			$this->cache['article_info']['title'] = strtr($this->cache['article_info']['title'], $words);//标题
+			$this->cache['article_info']['content'] = strtr($this->cache['article_info']['content'], $words);//内容
+			
+			if($this->cache['article_info']['content_arr']){
+				foreach($this->cache['article_info']['content_arr'] as $k => $v){
+					if($v['content']) $this->cache['article_info']['content_arr'][$k]['content'] = strtr($v['content'], $words);
+				}
+			}
+			
+		}
+		
+
+		if($this->cache['p_arr']['open_seo'] == 1){
+			//内容随机添加
+			$key_arr = array('push_title_header','push_title_footer','push_content_header','push_content_body','push_content_footer','push_reply_header', 'push_reply_body', 'push_reply_footer');
+			foreach($key_arr as $v){
+				$$v = $this->cache['p_arr'][$v] = format_wrap($this->cache['p_arr'][$v]);
+			}
+			
+			
+			//标题加内容
+			$title_header = $push_title_header ? $push_title_header[array_rand($push_title_header)] : '';
+			$title_footer = $push_title_footer ? $push_title_footer[array_rand($push_title_footer)] : '';
+			$this->cache['article_info']['title'] = $title_header.$this->cache['article_info']['title'].$title_footer;
+			
+			//内容加内容
+			$content_header = $push_content_header ? $push_content_header[array_rand($push_content_header)] : '';
+			$content_footer = $push_content_footer ? $push_content_footer[array_rand($push_content_footer)] : '';
+			if($this->cache['article_info']['content_arr'] && ($this->cache['article_info']['is_bbs'] != 1 && $this->cache['p_arr']['is_page_public'] == 1) ) {//如果是文章分页选择合并发布
+				$this->cache['article_info']['content'] = $content_header.$this->cache['article_info']['content'];
+				$last = end($this->cache['article_info']['content_arr']);
+				$this->cache['article_info']['content_arr'][$last['cid']]['content'] .= $content_footer;
+			}else{
+				$this->cache['article_info']['content'] = $content_header.$this->cache['article_info']['content'].$content_footer;
+			}
+			//回复加内容
+			if($this->cache['article_info']['content_arr'] && ($this->cache['article_info']['is_bbs'] == 1 || ($this->cache['article_info']['is_bbs'] != 1 && $this->cache['p_arr']['is_page_public'] == 2  && $this->cache['optype'] == 'move_forums') )) {//是论坛回复，或者是文章分页，但是以不合并的方式发布到论坛
+				foreach($this->cache['article_info']['content_arr'] as $k => $v){
+					$reply_header = $push_reply_header ? $push_reply_header[array_rand($push_reply_header)] : '';
+					$reply_footer = $push_reply_footer ? $push_reply_footer[array_rand($push_reply_footer)] : '';
+					$this->cache['article_info']['content_arr'][$k]['content'] = $reply_header.$v['content'].$reply_footer;
+				}
+			}
+			
+			
+		}
+		//如果文章是分页，而且合并的方式发布到论坛上，那么把内容合并起来看做是一篇普通不分页的文章		
+		if($this->cache['article_info']['content_arr'] && $this->cache['article_info']['is_bbs'] != 1 && $this->cache['p_arr']['is_page_public'] == 1 && $this->cache['optype'] == 'move_forums'){
+			array_unshift($this->cache['article_info']['content_arr'], array('cid' => $this->cache['article_info']['cid'], 'aid'  => $this->cache['article_info']['aid'], 'pageorder' => 1, 'content' => $this->cache['article_info']['content'], 'title' => $this->cache['article_info']['title']));
+			ksort($this->cache['article_info']['content_arr']);
+
+			
+			$this->cache['article_info']['content'] = content_merge($this->cache['article_info']['content_arr']);
+			$this->cache['article_info']['contents'] = 1;
+			$this->cache['article_info']['content_arr'] = array();
+		}
+		
+	}
+	
+	function ftp_check_attach($ext, $filesize){
+		global $_G;
+		if(!$_G['setting']['ftp']['on']) return TRUE;//不开启ftp不检测
+		if(((!$_G['setting']['ftp']['allowedexts'] && !$_G['setting']['ftp']['disallowedexts']) || ($_G['setting']['ftp']['allowedexts'] && in_array($ext, $_G['setting']['ftp']['allowedexts'])) || ($_G['setting']['ftp']['disallowedexts'] && !in_array($ext, $_G['setting']['ftp']['disallowedexts']) && (!$_G['setting']['ftp']['allowedexts'] || $_G['setting']['ftp']['allowedexts'] && in_array($ext, $_G['setting']['ftp']['allowedexts'])))) && (!$_G['setting']['ftp']['minsize'] || $filesize >= $_G['setting']['ftp']['minsize'] * 1024)) {
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+	
+	//取得需要上传的附件
+	function get_upload_attach_arr($uid, $aids){
+		global $_G;
+		if(!$aids || !$_G['setting']['ftp']['on']) {
+			return;
+		}
+		$attachtables = $pics = array();
+		$this->cache['common']['forum']['ismoderator'] = !empty($this->cache['common']['forum'][$uid]) ? 1 : 0;
+		$uidadd = $this->cache['common']['forum']['ismoderator'] ? '' : " AND uid='$uid'";
+		$query = DB::query("SELECT aid, tableid FROM ".DB::table('forum_attachment')." WHERE aid IN (".dimplode($aids).")$uidadd");
+		while($attach = DB::fetch($query)) {
+			$attachtables[$attach['tableid']][] = $attach['aid'];
+		}
+		foreach($attachtables as $attachtable => $aids) {
+			$attachtable = 'forum_attachment_'.$attachtable;
+			$query = DB::query("SELECT aid, thumb, attachment, filename, filesize, picid FROM ".DB::table($attachtable)." WHERE aid IN (".dimplode($aids).") AND remote='0'");
+			$remoteaids = array();
+			while($attach = DB::fetch($query)) {
+				$attach['ext'] = fileext(strtolower($attach['filename']));
+				if(!$this->ftp_check_attach($attach['ext'], $attach['filesize'])) continue;
+				$attach['attachtable'] = $attachtable;
+				$this->cache['upload']['attach_arr'][$attach['aid']] = $attach;
+			}
+		}
+	}
+	
+
+		
+	function upload_attach(){
+		global $_G;
+		if($this->cache['mod'] != 'upload') return;
+		$this->cache['mod'] = 'upload';
+		//不使用任何远程附件
+		if((!$this->pick_set['skydrive_type'] && !$_G['setting']['ftp']['on']) || !VIP){
+			$this->cache['mod'] = '';
+			$this->cache['run_step'] = '';
+			return;
+		}
+		//首次运行，计算出需要上传的附件
+		if($this->cache['upload']['count'] == 0){
+			if(!$this->pick_set['skydrive_type']){//通过ftp
+				if($this->cache['optype'] == 'move_forums'){//论坛
+					foreach($this->cache['upload']['newaids'] as $k => $v){
+						$this->get_upload_attach_arr($v['uid'], $v['aids']);
+					}
+				}else{
+				}
+			}else{//网盘
+				$this->cache['upload']['attach_arr'] = $this->cache['upload']['sky_attach_arr'];
+			}
+			$this->cache['upload']['count'] = count($this->cache['upload']['attach_arr']);
+		}
+		
+		if(!$this->step){
+			if(!$this->cache['upload']['attach_arr']) return;
+			$this->upload_attach_wait();
+		}
+		
+		
+		//处理掉
+		$attach_info = $this->cache['upload']['current_attach_info'];
+		if(!$this->pick_set['skydrive_type']){//ftp
+			if($this->cache['optype'] == 'move_forums'){//论坛	
+				$result = ftpcmd('upload', 'forum/'.$attach_info['attachment']);
+				$this->cache['upload']['remoteaids'][$attach_info['attachtable']][$attach_info['aid']] = $attach_info['aid'];
+				if($attach_info['picid']) {
+					$this->cache['upload']['pics'][$attach_info['aid']] = $attach_info['picid'];
+				}
+			}else{//门户、博客
+				$dir_name = $this->cache['optype'] == 'move_portal' ? 'portal' : 'album';
+				$ftpresult_thumb = 0;
+				$ftpresult = ftpcmd('upload', $dir_name.'/'.$attach_info['attachment']);
+				if($ftpresult) {
+					@unlink($_G['setting']['attachdir'].$dir_name.'/'.$attach_info['attachment']);
+					$thumbpath = getimgthumbname($attach_info['attachment']);
+					ftpcmd('upload', $dir_name.'/'.$thumbpath);
+					@unlink($_G['setting']['attachdir'].$dir_name.'/'.$thumbpath);
+				}
+			}
+		}else{
+			$re = $this->attach_remote_upload($attach_info['from'], $attach_info['to']);
+		}
+		//结束
+		if(!$this->cache['upload']['attach_arr']) {
+			if(!$this->pick_set['skydrive_type']){//ftp需要后续处理
+				if($this->cache['optype'] == 'move_forums'){
+					foreach((array)$this->cache['upload']['remoteaids'] as $attachtable => $remoteaids){
+						if(!$remoteaids || !is_array($remoteaids) || !$attachtable) continue;
+						DB::update($attachtable, array('remote' => 1), "aid IN (".dimplode($remoteaids).")");
+					}
+					if($this->cache['upload']['pics']) {
+						DB::update('home_pic', array('remote' => 3), "picid IN (".dimplode($this->cache['upload']['pics']).")");
+					}
+					
+					//设置封面
+					if($this->cache['upload']['cover']['pid']){
+						$_G['setting']['forumpicstyle'] = $this->cache['upload']['cover']['style'];
+						require_once libfile('function/post');
+						$_G['forum']['ismoderator'] = 1;
+						$_G['uid'] = $this->cache['common']['reply_public_uid'] ? $this->cache['common']['reply_public_uid'] : $this->cache['common']['public_uid'];//必须有这个
+						$_G['uid'] = $_G['uid'] ? $_G['uid'] : 1;
+						setthreadcover($this->cache['upload']['cover']['pid']);
+					}
+				}
+			}
+			$this->cache['mod'] = '';
+			$this->cache['run_step'] = '';
+		}else{
+			$this->upload_attach_wait();
+		}
+			
+			
+		
+		
+	}
+	
+	
+	function upload_attach_wait(){
+		if(!$this->cache['upload']['attach_arr']) return;
+		$current_get_num = $this->cache['upload']['count'] - count($this->cache['upload']['attach_arr']);
+		$this->cache['run_step'] = 1;
+		$percent = percent_format($current_get_num, $this->cache['upload']['count']);
+		$info = array_shift($this->cache['upload']['attach_arr']);
+		$this->cache['upload']['current_attach_info'] = $info;
+		$this->cpmsg(milu_lang('bat_i_p_a', array('t' => $this->import_cache['current']['title'])).milu_lang('upload_remote_attach', array('p' => $percent)).milu_lang('bat_import_article', array('t' => $this->import_cache['total'], 'p' => percent_format($this->import_cache['current']['currow'], $this->import_cache['total']) )), PICK_GO.'picker_manage&myac=article_public_start&tpl=no');
+	}
+	
+	
+	//附件远程上传
+	function attach_remote_upload($from, $to){
+		global $_G;
+		pload('F:attach');
+		if(!file_exists($from)) return;
+		$skydrive_type = $this->pick_set['skydrive_type'];
+		
+		//上传之前先打水印
+		require_once libfile('class/image');
+		$attach_dir_name = $this->cache['optype'] == 'move_portal' ? 'portal' : 'album';
+		if($this->cache['optype'] == 'move_forums') $attach_dir_name = 'forum';
+		$image = new image();
+		if($this->cache['p_arr']['is_water_img'] == 1) {
+			$re = $image->Watermark($from, '', $attach_dir_name);//打水印
+			if($re < 0) $this->errno = -24;//打水印失败
+		}
+		if($_G['setting']['ftp']['on'] && !$skydrive_type){//使用ftp
+			
+		}else if($skydrive_type == 1){//百度网盘
+			return baidu_attach_upload($from, $to);
+		}else if($skydrive_type == 2){//七牛云
+			return qiniu_attach_upload($from, $to);
+		}
+	}
+	
+	//核对附件，看看哪些附件需要下载。
+	function attach_download_data(){
+		$old_data_list = article_attach_by_aid($this->aid);
+		$is_download_file = $this->cache['p_arr']['is_download_file'];
+		if($this->cache['p_arr']['is_attach_setting'] == 1){
+			$is_download_file = 1;//如果设置特殊附件采集，必须是
+		}
+		$new_data_arr = (array)$this->cache['article_info']['attach_arr'][$this->cache['article_info']['cid']] = get_article_attach($this->cache['article_info']['content'], $is_download_file, $this->cache['article_info']['url']);
+		if($this->cache['article_info']['cover_pic']){//如果存在封面
+			array_push($new_data_arr, array(1 => $this->cache['article_info']['cover_pic']));
+		}
+		
+		if($this->cache['article_info']['sortid']){//如果是分类信息，里面含有图片
+			foreach($this->cache['threadsort'] as $k => $v){
+				if($v['type'] == 'image' && $this->cache['article_info']['sort_arr'][$k]){//数据类型是图片
+					$new_data_arr = (array)$new_data_arr;
+					array_push($new_data_arr, array(1 => $this->cache['article_info']['sort_arr'][$k]));
+				}
+			}
+		}
+		
+		foreach($this->cache['article_info']['content_arr'] as $k => $v){
+			$reply_attach_arr  = get_article_attach($v['content'], $this->cache['p_arr']['is_download_file'], $this->cache['article_info']['url']);
+			if($reply_attach_arr) $this->cache['article_info']['attach_arr'][$v['cid']] = $reply_attach_arr;
+			$new_data_arr = array_merge((array)$new_data_arr, (array)$reply_attach_arr);
+		}
+		$this->cache['attach_arr'] = array();//待下载的附件列表
+		
+		$this->cache['article_info']['attach_arr'] = array_filter($this->cache['article_info']['attach_arr']);//去掉空的
+
+		
+		$attach_link_hava_arr = $attach_link_text_hava_arr = $redirect_attach_info = array();
+		if($this->cache['p_arr']['is_download_file'] == 1){
+			$attach_link_hava_arr = format_wrap($this->cache['p_arr']['attach_link_hava']);
+			$attach_link_text_hava_arr = format_wrap($this->cache['p_arr']['attach_link_text_hava']);
+		}
+		//特殊附件
+		if($this->cache['p_arr']['is_attach_setting'] == 1){
+			$redirect_attach_info = $this->get_redirect_attach($this->cache['article_info']['url'], $this->cache['article_info']['content']);
+			if($redirect_attach_info['attach_download_url'] && $this->cache['p_arr']['is_download_file'] == 2){//如果附件不本地化，直接替换掉内容里面的附件路径
+				$this->cache['article_info']['content'] = str_replace('href="'.$redirect_attach_info['attach_redirect_url'].'"', 'href="'.$redirect_attach_info['attach_download_url'].'"', $this->cache['article_info']['content']);
+			}
+		}
+		$this->cache['redirect_attach_info'] = $redirect_attach_info;
+		foreach($new_data_arr as $k => $v){
+			$imageurl = $v[1];
+			$url_hash = md5($imageurl);
+			$info = $old_data_list[$url_hash];
+			$is_image = $v[4]==1 ? 0 : 1;
+			//过滤掉一些附件
+			if(!$imageurl || ($v[4] == 1 && filter_something($v[1], $attach_link_hava_arr)) || ($v[4] == 1 && filter_something($v[2], $attach_link_text_hava_arr)) ) {
+				continue;
+			}
+			if($this->cache['p_arr']['is_download_img'] != 1 && $is_image == 1) continue;
+			$file_name = $this->attach_file_name($info['save_name']);
+			if($info && file_exists($file_name)) continue;
+			
+			//特殊附件处理				
+			$imageurl = $imageurl == $redirect_attach_info['attach_redirect_url'] ? $redirect_attach_info['attach_download_url'] : $imageurl;
+			
+			$this->cache['attach_arr'][$url_hash] = array('imageurl' => $imageurl, 'title' => $v[2], 'is_image' => $is_image);
+		}
+		$this->cache['data_attach_arr'] = $this->cache['article_info']['data_attach_arr'] = $old_data_list;//数据库里面对应的
+	}
+	
+	
+	function get_redirect_attach($url, $content){
+		$arr = get_redirect_attach_url(array('attach_redirect_url_get_type' => $this->cache['p_arr']['attach_redirect_url_get_type'], 'attach_redirect_url_get_rules' => $this->cache['p_arr']['attach_redirect_url_get_rules'], 'attach_download_url_get_type' => $this->cache['p_arr']['attach_download_url_get_type'], 'attach_download_url_get_rules' => $this->cache['p_arr']['attach_download_url_get_rules']), $url, $content, $this->cache['p_arr']['login_cookie']);
+		return $arr;
+	}
+	
+	function attach_file_name($save_name){
+		if(!$save_name) return;
+		return PICK_ATTACH_PATH.'/'.$this->cache['p_arr']['pid'].'/'.$this->aid.'/'.$save_name;
+	}
+	
+	function download_attach_wait(){
+		if(!$this->cache['attach_arr']) return;
+		$info = array_shift($this->cache['attach_arr']);
+		$this->cache['attach']['current_attach_info'] = $info;
+		$imageurl = $info['imageurl'];
+		$url_hash = md5($imageurl);
+		$this->cache['attach']['current_key'] = $url_hash;
+		$current_get_num = $this->cache['attach']['count'] - count($this->cache['attach_arr']);
+		$percent = percent_format($current_get_num, $this->cache['attach']['count']);
+		$this->cache['run_step'] = 1;
+		$this->cpmsg(milu_lang('bat_i_p_a', array('t' => $this->import_cache['current']['title'])).milu_lang('bat_i_p_attach', array('p' => $percent ,'url' => $imageurl)).milu_lang('bat_import_article', array('t' => $this->import_cache['total'], 'p' => percent_format($this->import_cache['current']['currow'], $this->import_cache['total']) )), PICK_GO.'picker_manage&myac=article_public_start&tpl=no');
+	}
+	
+	function download_attach(){
+		if($this->cache['mod'] != 'attach') return;
+		if(!$this->cache['attach']['current_key']){//初次执行
+			$this->attach_download_data();//查询哪些附件需要采集
+			$this->cache['attach']['count'] = count($this->cache['attach_arr']);
+			if($this->cache['attach']['count'] == 0){
+				$this->cache['mod'] = 'avatar';
+				unset($this->cache['attach_arr'], $this->cache['data_attach_arr'], $this->cache['attach']);
+				return;
+			}
+		}
+		
+		$this->cache['mod'] = 'attach';
+		if(!$this->step){
+			if(!$this->cache['attach_arr']) return;
+			$this->download_attach_wait();
+		}else{
+			$info = $this->cache['attach']['current_attach_info'];
+			
+			$imageurl = $info['imageurl'];
+			$description = $info['title'];
+			$url_hash = md5($imageurl);
+			if($imageurl == $this->cache['redirect_attach_info']['attach_download_url']){
+				$url_hash = md5($this->cache['redirect_attach_info']['attach_redirect_url']);
+			}
+			
+			$this->cache['attach']['current_key'] = $url_hash;
+			$snoopy_args['cookie'] = $this->cache['p_arr']['login_cookie'];
+			$is_attach_allow = 1;
+			$snoop_obj = get_snoopy_obj($snoopy_args);
+			if(is_array($info) && $info['is_image'] != 1 && $this->cache['p_arr']['is_download_file'] != 1){//特殊附件
+				$attach_info = array();
+			}else{
+				$attach_info = get_img_content($imageurl, $snoop_obj, array('referer' => $this->cache['attach_info']['url'], 'is_set_referer' => $this->cache['p_arr']['is_set_referer']));
+			}
+			if(empty($attach_info['file_ext']) && $description){//discuz有些种子附件获取不到扩展名
+				$attach_info['file_ext'] = addslashes(strtolower(substr(strrchr(_striptext($description), '.'), 1, 10)));
+				if(!$attach_info['file_name'] && $attach_info['file_ext']) $attach_info['file_name'] = _striptext($description);
+			}
+			//系统默认不允许下载html、shtml、php扩展名
+			if(in_array($attach_info['file_ext'], array('shtml', 'html', 'php'))) $is_attach_allow = 0;
+			$attach_dir = PICK_ATTACH_PATH.'/'.$this->cache['p_arr']['pid'].'/'.$this->aid;
+			dmkdir($attach_dir);
+			if($attach_info['file_size'] && strlen($attach_info['content']) && $is_attach_allow == 1){
+				$hash = md5($attach_info['content']);
+				$save_name = $url_hash.'.'.$attach_info['file_ext'];
+				$attach_file = $this->attach_file_name($save_name);
+				$is_image = pis_image_ext($attach_info['file_ext']) ? 1 : 0;
+				file_put_contents($attach_dir.'/'.$save_name, $attach_info['content']);
+				if(!$this->cache['data_attach_arr'][$url_hash]){
+					$setarr = array('tid' =>$this->aid, 'url_hash' => $url_hash, 'hash' => $hash, 'pid' => $this->cache['p_arr']['pid'], 'save_name' => $save_name, 'file_name' => $attach_info['file_name'], 'filesize' => $attach_info['file_size'], 'description' => $description, 'isimage' => $is_image);
+					DB::insert('strayer_attach', paddslashes($setarr), TRUE);
+				}
+			}
+			//结束
+			if(!$this->cache['attach_arr']) {
+				$this->cache['mod'] = 'avatar';
+				$this->cache['run_step'] = '';
+				//如果数据库里面没有附件记录，但是文章里面后来添加了。也要更新
+				$this->cache['article_info']['data_attach_arr'] = article_attach_by_aid($this->aid);
+			}
+			$this->download_attach_wait();
+		}
+	
+	}
+	
+	
+	function download_avatar_wait(){
+		if(!$this->cache['avatar']['data_arr']) return;
+		$info = array_shift($this->cache['avatar']['data_arr']);
+		$this->cache['avatar']['current_info'] = $info;
+		$current_get_num = $this->cache['avatar']['count'] - count($this->cache['avatar']['data_arr']);
+		$this->cache['run_step'] = 1;
+		$percent = percent_format($current_get_num, $this->cache['avatar']['count']);
+		$this->cpmsg(milu_lang('bat_i_p_a', array('t' => $this->import_cache['current']['title'])).milu_lang('download_user_avatar', array('u' => $info['username'], 'p' => $percent)).milu_lang('bat_import_article', array('t' => $this->import_cache['total'], 'p' => percent_format($this->import_cache['current']['currow'], $this->import_cache['total']) )), PICK_GO.'picker_manage&myac=article_public_start&tpl=no');
+	}
+	
+	
+	//下载头像
+	function download_avatar(){
+		if($this->cache['mod'] != 'avatar') return;
+		pload('F:member');
+		if(!$this->cache['avatar']['current_info'] && count($this->cache['avatar']['data_arr']) > 0){//初次执行
+			$this->avatar_download_data();//查询哪些附件需要采集
+			if($this->cache['avatar']['count'] == 0 || empty($this->cache['avatar']['root_url'])){
+				$this->cache['mod'] = 'article';
+				unset($this->cache['avatar']);
+				return;
+			}
+		}
+		
+		if(!$this->cache['avatar']['data_arr']){
+			$this->cache['mod'] = 'article';
+			unset($this->cache['avatar']);
+			return;
+		}
+		
+		$this->cache['mod'] = 'avatar';
+		
+		if(!$this->step){
+			if(!$this->cache['avatar']) return;
+			$this->download_avatar_wait();
+		}else{
+			$info = $this->cache['avatar']['current_info'];
+			//下载头像
+			$avatar_url = $this->cache['avatar']['root_url'].get_avatar($info['get_uid'], 'middle');
+			$this->download_avatar_file($avatar_url, $info['uid']);
+			//结束
+			if(!$this->cache['avatar']) {
+				$this->cache['mod'] = 'article';
+				$this->cache['run_step'] = '';
+			}
+			$this->download_avatar_wait();
+		}
+	}
+	
+	function download_avatar_file($avatar_url, $uid){
+		$size_arr = array('middle', 'big', 'small');
+		$attach_dir = PICK_PATH.''.'/'.get_avatar($uid, '', '', true);
+		dmkdir($attach_dir);
+		$snoopy_args = array();
+		foreach($size_arr as $size){
+			$avatar_file_name = PICK_PATH.'/'.get_avatar($uid, $size);
+			if(file_exists($avatar_file_name)) continue;
+			$icon_url = str_replace('middle', $size, $avatar_url);
+			$snoopy_obj = get_snoopy_obj($snoopy_args);
+			$img_arr = get_img_content($icon_url, $snoopy_obj);
+			$img_re = $img_arr['content'];
+			if(empty($img_re)) continue;
+			$put_re = file_put_contents($avatar_file_name, $img_re);//写入头像
+			if(!$put_re) {
+				continue;
+			}	
+		}		
+	}
+	
+	//查询需要下载的头像
+	function avatar_download_data(){
+		$member_uid_arr[] = $this->cache['article_info']['uid'];
+		foreach($this->cache['article_info']['content_arr'] as $k => $v){
+			$member_uid_arr[] = $v['uid'];
+		} 
+		$member_uid_arr = array_filter($member_uid_arr);
+		$member_uid_arr = sarray_unique($member_uid_arr);
+		if($member_uid_arr){
+			$query = DB::query("SELECT avatar_root_url,uid,get_uid,username,data_uid FROM ".DB::table('strayer_member')." WHERE uid IN (".dimplode($member_uid_arr).")");
+			pload('F:member');
+			while(($v = DB::fetch($query))) {
+				if(file_exists(PICK_PATH.'/'.get_avatar($v['uid'], 'middle'))){
+					continue;
+				}
+				//如果用户已经注册，而且没有头像才下载
+				$avatar_file = get_avatar_path($v['data_uid']);
+				if(file_exists($avatar_file)){
+					continue;
+				}
+				
+				$this->cache['avatar']['root_url'] = $v['avatar_root_url'];
+				$member_data_arr[$v['uid']] = array('username' => $v['username'], 'get_uid' => $v['get_uid'], 'uid' => $v['uid']);
+			}
+		}
+		$this->cache['avatar']['data_arr'] = $member_data_arr;
+		$this->cache['avatar']['count'] = count($member_data_arr);
+	}
+	
+	//发布文章	
+	function article_public(){
+		if($this->cache['mod'] != 'article') return;
+		$this->cache['mod'] = 'article';
+		$func_name = $this->cache['optype'];
+		if(!in_array($func_name, array('move_forums', 'move_portal', 'move_blog'))) cpmsg_error(milu_lang('data_expired'));
+		$this->$func_name();
+		if($func_name == 'move_forums') {
+			$this->cache['mod'] = 'reply';
+		}else{
+			$this->cache['mod'] = 'upload';
+		}
+	}
+	
+	function check_article_common(){
+		if(empty($this->cache['article_info']['title'])) {
+			$this->errno = -1;
+			return FALSE;
+		}
+		if(empty($this->cache['article_info']['content'])) {
+			$this->errno = -2;
+			return FALSE;
+		}
+		return TRUE;
+	}
+	function check_article_forum(){
+		$this->article_format_forum();
+		if($this->check_article_common() == FALSE) return FALSE;
+		if($this->cache['check_title'] == 1){
+			$num = DB::result_first('SELECT COUNT(*) FROM '.DB::table('forum_thread')." WHERE subject='".daddslashes($this->cache['article_info']['title'])."' AND displayorder > '-1'");
+			if($num) {
+				$this->errno = -3;
+				return FALSE;
+			}
+		}
+		return TRUE;
+	}
+	
+	function article_format_forum(){
+		$this->cache['article_info']['title'] = trim($this->cache['article_info']['title']);
+		$this->cache['article_info']['content'] = trim($this->cache['article_info']['content']);
+		
+		$subject = $this->cache['article_info']['title'];
+		$content = $this->cache['article_info']['ori_content'] = $this->cache['article_info']['content'];
+		$subject = htmlspecialchars_decode(format_html($subject));
+		$this->cache['article_info']['title'] = $subject;
+		$this->cache['article_info']['content'] = $content;
+	}
+	
+	function get_rand_data($data){
+		if(strexists($data, ',')){
+			$temp_arr = format_wrap($data, ',');
+			return rand($temp_arr[0], $temp_arr[1]);
+		}else if(strexists($data, '|')){
+			$data_arr = format_wrap($data, '|');
+			$key = array_rand($data_arr);
+			return $data_arr[$key];
+		}else{
+			return intval($data);
+		}
+	}
+	
+	function move_forums(){
+		global $_G;
+		require_once libfile('function/editor');
+		require_once libfile('function/forum');
+		require_once libfile('function/post');
+		
+		if($this->check_article_forum() == FALSE) return FALSE;
+
+		$subject = $this->cache['article_info']['title'];
+		$message = $this->page_get_content();	
+		$is_htmlon = $this->cache['p_arr']['is_html_public'] == 1 ? 1 : 0;
+		$message = content_html_ubb($message, $this->cache['article_info']['url'], $is_htmlon);
+		
+		if(VIP && $this->pick_config['pick_config']['open_fanyi_module'] == 1 && $this->pick_set['tran_is_open'] == 1) {
+			$fanyi_flag = $this->cache['p_arr']['is_download_img'] != 1 && $this->cache['p_arr']['is_download_file'] != 1 && strexists('img', $message) ? 1: 0;//有远程图片的
+			$fanyi_flag = 0;
+			$fanyi_message = $fanyi_flag==1 ? 'test' : $message;
+			$fanyi_arr = pick_fanyi($fanyi_message, $subject, array('pid' => $this->cache['p_arr']['pid']));//翻译
+			if(!$fanyi_arr) return -12;
+			$message = $fanyi_flag==1 ? $message : $fanyi_arr['content'];
+			$subject = $fanyi_arr['title'];
+			$this->cache['article_info']['article_tag'] = dz_get_tag($message, $subject);
+		}
+			
+		
+		/*               设置各种参数            */
+		
+		$bbcodeoff = checkbbcodes($message, FALSE);
+		$smileyoff = checksmilies($message, FALSE);
+		$readperm = 0;
+		$displayorder = 0;
+		$digest = 0;
+		$moderated = 0;
+		$isgroup = 0;
+		$replycredit = 0;
+		$isanonymous = 0;
+		$parseurloff = 0;
+		
+		//设置查看数
+		$view_num = $this->cache['article_info']['view_num'];
+		$reply_count = count($this->cache['article_info']['content_arr']);
+		$view_num = $view_num < ($reply_count - 1) ? rand($reply_count*2, $reply_count*10) : $view_num; //查看数
+		$fid = $this->cache['common']['fid'] = $this->cache['forums'];
+		$_G['forum'] =  DB::fetch_first("SELECT * FROM ".DB::table('forum_forum')." WHERE fid='$fid'");
+		$forum_forumfield_info = DB::fetch_first("SELECT threadsorts,moderators FROM ".DB::table('forum_forumfield')." WHERE fid='$fid'");
+		$_G['forum']['threadsorts'] = dunserialize($forum_forumfield_info['threadsorts']);
+		$_G['forum']['moderators'] = $forum_forumfield_info['moderators'];
+		$this->cache['common']['forum'] = $_G['forum'];
+		//用户
+		
+		$uid = $this->cache['article_info']['public_uid'];
+		$author = $this->cache['article_info']['public_username'];
+			
+		$public_time = $this->cache['article_info']['public_time'];//时间	
+			
+		$special = $this->cache['article_info']['special'];
+		$sortid = $this->cache['article_info']['sortid'];
+		//所发布的板块没有这个信息分类
+		if($sortid && !in_array($sortid, array_keys($_G['forum']['threadsorts']['types']))){
+			if(in_array($this->cache['run_type'], $this->cache['no_msg_action_arr'])) {
+				$this->errno = -1452;
+				return FALSE;//
+			}
+			cpmsg_error(milu_lang('article_public_error_no_sort'));
+		}
+		if($special == 3){//悬赏主题
+			$price = $rewardprice = $this->cache['article_info']['reward_price'] ? $this->cache['article_info']['reward_price'] : rand(1,50);
+		}
+		if($sortid){//信息分类
+			$forum_optiondata = $this->cache['article_info']['sort_arr'];
+		} 
+		
+		
+		
+		
+		$typeid = $this->cache['threadtypeid'];
+		
+	
+		$is_htmlon = $this->cache['p_arr']['is_html_public'] == 1 ? 1 : 0;
+		
+		
+		if($this->cache['article_info']['forum_id']){//已经发布的
+			$info = DB::fetch_first("SELECT p.pid,p.tid,t.tid,p.first FROM ".DB::table('forum_post')." p Inner Join ".DB::table('forum_thread')." t  ON p.tid = t.tid WHERE p.first = '1' AND t.tid='".$this->cache['article_info']['forum_id']."' AND t.displayorder > '-1'");
+		}
+		
+		$this->cache['common']['subject'] = $subject;
+		if($info['tid']){//更新
+			DB::query("UPDATE ".DB::table('forum_thread')." SET typeid='$typeid', author='".daddslashes($author)."', sortid='$sortid', authorid='$uid', subject='".daddslashes($subject)."', dateline='$public_time', price='$price', lastpost='$public_time', special='$special', fid='$fid', lastposter='".daddslashes($author)."', views='$view_num', attachment='0' WHERE tid='$info[tid]'", 'UNBUFFERED');
+			$tid = $info['tid'];
+		}else{//添加
+			DB::query("INSERT INTO ".DB::table('forum_thread')." (fid, posttableid, readperm, price, typeid, sortid, author, authorid, subject, dateline, lastpost, lastposter, views, displayorder, digest, special, attachment, moderated, status, isgroup, replycredit, closed)
+				VALUES ('".$fid."', '0', '$readperm', '$price', '$typeid', '$sortid', '".daddslashes($author)."', '$uid', '".daddslashes($subject)."', '$public_time', '$public_time', '".daddslashes($author)."', '$view_num', '$displayorder', '$digest', '$special', '0', '$moderated', '32', '$isgroup', '$replycredit', '0')");
+			$tid = DB::insert_id();
+			useractionlog($uid, 'tid');
+			
+		}
+		$this->cache['finsh']['insert_id'] = $tid;
+		DB::update('common_member_field_home', array('recentnote'=> daddslashes($subject)), array('uid'=>$uid));
+
+		
+		if(DISCUZ_VERSION == 'X2'){//2.0版本
+			$tagstr = addthreadtag($this->cache['article_info']['article_tag'], $tid);
+		}else{
+			$class_tag = new tag();
+			$tagstr = $class_tag->add_tag($this->cache['article_info']['article_tag'], $tid, 'tid');
+			
+		}
+	
+		$message = preg_replace('/\[attachimg\](\d+)\[\/attachimg\]/is', '[attach]\1[/attach]', $message);
+		
+		$post_setarr = array(
+			'fid' => $fid,
+			'tid' => $tid,
+			'first' => '1',
+			'author' => $author,
+			'authorid' => $uid,
+			'subject' => $subject,
+			'dateline' => $public_time,
+			'message' => $message,
+			'useip' => $_G['clientip'],
+			'invisible' => 0,
+			'anonymous' => $isanonymous,
+			'usesig' => 1,
+			'htmlon' => $is_htmlon,
+			'bbcodeoff' => $bbcodeoff,
+			'smileyoff' => $smileyoff,
+			'parseurloff' => $parseurloff,
+			'attachment' => '0',
+			'replycredit' => 0,
+			'status' => 0
+		);
+		if(DISCUZ_VERSION != 'X2'){//2.5版本 2.5版本多了一个position字段
+			$post_setarr['position'] = 1;
+		}
+		$post_setarr = paddslashes($post_setarr);
+		$post_setarr['tags'] = $tagstr;
+		$today_time_arr = array();//用于今日统计
+		$replys = 0;
+		if($info['tid']){//更新
+			//发布时间要做更改
+			$new_post_arr = DB::fetch_first("SELECT dateline FROM ".DB::table('forum_post')." WHERE tid='$tid' ORDER BY dateline ASC limit 1");		
+			$post_setarr['dateline'] = $new_post_arr['dateline'] - 3600;
+			DB::update('forum_post', $post_setarr, array('pid' => $info['pid']));
+			$pid =  $info['pid'];
+			
+		}else{
+			$pid = insertpost($post_setarr);
+		}
+
+
+		$threadimageaid = 0;
+		$threadimage = array();
+	
+		
+
+		/*删除附件,删除主题和回复*/
+		if($this->cache['article_info']['forum_id']){
+			//删除附件
+			$tidsadd = "tid='".$this->cache['article_info']['forum_id']."'";
+			require_once libfile('function/delete');
+			deleteattach(array($this->cache['article_info']['forum_id']), 'tid');
+			DB::query("UPDATE ".DB::table('forum_thread')." SET attachment='0' WHERE $tidsadd");
+			updatepost(array('attachment' => '0'), $tidsadd);
+			
+			//删除回复
+			DB::delete('forum_post', "tid='".$this->cache['article_info']['forum_id']."' AND pid<>'$pid'");
+			
+		}
+		
+		
+		//分类信息	
+		//对日期和其他数据的转换待完成
+		if($_G['forum']['threadsorts']['types'][$sortid] && !empty($forum_optiondata) && is_array($forum_optiondata)) {
+			$filedname = $valuelist = $separator = '';
+			foreach($forum_optiondata as $optionid => $value) {
+				$value = trim($value);
+				$data_type = $this->cache['threadsort'][$optionid]['type'];
+				$data_title = $this->cache['threadsort'][$optionid]['title'];
+				$is_phone = $data_type == 'text' && (strexists($data_title, '手机') || strexists($data_title, '电话')) ? 1 : 0;
+				if($data_type == 'image' ||  $is_phone == 1) {
+					$attach_img_info = $this->get_attach_content_by_url($value, $this->cache['article_info']['data_attach_arr']);
+					$attach_info = (!empty($attach_img_info['file_ext']) && !empty($attach_img_info['file_name'])) ? $this->attach_add(array('tid' => $tid, 'fid' => $fid, 'uid' => $uid, 'pid' => $pid, 'attach_img_info' => $attach_img_info)) : array();
+					//按照discuz，如果开启ftp远程附件，信息分类里面的附件仍然是使用本地的，所以。。。
+					
+					if($attach_info['aid']){
+						$value = pserialize($attach_info);
+					}
+					if($is_phone == 1){
+						if(!empty($attach_info['url'])) {
+							$value = '<img src="'.$attach_info['url'].'">';
+						}
+						$value = trim($value);
+					}
+				}
+				if($data_type == 'select' || $data_type == 'checkbox' || $data_type == 'radio') {
+					$search_key = array_search($value, $this->cache['threadsort'][$optionid]['choices']);
+					if(empty($search_key)){
+						foreach($this->cache['threadsort'][$optionid]['choices'] as $k1 => $v1){
+							if(strexists(trim($value), trim($v1))){
+								$value = $k1;
+								break;
+							}
+							if(strexists(trim($v1), trim($value))){
+								$value = $k1;
+								break;
+							}
+						}
+					}else{
+						$value = $search_key;
+					}
+					
+				}
+				if($value) {
+					$filedname .= $separator.$this->cache['threadsort'][$optionid]['identifier'];
+					$valuelist .= $separator."'".daddslashes($value)."'";
+					$separator = ' ,';
+				}
+				DB::query("INSERT INTO ".DB::table('forum_typeoptionvar')." (sortid, tid, fid, optionid, value, expiration)
+					VALUES ('$sortid', '$tid', '$fid', '$optionid', '".daddslashes($value)."', '".($typeexpiration ? TIMESTAMP + $typeexpiration : 0)."')");
+			}
+			if($filedname && $valuelist) {
+				DB::query("INSERT INTO ".DB::table('forum_optionvalue')."$sortid ($filedname, tid, fid) VALUES ($valuelist, '$tid', '$fid')");
+			}
+		}
+		
+
+		
+	
+		$param = array('fid' => $fid, 'tid' => $tid, 'pid' => $pid);
+	
+		$statarr = array(0 => 'thread', 1 => 'poll', 2 => 'trade', 3 => 'reward', 4 => 'activity', 5 => 'debate', 127 => 'thread');
+		
+		include_once libfile('function/stat');
+		
+		updatestat($isgroup ? 'groupthread' : $statarr[$special]);
+	
+		dsetcookie('clearUserdata', 'forum');
+		
+		
+		//扩展主题	
+		if($specialextra) {
+	
+			$classname = 'threadplugin_'.$specialextra;
+			if(class_exists($classname) && method_exists($threadpluginclass = new $classname, 'newthread_submit_end')) {
+				$threadpluginclass->newthread_submit_end($fid, $tid);
+			}
+	
+		}
+	
+		
+		/****动态start***/
+		
+		$feed = array(
+			'icon' => '',
+			'title_template' => '',
+			'title_data' => array(),
+			'body_template' => '',
+			'body_data' => array(),
+			'title_data'=>array(),
+			'images'=>array()
+		);
+		if($_G['forum']['allowfeed'] && !$isanonymous) {
+			$message = !$price ? $message : '';
+			if($special == 0) {
+				$feed['icon'] = 'thread';
+				$feed['title_template'] = 'feed_thread_title';
+				$feed['body_template'] = 'feed_thread_message';
+				$feed['body_data'] = array(
+					'subject' => "<a href=\"forum.php?mod=viewthread&tid=$tid\">$subject</a>",
+					'message' => messagecutstr($message, 150)
+				);
+			
+			}elseif($special == 3) {
+				$feed['icon'] = 'reward';
+				$feed['title_template'] = 'feed_thread_reward_title';
+				$feed['body_template'] = 'feed_thread_reward_message';
+				$feed['body_data'] = array(
+					'subject'=> "<a href=\"forum.php?mod=viewthread&tid=$tid\">$subject</a>",
+					'rewardprice'=> $rewardprice,
+					'extcredits' => $_G['setting']['extcredits'][$_G['setting']['creditstransextra'][2]]['title'],
+				);
+			}
+		}
+	
+		$feed['title_data']['hash_data'] = "tid{$tid}";
+		$feed['id'] = $tid;
+		$feed['idtype'] = 'tid';
+		if($feed['icon']) {
+			postfeed($feed);
+		}
+		
+		/****动态end***/
+		
+		if($displayorder != -4) {
+			updatepostcredits('+',  $uid, 'post', $fid);//加积分，猜的
+			
+			$subject = str_replace("\t", ' ', daddslashes($subject));
+			$f_lastpost = "$tid\t$subject\t".$public_time."\t".daddslashes($author);
+			if($_G['forum']['type'] == 'sub') {
+				DB::query("UPDATE ".DB::table('forum_forum')." SET lastpost='$f_lastpost' WHERE fid='".$_G['forum'][fup]."'", 'UNBUFFERED');
+			}
+		}	
+		
+		/***************更新统计start*******************/
+		$subject = str_replace("\t", ' ', daddslashes($subject));
+		$replys = count($this->cache['content_arr']);
+		$replys = $replys ? $replys : 1;
+		$todayposts = date("Yjn", $public_time) == date("Yjn", $_G['timestamp']) ? 1 : 0;
+		foreach((array)$today_time_arr as $k => $v){
+			if(date("Yjn", $_G['timestamp']) == date("Yjn", $v)) $todayposts++;
+		
+		}
+		DB::query("UPDATE ".DB::table('forum_forum')." SET lastpost='$f_lastpost', threads=threads+1, posts=posts+$replys, todayposts=todayposts+$todayposts WHERE fid='$fid'", 'UNBUFFERED');//更新今日发帖这些数据
+		/***************更新统计end*******************/
+		
+		$this->cache['common']['tid'] = $tid;
+		$this->cache['common']['public_uid'] = $uid;
+		$this->cache['common']['public_username'] = $author;
+		$this->cache['common']['public_time'] = $public_time;
+		$this->cache['common']['fid'] = $fid;
+		$this->cache['common']['pid'] = $pid;
+		
+		//内容图片更新
+		
+		//
+		$content_is_have_cover = strexists($this->cache['article_info']['ori_content'], '{@cover}') ? 1 : 0;//判断内容是否含有封面
+		if($content_is_have_cover == 1){
+			$this->cache['article_info']['attach_arr'][$this->cache['article_info']['cid']] = (array)$this->cache['article_info']['attach_arr'][$this->cache['article_info']['cid']];
+			array_push($this->cache['article_info']['attach_arr'][$this->cache['article_info']['cid']], array(0 => '{@cover}', 1 => $this->cache['article_info']['cover_pic']));
+		}
+		
+		$this->forum_attach_content(array('content' => $this->cache['article_info']['ori_content'], 'cid' => $this->cache['article_info']['cid']));
+		
+		if($content_is_have_cover != 1 && $this->cache['article_info']['cover_pic']){//如果内容不含封面，也没有任何附件。单独设置帖子的封面
+			$attach_dir = str_replace(PICK_DIR, '', PICK_ATTACH_PATH);
+			$save_name = $this->cache['article_info']['data_attach_arr'][md5($this->cache['article_info']['cover_pic'])]['save_name'];
+			$picsource = PICK_URL.$attach_dir.'/'.$this->cache['p_arr']['pid'].'/'.$this->aid.'/'.$save_name;
+			$this->forum_set_cover($tid, $picsource);
+		}
+
+	}
+	
+	//封面设置
+	function forum_set_cover($tid, $picsource){
+		global $_G;
+		$basedir = !$_G['setting']['attachdir'] ? (DISCUZ_ROOT.'./data/attachment/') : $_G['setting']['attachdir'];
+		$coverdir = 'threadcover/'.substr(md5($tid), 0, 2).'/'.substr(md5($tid), 2, 2).'/';
+		dmkdir($basedir.'./forum/'.$coverdir);
+		$image = new image();
+		if($_G['setting']['forumpicstyle'] && !is_array($_G['setting']['forumpicstyle'])){
+			$_G['setting']['forumpicstyle'] = dunserialize($_G['setting']['forumpicstyle']);
+		}
+		if(!$_G['setting']['forumpicstyle']) $_G['setting']['forumpicstyle'] = $this->load_forumpicstyle();
+		empty($_G['setting']['forumpicstyle']['thumbwidth']) && $_G['setting']['forumpicstyle']['thumbwidth'] = 203;
+		empty($_G['setting']['forumpicstyle']['thumbheight']) && $_G['setting']['forumpicstyle']['thumbheight'] = 999;
+		if($image->Thumb($picsource, 'forum/'.$coverdir.$tid.'.jpg', $_G['setting']['forumpicstyle']['thumbwidth'], $_G['setting']['forumpicstyle']['thumbheight'], 2)) {
+			DB::update('forum_thread', array('cover' => 1), array('tid'=>$tid));
+		}
+	}
+	
+	function get_postid($content){
+		if(!$this->pick_config['postid_public_get_rules']) return;
+		if($this->cache['reply']['postid_get_rules']){
+			return $this->get_postid_by_rules($content, $this->cache['reply']['postid_get_rules']);
+		}
+		foreach($this->pick_config['postid_public_get_rules'] as $k => $v){
+			if(strexists($content, $v['check_str'])){
+				$postid = $this->get_postid_by_rules($content, $v);
+				if($postid){
+					$this->cache['reply']['postid_get_rules'] = $v;
+					return $postid;
+				}
+			}
+		}
+	}
+	
+	function get_postid_by_rules($content, $postid_rules){
+		$postid_arr = $postid_rules['get_type'] == 1 ? dom_get_str($html, $postid_rules['get_rules'], array('is_get_all' => 0, 'is_return_array' => 1)) : str_get_str($content, $postid_rules['get_rules'], 'data',  -1, 1);
+		return intval($postid_arr[0]);
+	}
+	
+	//生成回复时间
+	function create_reply_time(){
+		$time_arr = create_public_time(array('public_time' => $this->cache['common']['public_time'], 'p_arr' => $this->cache['p_arr']), $this->cache['reply']['reply_num'], 1);
+		//如果是回帖
+		if($this->cache['article_info']['is_bbs'] == 1){
+			//回帖时间是采集的
+			if($this->cache['p_arr']['is_get_post_user'] == 1 && ($this->cache['p_arr']['is_use_thread_setting'] == 1 && !empty($this->cache['p_arr']['thread_dateline_get_rules']) ) || ($this->cache['p_arr']['is_use_thread_setting'] != 1 && !empty($this->cache['p_arr']['post_dateline_get_rules'])) ){
+				foreach($this->cache['article_info']['content_key_arr'] as $k => $v){
+					$c_info = $this->cache['article_info']['content_arr'][$v];
+					$time_arr[$k] = $c_info['dateline'] ? $c_info['dateline'] : $time_arr[$k];
+				}
+			}
+			
+		}else{//分页文章
+			$first_dateline = reset($time_arr);
+			$end_dateline = end($time_arr);
+			$diff_time = $end_dateline - $first_dateline;
+			//如果时间差距太大，强制在0,5随机
+			if($diff_time > 3600*5){
+				$time_arr = create_public_time(array('public_time' => $this->cache['common']['public_time'], 'p_arr' => array('reply_dateline' => '0,5')), $this->cache['reply']['reply_num'], 1);
+			}
+			
+		}
+		
+		//对时间进行处理 //主要是防止时间相同的情况
+		if(empty($time_arr[0]) || $time_arr[0] == $this->cache['common']['public_time'] || $time_arr[0] < $this->cache['common']['public_time']) $time_arr[0] = $this->cache['common']['public_time'] + 60*rand(3, 10);
+		$last_time = $time_arr[0];
+		$count = count($time_arr);
+		foreach($time_arr as $k => $v){
+			if($k == 0) continue;
+			$last_time = intval($time_arr[$k-1]);
+
+			$next_time = intval($time_arr[$k+1]);
+			if($v == $last_time || $v < $last_time){
+				if($next_time > $v && $next_time > $last_time){
+					$v = rand($v, $next_time);
+				}else{
+					$v = $last_time + rand(15*60, 3600*0.5);				
+				}
+			}
+			$time_arr[$k] = $v;
+			
+		}
+		return $time_arr;
+	}
+	
+	//生成回复用户
+	function create_rand_user(){
+		$user_arr = array();
+		//如果是回帖
+		if($this->cache['article_info']['is_bbs'] == 1){
+			$user_arr = get_rand_uid(array('p_arr' => $this->cache['p_arr'], 'public_uid' => $this->cache['common']['public_uid'], 'reply_num' => $this->cache['reply']['reply_num']), 'reply');
+		}else{//分页文章 回复者跟发帖者用户名是一样的
+			//
+		}
+		return $user_arr;
+	}
+	
+	function reply_public(){
+		global $_G;
+		if($this->cache['mod'] != 'reply') return;
+		if($this->cache['run_type'] == 'timing' && $this->cache['timing']['is_reply'] != 1) {
+			$this->cache['mod'] = 'upload';
+			return;
+		}
+		$this->cache['mod'] = 'reply';
+		if(!$this->cache['article_info']['content_key_arr']){
+			$this->cache['mod'] = 'upload';
+			return;
+		}
+		require_once libfile('function/editor');
+		require_once libfile('function/post');
+		
+		//参数设置
+		$bat_run_num = 50;//每批执行50条数据
+		if(intval($this->cache['reply']['reply_num']) == 0 && $this->cache['article_info']['content_arr']){//初次执行
+			$this->cache['reply']['reply_num'] = count($this->cache['article_info']['content_arr']);
+			$this->cache['reply']['time_arr'] = $this->create_reply_time();//处理时间
+			$this->cache['reply']['uid_arr'] = $this->create_rand_user();//处理用户
+			$this->cache['reply']['now_key'] = 0;
+			$this->cache['reply']['postid_arr'] = array();
+			if($this->cache['p_arr']['public_reply_seq'] == 1 && $this->cache['article_info']['is_bbs'] == 1) shuffle($this->cache['article_info']['content_key_arr']);//打乱回帖
+			$this->cache['reply']['replyed_num'] = 0;//已经发布的
+		}
+		$is_htmlon = $this->cache['p_arr']['is_html_public'] == 1 ? 1 : 0;
+		foreach($this->cache['article_info']['content_key_arr'] as $k => $v){
+			$reply_info = $this->cache['article_info']['content_arr'][$v];
+			$key = $this->cache['reply']['now_key'];
+			$subject = $reply_info['title'];
+			$message = $reply_info['content'];
+			unset($this->cache['article_info']['content_key_arr'][$k]);
+			$postid = $this->get_postid($message);
+			if($postid){
+				$quote_post_info = $this->cache['reply']['postid_arr'][$postid];
+				if($quote_post_info){
+					$post_reply_quote = lang('forum/misc', 'post_reply_quote', array('author' => $quote_post_info['author'], 'time' => dgmdate($quote_post_info['time'])));
+					
+					$quote_post_info['message'] = messagecutstr($quote_post_info['message'], 100);
+
+					$quote_post_info['message'] = implode("\n", array_slice(explode("\n", $quote_post_info['message']), 0, 3));
+					$quote_message = "[quote][size=2][color=#999999]{$post_reply_quote}[/color] [url=forum.php?mod=redirect&goto=findpost&pid=".$quote_post_info['pid']."&ptid=".$this->cache['common']['tid']."][img]static/image/common/back.gif[/img][/url][/size]<br />".$quote_post_info['message']."[/quote]";
+					$quote_replace_rules = $this->cache['reply']['postid_get_rules']['replace'].'@@'.$quote_message;
+					$message = replace_something($message, $quote_replace_rules);
+				}
+			}
+			$reply_content = $message;
+			$message = content_html_ubb($message, $this->cache['article_info']['url'], $is_htmlon);
+			if(strlen($message) < 1) continue;
+			if(!$postid && strexists($message, '[quote]')){//如果不存在，也要替换掉引用代码
+				$message = replace_something($message, '[quote][size=2][color=#999999](*)[/quote]@@');
+			}
+			
+			if(VIP && $this->pick_config['pick_config']['open_fanyi_module'] == 1 && $this->pick_set['tran_is_open'] == 1) {
+				$fanyi_flag = $this->cache['p_arr']['is_download_img'] != 1 && $this->cache['p_arr']['is_download_file'] != 1 && strexists('img', $message) ? 1: 0;//有远程图片的
+				$fanyi_flag = 0;
+				$fanyi_message = $fanyi_flag==1 ? 'test' : $message;
+				$fanyi_arr = pick_fanyi($fanyi_message, $subject, array('pid' => $this->cache['p_arr']['pid']));//翻译
+				if(!$fanyi_arr) return -12;
+				$message = $fanyi_flag==1 ? $message : $fanyi_arr['content'];
+				$subject = $fanyi_arr['title'];
+			}
+			
+			$bbcodeoff = checkbbcodes($message, !empty($_GET['bbcodeoff']));
+			$smileyoff = checksmilies($message, !empty($_GET['smileyoff']));
+			$parseurloff = 0;
+			$usesig = 1;
+			$isanonymous = 0;
+			if(!$message || strlen($message) < 2) continue;
+			
+			//设置时间
+			$dateline = $this->cache['reply']['time_arr'][$key] ? $this->cache['reply']['time_arr'][$key] : $_G['timestamp'];
+			
+			if($this->cache['article_info']['best_answer_cid'] && $this->cache['article_info']['best_answer_cid'] == $v && $this->cache['article_info']['reward_pric

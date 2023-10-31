@@ -1,0 +1,132 @@
+{subtemplate common/header}
+
+<div id="pt" class="bm cl">
+<div class="z"><a href="./" class="nvhm">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="./">$_G[setting][bbname]</a> <em>&rsaquo;</em><a href="plugin.php?id=drc_wake:main">{lang drc_wake:plugin_name}</a> <em>&rsaquo;</em>$plugin_nav</div>
+</div>
+
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+    	<div class="bm bw0">
+			
+            <div class="bm bw0">
+			<ul class="tb cl">
+				<li <!--{if empty($_G[gp_mod]) || $_G[gp_mod] == 'send'}-->class="a"<!--{/if}-->><a href="plugin.php?id=drc_wake:main&mod=send">{lang drc_wake:tab_send}</a></li>
+				<li <!--{if $_G[gp_mod] == 'check'}-->class="a"<!--{/if}-->><a href="plugin.php?id=drc_wake:main&mod=check">{lang drc_wake:tab_check}</a></li>
+				<li <!--{if $_G[gp_mod] == 'log'}-->class="a"<!--{/if}-->><a href="plugin.php?id=drc_wake:main&mod=log">{lang drc_wake:tab_log}</a></li>
+			</ul>
+
+			<div class="datalist" style="margin:20px 0 0 0;">
+				<!--{if $_G[gp_mod] == 'send' || empty($_G[gp_mod])}-->
+				<form method="post" action="plugin.php?id=drc_wake:main&mod=send&sendsubmit=true" name="sendform">
+				<input type="hidden" name="referer" value="$_G[referer]">
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+                <table width="100%" border="1" bordercolor="#cccccc">
+					<tr>
+						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang drc_wake:shaixuan}</td>
+						<td align="center"><input name="timecycle" type="radio" value="3" id="input3" style="position:relative; top:2px;" /> <label for="input3">{lang drc_wake:shaixuan_3}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="7" id="input7" style="position:relative; top:2px;" /> <label for="input7">{lang drc_wake:shaixuan_7}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="10" id="input10" style="position:relative; top:2px;" /> <label for="input10">{lang drc_wake:shaixuan_10}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="30" id="input30" style="position:relative; top:2px;" /> <label for="input30">{lang drc_wake:shaixuan_30}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="60" id="input60" style="position:relative; top:2px;" /> <label for="input60">{lang drc_wake:shaixuan_60}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="90" id="input90" style="position:relative; top:2px;" /> <label for="input90">{lang drc_wake:shaixuan_90}</label>
+							&nbsp;&nbsp;<input name="timecycle" type="radio" value="180" id="input180" style="position:relative; top:2px;" /> <label for="input180">{lang drc_wake:shaixuan_180}</label></td>
+						<td align="center">
+							<input name="waketype" type="radio" value="1" id="nologin" style="position:relative; top:2px;" /> <label for="nologin">{lang drc_wake:shaixuan_type1}</label>
+							&nbsp;&nbsp;<input name="waketype" type="radio" value="2" id="noactive" style="position:relative; top:2px;" /> <label for="noactive">{lang drc_wake:shaixuan_type2}</label>
+							&nbsp;&nbsp;<input name="waketype" type="radio" value="3" id="nopost" style="position:relative; top:2px;" /> <label for="nopost">{lang drc_wake:shaixuan_type3}</label></td>
+					</tr>
+					<tr>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang drc_wake:fenpi_title}</td>
+						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" name="stepnum" style="width:80px; height:25px;" /> {lang drc_wake:fenpi_tip}</td>
+					</tr>
+					<tr>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang drc_wake:email_title}</td>
+						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" name="waketitle" style="width:96%; height:25px;" /></td>
+					</tr>
+					<tr>
+						<td bgcolor="#F2F2F2" align="center">{lang drc_wake:email_message}</td>
+						<td colspan="2">
+							<div class="tedt" style="width:96%;margin:5px auto;">
+                            <div class="bar">
+							{eval $seditor = array('reply', array('bold', 'color', 'img', 'link'));}
+							{subtemplate common/seditor}
+							</div>
+							<div class="area">
+								<textarea rows="5" cols="40" name="wakemessage" class="pt" id="replymessage"></textarea>
+							</div>
+						</div>
+						
+						</td>
+					</tr>
+				</table>
+                <div style="text-align:center; margin-top:20px;">
+					<button type="submit" name="sendsubmit" id="sendsubmit" value="true" class="pn pnp" /><strong>{lang drc_wake:send_submit}</strong></button>
+					<button type="reset" name="sendreset" class="pn pnp" /><strong>{lang drc_wake:send_reset}</strong></button>
+				</div>
+				<form>
+				
+				<!--{elseif $_G[gp_mod] == 'check'}-->
+				<form method="post" action="plugin.php?id=drc_wake:main&mod=check&checksubmit=true" name="checkform">
+				<input type="hidden" name="referer" value="$_G[referer]">
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+				<table width="100%" border="1" bordercolor="#cccccc">
+					
+					<tr>
+						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang drc_wake:check_email}</td>
+						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" name="checkemail" style="width:180px; height:25px;" /> {lang drc_wake:check_email_tip}</td>
+					</tr>
+					<tr>
+						<td bgcolor="#F2F2F2" align="center">{lang drc_wake:check_txt}</td>
+						<td colspan="2">
+							<div class="tedt" style="width:96%;margin:5px auto;">
+                            <div class="bar">
+							{eval $seditor = array('reply', array('bold', 'color', 'img', 'link'));}
+							{subtemplate common/seditor}
+							</div>
+							<div class="area">
+								<textarea rows="5" cols="40" name="checkmessage" class="pt" id="replymessage"></textarea>
+							</div>
+						</div>
+						
+						</td>
+					</tr>
+				</table>
+                <div style="text-align:center; margin-top:20px;">
+					<button type="submit" name="checksubmit" id="checksubmit" value="true" class="pn pnp" /><strong>{lang drc_wake:check_submit}</strong></button>
+				</div>
+				</form>
+				<!--{elseif $_G[gp_mod] == 'log'}-->
+				<table width="100%" border="1" bordercolor="#cccccc">
+					
+					<tr bgcolor="#F2F2F2" align="center">
+						<td height="35" width="120">{lang drc_wake:log_title1}</td>
+						<td>{lang drc_wake:log_title2}</td>
+						<td width="120">{lang drc_wake:log_title3}</td>
+						<td width="120">{lang drc_wake:log_title4}</td>
+						<td width="120">{lang drc_wake:log_title5}</td>
+					</tr>
+					<!--{loop $loglists $loglist}-->
+					<tr align="center">
+						<td height="35"><!--{if $loglist[timecycle] == 3}-->{lang drc_wake:log_timecycle1}<!--{elseif $loglist[timecycle] == 7}-->{lang drc_wake:log_timecycle2}<!--{elseif $loglist[timecycle] == 10}-->{lang drc_wake:log_timecycle3}<!--{elseif $loglist[timecycle] == 30}-->{lang drc_wake:log_timecycle4}<!--{elseif $loglist[timecycle] == 60}-->{lang drc_wake:log_timecycle5}<!--{elseif $loglist[timecycle] == 90}-->{lang drc_wake:log_timecycle6}<!--{elseif $loglist[timecycle] == 180}-->{lang drc_wake:log_timecycle7}<!--{/if}--> / <!--{if $loglist[waketype] == 1}-->{lang drc_wake:log_type1}<!--{elseif $loglist[waketype] == 2}-->{lang drc_wake:log_type2}<!--{elseif $loglist[waketype] == 3}-->{lang drc_wake:log_type3}<!--{/if}--></td>
+						<td>{echo cutstr($loglist[title], 32)}</td>
+						<td><span id="viewmsg_$loglist[id]" onmouseover="showMenu(this.id);"><a href="javascript:;" class="red">{lang drc_wake:log_viewmsg}</a></span>
+						<div id="viewmsg_$loglist[id]_menu" style="display:none; border:1px solid #ccc; background-color:#F2F2F2; padding:10px; text-align:left">$loglist[message]</div></td>
+						<td><a href="home.php?mod=space&uid=$loglist[operatorid]" target="_blank">$loglist[operator]</a></td>
+						<td>$loglist[dateline]</td>
+					</tr>
+					<!--{/loop}-->
+				</table>
+				<div style="clear:both"></div>
+				<div style="margin-top:20px;">$multipage</div>
+                <!--{/if}-->
+                
+			</div></div>
+            
+		
+		</div>
+	</div>
+
+	{template drc_wake:side}
+</div>
+
+{subtemplate common/footer}

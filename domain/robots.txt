@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /application/
+Disallow: /assets/
+Disallow: /code.php
+Disallow: /errpage/
+Disallow: /install/
+Disallow: /thinkphp/
+Allow: /index.php
+        

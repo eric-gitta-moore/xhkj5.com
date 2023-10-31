@@ -1,0 +1,83 @@
+{template common/header_ajax}
+<script type="text/javascript" src="static/js/seditor.js"></script>
+<h3 class="flb">
+	<em>{lang ljww360:bc1}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<form id="qiandao" method="post" action="plugin.php?id=ljww360&mod=wtw&action=bcmsg&tid=$tid&wid=$id" onkeydown="if(event.keyCode==13){showWindow('qwindow', 'qiandao', 'post', '0');return false}">
+<input type="hidden" name="formhash" value="{FORMHASH}"/>
+
+		<style type="text/css">
+			
+		
+.m_c .c {
+    padding: 0 10px 10px;
+}
+		.tedt .bar {
+  background: none repeat scroll 0 0 #F2F2F2;
+  border-bottom: 1px solid #CDCDCD;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px 0 0;
+}
+		</style>
+		<div class="c" >
+        
+        
+        	<table cellspacing="0" cellpadding="0" border="0">
+                
+  				<tbody>
+				
+                <tr>
+                   <td>{lang ljww360:bc2}</td>
+                    <td colspan="4"><div class="tedt">
+<div class="bar">
+<div class="fpd">
+<a onclick="seditor_insertunit('fastpost', '[b]', '[/b]');doane(event);" class="fbld" title="{lang ljww360:wt2}" href="javascript:;">B</a>
+<a onclick="showColorBox(this.id, 2, 'fastpost');doane(event);" id="fastpostforecolor" class="fclr" title="{lang ljww360:wt3}" href="javascript:;">Color</a>
+<a onclick="seditor_menu('fastpost', 'img');doane(event);" class="fmg" title="{lang ljww360:wt4}" href="javascript:;" id="fastpostimg">Image</a>
+<a onclick="seditor_menu('fastpost', 'url');doane(event);" class="flnk" title="{lang ljww360:wt5}" href="javascript:;" id="fastposturl">Link</a>
+<a onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;" id="fastpostsml" class="fsml" href="javascript:;">Smilies</a>
+<a onclick="seditor_menu('fastpost', 'code');doane(event);" class="fcd" title="{lang ljww360:daima}" href="javascript:;" id="fastpostcode" initialized="true">Code</a>
+<script reload="1" type="text/javascript">smilies_show('fastpostsmiliesdiv', 8, 'fastpost');</script>
+</div></div>
+<div class="area">
+<textarea class="pt" tabindex="12" id="fastpostmessage" name="message" cols="80" rows="10">{eval echo stripslashes($bu)}</textarea>
+</div>
+</div></td>
+  				</tr>
+                
+                                
+            </tbody></table>		
+
+		<script>
+		function Icon_selected(sId) {
+			var oImg = document.getElementsByTagName('li');
+			for (var i = 0; i < oImg.length; i++) {
+			  if (oImg[i].id == sId) {
+				var selectname = document.getElementById(oImg[i].id + "_s");
+				selectname.checked = true;
+				oImg[i].style. background = '#EFEFEF';
+			  } else {
+				oImg[i].style. background = '';
+			  }
+			}
+		}
+		</script>
+	
+</div>
+<p class="o pns">
+	<button type="submit" name="submit" class="pn pnc" value="true"><strong>{lang ljww360:wenwen38}</strong></button>
+</p>
+</form>
+<script type="text/javascript">
+function validate(obj) {
+               edit_save();
+            window.onbeforeunload = null;
+            obj.form.submit();
+            return false;
+        }
+</script>
+{template home/editor_image_menu}
+{template common/footer_ajax}

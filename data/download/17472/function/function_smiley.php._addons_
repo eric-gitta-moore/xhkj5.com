@@ -1,0 +1,83 @@
+<?php
+/**
+ * 		Copyright£ºSmartCome
+ * 		  WebSite£ºwww.SmartCome.com
+ *             QQ: 2811931192
+ */
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+function get_smiley(){
+$smiley1=array(
+":)"=>"smile.gif",
+":("=>"sad.gif",
+":D"=>"biggrin.gif",
+":@"=>"huffy.gif",
+":o"=>"shocked.gif",
+":P"=>"tongue.gif",
+":$"=>"shy.gif",
+";P"=>"titter.gif",
+":L"=>"sweat.gif",
+":Q"=>"mad.gif",
+":lol"=>"lol.gif",
+":loveliness:"=>"loveliness.gif",
+":funk:"=>"funk.gif",
+":curse:"=>"curse.gif",
+":dizzy:"=>"dizzy.gif",
+":shutup:"=>"shutup.gif",
+":sleepy:"=>"sleepy.gif",
+":hug:"=>"hug.gif",
+":victory:"=>"victory.gif",
+":time:"=>"time.gif",
+":kiss:"=>"kiss.gif",
+":handshake"=>"handshake.gif",
+":call:"=>"call.gif");
+$smiley2=array(
+"{:2_25:}"=>"01.gif",
+"{:2_26:}"=>"02.gif",
+"{:2_27:}"=>"03.gif",
+"{:2_28:}"=>"04.gif",
+"{:2_29:}"=>"05.gif",
+"{:2_30:}"=>"06.gif",
+"{:2_31:}"=>"07.gif",
+"{:2_32:}"=>"08.gif",
+"{:2_33:}"=>"09.gif",
+"{:2_34:}"=>"10.gif",
+"{:2_35:}"=>"11.gif",
+"{:2_36:}"=>"12.gif",
+"{:2_37:}"=>"13.gif",
+"{:2_38:}"=>"14.gif",
+"{:2_39:}"=>"15.gif",
+"{:2_40:}"=>"16.gif");
+$smiley3=array(
+"{:3_41:}"=>"01.gif",
+"{:3_42:}"=>"02.gif",
+"{:3_43:}"=>"03.gif",
+"{:3_44:}"=>"04.gif",
+"{:3_45:}"=>"05.gif",
+"{:3_46:}"=>"06.gif",
+"{:3_47:}"=>"07.gif",
+"{:3_48:}"=>"08.gif",
+"{:3_49:}"=>"09.gif",
+"{:3_50:}"=>"10.gif",
+"{:3_51:}"=>"11.gif",
+"{:3_52:}"=>"12.gif",
+"{:3_53:}"=>"13.gif",
+"{:3_54:}"=>"14.gif",
+"{:3_55:}"=>"15.gif",
+"{:3_56:}"=>"16.gif",
+"{:3_57:}"=>"17.gif",
+"{:3_58:}"=>"18.gif",
+"{:3_59:}"=>"19.gif",
+"{:3_60:}"=>"20.gif",
+"{:3_61:}"=>"21.gif",
+"{:3_62:}"=>"22.gif",
+"{:3_63:}"=>"23.gif",
+"{:3_64:}"=>"24.gif"
+);
+$smiley=array();$smiley[0]['dir']='static/image/smiley/default/';$smiley[0]['img']=$smiley1;	
+$smiley[1]['dir']='static/image/smiley/coolmonkey/';$smiley[1]['img']=$smiley2;
+$smiley[2]['dir']='static/image/smiley/grapeman/';$smiley[2]['img']=$smiley3;	
+return $smiley;
+}
+?>

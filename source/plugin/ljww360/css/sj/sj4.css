@@ -1,0 +1,90 @@
+.mod-q {
+	border-top: 1px solid #bed8b3
+}
+
+.mod-rel-q li {
+	border-bottom: 1px solid #dbdbdb;
+	clear: both;
+	height: 35px;
+	zoom: 1
+}
+
+.mod-rel-q li,.mod-rel-q p {
+	border-top: 1px solid #fff
+}
+
+.mod-all-a-list li {
+	border-bottom: 1px solid #dbdbdb
+}
+
+.mod-all-a-list ul {
+	margin-bottom: 7px
+}
+
+.mod-rel-q li a {
+	color: #1a62d8;
+	float: left;
+	width: 80%
+}
+
+.mod-rel-q li span {
+	color: #9e9e9e;
+	float: right;
+	text-align: right;
+	width: 20%
+}
+
+.mod-rel-q p b {
+	color: #1a62d8
+}
+
+.mod .hd {
+	background-color: #eee
+}
+
+.mod-q .hd {
+	background-color: #d1eac7;
+	border-top: 1px solid #e5f7dd;
+	border-bottom: 1px solid #bed1b7
+}
+
+.mod-best-a .hd,.mod-all-a-list .hd {
+	border-top: 1px solid #fbfbfb
+}
+
+.mod-rel-q .bd {
+	line-height: 35px;
+	padding-top: 0
+}
+
+.mod-q .hd h2 {
+	color: #2b5918
+}
+
+.mod-rel-q li:first-child {
+	border-top: 0 none
+}
+
+.mod-all-a-list li:last-child {
+	border-bottom: 0 none
+}
+
+.mod-q .hd .ico {
+	background-image: url('../../images/sjimg/wen.png')
+}
+
+.mod-best-a .hd .satisfy {
+	background-image: url('../../images/sjimg/hzuijia.png');background-position: 50% 0
+}
+
+.mod-best-a .hd .recommend {
+	background-image: url('../../images/sjimg/zuijia.png');background-position: 50% 0
+}
+
+.mod-rel-q .hd .ico {
+	background-image: url('../../images/sjimg/gou.png')
+}
+
+.mod-all-a-list .hd .ico {
+	background-image: url('../../images/sjimg/da.png')
+}

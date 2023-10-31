@@ -1,0 +1,36 @@
+{if $config['mobile_index_img']}
+<!-- Í¼Æ¬³ß´ç 304X80 -->
+<div class="swipe-box">
+    <div id="slider" class="swipe">
+        <div class="swipe-wrap">
+            {loop $lz_types $k $v}         
+            <figure>
+                <div class="wrap">
+                    <div class="image">
+                        <a href="$v" title="123">
+                            <img src="$k" alt="123" width="100%" height="125">
+                        </a>
+                    </div>
+                </div>
+            </figure>
+            {/loop} 
+                                </div>
+    </div>
+</div>
+{/if}
+<script src="source/plugin/ljww360/js/jquery.js"></script>
+<script type="text/javascript">
+    var jq = jQuery.noConflict();
+</script>
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/plugin.css" />
+
+<script src="source/plugin/ljww360/js/sjjs/jquery.plugin.js"></script>
+<script src="source/plugin/ljww360/js/sjjs/swipe.js"></script>
+<script>
+jq(document).ready(function() {
+    Swipe(document.getElementById('slider'), {
+        auto: 5000,
+        continuous: true
+    });
+});
+</script>

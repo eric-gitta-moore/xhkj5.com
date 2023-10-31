@@ -1,0 +1,65 @@
+{eval include template($PL_NAME.':'.$prefix.'common/header')}
+<div class="chat-body">
+    <div class="chat-wrap clearfix">
+        <div class="list-container" id="list-container" style="display: none;">
+            <div class="panel list-panel">
+                <div class="panel list-panel-body">
+                    <header class="panel-header">
+                        <h1 class="text-ellipsis">{eval echo $PL_G['list_name'] ? $PL_G['list_name'] : $PL_LANG['member'];}</h1>
+                    </header>
+                    <div class="panel-wrapper">
+                        <div class="panel-body">
+                            <div class="scroll-wrapper" id="member-panel-body">
+                                <ul class="list list-white" id="chat-member-list"></ul>
+                            </div>
+                        </div>
+                        <div class="chat-member-loading" id="chat-member-loading">
+                            <img src="{$PL_STATIC}/images/loading.gif" />
+                        </div>
+                    </div>
+                    <footer class="">
+                        <div class="chat-back">
+                            <a href="">{$PL_LANG['returnIndex']}</a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="chat-container" id="chat-container" style="display: none;">
+            <div class="panel chat-panel">
+                <header class="panel-header">
+                    <h1 class="text-ellipsis">{eval echo $PL_G['group_name'] ? $PL_G['group_name'] : 'I\'m WI';}</h1>
+                </header>
+                <div class="chat-panel-body" id="chat-panel-body">
+                    <div class="panel-body chat-panel-wrapper" id="chat-content-body"></div>
+                    <input type="hidden" id="last-send-time" value="0" />
+                </div>
+                <footer class="chat-toolbar-footer" id="chat-toolbar-footer">
+                    <div class="chat-toolbar">
+                        <div id="add-face-btn" class="btn btn-face">
+                            <span class="btn-face-image"></span>
+                        </div>
+                        <textarea class="chat-textarea" id="chat-textarea"></textarea>
+                        <button id="send-chat-btn" class="btn btn-small btn-blue btn-chat-send">{$PL_LANG['send']}</button>
+                    </div>
+                    <div class="chat-face" id="chat-face-images">
+                        <ul class="face-wrap clearfix">
+                            <li class="face-item">
+                                {loop $PL_EMOTION[emotion] $k $r}
+                                <img src="{$PL_EMOTION[path]}/{$r}" title="{$k}" />
+                                {/loop}
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div class="mask-container" id="mask-container" style="display: none;">
+            <div class="mask-text">{$PL_LANG['browser'].$PL_LANG['colon']}</div>
+            <div class="mask-logo">
+                <a href="https://www.google.com/intl/en/chrome/browser/" title="{$PL_LANG['browserChrome']}" class="mask-chrome" target="_blank"></a>
+                <a href="http://firefox.com.cn/" title="{$PL_LANG['browserFirefox']}" class="mask-firefox" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+<!--{if $_G['setting']['mobile']['mobilehotthread'] && $_GET['forumlist'] != 1}-->
+	<!--{eval dheader('Location:forum.php?mod=guide&view=hot');exit;}-->
+<!--{/if}-->
+<!--{template common/header}-->
+<script type="text/javascript">
+	function getvisitclienthref() {
+		var visitclienthref = '';
+		if(ios) {
+			visitclienthref = 'https://itunes.apple.com/cn/app/zhang-shang-lun-tan/id489399408?mt=8';
+		} else if(andriod) {
+			visitclienthref = 'http://www.discuz.net/mobile.php?platform=android';
+		}
+		return visitclienthref;
+	}
+</script>
+
+<!--{if $_GET['visitclient']}-->
+
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc">
+            <div class="hd_name"><h2>{lang warmtip}</h2></div>
+        </div>
+    </div>
+</div>
+<div class="clew_con">
+    <h2>{lang zsltmobileclient}</h2>
+    <p>{lang visitbbsanytime}<input class="redirect button" id="visitclientid" type="button" value="{lang clicktodownload}" href="" /></p>
+    <h2>{lang iphoneandriodmobile}</h2>
+    <p>{lang visitwapmobile}<input class="redirect button" type="button" value="{lang clicktovisitwapmobile}" href="$_GET[visitclient]" /></p>
+</div>
+<script type="text/javascript">
+	var visitclienthref = getvisitclienthref();
+	if(visitclienthref) {
+		$('#visitclientid').attr('href', visitclienthref);
+	} else {
+		window.location.href = '$_GET[visitclient]';
+	}
+</script>
+
+<!--{else}-->
+
+<!-- header start -->
+<!--{if $showvisitclient}-->
+<div class="visitclienttip vm" style="display:block;">
+	<a href="javascript:;" id="visitclientid" class="btn_download">{lang downloadnow}</a>	
+	<p>
+		{lang downloadzslttoshareview}
+	</p>
+</div>
+<script type="text/javascript">
+	var visitclienthref = getvisitclienthref();
+	if(visitclienthref) {
+		$('#visitclientid').attr('href', visitclienthref);
+		$('.visitclienttip').css('display', 'block');
+	}
+</script>
+
+<!--{/if}-->
+
+<!-- header start -->
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc hdc1">
+            <div class="logo"><a title="$_G[setting][bbname]" href="forum.php"><img src="./template/yunmb_ttm/static/images/logo.png" /></a></div>
+            <div class="scbar">
+            	<div class="iconfont icon-search">
+                    <!--{subtemplate common/header_scbar}-->
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<!-- header end -->
+<!--{hook/index_top_mobile}-->
+<!-- main forumlist start -->
+<div class="wp wm" id="wp">
+	<!--{loop $catlist $key $cat}-->
+	<div class="forum_box">
+		<div class="subforumshow bm_h cl" href="#sub_forum_$cat[fid]">
+			<span class="o"><img src="./template/yunmb_ttm/static/images/collapsed_<!--{if !$_G[setting][mobile][mobileforumview]}-->yes<!--{else}-->no<!--{/if}-->.png" style="height:36px;"></span>
+            <h2><a href="javascript:;">$cat[name]</a></h2>
+		</div>
+		<div id="sub_forum_$cat[fid]" class="sub_forum bm_c">
+                <ul>
+                <!--{loop $cat[forums] $forumid}-->
+                <!--{eval $forum=$forumlist[$forumid];}-->
+                <!--{eval $forumurl = !empty($forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$forum['fid'];}-->
+                <li>
+                    <div class="fl_icn_g">
+                    <!--{if $forum[icon]}-->
+                        $forum[icon]
+                    <!--{else}-->
+                        <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}><img src="./template/yunmb_ttm/static/images/forum{if $forum[folder]}_new{/if}.gif" alt="$forum[name]" /></a>
+                    <!--{/if}-->
+                    </div>
+                    <dl>
+                <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}>
+                        <dt><span{if $forum[extra][namecolor]} style="color: {$forum[extra][namecolor]};"{/if}>$forum[name]</span></dt>
+                        <dd>{echo strip_tags($forum[description])}</dd>
+                </a>
+                    </dl>
+                </li>
+                <!--{/loop}-->
+                </ul>
+		</div>
+	</div>
+	<!--{/loop}-->
+
+
+</div>
+<!-- main forumlist end -->
+<!--{hook/index_middle_mobile}-->
+<script type="text/javascript">
+	(function() {
+		<!--{if !$_G[setting][mobile][mobileforumview]}-->
+			$('.sub_forum').css('display', 'block');
+		<!--{else}-->
+			$('.sub_forum').css('display', 'none');
+		<!--{/if}-->
+		$('.subforumshow').on('click', function() {
+			var obj = $(this);
+			var subobj = $(obj.attr('href'));
+			if(subobj.css('display') == 'none') {
+				subobj.css('display', 'block');
+				obj.find('img').attr('src', './template/yunmb_ttm/static/images/collapsed_yes.png');
+			} else {
+				subobj.css('display', 'none');
+				obj.find('img').attr('src', './template/yunmb_ttm/static/images/collapsed_no.png');
+			}
+		});
+	 })();
+</script>
+
+<!--{/if}-->
+<!--{template common/footer}-->

@@ -1,0 +1,42 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em><!--{eval echo lang('plugin/ljww360','wenwen14')}--></em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<form id="qiandao" method="post" action="plugin.php?id=ljww360:wenwen&action=msgaction" onkeydown="if(event.keyCode==13){showWindow('qwindow', 'qiandao', 'post', '0');return false}">
+<div class="f_c" style="width:280px;height:100px;margin:10px;">
+
+		<style>
+		.qdsmilea{padding:3px;margin:auto;float:left;list-style:none;float:left}
+		.qdsmilea li{float: left;padding:5px .4em;border:2px #fff solid;}
+		.qdsmilea li img{margin-bottom:5px;}
+		.qdsmilea li:hover{cursor:pointer;}
+		</style>
+		<h3><!--{eval echo lang('plugin/ljww360','wenwen31')}--></h3>
+		<select name="fenlei" id="sort" class="txt" style="width: 250px;">
+							<!--{loop $askarr $val}-->
+							<option value="{$val['fid']}">$val['name']</option>
+							<!--{/loop}-->
+						</select>
+		<script>
+		function Icon_selected(sId) {
+			var oImg = document.getElementsByTagName('li');
+			for (var i = 0; i < oImg.length; i++) {
+			  if (oImg[i].id == sId) {
+				var selectname = document.getElementById(oImg[i].id + "_s");
+				selectname.checked = true;
+				oImg[i].style. background = '#EFEFEF';
+			  } else {
+				oImg[i].style. background = '';
+			  }
+			}
+		}
+		</script>
+	
+</div>
+<p class="o pns">
+	<button type="submit" class="pn pnc"><strong><!--{eval echo lang('plugin/ljww360','wenwen32')}--></strong></button>
+</p>
+</form>
+{template common/footer_ajax}

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.1]]></item>
+	<item id="Time"><![CDATA[2014-02-22 12:57]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://127.0.0.1/x31/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[楼中楼]]></item>
+			<item id="identifier"><![CDATA[dxksst_floor]]></item>
+			<item id="description"><![CDATA[仿百度贴吧楼中楼  好处不必多说！如有问题及发展建议请访问www.SmartCome.com]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dxksst_floor/]]></item>
+			<item id="copyright"><![CDATA[SmartCome]]></item>
+			<item id="version"><![CDATA[2.9]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[mobile]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[collect]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[采集回复]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[set]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[配置教程]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[admin]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[装站必备]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[开启板块]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[froums]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+					<item id="1"><![CDATA[39]]></item>
+				</item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开启群组]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[allow_group]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[发帖用户组]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[users]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[10]]></item>
+					<item id="1"><![CDATA[11]]></item>
+					<item id="2"><![CDATA[12]]></item>
+					<item id="3"><![CDATA[13]]></item>
+					<item id="4"><![CDATA[14]]></item>
+					<item id="5"><![CDATA[15]]></item>
+					<item id="6"><![CDATA[20]]></item>
+					<item id="7"><![CDATA[16]]></item>
+					<item id="8"><![CDATA[17]]></item>
+					<item id="9"><![CDATA[18]]></item>
+					<item id="10"><![CDATA[19]]></item>
+					<item id="11"><![CDATA[1]]></item>
+					<item id="12"><![CDATA[2]]></item>
+					<item id="13"><![CDATA[3]]></item>
+				</item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[版主删帖权限]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[moderator]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[删贴权限uid]]></item>
+				<item id="description"><![CDATA[具有删除楼中楼帖子权限的uid  多个uid之间请用‘|’分开 如 1|2|3|4]]></item>
+				<item id="variable"><![CDATA[deuid]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[1|3]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[启用插件表情]]></item>
+				<item id="description"><![CDATA[如果你的系统表情因为某种原因不能显示 请开启此选项启动插件自带的表情库]]></item>
+				<item id="variable"><![CDATA[self]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[禁止系统楼层回复]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[forbid_discuz]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[间隔帖子距离]]></item>
+				<item id="description"><![CDATA[回复列表与内容的 间距 单位像素]]></item>
+				<item id="variable"><![CDATA[top]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[行间距]]></item>
+				<item id="description"><![CDATA[两条回复之间的间距 单位像素]]></item>
+				<item id="variable"><![CDATA[space]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[默认展开帖数]]></item>
+				<item id="description"><![CDATA[帖字数超过此数值的回帖将被隐藏]]></item>
+				<item id="variable"><![CDATA[limit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[背景]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#fafafa]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[字符限制]]></item>
+				<item id="description"><![CDATA[使用楼中楼时最少回复的字符数]]></item>
+				<item id="variable"><![CDATA[mlimit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[回帖奖励类型]]></item>
+				<item id="description"><![CDATA[用户通过楼中楼回复后 奖励的积分类型]]></item>
+				<item id="variable"><![CDATA[jftype]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[奖励金额]]></item>
+				<item id="description"><![CDATA[奖励的数目]]></item>
+				<item id="variable"><![CDATA[jfvalue]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[字体大小]]></item>
+				<item id="description"><![CDATA[楼中楼中的字体大小 单位像素]]></item>
+				<item id="variable"><![CDATA[font_size]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[12]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[每页显示回复数]]></item>
+				<item id="description"><![CDATA[楼中楼每页显示的数目]]></item>
+				<item id="variable"><![CDATA[e_page_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[宽度]]></item>
+				<item id="description"><![CDATA[楼中楼的宽度 单位像素 如果填写为0 则会自动填充满屏幕]]></item>
+				<item id="variable"><![CDATA[width]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[560]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[手机端宽度]]></item>
+				<item id="description"><![CDATA[手机端楼中楼宽度 单位像素 如果填写为0 则会自动填充满屏幕]]></item>
+				<item id="variable"><![CDATA[mobile_width]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="hide"><![CDATA[收起]]></item>
+				<item id="show"><![CDATA[回复]]></item>
+				<item id="left_message"><![CDATA[还有{n}条回复]]></item>
+				<item id="click_to_view"><![CDATA[点击查看]]></item>
+				<item id="reply"><![CDATA[回复]]></item>
+				<item id="delete"><![CDATA[删除]]></item>
+				<item id="want_reply"><![CDATA[我也说一句]]></item>
+				<item id="pre_page"><![CDATA[上一页]]></item>
+				<item id="next_page"><![CDATA[下一页]]></item>
+				<item id="first_page"><![CDATA[首页]]></item>
+				<item id="end_page"><![CDATA[尾页]]></item>
+				<item id="submit"><![CDATA[发表]]></item>
+				<item id="font_limit"><![CDATA[对不起,请至少输入{n}个字符！]]></item>
+				<item id="not_input"><![CDATA[亲,你还未输入内容哦！]]></item>
+				<item id="have_reply"><![CDATA[回复你的帖子,]]></item>
+				<item id="notice"><![CDATA[收到楼中楼回复->]]></item>
+				<item id="replypid"><![CDATA[回复的pid]]></item>
+				<item id="replymes"><![CDATA[回复的内容]]></item>
+				<item id="forbide_reply"><![CDATA[对不起 没有权限执行此操作！]]></item>
+				<item id="collect_done"><![CDATA[采集完成]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="first_page"><![CDATA[首页]]></item>
+				<item id="end_page"><![CDATA[尾页]]></item>
+				<item id="collect_info"><![CDATA[点击确定将会采集论坛默认的回复数据到楼中楼]]></item>
+				<item id="collect_notice"><![CDATA[注意:被采集的默认的回复数据将会被隐藏,卸载本插件后会恢复到显示状态]]></item>
+				<item id="confirm"><![CDATA[确定]]></item>
+				<item id="cancel"><![CDATA[取消]]></item>
+			</item>
+		</item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

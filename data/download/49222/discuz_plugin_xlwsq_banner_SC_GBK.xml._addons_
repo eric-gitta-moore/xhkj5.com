@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2015-04-04]]></item>
+	<item id="From"><![CDATA[°¢Âü´ï]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[ÊÖ»ú°æºá·ù]]></item>
+			<item id="identifier"><![CDATA[xlwsq_banner]]></item>
+			<item id="description"><![CDATA[ÊÖ»ú´¥Ãþ°æÏÔÊ¾ºá·ù¹¦ÄÜ]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[xlwsq_banner/]]></item>
+			<item id="copyright"><![CDATA[°¢Âü´ï]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="1">
+					<item id="name"><![CDATA[xlwsq_banner]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[xlwsq_banner_admin]]></item>
+					<item id="menu"><![CDATA[ÊÖ»úºá·ù¹ÜÀí]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+			</item>
+		</item>
+	    <item id="version"><![CDATA[X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[»ÃµÆÆ¬¸ß¶È]]></item>
+				<item id="description"><![CDATA[ÌîÐ´Êý×Ö£¬Ä¬ÈÏ150¡£¿í¶È½«ËæÉè±¸ÆÁÄ»´óÐ¡×Ô¶¯ÊÊÓ¦£¬Çë×Ô¼º¾ö¶¨ÕÛÖÐ¸ß¶È]]></item>
+				<item id="variable"><![CDATA[bannerheight]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[150]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="wuquanxiancaozuo"><![CDATA[ÎÞÈ¨ÏÞ½øÐÐ¸Ã²Ù×÷]]></item>
+				<item id="wuquanxiancaozuoqingdenglu"><![CDATA[ÎÞÈ¨ÏÞ½øÐÐ¸Ã²Ù×÷£¬ÇëµÇÂ¼]]></item>
+				<item id="tijiaochenggong"><![CDATA[Ìá½»³É¹¦]]></item>
+				<item id="caozuochenggong"><![CDATA[²Ù×÷³É¹¦]]></item>
+				<item id="shanchuok"><![CDATA[É¾³ý³É¹¦]]></item>
+				<item id="caozuo"><![CDATA[²Ù×÷]]></item>
+				<item id="tupiangeshibuzhengque"><![CDATA[Í¼Æ¬¸ñÊ½²»ÕýÈ·£¬ÇëÑ¡Ôñjpg,png,gif¸ñÊ½]]></item>
+				<item id="querenshanchutishi"><![CDATA[É¾³ýºóÎÞ·¨»Ö¸´£¬È·¶¨É¾³ýÂð£¿]]></item>
+				<item id="querenshanchu"><![CDATA[È·ÈÏÉ¾³ý]]></item>
+				<item id="shanchu"><![CDATA[É¾³ý]]></item>
+				<item id="fabuchenggong"><![CDATA[·¢²¼³É¹¦]]></item>
+			</item>
+
+			<item id="templatelang">
+				<item id="banner"><![CDATA[ºá·ù]]></item>
+				<item id="bannerlist"><![CDATA[ºá·ùÁÐ±í]]></item>
+				<item id="banneradd"><![CDATA[Ìí¼Óºá·ù]]></item>
+				<item id="bannertitle"><![CDATA[±êÌâ]]></item>
+				<item id="bannerupimg"><![CDATA[Í¼Æ¬ÉÏ´«(¸ß¶È{$bannerheight}px)]]></item>
+				<item id="bannershangchuantupian"><![CDATA[ÉÏ´«Í¼Æ¬]]></item>
+				<item id="bannertupianlianjie"><![CDATA[Í¼Æ¬Á´½Ó£¨http://£©]]></item>
+				<item id="bannerurl"><![CDATA[ÍøÖ·Á´½Ó]]></item>
+				<item id="bannertijiao"><![CDATA[Ìá½»]]></item>
+				<item id="bannertime"><![CDATA[Ìí¼ÓÊ±¼ä]]></item>
+				<item id="bannercaozuo"><![CDATA[²Ù×÷]]></item>
+				<item id="bannerbianji"><![CDATA[±à¼­]]></item>
+				<item id="bannershanchu"><![CDATA[É¾³ý]]></item>
+				<item id="bannerquedingshanchu"><![CDATA[È·¶¨É¾³ýÂð£¿]]></item>
+				<item id="bannerpaixun"><![CDATA[ÅÅÐò]]></item>
+				<item id="bannerkeliukong"><![CDATA[£¨¿ÉÁô¿Õ£©]]></item>
+				
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

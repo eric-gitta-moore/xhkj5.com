@@ -1,0 +1,746 @@
+(function (AD, P) {
+
+    function Y(A) {
+        return Q === "" ? A : (A = A.charAt(0).toUpperCase() + A.substr(1), Q + A)
+   }
+    var U = Math,
+            z = P.createElement("div").style,
+            Q = function () {
+                var E = "t,webkitT,MozT,msT,OT".split(","),
+                        A,
+                        L = 0,
+                        C = E.length;
+                for (; L < C; L++) {
+                    A = E[L] + "ransform";
+                    if (A in z) {
+                        return E[L].substr(0, E[L].length - 1)
+                   }
+               }
+                return !1
+           }(),
+            X = Q ? "-" + Q.toLowerCase() + "-" : "",
+            M = Y("transform"),
+            AH = Y("transitionProperty"),
+            AC = Y("transitionDuration"),
+            j = Y("transformOrigin"),
+            AF = Y("transitionTimingFunction"),
+            AA = Y("transitionDelay"),
+            W = /android/gi.test(navigator.appVersion),
+            AE = /iphone|ipad/gi.test(navigator.appVersion),
+            K = /hp-tablet/gi.test(navigator.appVersion),
+            Z = Y("perspective") in z,
+            AB = "ontouchstart" in AD && !K,
+            H = Q !== !1,
+            AG = Y("transition") in z,
+            J = "onorientationchange" in AD ? "orientationchange" : "resize",
+            O = AB ? "touchstart" : "mousedown",
+            D = AB ? "touchmove" : "mousemove",
+            I = AB ? "touchend" : "mouseup",
+            B = AB ? "touchcancel" : "mouseup",
+            F = function () {
+                if (Q === !1) {
+                    return !1
+               }
+                var A = {
+                    "": "transitionend",
+                    webkit: "webkitTransitionEnd",
+                    Moz: "transitionend",
+                    O: "otransitionend",
+                    ms: "MSTransitionEnd"
+               };
+                return A[Q]
+           }(),
+            R = function () {
+                return AD.requestAnimationFrame || AD.webkitRequestAnimationFrame || AD.mozRequestAnimationFrame || AD.oRequestAnimationFrame || AD.msRequestAnimationFrame ||
+                        function (A) {
+                            return setTimeout(A, 1)
+                       }
+           }(),
+            q = function () {
+                return AD.cancelRequestAnimationFrame || AD.webkitCancelAnimationFrame || AD.webkitCancelRequestAnimationFrame || AD.mozCancelRequestAnimationFrame || AD.oCancelRequestAnimationFrame || AD.msCancelRequestAnimationFrame || clearTimeout
+           }(),
+            G = Z ? " translateZ(0)" : "",
+            V = function (L, E) {
+                var A = this,
+                        C;
+                A.wrapper = typeof L == "object" ? L : P.getElementById(L),
+                        A.wrapper.style.overflow = "hidden",
+                        A.scroller = A.wrapper.children[0],
+                        A.options = {
+                            hScroll: !0,
+                            vScroll: !0,
+                            x: 0,
+                            y: 0,
+                            bounce: !0,
+                            bounceLock: !1,
+                            momentum: !0,
+                            lockDirection: !0,
+                            useTransform: !0,
+                            useTransition: !1,
+                            topOffset: 0,
+                            checkDOMChanges: !1,
+                            handleClick: !0,
+                            hScrollbar: !0,
+                            vScrollbar: !0,
+                            fixedScrollbar: W,
+                            hideScrollbar: AE,
+                            fadeScrollbar: AE && Z,
+                            scrollbarClass: "",
+                            zoom: !1,
+                            zoomMin: 1,
+                            zoomMax: 4,
+                            doubleTapZoom: 2,
+                            wheelAction: "scroll",
+                            snap: !1,
+                            snapThreshold: 1,
+                            onRefresh: null,
+                            onBeforeScrollStart: function (N) {
+                                N.preventDefault()
+                           },
+                            onScrollStart: null,
+                            onBeforeScrollMove: null,
+                            onScrollMove: null,
+                            onBeforeScrollEnd: null,
+                            onScrollEnd: null,
+                            onTouchEnd: null,
+                            onDestroy: null,
+                            onZoomStart: null,
+                            onZoom: null,
+                            onZoomEnd: null
+                       };
+                for (C in E) {
+                    A.options[C] = E[C]
+               }
+                A.x = A.options.x,
+                        A.y = A.options.y,
+                        A.options.useTransform = H && A.options.useTransform,
+                        A.options.hScrollbar = A.options.hScroll && A.options.hScrollbar,
+                        A.options.vScrollbar = A.options.vScroll && A.options.vScrollbar,
+                        A.options.zoom = A.options.useTransform && A.options.zoom,
+                        A.options.useTransition = AG && A.options.useTransition,
+                        A.options.zoom && W && (G = ""),
+                        A.scroller.style[AH] = A.options.useTransform ? X + "transform" : "top left",
+                        A.scroller.style[AC] = "0",
+                        A.scroller.style[j] = "0 0",
+                        A.options.useTransition && (A.scroller.style[AF] = "cubic-bezier(0.33,0.66,0.66,1)"),
+                        A.options.useTransform ? A.scroller.style[M] = "translate(" + A.x + "px," + A.y + "px)" + G : A.scroller.style.cssText += ";position:absolute;top:" + A.y + "px;left:" + A.x + "px",
+                        A.options.useTransition && (A.options.fixedScrollbar = !0),
+                        A.refresh(),
+                        A._bind(J, AD),
+                        A._bind(O),
+                        AB || A.options.wheelAction != "none" && (A._bind("DOMMouseScroll"), A._bind("mousewheel")),
+                        A.options.checkDOMChanges && (A.checkDOMTime = setInterval(function () {
+                            A._checkDOMChanges()
+                       },
+                                500))
+           };
+    V.prototype = {
+        enabled: !0,
+        x: 0,
+        y: 0,
+        steps: [],
+        scale: 1,
+        currPageX: 0,
+        currPageY: 0,
+        pagesX: [],
+        pagesY: [],
+        aniTime: null,
+        wheelZoomCount: 0,
+        handleEvent: function (C) {
+            var A = this;
+            switch (C.type) {
+                case O:
+                    if (!AB && C.button !== 0) {
+                        return
+                   }
+                    A._start(C);
+                    break;
+                case D:
+                    A._move(C);
+                    break;
+                case I:
+                case B:
+                    A._end(C);
+                    break;
+                case J:
+                    A._resize();
+                    break;
+                case "DOMMouseScroll":
+                case "mousewheel":
+                    A._wheel(C);
+                    break;
+                case F:
+                    A._transitionEnd(C)
+           }
+       },
+        _checkDOMChanges: function () {
+            if (this.moved || this.zoomed || this.animating || this.scrollerW == this.scroller.offsetWidth * this.scale && this.scrollerH == this.scroller.offsetHeight * this.scale) {
+                return
+           }
+            this.refresh()
+       },
+        _scrollbar: function (C) {
+            var E = this,
+                    A;
+            if (!E[C + "Scrollbar"]) {
+                E[C + "ScrollbarWrapper"] && (H && (E[C + "ScrollbarIndicator"].style[M] = ""), E[C + "ScrollbarWrapper"].parentNode.removeChild(E[C + "ScrollbarWrapper"]), E[C + "ScrollbarWrapper"] = null, E[C + "ScrollbarIndicator"] = null);
+                return
+           }
+            E[C + "ScrollbarWrapper"] || (A = P.createElement("div"), E.options.scrollbarClass ? A.className = E.options.scrollbarClass + C.toUpperCase() : A.style.cssText = "position:absolute;z-index:100;" + (C == "h" ? "height:7px;bottom:1px;left:2px;right:" + (E.vScrollbar ? "7" : "2") + "px" : "width:7px;bottom:" + (E.hScrollbar ? "7" : "2") + "px;top:2px;right:1px"), A.style.cssText += ";pointer-events:none;" + X + "transition-property:opacity;" + X + "transition-duration:" + (E.options.fadeScrollbar ? "350ms" : "0") + ";overflow:hidden;opacity:" + (E.options.hideScrollbar ? "0" : "1"), E.wrapper.appendChild(A), E[C + "ScrollbarWrapper"] = A, A = P.createElement("div"), E.options.scrollbarClass || (A.style.cssText = "position:absolute;z-index:100;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.9);" + X + "background-clip:padding-box;" + X + "box-sizing:border-box;" + (C == "h" ? "height:100%" : "width:100%") + ";" + X + "border-radius:3px;border-radius:3px"), A.style.cssText += ";pointer-events:none;" + X + "transition-property:" + X + "transform;" + X + "transition-timing-function:cubic-bezier(0.33,0.66,0.66,1);" + X + "transition-duration:0;" + X + "transform: translate(0,0)" + G, E.options.useTransition && (A.style.cssText += ";" + X + "transition-timing-function:cubic-bezier(0.33,0.66,0.66,1)"), E[C + "ScrollbarWrapper"].appendChild(A), E[C + "ScrollbarIndicator"] = A),
+                    C == "h" ? (E.hScrollbarSize = E.hScrollbarWrapper.clientWidth, E.hScrollbarIndicatorSize = U.max(U.round(E.hScrollbarSize * E.hScrollbarSize / E.scrollerW), 8), E.hScrollbarIndicator.style.width = E.hScrollbarIndicatorSize + "px", E.hScrollbarMaxScroll = E.hScrollbarSize - E.hScrollbarIndicatorSize, E.hScrollbarProp = E.hScrollbarMaxScroll / E.maxScrollX) : (E.vScrollbarSize = E.vScrollbarWrapper.clientHeight, E.vScrollbarIndicatorSize = U.max(U.round(E.vScrollbarSize * E.vScrollbarSize / E.scrollerH), 8), E.vScrollbarIndicator.style.height = E.vScrollbarIndicatorSize + "px", E.vScrollbarMaxScroll = E.vScrollbarSize - E.vScrollbarIndicatorSize, E.vScrollbarProp = E.vScrollbarMaxScroll / E.maxScrollY),
+                    E._scrollbarPos(C, !0)
+       },
+        _resize: function () {
+            var A = this;
+            setTimeout(function () {
+                A.refresh()
+           },
+                    W ? 200 : 0)
+       },
+        _pos: function (C, A) {
+            if (this.zoomed) {
+                return
+           }
+            C = this.hScroll ? C : 0,
+                    A = this.vScroll ? A : 0,
+                    this.options.useTransform ? this.scroller.style[M] = "translate(" + C + "px," + A + "px) scale(" + this.scale + ")" + G : (C = U.round(C), A = U.round(A), this.scroller.style.left = C + "px", this.scroller.style.top = A + "px"),
+                    this.x = C,
+                    this.y = A,
+                    this._scrollbarPos("h"),
+                    this._scrollbarPos("v")
+       },
+        _scrollbarPos: function (L, C) {
+            var N = this,
+                    A = L == "h" ? N.x : N.y,
+                    E;
+            if (!N[L + "Scrollbar"]) {
+                return
+           }
+            A = N[L + "ScrollbarProp"] * A,
+                    A < 0 ? (N.options.fixedScrollbar || (E = N[L + "ScrollbarIndicatorSize"] + U.round(A * 3), E < 8 && (E = 8), N[L + "ScrollbarIndicator"].style[L == "h" ? "width" : "height"] = E + "px"), A = 0) : A > N[L + "ScrollbarMaxScroll"] && (N.options.fixedScrollbar ? A = N[L + "ScrollbarMaxScroll"] : (E = N[L + "ScrollbarIndicatorSize"] - U.round((A - N[L + "ScrollbarMaxScroll"]) * 3), E < 8 && (E = 8), N[L + "ScrollbarIndicator"].style[L == "h" ? "width" : "height"] = E + "px", A = N[L + "ScrollbarMaxScroll"] + (N[L + "ScrollbarIndicatorSize"] - E))),
+                    N[L + "ScrollbarWrapper"].style[AA] = "0",
+                    N[L + "ScrollbarWrapper"].style.opacity = C && N.options.hideScrollbar ? "0" : "1",
+                    N[L + "ScrollbarIndicator"].style[M] = "translate(" + (L == "h" ? A + "px,0)" : "0," + A + "px)") + G
+       },
+        _start: function (L) {
+            var b = this,
+                    E = AB ? L.touches[0] : L,
+                    N,
+                    T,
+                    C,
+                    S,
+                    A;
+            if (!b.enabled) {
+                return
+           }
+            b.options.onBeforeScrollStart && b.options.onBeforeScrollStart.call(b, L),
+                    (b.options.useTransition || b.options.zoom) && b._transitionTime(0),
+                    b.moved = !1,
+                    b.animating = !1,
+                    b.zoomed = !1,
+                    b.distX = 0,
+                    b.distY = 0,
+                    b.absDistX = 0,
+                    b.absDistY = 0,
+                    b.dirX = 0,
+                    b.dirY = 0,
+                    b.options.zoom && AB && L.touches.length > 1 && (S = U.abs(L.touches[0].pageX - L.touches[1].pageX), A = U.abs(L.touches[0].pageY - L.touches[1].pageY), b.touchesDistStart = U.sqrt(S * S + A * A), b.originX = U.abs(L.touches[0].pageX + L.touches[1].pageX - b.wrapperOffsetLeft * 2) / 2 - b.x, b.originY = U.abs(L.touches[0].pageY + L.touches[1].pageY - b.wrapperOffsetTop * 2) / 2 - b.y, b.options.onZoomStart && b.options.onZoomStart.call(b, L));
+            if (b.options.momentum) {
+                b.options.useTransform ? (N = getComputedStyle(b.scroller, null)[M].replace(/[^0-9\-.,]/g, "").split(","), T = +(N[12] || N[4]), C = +(N[13] || N[5])) : (T = +getComputedStyle(b.scroller, null).left.replace(/[^0-9-]/g, ""), C = +getComputedStyle(b.scroller, null).top.replace(/[^0-9-]/g, ""));
+                if (T != b.x || C != b.y) {
+                    b.options.useTransition ? b._unbind(F) : q(b.aniTime),
+                            b.steps = [],
+                            b._pos(T, C),
+                            b.options.onScrollEnd && b.options.onScrollEnd.call(b)
+               }
+           }
+            b.absStartX = b.x,
+                    b.absStartY = b.y,
+                    b.startX = b.x,
+                    b.startY = b.y,
+                    b.pointX = E.pageX,
+                    b.pointY = E.pageY,
+                    b.startTime = L.timeStamp || Date.now(),
+                    b.options.onScrollStart && b.options.onScrollStart.call(b, L),
+                    b._bind(D, AD),
+                    b._bind(I, AD),
+                    b._bind(B, AD)
+       },
+        _move: function (T) {
+            var g = this,
+                    C = AB ? T.touches[0] : T,
+                    L = C.pageX - g.pointX,
+                    k = C.pageY - g.pointY,
+                    A = g.x + L,
+                    d = g.y + k,
+                    S,
+                    E,
+                    b,
+                    N = T.timeStamp || Date.now();
+            g.options.onBeforeScrollMove && g.options.onBeforeScrollMove.call(g, T);
+            if (g.options.zoom && AB && T.touches.length > 1) {
+                S = U.abs(T.touches[0].pageX - T.touches[1].pageX),
+                        E = U.abs(T.touches[0].pageY - T.touches[1].pageY),
+                        g.touchesDist = U.sqrt(S * S + E * E),
+                        g.zoomed = !0,
+                        b = 1 / g.touchesDistStart * g.touchesDist * this.scale,
+                        b < g.options.zoomMin ? b = 0.5 * g.options.zoomMin * Math.pow(2, b / g.options.zoomMin) : b > g.options.zoomMax && (b = 2 * g.options.zoomMax * Math.pow(0.5, g.options.zoomMax / b)),
+                        g.lastScale = b / this.scale,
+                        A = this.originX - this.originX * g.lastScale + this.x,
+                        d = this.originY - this.originY * g.lastScale + this.y,
+                        this.scroller.style[M] = "translate(" + A + "px," + d + "px) scale(" + b + ")" + G,
+                        g.options.onZoom && g.options.onZoom.call(g, T);
+                return
+           }
+            g.pointX = C.pageX,
+                    g.pointY = C.pageY;
+            if (A > 0 || A < g.maxScrollX) {
+                A = g.options.bounce ? g.x + L / 2 : A >= 0 || g.maxScrollX >= 0 ? 0 : g.maxScrollX
+           }
+            if (d > g.minScrollY || d < g.maxScrollY) {
+                d = g.options.bounce ? g.y + k / 2 : d >= g.minScrollY || g.maxScrollY >= 0 ? g.minScrollY : g.maxScrollY
+           }
+            g.distX += L,
+                    g.distY += k,
+                    g.absDistX = U.abs(g.distX),
+                    g.absDistY = U.abs(g.distY);
+            if (g.absDistX < 6 && g.absDistY < 6) {
+                return
+           }
+            g.options.lockDirection && (g.absDistX > g.absDistY + 5 ? (d = g.y, k = 0) : g.absDistY > g.absDistX + 5 && (A = g.x, L = 0)),
+                    g.moved = !0,
+                    g._pos(A, d),
+                    g.dirX = L > 0 ? -1 : L < 0 ? 1 : 0,
+                    g.dirY = k > 0 ? -1 : k < 0 ? 1 : 0,
+                    N - g.startTime > 300 && (g.startTime = N, g.startX = g.x, g.startY = g.y),
+                    g.options.onScrollMove && g.options.onScrollMove.call(g, T)
+       },
+        _end: function (E) {
+            if (AB && E.touches.length !== 0) {
+                return
+           }
+            var S = this,
+                    x = AB ? E.changedTouches[0] : E,
+                    C,
+                    r,
+                    N = {
+                        dist: 0,
+                        time: 0
+                   },
+            f = {
+                dist: 0,
+                time: 0
+           },
+            T = (E.timeStamp || Date.now()) - S.startTime,
+                    A = S.x,
+                    e = S.y,
+                    u,
+                    L,
+                    k,
+                    g,
+                    t;
+            S._unbind(D, AD),
+                    S._unbind(I, AD),
+                    S._unbind(B, AD),
+                    S.options.onBeforeScrollEnd && S.options.onBeforeScrollEnd.call(S, E);
+            if (S.zoomed) {
+                t = S.scale * S.lastScale,
+                        t = Math.max(S.options.zoomMin, t),
+                        t = Math.min(S.options.zoomMax, t),
+                        S.lastScale = t / S.scale,
+                        S.scale = t,
+                        S.x = S.originX - S.originX * S.lastScale + S.x,
+                        S.y = S.originY - S.originY * S.lastScale + S.y,
+                        S.scroller.style[AC] = "200ms",
+                        S.scroller.style[M] = "translate(" + S.x + "px," + S.y + "px) scale(" + S.scale + ")" + G,
+                        S.zoomed = !1,
+                        S.refresh(),
+                        S.options.onZoomEnd && S.options.onZoomEnd.call(S, E);
+                return
+           }
+            if (!S.moved) {
+                AB && (S.doubleTapTimer && S.options.zoom ? (clearTimeout(S.doubleTapTimer), S.doubleTapTimer = null, S.options.onZoomStart && S.options.onZoomStart.call(S, E), S.zoom(S.pointX, S.pointY, S.scale == 1 ? S.options.doubleTapZoom : 1), S.options.onZoomEnd && setTimeout(function () {
+                    S.options.onZoomEnd.call(S, E)
+               },
+                        200)) : this.options.handleClick && (S.doubleTapTimer = setTimeout(function () {
+                    S.doubleTapTimer = null,
+                            C = x.target;
+                    while (C.nodeType != 1) {
+                        C = C.parentNode
+                   }
+                    C.tagName != "SELECT" && C.tagName != "INPUT" && C.tagName != "TEXTAREA" && (r = P.createEvent("MouseEvents"), r.initMouseEvent("click", !0, !0, E.view, 1, x.screenX, x.screenY, x.clientX, x.clientY, E.ctrlKey, E.altKey, E.shiftKey, E.metaKey, 0, null), r._fake = !0, C.dispatchEvent(r))
+               },
+                        S.options.zoom ? 250 : 0))),
+                        S._resetPos(400),
+                        S.options.onTouchEnd && S.options.onTouchEnd.call(S, E);
+                return
+           }
+            if (T < 300 && S.options.momentum) {
+                N = A ? S._momentum(A - S.startX, T, -S.x, S.scrollerW - S.wrapperW + S.x, S.options.bounce ? S.wrapperW : 0) : N,
+                        f = e ? S._momentum(e - S.startY, T, -S.y, S.maxScrollY < 0 ? S.scrollerH - S.wrapperH + S.y - S.minScrollY : 0, S.options.bounce ? S.wrapperH : 0) : f,
+                        A = S.x + N.dist,
+                        e = S.y + f.dist;
+                if (S.x > 0 && A > 0 || S.x < S.maxScrollX && A < S.maxScrollX) {
+                    N = {
+                        dist: 0,
+                        time: 0
+                   }
+               }
+                if (S.y > S.minScrollY && e > S.minScrollY || S.y < S.maxScrollY && e < S.maxScrollY) {
+                    f = {
+                        dist: 0,
+                        time: 0
+                   }
+               }
+           }
+            if (N.dist || f.dist) {
+                k = U.max(U.max(N.time, f.time), 10),
+                        S.options.snap && (u = A - S.absStartX, L = e - S.absStartY, U.abs(u) < S.options.snapThreshold && U.abs(L) < S.options.snapThreshold ? S.scrollTo(S.absStartX, S.absStartY, 200) : (g = S._snap(A, e), A = g.x, e = g.y, k = U.max(g.time, k))),
+                        S.scrollTo(U.round(A), U.round(e), k),
+                        S.options.onTouchEnd && S.options.onTouchEnd.call(S, E);
+                return
+           }
+            if (S.options.snap) {
+                u = A - S.absStartX,
+                        L = e - S.absStartY,
+                        U.abs(u) < S.options.snapThreshold && U.abs(L) < S.options.snapThreshold ? S.scrollTo(S.absStartX, S.absStartY, 200) : (g = S._snap(S.x, S.y), (g.x != S.x || g.y != S.y) && S.scrollTo(g.x, g.y, g.time)),
+                        S.options.onTouchEnd && S.options.onTouchEnd.call(S, E);
+                return
+           }
+            S._resetPos(200),
+                    S.options.onTouchEnd && S.options.onTouchEnd.call(S, E)
+       },
+        _resetPos: function (E) {
+            var A = this,
+                    L = A.x >= 0 ? 0 : A.x < A.maxScrollX ? A.maxScrollX : A.x,
+                    C = A.y >= A.minScrollY || A.maxScrollY > 0 ? A.minScrollY : A.y < A.maxScrollY ? A.maxScrollY : A.y;
+            if (L == A.x && C == A.y) {
+                A.moved && (A.moved = !1, A.options.onScrollEnd && A.options.onScrollEnd.call(A)),
+                        A.hScrollbar && A.options.hideScrollbar && (Q == "webkit" && (A.hScrollbarWrapper.style[AA] = "300ms"), A.hScrollbarWrapper.style.opacity = "0"),
+                        A.vScrollbar && A.options.hideScrollbar && (Q == "webkit" && (A.vScrollbarWrapper.style[AA] = "300ms"), A.vScrollbarWrapper.style.opacity = "0");
+                return
+           }
+            A.scrollTo(L, C, E || 0)
+       },
+        _wheel: function (N) {
+            var C = this,
+                    T, L, A, E, S;
+            if ("wheelDeltaX" in N) {
+                T = N.wheelDeltaX / 12,
+                        L = N.wheelDeltaY / 12
+           } else {
+                if ("wheelDelta" in N) {
+                    T = L = N.wheelDelta / 12
+               } else {
+                    if (!("detail" in N)) {
+                        return
+                   }
+                    T = L = -N.detail * 3
+               }
+           }
+            if (C.options.wheelAction == "zoom") {
+                S = C.scale * Math.pow(2, 1 / 3 * (L ? L / Math.abs(L) : 0)),
+                        S < C.options.zoomMin && (S = C.options.zoomMin),
+                        S > C.options.zoomMax && (S = C.options.zoomMax),
+                        S != C.scale && (!C.wheelZoomCount && C.options.onZoomStart && C.options.onZoomStart.call(C, N), C.wheelZoomCount++, C.zoom(N.pageX, N.pageY, S, 400), setTimeout(function () {
+                            C.wheelZoomCount--,
+                                    !C.wheelZoomCount && C.options.onZoomEnd && C.options.onZoomEnd.call(C, N)
+                       },
+                                400));
+                return
+           }
+            A = C.x + T,
+                    E = C.y + L,
+                    A > 0 ? A = 0 : A < C.maxScrollX && (A = C.maxScrollX),
+                    E > C.minScrollY ? E = C.minScrollY : E < C.maxScrollY && (E = C.maxScrollY),
+                    C.maxScrollY < 0 && C.scrollTo(A, E, 0)
+       },
+        _transitionEnd: function (C) {
+            var A = this;
+            if (C.target != A.scroller) {
+                return
+           }
+            A._unbind(F),
+                    A._startAni()
+       },
+        _startAni: function () {
+            var N = this,
+                    E = N.x,
+                    T = N.y,
+                    C = Date.now(),
+                    L,
+                    S,
+                    A;
+            if (N.animating) {
+                return
+           }
+            if (!N.steps.length) {
+                N._resetPos(400);
+                return
+           }
+            L = N.steps.shift(),
+                    L.x == E && L.y == T && (L.time = 0),
+                    N.animating = !0,
+                    N.moved = !0;
+            if (N.options.useTransition) {
+                N._transitionTime(L.time),
+                        N._pos(L.x, L.y),
+                        N.animating = !1,
+                        L.time ? N._bind(F) : N._resetPos(0);
+                return
+           }
+            A = function () {
+                var c = Date.now(),
+                        d,
+                        b;
+                if (c >= C + L.time) {
+                    N._pos(L.x, L.y),
+                            N.animating = !1,
+                            N.options.onAnimationEnd && N.options.onAnimationEnd.call(N),
+                            N._startAni();
+                    return
+               }
+                c = (c - C) / L.time - 1,
+                        S = U.sqrt(1 - c * c),
+                        d = (L.x - E) * S + E,
+                        b = (L.y - T) * S + T,
+                        N._pos(d, b),
+                        N.animating && (N.aniTime = R(A))
+           },
+                    A()
+       },
+        _transitionTime: function (A) {
+            A += "ms",
+                    this.scroller.style[AC] = A,
+                    this.hScrollbar && (this.hScrollbarIndicator.style[AC] = A),
+                    this.vScrollbar && (this.vScrollbarIndicator.style[AC] = A)
+       },
+        _momentum: function (S, c, C, L, d) {
+            var A = 0.0006,
+                    b = U.abs(S) / c,
+                    T = b * b / (2 * A),
+                    N = 0,
+                    E = 0;
+            return S > 0 && T > C ? (E = d / (6 / (T / b * A)), C += E, b = b * C / T, T = C) : S < 0 && T > L && (E = d / (6 / (T / b * A)), L += E, b = b * L / T, T = L),
+                    T *= S < 0 ? -1 : 1,
+                    N = b / A,
+                    {
+                        dist: T,
+                        time: U.round(N)
+                   }
+       },
+        _offset: function (C) {
+            var A = -C.offsetLeft,
+                    E = -C.offsetTop;
+            while (C = C.offsetParent) {
+                A -= C.offsetLeft,
+                        E -= C.offsetTop
+           }
+            return C != this.wrapper && (A *= this.scale, E *= this.scale),
+                    {
+                        left: A,
+                        top: E
+                   }
+       },
+        _snap: function (N, b) {
+            var C = this,
+                    E, c, A, T, S, L;
+            A = C.pagesX.length - 1;
+            for (E = 0, c = C.pagesX.length; E < c; E++) {
+                if (N >= C.pagesX[E]) {
+                    A = E;
+                    break
+               }
+           }
+            A == C.currPageX && A > 0 && C.dirX < 0 && A--,
+                    N = C.pagesX[A],
+                    S = U.abs(N - C.pagesX[C.currPageX]),
+                    S = S ? U.abs(C.x - N) / S * 500 : 0,
+                    C.currPageX = A,
+                    A = C.pagesY.length - 1;
+            for (E = 0; E < A; E++) {
+                if (b >= C.pagesY[E]) {
+                    A = E;
+                    break
+               }
+           }
+            return A == C.currPageY && A > 0 && C.dirY < 0 && A--,
+                    b = C.pagesY[A],
+                    L = U.abs(b - C.pagesY[C.currPageY]),
+                    L = L ? U.abs(C.y - b) / L * 500 : 0,
+                    C.currPageY = A,
+                    T = U.round(U.max(S, L)) || 200,
+                    {
+                        x: N,
+                        y: b,
+                        time: T
+                   }
+       },
+        _bind: function (C, A, E) {
+            (A || this.scroller).addEventListener(C, this, !!E)
+       },
+        _unbind: function (C, A, E) {
+            (A || this.scroller).removeEventListener(C, this, !!E)
+       },
+        destroy: function () {
+            var A = this;
+            A.scroller.style[M] = "",
+                    A.hScrollbar = !1,
+                    A.vScrollbar = !1,
+                    A._scrollbar("h"),
+                    A._scrollbar("v"),
+                    A._unbind(J, AD),
+                    A._unbind(O),
+                    A._unbind(D, AD),
+                    A._unbind(I, AD),
+                    A._unbind(B, AD),
+                    A.options.hasTouch || (A._unbind("DOMMouseScroll"), A._unbind("mousewheel")),
+                    A.options.useTransition && A._unbind(F),
+                    A.options.checkDOMChanges && clearInterval(A.checkDOMTime),
+                    A.options.onDestroy && A.options.onDestroy.call(A)
+       },
+        refresh: function () {
+            var N = this,
+                    E, T, C, L, S = 0,
+                    A = 0;
+            N.scale < N.options.zoomMin && (N.scale = N.options.zoomMin),
+                    N.wrapperW = N.wrapper.clientWidth || 1,
+                    N.wrapperH = N.wrapper.clientHeight || 1,
+                    N.minScrollY = -N.options.topOffset || 0,
+                    N.scrollerW = U.round(N.scroller.offsetWidth * N.scale),
+                    N.scrollerH = U.round((N.scroller.offsetHeight + N.minScrollY) * N.scale),
+                    N.maxScrollX = N.wrapperW - N.scrollerW,
+                    N.maxScrollY = N.wrapperH - N.scrollerH + N.minScrollY,
+                    N.dirX = 0,
+                    N.dirY = 0,
+                    N.options.onRefresh && N.options.onRefresh.call(N),
+                    N.hScroll = N.options.hScroll && N.maxScrollX < 0,
+                    N.vScroll = N.options.vScroll && (!N.options.bounceLock && !N.hScroll || N.scrollerH > N.wrapperH),
+                    N.hScrollbar = N.hScroll && N.options.hScrollbar,
+                    N.vScrollbar = N.vScroll && N.options.vScrollbar && N.scrollerH > N.wrapperH,
+                    E = N._offset(N.wrapper),
+                    N.wrapperOffsetLeft = -E.left,
+                    N.wrapperOffsetTop = -E.top;
+            if (typeof N.options.snap == "string") {
+                N.pagesX = [],
+                        N.pagesY = [],
+                        L = N.scroller.querySelectorAll(N.options.snap);
+                for (T = 0, C = L.length; T < C; T++) {
+                    S = N._offset(L[T]),
+                            S.left += N.wrapperOffsetLeft,
+                            S.top += N.wrapperOffsetTop,
+                            N.pagesX[T] = S.left < N.maxScrollX ? N.maxScrollX : S.left * N.scale,
+                            N.pagesY[T] = S.top < N.maxScrollY ? N.maxScrollY : S.top * N.scale
+               }
+           } else {
+                if (N.options.snap) {
+                    N.pagesX = [];
+                    while (S >= N.maxScrollX) {
+                        N.pagesX[A] = S,
+                                S -= N.wrapperW,
+                                A++
+                   }
+                    N.maxScrollX % N.wrapperW && (N.pagesX[N.pagesX.length] = N.maxScrollX - N.pagesX[N.pagesX.length - 1] + N.pagesX[N.pagesX.length - 1]),
+                            S = 0,
+                            A = 0,
+                            N.pagesY = [];
+                    while (S >= N.maxScrollY) {
+                        N.pagesY[A] = S,
+                                S -= N.wrapperH,
+                                A++
+                   }
+                    N.maxScrollY % N.wrapperH && (N.pagesY[N.pagesY.length] = N.maxScrollY - N.pagesY[N.pagesY.length - 1] + N.pagesY[N.pagesY.length - 1])
+               }
+           }
+            N._scrollbar("h"),
+                    N._scrollbar("v"),
+                    N.zoomed || (N.scroller.style[AC] = "0", N._resetPos(400))
+       },
+        scrollTo: function (S, E, a, N) {
+            var C = this,
+                    L = S,
+                    T, A;
+            C.stop(),
+                    L.length || (L = [{
+                            x: S,
+                            y: E,
+                            time: a,
+                            relative: N
+                       }]);
+            for (T = 0, A = L.length; T < A; T++) {
+                L[T].relative && (L[T].x = C.x - L[T].x, L[T].y = C.y - L[T].y),
+                        C.steps.push({
+                            x: L[T].x,
+                            y: L[T].y,
+                            time: L[T].time || 0
+                       })
+           }
+            C._startAni()
+       },
+        scrollToElement: function (E, C) {
+            var L = this,
+                    A;
+            E = E.nodeType ? E : L.scroller.querySelector(E);
+            if (!E) {
+                return
+           }
+            A = L._offset(E),
+                    A.left += L.wrapperOffsetLeft,
+                    A.top += L.wrapperOffsetTop,
+                    A.left = A.left > 0 ? 0 : A.left < L.maxScrollX ? L.maxScrollX : A.left,
+                    A.top = A.top > L.minScrollY ? L.minScrollY : A.top < L.maxScrollY ? L.maxScrollY : A.top,
+                    C = C === undefined ? U.max(U.abs(A.left) * 2, U.abs(A.top) * 2) : C,
+                    L.scrollTo(A.left, A.top, C)
+       },
+        scrollToPage: function (N, C, S) {
+            var L = this,
+                    A, E;
+            S = S === undefined ? 400 : S,
+                    L.options.onScrollStart && L.options.onScrollStart.call(L),
+                    L.options.snap ? (N = N == "next" ? L.currPageX + 1 : N == "prev" ? L.currPageX - 1 : N, C = C == "next" ? L.currPageY + 1 : C == "prev" ? L.currPageY - 1 : C, N = N < 0 ? 0 : N > L.pagesX.length - 1 ? L.pagesX.length - 1 : N, C = C < 0 ? 0 : C > L.pagesY.length - 1 ? L.pagesY.length - 1 : C, L.currPageX = N, L.currPageY = C, A = L.pagesX[N], E = L.pagesY[C]) : (A = -L.wrapperW * N, E = -L.wrapperH * C, A < L.maxScrollX && (A = L.maxScrollX), E < L.maxScrollY && (E = L.maxScrollY)),
+                    L.scrollTo(A, E, S)
+       },
+        disable: function () {
+            this.stop(),
+                    this._resetPos(0),
+                    this.enabled = !1,
+                    this._unbind(D, AD),
+                    this._unbind(I, AD),
+                    this._unbind(B, AD)
+       },
+        enable: function () {
+            this.enabled = !0
+       },
+        stop: function () {
+            this.options.useTransition ? this._unbind(F) : q(this.aniTime),
+                    this.steps = [],
+                    this.moved = !1,
+                    this.animating = !1
+       },
+        zoom: function (N, C, S, L) {
+            var A = this,
+                    E = S / A.scale;
+            if (!A.options.useTransform) {
+                return
+           }
+            A.zoomed = !0,
+                    L = L === undefined ? 200 : L,
+                    N = N - A.wrapperOffsetLeft - A.x,
+                    C = C - A.wrapperOffsetTop - A.y,
+                    A.x = N - N * E + A.x,
+                    A.y = C - C * E + A.y,
+                    A.scale = S,
+                    A.refresh(),
+                    A.x = A.x > 0 ? 0 : A.x < A.maxScrollX ? A.maxScrollX : A.x,
+                    A.y = A.y > A.minScrollY ? A.minScrollY : A.y < A.maxScrollY ? A.maxScrollY : A.y,
+                    A.scroller.style[AC] = L + "ms",
+                    A.scroller.style[M] = "translate(" + A.x + "px," + A.y + "px) scale(" + S + ")" + G,
+                    A.zoomed = !1
+       },
+        isReady: function () {
+            return !this.moved && !this.zoomed && !this.animating
+       }
+   },
+    z = null,
+            typeof exports != "undefined" ? exports.iScroll = V : AD.iScroll = V
+})(window, document);

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-11-06 10:31]]></item>
+	<item id="From"><![CDATA[讯幻网（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[讯幻网_DRC - 邮件唤醒]]></item>
+			<item id="identifier"><![CDATA[drc_wake]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[drc_wake/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[2.0]]></item>
+			<item id="__modules">
+				<item id="9">
+					<item id="name"><![CDATA[mysitead]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>讯幻网</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[main]]></item>
+					<item id="menu"><![CDATA[邮件唤醒]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[5]]></item>
+					<item id="adminid"><![CDATA[1]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[插件开关]]></item>
+				<item id="description"><![CDATA[设置是否开启邮件唤醒插件]]></item>
+				<item id="variable"><![CDATA[offset]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[管理员列表]]></item>
+				<item id="description"><![CDATA[设置邮件唤醒插件的管理员，只有这里设置了的管理员才有权限使用该系统。多个管理员UID之间用英文逗号(,)隔开，比如：1,5,100]]></item>
+				<item id="variable"><![CDATA[admins]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[注意事项公告]]></item>
+				<item id="description"><![CDATA[设置邮件唤醒系统的操作注意事项，已提醒多个管理人员操作时候不细心导致的问题。支持HTML代码]]></item>
+				<item id="variable"><![CDATA[notice]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<strong>1</strong>、该系统主要为了电子邮件唤醒长期未登录本站的会员，定期由管理人员集中发送电子邮件来提醒用户；<br />
+<strong>2</strong>、在发送唤醒邮件前，务必先查看下唤醒记录，上一次发送时间距今时间间隔，尽量避免短期内频繁的发送电子邮件，造成会员的反感；<br />
+<strong>3</strong>、如果发送邮件出现异常，请先切换到“检测邮件配置”选项卡测试邮件，如果检测确实无法正常发送邮件，可联系站点创始人进入论坛后台检查配置邮件；<br />
+<strong>4</strong>、唤醒系统记录可以查看到该系统的历史唤醒记录，操作历史等信息，方便各个管理员、创始人参考。]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="log_xhkj5_com"><![CDATA[<h2 style="text-align:-webkit-center;">
+	<span style="color:#4C33E5;">推荐一个dz商</span><span style="color:#4C33E5;">业插件模版下载的</span><span style="color:#4C33E5;"></span><span style="color:#4C33E5;">网站给大家</span><a href="http://www.xhkj5.com" target="_blank"><span style="color:#4C33E5;">讯幻网</span></a><span style="color:#4C33E5;">（www.xhkj5.com）</span> 
+</h2>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">这</span><span style="color:#E53333;">是一个</span><span style="color:#E53333;">dz商业</span><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank"><span style="color:#337FE5;">插</span><u><span style="color:#337FE5;"></span></u><span style="color:#337FE5;">件</span></a><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank"><u><span style="color:#337FE5;">模</span></u><u><span style="color:#337FE5;"></span></u><u><span style="color:#337FE5;">版</span></u></a><span style="color:#E53333;">资源破解分享的网站，而且还有很多精品的网站源码下载</span> 
+</h3>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">他们资源每天更新，并且很多都是他们自己出钱在应用中心购买后破解分享出来的</span><br />
+</h3>
+<h3>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">不过还是替他们说一下</span> 
+	</div>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">&nbsp;他们站下载的资源只限于自己学习研究内含的设计思想和原理 请勿有任何商业盈利行为</span> 
+	</div>
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#999999;">介绍也介绍完了，给大家做个小导航吧</span> 
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#337FE5;"><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank">dz商业破解插件下载</a> &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank">dz商业风格模版下载</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=72" target="_blank">精品网站源码下载</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=73" target="_blank">工具素材下载</a></span><span style="color:#337FE5;">&nbsp; &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=94" target="_blank">精选教程区</a></span> 
+</h3> ]]></item>
+				<item id="offset1"><![CDATA[邮件唤醒系统处于关闭状态，请进入后台打开！]]></item>
+				<item id="offset2"><![CDATA[您不是论坛管理员，没有权限进行该操作！]]></item>
+				<item id="offset3"><![CDATA[您没有被添加到邮件系统管理员名单，无权操作！]]></item>
+				<item id="nav"><![CDATA[邮件唤醒系统]]></item>
+				<item id="nav_send"><![CDATA[发送]]></item>
+				<item id="nav_check"><![CDATA[检测]]></item>
+				<item id="nav_log"><![CDATA[日志]]></item>
+				<item id="senderr_time"><![CDATA[请选择时间周期！]]></item>
+				<item id="senderr_type"><![CDATA[请选择筛选方式！]]></item>
+				<item id="senderr_stepnum"><![CDATA[请输入分批发送的数量！]]></item>
+				<item id="senderr_waketitle"><![CDATA[请输入邮件标题！]]></item>
+				<item id="senderr_waketmessage"><![CDATA[请输入邮件正文内容！]]></item>
+				<item id="send_message1"><![CDATA[休眠用户已收集完毕，正在发送唤醒邮件，请耐心等待...]]></item>
+				<item id="send_message21"><![CDATA[已发送第  ]]></item>
+				<item id="send_message22"><![CDATA[ 封邮件，正在进入下一批，请耐心等待...]]></item>
+				<item id="sendsuccess"><![CDATA[恭喜您，所有唤醒邮件已发送完毕！]]></item>
+				<item id="check_message1"><![CDATA[请输入正确的电子邮箱地址]]></item>
+				<item id="check_message2"><![CDATA[请输入测试邮件内容]]></item>
+				<item id="check_success"><![CDATA[一封测试邮件已发送至您的邮箱，请注意查收]]></item>
+				<item id="check_title"><![CDATA[这是一封邮件唤醒测试邮件]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="plugin_name"><![CDATA[邮件唤醒系统]]></item>
+				<item id="tab_send"><![CDATA[发送唤醒邮件]]></item>
+				<item id="tab_check"><![CDATA[检测邮件配置]]></item>
+				<item id="tab_log"><![CDATA[唤醒系统记录]]></item>
+				<item id="shaixuan"><![CDATA[筛选条件]]></item>
+				<item id="shaixuan_3"><![CDATA[三天]]></item>
+				<item id="shaixuan_7"><![CDATA[一周]]></item>
+				<item id="shaixuan_10"><![CDATA[十天]]></item>
+				<item id="shaixuan_30"><![CDATA[一个月]]></item>
+				<item id="shaixuan_60"><![CDATA[两个月]]></item>
+				<item id="shaixuan_90"><![CDATA[三个月]]></item>
+				<item id="shaixuan_180"><![CDATA[半年]]></item>
+				<item id="shaixuan_type1"><![CDATA[未登录]]></item>
+				<item id="shaixuan_type2"><![CDATA[未活动]]></item>
+				<item id="shaixuan_type3"><![CDATA[未发帖]]></item>
+				<item id="fenpi_title"><![CDATA[分批数量]]></item>
+				<item id="fenpi_tip"><![CDATA[个每批 ( 建议每批数量尽量少点，30-50较为合适，避免服务器超时 )]]></item>
+				<item id="email_title"><![CDATA[邮件标题]]></item>
+				<item id="email_message"><![CDATA[邮件内容]]></item>
+				<item id="send_submit"><![CDATA[发 送]]></item>
+				<item id="send_reset"><![CDATA[重 置]]></item>
+				<item id="check_email"><![CDATA[接收邮箱]]></item>
+				<item id="check_email_tip"><![CDATA[( 输入您的可用电子邮箱地址，用于接收测试邮件 )]]></item>
+				<item id="check_txt"><![CDATA[测试内容]]></item>
+				<item id="check_submit"><![CDATA[检 测]]></item>
+				<item id="side_title1"><![CDATA[注意事项]]></item>
+				<item id="side_title2"><![CDATA[版权信息]]></item>
+				<item id="side_copy"><![CDATA[<li>版权：www.xhkj5.com</li><li>作者：<a href="http://www.xhkj5.com" target="_blank">讯幻网</a></li><li>网站：<a href="http://www.xhkj5.com" target="_blank">www.xhkj5.com</a></li>]]></item>
+				<item id="log_title1"><![CDATA[唤醒筛选方式]]></item>
+				<item id="log_title2"><![CDATA[邮件标题]]></item>
+				<item id="log_title3"><![CDATA[内容简要]]></item>
+				<item id="log_title4"><![CDATA[操作人]]></item>
+				<item id="log_title5"><![CDATA[操作时间]]></item>
+				<item id="log_timecycle1"><![CDATA[三天]]></item>
+				<item id="log_timecycle2"><![CDATA[一周]]></item>
+				<item id="log_timecycle3"><![CDATA[十天]]></item>
+				<item id="log_timecycle4"><![CDATA[一个月]]></item>
+				<item id="log_timecycle5"><![CDATA[两个月]]></item>
+				<item id="log_timecycle6"><![CDATA[三个月]]></item>
+				<item id="log_timecycle7"><![CDATA[半年]]></item>
+				<item id="log_type1"><![CDATA[未登录]]></item>
+				<item id="log_type2"><![CDATA[未活动]]></item>
+				<item id="log_type3"><![CDATA[未发帖]]></item>
+				<item id="log_viewmsg"><![CDATA[查看简要]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="license"><![CDATA[[b][size=4][color=DarkOrange]Drc_Wake[/color] [/size][/b][版本: V2.0]
+		
+[b]许可协议[/b]
+本插件为 体无完肤 | 【DRC】 独立开发的原创插件, 依法拥有版权。
+未得允许不得公开出售、发布、修改，如需二次开发联系我们获得授权。
+联系方式：23735841(QQ)、mutou.lee@163.com (Email)
+
+[b]技术支持[/b]
+Discuz! Rescue Centre 官方QQ群：40318866
+Discuz! Rescue Centre！| 【DRC】：[url=http://www.xhkj5.com]http://www.xhkj5.com[/url]
+]]></item>
+
+  <item id="intro"><![CDATA[[b][size=4][color=DarkOrange]Drc_Wake 2.0 介绍：[/color][/size][/b]
+[b]许可协议[/b]
+本插件为 体无完肤 | 【DRC】 独立开发的原创插件, 依法拥有版权。
+未得允许不得公开出售、发布、修改，如需二次开发联系我们获得授权。
+联系方式：23735841(QQ)、mutou.lee@163.com (Email)
+
+[b]技术支持[/b]
+Discuz! Rescue Centre 官方QQ群：40318866
+Discuz! Rescue Centre！| 【DRC】：[url=http://www.xhkj5.com]http://www.xhkj5.com[/url]
+]]></item>
+	</item>
+</root>

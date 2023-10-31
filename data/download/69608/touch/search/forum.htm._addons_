@@ -1,0 +1,42 @@
+<!--{template common/header}-->
+<!-- header start -->
+<div class="header">
+    <div id="hd" class="cl">
+    	<div class="hdc">
+            <a href="javascript:;" onclick="history.go(-1)" class="hd_left iconfont icon-back"></a>
+            <div class="hd_name"><h2>{lang search}</h2></div>
+        </div>
+	</div>
+</div>
+<!-- header end -->
+<div class="tabs blockBG">
+	<div class="hd">
+        <ul class="tb4">
+            <li class="on"><a href="search.php?mod=forum">{lang search}</a></li>
+            <li><a href="forum.php?forumlist=1">{lang forum_list}</a></li>
+            <li id="usermsg"><a href="<!--{if $_G[uid]}-->home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1<!--{else}-->member.php?mod=logging&action=login<!--{/if}-->">{lang user_info}</a><!--{if $_G[member][newpm]}--><span class="icon_msg"></span><!--{/if}--></li>
+            <!--{if $_G['setting']['mobile']['mobilehotthread']}-->
+            <li><a href="forum.php?mod=guide&view=hot">{lang hot_thread}</a></li>
+            <!--{/if}-->
+        </ul>
+    </div>
+    <div class="bd blockBG">
+    <form id="searchform" class="searchform" method="post" autocomplete="off" action="search.php?mod=forum&mobile=2">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+    
+        <!--{subtemplate search/pubsearch}-->
+    
+        <!--{eval $policymsgs = $p = '';}-->
+        <!--{loop $_G['setting']['creditspolicy']['search'] $id $policy}-->
+        <!--{block policymsg}--><!--{if $_G['setting']['extcredits'][$id][img]}-->$_G['setting']['extcredits'][$id][img] <!--{/if}-->$_G['setting']['extcredits'][$id][title] $policy $_G['setting']['extcredits'][$id][unit]<!--{/block}-->
+        <!--{eval $policymsgs .= $p.$policymsg;$p = ', ';}-->
+        <!--{/loop}-->
+        <!--{if $policymsgs}--><p>{lang search_credit_msg}</p><!--{/if}-->
+    </form>
+    
+    <!--{if !empty($searchid) && submitcheck('searchsubmit', 1)}-->
+        <!--{subtemplate search/thread_list}-->
+    <!--{/if}-->
+    </div>
+</div>
+<!--{template common/footer}-->

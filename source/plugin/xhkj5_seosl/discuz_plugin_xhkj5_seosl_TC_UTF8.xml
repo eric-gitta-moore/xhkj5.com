@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-10-24 10:07]]></item>
+	<item id="From"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[訊幻網_潮宅SEO收錄]]></item>
+			<item id="identifier"><![CDATA[xhkj5_seosl]]></item>
+			<item id="description"><![CDATA[潮宅SEO收錄：有利提高網站的收錄、增加網站的權重、提升網站的搜索流量，經過測試，網站被K也能收錄！此插件利用國內外最熱門的六大搜索引擎平臺，給你網站帶來高效的收錄和流量。搜索引擎平臺：（百度 谷歌 雅虎 搜狗 搜搜 有道 360搜索 奇虎）。網站天天快照，新帖快速收錄，網站帖子快照更新，網站搜索功能，網站SEO優化。]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[xhkj5_seosl/]]></item>
+			<item id="copyright"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[潮宅3.8]]></item>
+			<item id="__modules">
+				<item id="9">
+					<item id="name"><![CDATA[mysitead]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>訊幻網</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[seosl]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[開關]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[kg]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[搜索設置]]></item>
+				<item id="description"><![CDATA[例如：百度|icon_baidu.gif|http://www.baidu.com/s?wd=%s
+搜索圖標|搜索地址/一行一個]]></item>
+				<item id="variable"><![CDATA[sssz]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[百度|icon_baidu.gif|http://www.baidu.com/s?wd=%s
+
+谷歌|icon_google.gif|http://www.google.com/search?hl=zh-CN&q=%s
+
+雅虎|icon_yahoo.gif|http://search.cn.yahoo.com/s?q=%s
+
+搜狗|icon_sogou.gif|http://www.sogou.com/web?query=%s
+
+搜搜|icon_soso.gif|http://www.soso.com/q?pid=s.idx&w=%s
+
+有道|icon_yodao.gif|http://www.youdao.com/search?q=%s
+
+360搜索|icon_360sou.gif|http://so.360.cn/s?ie=gbk&src=hao_phome&q=%s
+
+奇虎|icon_qihoo.gif|http://www.qihoo.com/wenda.php?kw=%s]]></item>
+
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[顯示位置]]></item>
+				<item id="description"><![CDATA[顯示位置]]></item>
+				<item id="variable"><![CDATA[showhere]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[2=正文位置]]></item>
+			</item>
+		</item>
+		<item id="license"><![CDATA[  [*]本插件版權歸屬插件作者,及其下屬潮宅男女所有.
+[*]未經插件作者許可,任何人不得以任何形式在任何地方發布/轉發原版以及其衍生的修改版.
+[*][b]插件作者:[/b]Aka_joey
+[*][b]作品簡介:[/b]潮宅SEO收錄
+[*][b]發布地址:[/b][url]http://xhkj5com/thread-11479-1-1.html[/url]
+[*]如有任何關于使用上的疑問,請至[url]http://xhkj5com/forum-40-1.html[/url]提出.
+[*]最后,感謝您使用我們的插件,也希望您能夠給我們潮宅男女提供更好的意見([url=http://xhkj5com/]請點擊這里進入潮宅男女官方站點[/url]).]]></item>
+		<item id="intro"><![CDATA[
+			[color=DeepSkyBlue][b]插件介紹:[/b][/color]
+				名稱: [b]潮宅SEO收錄[/b]
+				版本: [b]潮宅3.8[/b]
+				作者: Aka_joey
+				潮宅男女榮譽出品 http://xhkj5com
+				
+				-------------------------------------------
+				本插件僅供個人非商業用途使用!
+				禁止任何形式的封裝再發布行為.
+				特此聲明.
+
+				2012年05月28日
+			]]></item>
+	</item>
+</root>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="$metakeywords" />
+<meta name="description" content="$metadescription" />
+<title>$navtitle</title>
+</head>
+
+<body class="bg">
+<!--{hook/global_header_mobile}-->
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sj1.css">
+</head>
+<style type="text/css">
+	body,#bd,#ft{background:#fff}#doc a,article{color:#333;font-family:"Microsoft YaHei";font-size:14px;width:100%}.nav{background:#f5f5f5;border:1px solid #e4e3e4;height:35px;margin:0 auto;overflow:hidden;width:auto}.intro{font-size:14px;margin-top:24px}.intro2{font-size:15px;margin-top:78px;margin-bottom:30px;text-align:center}.ask-btn{margin-top:57px;text-align:center}.index-ask-btn{background:#40c802;border:1px solid #40c802;border-radius:25px;color:#fff;font-size:14px;padding:7px 22px;width:auto}.intro b,.intro2 b{color:#45bd0f}.nav ul li{display:inline;font-size:16px;height:35px;line-height:35px;margin:0 15px;position:relative}.intro .head{margin-top:18px;position:relative}.index-ask-btn:active{background:#42ad0c}.nav ul .current{color:#45bd0f;position:relative}.nav a:active{color:#40c802}.intro .head li{display:inline-block;margin-left:5px}.intro .head img{display:inline-block;height:32px;width:32px}
+	.qa-list li {
+  background-color: #fff;
+}
+</style>
+{template ljww360:header}
+{template ljww360:round_robin}
+<div id="doc">
+	<header id="header">
+		<div class="search-box" style="width:98%">
+			<div class="search-form-container">
+			<form method="post" action="plugin.php?id=ljww360&mod=search&do=ss&sj=yes" class="search-form">
+				
+					<div class="input-container">
+						<input x-webkit-speech="" autocomplete="off" value="$_GET['keyword']" class="q" name="keyword" id="searchInputBox" style="color: rgb(187, 187, 187);">
+
+							<div class="search-box-reset" style="display: none;">
+							</div>
+					</div>
+						<button type="submit" value="true" class="search-button"></button>
+						
+			</form>
+			</div>
+		</div>
+	</header>
+<div id="bd">
+<article><div class="bd clearfix" id="js-home-page">
+<div class="nav"><ul>
+<li id="tab1" class="current"><a href="javascript:;" class="on" onclick="switchTab('tab1','con1');this.blur();return false;">{lang ljww360:sj_10}<i></i></a></li>
+<li id="tab2" ><a href="javascript:;"  onclick="switchTab('tab2','con2');this.blur();return false;">{lang ljww360:sj_11}<i></i></a></li>
+<li id="tab3"><a href="javascript:;"  onclick="switchTab('tab3','con3');this.blur();return false;">{lang ljww360:sj_12}<i></i></a></li>
+<li id="tab4"><a href="javascript:;"  onclick="switchTab('tab4','con4');this.blur();return false;">{lang ljww360:sj_13}<i></i></a></li></ul></div></div></article>
+
+			<div class="bd clearfix" >
+
+				<div id="con1"  class="qa-list" style="margin-left:10px;">
+					<ul>
+					<!--{loop $djarr $k $v}-->
+						<li>
+							<a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->"><!--{eval echo mb_substr($v['subject'],0,20,$_G['charset']);}--> </a><font style="float:right;">$v['replies']{lang ljww360:wenwen6}</font>
+						</li>	
+					<!--{/loop}-->	
+					</ul>
+					
+					
+				</div>	
+				<div id="con2" style="display: none" class="qa-list" style="margin-left:10px;">
+					<ul>
+					<!--{loop $zeroarr $k $v}-->
+						<li>
+							<a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->"><!--{eval echo mb_substr($v['subject'],0,20,$_G['charset']);}--> </a><font style="float:right;">$v['replies']{lang ljww360:wenwen6}</font>
+						</li>	
+					<!--{/loop}-->	
+					</ul>
+				</div>	
+				<div id="con3" style="display: none" class="qa-list" style="margin-left:10px;">
+					<ul>
+					<!--{loop $xsarr $k $v}-->
+						<li>
+							<a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->"><!--{eval echo mb_substr($v['subject'],0,20,$_G['charset']);}--> </a><font style="float:right;">$v['replies']{lang ljww360:wenwen6}</font>
+						</li>	
+					<!--{/loop}-->	
+					</ul>
+				</div>	
+				<div id="con4" style="display: none" class="qa-list" style="margin-left:10px;">
+					<ul>
+					<!--{loop $yjqarr $k $v}-->
+						<li>
+							<a href="<!--{if $config['isrewrite']}-->answer-{$v['id']}-{$v['tid']}.html<!--{else}-->plugin.php?id=ljww360&mod=wtw&wid=$v['id']&tid=$v['tid']<!--{/if}-->"><!--{eval echo mb_substr($v['subject'],0,20,$_G['charset']);}--> </a><font style="float:right;">$v['replies']{lang ljww360:wenwen6}</font>
+						</li>	
+					<!--{/loop}-->	
+					</ul>
+				</div>	
+			</div>
+		</article>
+		 
+	</div>
+</div>
+{template ljww360:footer}
+</body>
+</html>
+<script type="text/javascript">
+        function switchTab(ProTag, ProBox) {
+            for (i = 1; i < 5; i++) {
+                if ("tab" + i == ProTag) {
+                    document.getElementById(ProTag).getElementsByTagName("a")[0].className = "on";
+                } else {
+                    document.getElementById("tab" + i).getElementsByTagName("a")[0].className = "";
+                }
+                if ("con" + i == ProBox) {
+                    document.getElementById(ProBox).style.display = "";
+                } else {
+                    document.getElementById("con" + i).style.display = "none";
+                }
+            }
+        }
+</script>
+<style type="text/css">
+        .frame-title, .frametitle, .tab-title{
+			background:url("");
+		}
+        
+        #tabContainer li
+        {
+            float: left;
+            width: 90px;
+           
+            background: #efefef;
+            text-align: center;
+        }
+        #tabContainer a
+        {
+            display: block;
+        }
+        a.on i
+        {
+            
+		  background: none repeat scroll 0 0 {if $config['mobile_color']}$config['mobile_color']{else}#68b2fc{/if};
+		  height: 2px;
+		  left: -8px;
+		  position: absolute;
+		  top: 25px;
+		  width: 62px;
+
+        }
+    </style>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[svipzan_qn_dashang.plugin]]></item>
+	<item id="RevisionID"><![CDATA[69547]]></item>
+	<item id="SN"><![CDATA[2016111216wCATJ1MzaI]]></item>
+	<item id="RevisionDateline"><![CDATA[1478952020]]></item>
+	<item id="Data">
+		<item id="/discuz_plugin_svipzan_qn_dashang_SC_GBK.xml"><![CDATA[7f74e0be70f014645d01cea7ac938003]]></item>
+		<item id="/discuz_plugin_svipzan_qn_dashang_SC_UTF8.xml"><![CDATA[7f74e0be70f014645d01cea7ac938003]]></item>
+		<item id="/discuz_plugin_svipzan_qn_dashang_TC_BIG5.xml"><![CDATA[7f74e0be70f014645d01cea7ac938003]]></item>
+		<item id="/discuz_plugin_svipzan_qn_dashang_TC_UTF8.xml"><![CDATA[7f74e0be70f014645d01cea7ac938003]]></item>
+		<item id="/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/qn_dashang.inc.php"><![CDATA[ba3a827e65f054b03f063dbdebf5602c]]></item>
+		<item id="/template/img/alipay.jpg"><![CDATA[b9fe9636a223e93213a4c523e263f8f9]]></item>
+		<item id="/template/img/alipayimg.png"><![CDATA[f8e6f7e930de847adcf17ea0b91838c5]]></item>
+		<item id="/template/img/bdpay.jpg"><![CDATA[b81dae9ba99eec49458f69995b6df9be]]></item>
+		<item id="/template/img/bdpayimg.png"><![CDATA[20543a9c65610dee0410c03e5dd40647]]></item>
+		<item id="/template/img/code-bg.jpg"><![CDATA[9ec20943b908a38d1f214798b74c075b]]></item>
+		<item id="/template/img/qqpay.jpg"><![CDATA[f4bcbbf71337246b1f2be0f9ed429c9b]]></item>
+		<item id="/template/img/qqpayimg.png"><![CDATA[1e27141e2a8519488c882a26119353a0]]></item>
+		<item id="/template/img/radio1.jpg"><![CDATA[18ea3c7073dc42fdd46cbf2c89a4ba81]]></item>
+		<item id="/template/img/radio2.jpg"><![CDATA[a760da5c68eb53d3cedd79343882da4b]]></item>
+		<item id="/template/img/wechat.jpg"><![CDATA[353c07191aafea159bffaf00275aa488]]></item>
+		<item id="/template/img/wxpayimg.png"><![CDATA[5e84379f360dc063497aed16c6cd17c8]]></item>
+		<item id="/template/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/template/qn_dashang.htm"><![CDATA[6d2a6173279b0efc539b604fd803b279]]></item>
+		<item id="/vip.class.php"><![CDATA[40729488841627a9e87f1dc0e32813df]]></item>
+		<item id="/more.inc.php"><![CDATA[e36ed2aa396e8d60f1ce441db3c9db5d]]></item>
+	</item>
+</root>

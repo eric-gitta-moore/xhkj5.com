@@ -1,0 +1,73 @@
+{template common/header}
+<link rel="stylesheet" href="source/plugin/ljww360/css/gl.css">
+{template ljww360:twnav}
+<div class="egridt clearfix" id="bd">
+            {template ljww360:body}
+
+<div class="article article_bg">
+    <div class="mod-status">
+        <div class="hd">
+            <h3>
+                {lang ljww360:mydj5}
+            </h3>
+        </div>
+        <div class="bd">
+            <p class="next_level">
+                {lang ljww360:mydj6}
+                <span class="ico-lv ico-lv-$dj">
+                                    </span>
+									
+                {lang ljww360:mydj7}<!--{if $cha}-->{lang ljww360:mydj8}
+               
+				<span>				
+                    {$cha}                </span>
+                {$creditname}!
+				<!--{/if}-->
+            </p>
+        </div>
+        <div class="ft">
+        </div>
+    </div>
+    <div class="table_list">
+        <div class="hd">
+            <h4>
+                {lang ljww360:mydj9}
+            </h4>
+        </div>
+        <div class="bd">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="248">
+                            {lang ljww360:mydj10}
+                        </th>
+                        <th width="248">
+                            {$creditname}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+				<!--{loop $arrgg $k $v}-->
+                    <tr>
+                        <td>
+		
+                            $k                        </td>
+                        <td>
+		
+                            $v                       
+                        </td>
+                    </tr>
+                    <!--{/loop}-->
+                </tbody>
+            </table>
+        </div>
+        <div class="ft">
+        </div>
+    </div>
+
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		{template common/footer}

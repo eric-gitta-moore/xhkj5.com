@@ -1,0 +1,59 @@
+a {
+	font-family: "Microsoft YaHei"
+}
+
+.ui-slide-bd {
+	height: auto;
+	overflow: hidden
+}
+
+.ui-slide-bd,.ft,.ui-slide-bd img {
+	width: 100%
+}
+
+.ft {
+	text-align: center
+}
+
+.qa-list li {
+	background-color: #fafafa;
+	border-bottom: 1px solid #ccc;
+	line-height: 22px;
+	padding: 5px
+}
+
+.ft span {
+	background-size: contain;
+}
+
+.qa-list li span {
+	background: url(../../images/sjimg/t01a8b00aa64f042d27.png) 0 0 no-repeat;
+	background-size: contain;
+	padding: 5px;
+	position: absolute
+}
+
+.qa-list li span em {
+	color: #fff;
+	display: block;
+	font-size: 10px;
+	margin-top: -7px
+}
+
+@media(min-width:599px) {
+	.ft {
+		margin-top: 80px
+	}
+}
+
+@media(min-width:300px) and (max-width:599px) {
+	.ft {
+		margin-top: 30px
+	}
+}
+
+@media(max-width:280px) {
+	.bd {
+		max-width: 240px
+	}
+}

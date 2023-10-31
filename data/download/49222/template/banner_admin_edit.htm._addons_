@@ -1,0 +1,33 @@
+{template xlwsq_banner:banner_admin_header}
+<form method="post" autocomplete="off" id="editbannerform" name="editbannerform" enctype="multipart/form-data"  action="" onsubmit="return validate(this)"/>
+    <input type="hidden" name="formhash" value="{FORMHASH}" />
+        <table class="ct_list" width="100%">
+            <tr>
+                <td>{lang xlwsq_banner:bannertitle}</td>
+                <td><input type="text" name="title" size="55" id="bannertitle" value="{$active[title]}"></td>
+            </tr>
+
+            <tr>
+                <td>{lang xlwsq_banner:bannerupimg}</td>
+                <td><img src="{$active[pic]}"  onclick="zoom(this, '', 0)" height="80" width="250"><br/>
+				    <input type="file" id="file" name="file" style="display:none;" /> 
+                    <input type="text" id="text"  size="55" name="pic"  value="{$active[pic]}"/> 
+                    <a href="javascript:" id="up" onclick="changetype('file'); return false;">{lang xlwsq_banner:bannershangchuantupian}</a> | <a href="javascript:" id="url" onclick="changetype('text'); return false;" style="font-weight:bold;">{lang xlwsq_banner:bannertupianlianjie}</a>
+				</td>
+            </tr>
+
+            <tr>
+                <td>{lang xlwsq_banner:bannerurl}</td>
+                <td>http://<input type="text" name="url" size="55" id="bannerurl" value="{$active[url]}"></td>
+            </tr>
+            <tr>
+                <td>{lang xlwsq_banner:bannerpaixun}</td>
+                <td><input type="text" name="diynum" size="5" id="{$active[diynum]}"></td>
+            </tr>
+        </table>
+    
+    <div style="text-align:center; margin:10px auto; width:100%; float:left">
+
+    <button type="submit" name="editbannersubmit" id="editbannersubmit" value="true" class="pn pnp" /><strong>{lang xlwsq_banner:bannertijiao}</strong></button>
+    </div>
+</form>

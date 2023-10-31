@@ -1,0 +1,13 @@
+<form id="hdform" class="hdform" method="post" autocomplete="off" action="search.php?mod=forum&mobile=2">
+    <input type="hidden" name="formhash" value="{FORMHASH}" />
+    <input value="$keyword" class="input" name="srchtxt" id="hdform_srchtxt" value="" placeholder=" ËÑÄãÏëËÑµÄ ">
+    <input type="hidden" name="searchsubmit" value="yes">
+    <input type="submit" value="{lang search}" class="hdform_submit" id="hdform_submit" style="display:none">
+</form>
+<script>
+JQT(document).ready(function(){
+	JQT("#hdform_srchtxt").focus(function(){
+		JQT('#hdform_submit').css('display','block'); 
+	});
+});
+</script>

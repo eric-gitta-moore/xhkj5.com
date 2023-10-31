@@ -1,0 +1,66 @@
+<!--{template common/header}-->
+<!-- header start -->
+<div class="header bar">
+    <div id="hd" class="cl">
+    	<div class="hdc hdc1">
+            <div class="logo"><a title="$_G[setting][bbname]" href="forum.php"><img src="./template/yunmb_ttm/static/images/logo.png" /></a></div>
+            <div class="scbar">
+            	<div class="iconfont icon-search">
+                    <!--{subtemplate common/header_scbar}-->
+                </div>
+            </div>
+        </div>
+	</div>
+    <div id="top_nav">
+        <div class="top_menu_bar">
+            <div class="top_menu_more">
+                <a href="forum.php?mod=misc&action=nav" class="iconfont icon-jia"></a>
+            </div>
+            <div class="top_menu top_menu_list" id="navs_scrolls">
+                <div class="nav_list">
+                    <ul>
+    <!--{block/100000}-->
+                        <li style="width: 28px;"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./template/yunmb_ttm/static/js/iscroll.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var window_width = $(window).width();
+    var navs_scrolls_width = $('#navs_scrolls ul').width();
+    $('#navs_scrolls ul').parent().css('width', navs_scrolls_width);
+    if (navs_scrolls_width > window_width) {
+        myscroll_navs_scrolls = new iScroll("navs_scrolls", { hScrollbar: false, vScroll: false, bounce: true,});
+        if ($('.nav_list li').length) {
+            var navs_scrolls = $('#navs_scrolls li').offset().left;
+            if (navs_scrolls > window_width / 2) {
+                var scrollTo_left = navs_scrolls - (window_width / 2);
+                var left = navs_scrolls_width - window_width;
+                var scrollleft = left < scrollTo_left ? left : scrollTo_left;
+                myscroll_navs_scrolls.scrollTo(-scrollleft, 0, 1500);
+            }
+        }
+    }
+    </script>
+
+</div>
+<!-- header end -->
+
+<!-- main threadlist start -->
+
+<!--{block/200000}-->
+<!--{block/300000}-->
+
+<!-- main threadlist end -->
+<script>
+function loadimg_cell(obj) {
+	obj.style.height = "" + (obj.offsetWidth / 1.5) + "px";
+}
+var imgsid = $(".thumb1 img");
+for(var i = 0;i < imgsid.length; i++) {
+	 loadimg_cell(imgsid[i]);
+} 
+</script>
+<!--{template common/footer}-->

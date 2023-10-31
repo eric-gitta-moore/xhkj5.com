@@ -1,0 +1,9 @@
+<!--{block return}-->
+<form method="post" action="admin.php?action=plugins&identifier=dxksst_floor&pmod=collect">
+<input type="hidden" name="formhash" value="{FORMHASH}">
+<input type="hidden" name="submit" value="ture">
+<br><h4 class="marginbot normal"><br><br><h1>{lang dxksst_floor:collect_info}<br><br><font color="#FF0000">{lang dxksst_floor:collect_notice}</font></h1><br><br>
+<input type="submit" class="btn" name="confirmed" value="{lang dxksst_floor:confirm}"> &nbsp; 
+<script type="text/javascript">if(history.length > (BROWSER.ie ? 0 : 1)) document.write('<input type="button" class="btn" value="{lang dxksst_floor:cancel}" onClick="history.go(-1);">');</script>
+</p></form><br>
+<!--{/block}-->

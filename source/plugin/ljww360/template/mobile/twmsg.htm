@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=$_G['charset']">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="$metakeywords" />
+<meta name="description" content="$metadescription" />
+<title>$navtitle</title>
+</head>
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sjtw.css">
+<link rel="stylesheet" href="source/plugin/ljww360/css/sj/sjtw1.css">
+<script type="text/javascript" src="source/plugin/ljww360/js/sjjs/common.js" charset="utf-8">
+</script>
+<body>
+<style type="text/css">
+	.cl:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.exfm {
+  background: none repeat scroll 0 0 #e5edf2;
+  border: 1px dashed #c2d5e3;
+  margin: 10px 0;
+  padding: 10px 14px;
+}
+</style>
+<script type="text/javascript" src="source/plugin/ljww360/js/jquery.js"></script>
+<script  type="text/javascript">
+var jq=jQuery.noConflict();
+</script>
+<script type="text/javascript">
+
+function _on_select_z(fid){
+	$('level_88_fid').innerHTML = '';
+	if(fid != "0"){
+		ajaxget('plugin.php?id=ljww360:export&level=88&fid='+fid, 'level_88_fid');
+	}
+	
+}
+</script>
+<div data-current-page="ask" id="doc"><div id="bd">
+<div class="mod-back-hd"><div class="back-hd"><h2 id="js-back-btn" ><span onclick="window.location.href='plugin.php?id=ljww360'">{lang ljww360:sjtw_1}</span></h2></div></div><div class="bd"><input type="hidden" id="js-ask-title" value="">
+<article class="mod ask-form" id="js-ask-form">
+<iframe style="display:none" name="formsubmit" id="myiframe"></iframe>
+<form id="submit-form" method="post" action="plugin.php?id=ljww360&mod=tw&act=twmsg" target="formsubmit">
+<input type="hidden" value="{FORMHASH}" id="formhash" name="formhash">
+<p style="margin-bottom:10px;margin-top:10px;"><select name="catid" id="catid_0" onchange="_on_select_z(this.value)">
+<option selected="selected" value="0" >{lang ljww360:wenwen34}</option>
+<!--{loop $fenlei $k $v}-->
+<option value="$v[id]">$v[subject]</option>
+<!--{/loop}-->
+</select>
+<span id="level_88_fid"></span><input type="text" placeholder="" name="subject" value="" style="border:1px solid #A0A0A0;width:150px;height:21px;"></p>
+<p style="margin-bottom:10px;"><!--{if $isxst}--><tr><td colspan="4"><div class="exfm cl">
+<label for="rewardprice">{lang ljww360:twmsg_2}</label>
+<input type="text" tabindex="1" value="<!--{if $config[isxs]}-->1<!--{else}-->0<!--{/if}-->" onkeyup="getrealprice(this.value)" size="6" class="px pxs" id="rewardprice" name="rewardprice">
+{$creditname}{lang ljww360:twmsg_3}<strong id="realprice"></strong> {$creditname}<p class="mtn xg1">
+{lang ljww360:twmsg_5}&nbsp;$brenmyarr&nbsp;{$creditname}</p>
+<p class="mtn xg1">{lang ljww360:twmsg_6}</p>
+</div></td></tr>
+
+
+<script  type="text/javascript">
+var jq=jQuery.noConflict();
+function getrealprice(price){
+
+if(!price.search(/^\d+$/) ) {
+n = Math.ceil(parseInt(price) + price * $xsgs);
+if(price > $config['zgxsz']) {
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_7}{$config[zgxsz]}</b>';
+} else if(price < 1 || (0 > 0 && price > 0)) {
+if($config['isxs']){
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_8}</b>';
+}else{
+$('realprice').innerHTML = '<b>0</b>';
+}
+} else {
+$('realprice').innerHTML = n;
+}
+}else{
+$('realprice').innerHTML = '<b>{lang ljww360:twmsg_9}</b>';
+}
+}
+if($('rewardprice')) {
+getrealprice($('rewardprice').value)
+}
+//EXTRAFUNC['validator']['special'] = 'validateextra';
+function validateextra() {
+if($('postform').rewardprice && $('postform').rewardprice.value == '') {
+showDialog('{lang ljww360:twmsg_10}', 'alert', '', function () { $('postform').rewardprice.focus() });
+return false;
+}
+return true;
+} 
+</script>
+<!--{/if}-->
+<div class="ask-title">
+
+<textarea name="content" placeholder="" id="ask-area"></textarea>
+</div><div style="margin-top:4px;" id="title-tip"></div><button type="submit" name="submit" class="sbtn" id="submit-btn" value="true" ><strong>{lang ljww360:wenwen38}</strong></button></form></article>
+
+</body></html>
+<script type="text/javascript">
+function tips(txt, fun) {
+	jq('.tips').remove();
+	var div = jq('<div style="background: url(source/plugin/ljww360/images/tips.png);max-width: 85%;min-height: 77px;min-width: 270px;position: absolute;left: -1000px;top: -1000px;text-align: center;border-radius:10px;"><span style="color: #ffffff;line-height: 77px;font-size: 23px;">' + txt + '</span></div>');
+	jq('body').append(div);
+	div.css('zIndex', 9999999);
+	div.css('left', parseInt((jq(window).width() - div.width()) / 2));
+	var top = parseInt(jq(window).scrollTop() + (jq(window).height() - div.height()) / 2);
+	div.css('top', top);
+	setTimeout(function() {
+		div.remove();
+		if (fun) {
+			fun();
+		}
+	}, 2000);
+}
+
+</script>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->

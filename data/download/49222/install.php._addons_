@@ -1,0 +1,18 @@
+<?php
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+$sql = <<<EOF
+   CREATE TABLE IF NOT EXISTS `pre_plugin_xlwsq_banner_banner` (
+	  `id` int(11) NOT NULL auto_increment,
+	  `diynum` int(11) NOT NULL,
+	  `title` text NOT NULL,
+	  `pic` text NOT NULL,
+	  `url` text NOT NULL,
+	  `dateline` int(11) NOT NULL,
+	  PRIMARY KEY  (`id`)
+   ) ENGINE=MyISAM;
+EOF;
+runquery($sql);
+$finish = true;
+?>

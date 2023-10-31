@@ -1,0 +1,2 @@
+         <li><a href='home.php?mod=space&uid={$uid}'><em><img class="dxksst_avatar" src="{$avatar}" alt='{$username}' > <font color="#0066CC">{$username}</font>
+</em></a><em>:{$message}</em><div align="right"><em>{$dateline}&nbsp;</em><em><a href="javascript:;" onclick="dxksst_reply({$pid},'{$_G[username]}');">{$txt[reply]}</a></em></div></li>

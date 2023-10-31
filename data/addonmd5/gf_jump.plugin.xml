@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[gf_jump.plugin]]></item>
+	<item id="RevisionID"><![CDATA[60710]]></item>
+	<item id="SN"><![CDATA[2017072421p5w1wpKwow]]></item>
+	<item id="RevisionDateline"><![CDATA[1452333602]]></item>
+	<item id="Data">
+		<item id="/uninstall.php"><![CDATA[5dc076063e79471311340aebcce686c7]]></item>
+		<item id="/install.php"><![CDATA[9a8260f715caa1719da310b4be8b9a4c]]></item>
+		<item id="/discuz_plugin_gf_jump_SC_UTF8.xml"><![CDATA[4b7d5b436a12ef684511d74614f1bdcd]]></item>
+		<item id="/discuz_plugin_gf_jump_TC_UTF8.xml"><![CDATA[d25e089fcbfe18069c6077e8b5e56b64]]></item>
+		<item id="/hook_pc.class.php"><![CDATA[9379460a4ffb725eb0fbc1ffc8f90f91]]></item>
+		<item id="/index.html"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/discuz_plugin_gf_jump_TC_BIG5.xml"><![CDATA[a8b7ac95afb37dacedff232035404b58]]></item>
+		<item id="/discuz_plugin_gf_jump_SC_GBK.xml"><![CDATA[c095437a8e7e239c1365b637d6703e86]]></item>
+	</item>
+</root>

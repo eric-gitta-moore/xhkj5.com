@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{$navMenu}">
+    <meta name="keywords" content="{$navMenu}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{$navMenu}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="source/plugin/yinxingfei_thinfellpay_vip/template/m/css/amazeui.min.css">
+    <link rel="stylesheet" href="source/plugin/yinxingfei_thinfellpay_vip/template/m/css/app.css">
+</head>
+<body>
+    <header data-am-widget="header" class="am-header am-header-default">
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">{$navMenu}</a>
+        </h1>
+        <div class="am-header-left am-header-nav">
+            <a href="javascript:;" onclick="javascript :history.back(-1);">
+                <img class="am-header-icon-custom" src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 20&quot;&gt;&lt;path d=&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill=&quot;%23fff&quot;/&gt;&lt;/svg&gt;"
+                     alt="" />
+            </a>
+        </div>
+        <div class="am-header-right am-header-nav">
+            <div class="am-dropdown" data-am-dropdown>
+                <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>
+                    <img class="am-header-icon-custom" src="data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 42 26&quot; fill=&quot;%23fff&quot;&gt;&lt;rect width=&quot;4&quot; height=&quot;4&quot;/&gt;&lt;rect x=&quot;8&quot; y=&quot;1&quot; width=&quot;34&quot; height=&quot;2&quot;/&gt;&lt;rect y=&quot;11&quot; width=&quot;4&quot; height=&quot;4&quot;/&gt;&lt;rect x=&quot;8&quot; y=&quot;12&quot; width=&quot;34&quot; height=&quot;2&quot;/&gt;&lt;rect y=&quot;22&quot; width=&quot;4&quot; height=&quot;4&quot;/&gt;&lt;rect x=&quot;8&quot; y=&quot;23&quot; width=&quot;34&quot; height=&quot;2&quot;/&gt;&lt;/svg&gt;"
+                         alt="" />
+                </button>
+                <ul class="am-dropdown-content">
+                    <!--{loop $mnav $k $v}-->
+                    <li><a href="$v[1]">{$v[0]}</a></li>
+                    <!--{/loop}-->
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="am-panel-group" id="accordion">
+        {eval $ix=0;}
+        <!--{loop $yinxingfei_thinfellpay_rule $key $value}-->
+        <div class="am-panel am-panel-primary">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-$ix'}">
+                    $value[0]
+                </h4>
+            </div>
+            <div id="do-not-say-$ix" class="am-panel-collapse am-collapse am-in">
+                <div class="am-panel-bd">
+                    <table class="am-table am-table-striped am-table-radius">
+                        <tbody>
+                            <tr>
+                                <td rowspan=3 class="am-primary"><img class="am-radius" src="source/plugin/yinxingfei_thinfellpay_vip/images/vip_m.png" width="120" /></td>
+                                <td >{lang yinxingfei_thinfellpay_vip:group_column04}:$value[4]</td>
+                            </tr>
+                            <tr>
+                                <td>{lang yinxingfei_thinfellpay_vip:group_column03}:<!--{if $value[3]>0}-->$value[3]{lang yinxingfei_thinfellpay_vip:danwei}<!--{else}-->{lang yinxingfei_thinfellpay_vip:validityinfo}<!--{/if}--></td>
+                            </tr>
+                            <tr>
+                                <td>{lang yinxingfei_thinfellpay_vip:group_column02}:$value[2]{lang yinxingfei_thinfellpay_vip:danwei01}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <a href="plugin.php?id=yinxingfei_thinfellpay_vip:m&action=buytrue&buyId=$ix" class="am-btn am-btn-warning">{lang yinxingfei_thinfellpay_vip:buyButton}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {eval $ix++}
+        <!--{/loop}-->
+    </div>
+    <!-- {if $yinxingfei_thinfellpay_isshow==1} -->
+    <div class="am-panel am-panel-primary">
+        <div class="am-panel-hd">
+            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-$ix'}">
+                {lang yinxingfei_thinfellpay_vip:notice03}
+            </h4>
+        </div>
+        <div class='bm_c txtstyle'>
+            <!--{eval $i=0;}-->
+            <!--{loop $order_completed_data $ordervalue}-->
+
+            <div class="dashed">
+                $ordervalue['submitdate'] $ordervalue['username'], {lang yinxingfei_thinfellpay_vip:notice02}
+                $ordervalue['group_name']
+                <!--{if $i<3}-->
+
+                <img src='source/plugin/yinxingfei_thinfellpay_vip/images/new.gif'>
+                <!--{/if}-->
+            </div>
+            <!--{eval ++$i;}-->
+            <!--{/loop}-->
+
+        </div>
+    </div>
+
+    <!-- {/if} -->
+
+    <!--[if lt IE 9]>
+    <script src="source/plugin/yinxingfei_thinfellpay_pay/template/m/js/jquery.1.11.js"></script>
+    <script src="source/plugin/yinxingfei_thinfellpay_pay/template/m/js/modernizr_p.js"></script>
+    <script src="source/plugin/yinxingfei_thinfellpay_pay/template/m/js/polyfill/rem.min.js"></script>
+    <script src="source/plugin/yinxingfei_thinfellpay_pay/template/m/js/polyfill/respond.min.js"></script>
+    <script src="source/plugin/yinxingfei_thinfellpay_pay/template/m/js/amazeui.legacy.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="source/plugin/yinxingfei_thinfellpay_vip/template/m/js/jquery.min.js"></script>
+    <script src="source/plugin/yinxingfei_thinfellpay_vip/template/m/js/amazeui.min.js"></script>
+    <!--<![endif]-->
+</body>
+</html>

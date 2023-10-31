@@ -1,0 +1,87 @@
+<!--{block return}-->
+<div align="right">
+<div class="dxksst_floor" align="left">
+ <!--{if $have==2}-->	
+	<table width="100%" >
+  <tr>
+    <td class="floor_header_left" id="floor_left_{$upid}">&nbsp;</td>
+    <td bgcolor="{$color}" align="center" width="80px;" class="floor_header_right"><a href="javascript:;"  onclick="dxksst_toggle_main('{$upid}')"><font id="dxksst_floor_message_{$upid}">{$txt[hide]}</font></a><font>({$total_mes})</font></td>
+  </tr>
+</table>
+ <!--{/if}-->
+		 <div id="dxksst_floor_{$upid}" class="floor_main" style="<!--{if $have==2}-->background-color:{$color};{else}border:0;<!--{/if}-->">
+         <ul  style='margin-bottom:{$space}px; overflow:hidden;'>
+         <div id="dxksst_page_{$upid}"> 
+     	<!--{loop $val $k $v}-->
+		 <!--{if $v['pid']!=''}-->	
+         <li id="dxksst_floor_li_{$v[id]}"><a href='home.php?mod=space&uid={$v[uid]}'><em><img class="dxksst_avatar" src="{$v['avatar']}" alt='{$v[username]}'> <font>{$v[username]}</font>
+</em></a><em>:{$v[message]}</em><div align="right"><em>{$v[dateline]}&nbsp;</em><em><a href="javascript:;" onclick="dxksst_reply({$upid},'{$v[username]}',{$v[uid]});">{$txt[reply]}</a></em> 
+<!--{if $del==1||$v[self]}--><em>&nbsp;&nbsp;<a href="javascript:;" onclick="dxksst_reply_delete({$upid},{$v[id]});">{$txt[delete]}</a></em><!--{/if}--></div>
+</li>
+		 <!--{/if}-->
+         <!--{/loop}-->
+          <div id="dxksst_left_{$upid}"></div>
+          
+        </div>
+          <div id="dxksst_floor_ready_{$upid}"></div>
+          <div id="dxksst_floor_ready_wait_{$upid}"></div>
+          <div id="dxksst_floor_dele_{$upid}" style="display:none;"></div>
+<li style="border-bottom:0px  dotted #ccc;">
+ <table width="100%" border="0">
+  <tr>
+    <td><!--{if $hidden>0}--> 
+		<a href="javascript:;" id="dxksst_left_message_{$upid}" onclick="showleft({$upid});return false;">{$left_message}
+		 <font>{$txt[click_to_view]}</font></a> 
+          <!--{/if}-->
+          <div id="dxksst_pagenum_{$upid}"></div>
+          </td>
+        
+    <td align="right"><a href="javascript:;" onclick="showreplymodule({$upid});"><p class="dxksst_showreply">{$txt[want_reply]}</p></a></td>
+  </tr>
+</table>
+  </li>     
+
+         <form id="dxksst_floor_form_{$upid}"  method="post" action="plugin.php?id=dxksst_floor:ajax&type=reply" name="dxksst_floor_form_{$upid}">
+         <input type="hidden" name="formhash" value="{FORMHASH}">
+         <input type="hidden" name="fsubmit" value="true">
+         <input type="hidden" name="pid" value="{$upid}">
+         <input type="hidden" name="tid" value="{$_G[tid]}" />
+         <input type="hidden" name="fid" value="{$_G[fid]}" />
+         <input type="hidden" name="inajax" value="1">
+ <li id='dxksst_reply_module_{$upid}' style="display:none;border-bottom:0px  dotted #ccc;">
+         <div align="center"><textarea name="message" id="dxksst_floor_reply_{$upid}"></textarea></div>
+         <div  align="right" style="height:35px;" > 
+   <table width="100%" border="0">
+  <tr>
+    <td align="right"><a href="javascript:;" onclick="play_smiley({$upid})"><img src="source/plugin/dxksst_floor/images/smiley.png"></a>
+	 </td>
+        
+    <td align="right" width="55px;">
+    <input type="hidden" name="touid" id="dxksst_floor_touid_{$upid}" value='0'>
+   <span class="dxksst_submit" onclick="dxksst_submit({$upid},{$_G[uid]},'{$_G[tid]}','{$_G[fid]}',{$addn},{$mlimit},'dxksst_floor_form_{$upid}',{$forbide_reply});">{$txt[submit]}</span>
+    </td>
+  </tr>
+</table>
+ </div>
+          <div id="dxksst_floor_smiley_{$upid}"  align="right" style="display:none;">
+          <div style="width:450px; border:1;" align="left">
+          <!--{loop $smiley $sk $smiley1}-->
+          <!--{loop $smiley1[img] $sk1 $sv}-->
+          <!--{if $self}-->
+          <a href="javascript:;" onclick="dxksst_addsmiley('$sk1',{$upid})"> <img src="./source/plugin/dxksst_floor/images/{$sk}/{$sv}" width="20px;" height="20px;"></a>
+          <!--{else}-->
+         <a href="javascript:;" onclick="dxksst_addsmiley('$sk1',{$upid})"> <img src="{$smiley1[dir]}{$sv}" width="20px;" height="20px;"></a>
+         <!--{/if}-->
+          <!--{/loop}-->
+          <!--{/loop}-->
+</div>
+</div>
+</li>
+   </form>
+   
+ </ul>
+
+         </div>
+         </div>
+    </div>    
+<!--{/block}-->
